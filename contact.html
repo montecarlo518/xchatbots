@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5BKLJR7QJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N5BKLJR7QJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Xchatbots</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <span class="logo-text">Xchatbots</span>
+            </a>
+            <nav class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="submit.html" class="btn-primary">Submit AI</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Contact Us</h1>
+        <p>Have questions, feedback, or want to partner with us? We'd love to hear from you.</p>
+    </section>
+
+    <!-- Content -->
+    <div class="content-container">
+        <div class="content-card">
+            <div class="success-message" id="success-message">
+                <span>✅</span>
+                <span>Thank you for your message! We'll get back to you within 24-48 hours.</span>
+            </div>
+
+            <h2>Send Us a Message</h2>
+            <form id="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="feedback">Feedback / Suggestion</option>
+                        <option value="partnership">Partnership / Business</option>
+                        <option value="bug">Report an Issue</option>
+                        <option value="tool-update">Update Tool Information</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">
+                    Send Message
+                </button>
+            </form>
+
+            <h2 style="margin-top: 3rem;">Frequently Asked Questions</h2>
+            
+            <h3>How do I submit a new AI tool?</h3>
+            <p>Visit our <a href="submit.html">Submit AI Tool</a> page and fill out the form. We review all submissions within 5-7 business days.</p>
+            
+            <h3>How do you evaluate AI tools?</h3>
+            <p>We assess tools based on conversation quality, safety, privacy practices, features, pricing, and user feedback. See our <a href="about.html">About page</a> for more details.</p>
+            
+            <h3>Can I update information about my tool?</h3>
+            <p>Yes! Use this contact form with the subject "Update Tool Information" and let us know what needs to be changed.</p>
+            
+            <h3>Do you accept sponsored listings?</h3>
+            <p>We offer featured placements for quality tools. Contact us with the subject "Partnership / Business" to learn more.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <span class="footer-logo-text">Xchatbots</span>
+                </div>
+                <p>Your trusted directory for discovering NSFW AI chatbots and uncensored virtual companions that deliver steamy, no-limits conversations, intense roleplay and raw intimate fantasies. We carefully review each tool to ensure top-tier quality, uncensored freedom and a thrilling, judgment-free experience.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Browse</h4>
+                <ul>
+                    <li><a href="index.html">All AI Tools</a></li>
+                    <li><a href="index.html">Virtual Girlfriend</a></li>
+                    <li><a href="index.html">NSFW Image Generation</a></li>
+                    <li><a href="index.html">NSFW Video Generation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="submit.html">Submit AI Tool</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Xchatbots. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Simulate form submission success
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('success-message').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5BKLJR7QJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N5BKLJR7QJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories — Companion AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(30, 41, 59, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: block;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(30, 41, 59, 0.1);
+        }
+
+        .category-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .category-icon.purple { background: var(--lavender); }
+        .category-icon.green { background: var(--mint); }
+        .category-icon.pink { background: #FCE7F3; }
+        .category-icon.blue { background: var(--ice); }
+        .category-icon.orange { background: #FEF3C7; }
+        .category-icon.yellow { background: #FEF9C3; }
+
+        .category-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-card p {
+            color: var(--gray-warm);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .category-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--blue);
+            font-weight: 600;
+        }
+
+        .category-count svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .content-container.wide {
+            max-width: 1200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <span class="logo-text">Companion AI</span>
+            </a>
+            <nav class="nav-links">
+                <a href="categories.html" class="nav-link active">Categories</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="submit.html" class="btn-primary">Submit AI</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Browse by Category</h1>
+        <p>Find the perfect AI companion for your needs — from emotional support to creative roleplay.</p>
+    </section>
+
+    <!-- Content -->
+    <div class="content-container wide">
+        <div class="categories-grid">
+            <a href="index.html?category=companion" class="category-card">
+                <div class="category-icon purple">💜</div>
+                <h3>Companion</h3>
+                <p>AI friends designed for meaningful conversations, emotional support, and genuine connection. Perfect for daily chats and building a lasting relationship.</p>
+                <span class="category-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    5 tools
+                </span>
+            </a>
+
+            <a href="index.html?category=therapy" class="category-card">
+                <div class="category-icon green">🌿</div>
+                <h3>Therapy & Mental Health</h3>
+                <p>Evidence-based AI tools for anxiety, depression, and emotional wellness. Many use CBT techniques, mood tracking, and guided exercises.</p>
+                <span class="category-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    3 tools
+                </span>
+            </a>
+
+            <a href="index.html?category=romance" class="category-card">
+                <div class="category-icon pink">💕</div>
+                <h3>Romantic</h3>
+                <p>AI partners for romantic connections and relationships. Customizable personalities, appearances, and relationship dynamics.</p>
+                <span class="category-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    2 tools
+                </span>
+            </a>
+
+            <a href="index.html?category=friendship" class="category-card">
+                <div class="category-icon blue">☕</div>
+                <h3>Friendship</h3>
+                <p>Casual AI friends for fun conversations, entertainment, and companionship. Great for when you need someone to chat with.</p>
+                <span class="category-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    2 tools
+                </span>
+            </a>
+
+            <a href="index.html?category=coach" class="category-card">
+                <div class="category-icon orange">🎯</div>
+                <h3>Life Coach</h3>
+                <p>AI mentors focused on personal development, goal setting, and motivation. Get guidance on career, habits, and life decisions.</p>
+                <span class="category-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Coming soon
+                </span>
+            </a>
+
+            <a href="index.html?category=roleplay" class="category-card">
+                <div class="category-icon yellow">🎭</div>
+                <h3>Roleplay</h3>
+                <p>Creative AI characters for storytelling, roleplay scenarios, and immersive conversations. Endless personalities to explore.</p>
+                <span class="category-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    1 tool
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <span class="footer-logo-text">Companion AI</span>
+                </div>
+                <p>Your trusted directory for discovering AI companions that provide meaningful conversations and genuine connection.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Browse</h4>
+                <ul>
+                    <li><a href="index.html">All AI Tools</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="submit.html">Submit AI Tool</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Companion AI. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5BKLJR7QJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N5BKLJR7QJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xchatbots — Best NSFW AI Chatbots and Virtual Girlfriends</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ice: #E8F4F8;
+            --ice-light: #F5FAFB;
+            --blue: #4A9EBF;
+            --blue-dark: #2D7A9C;
+            --slate: #94A3B8;
+            --slate-dark: #64748B;
+            --lavender: #E0E7FF;
+            --mint: #D1FAE5;
+            --frost: #F8FAFC;
+            --charcoal: #1E293B;
+            --gray-warm: #475569;
+            --gray-light: #94A3B8;
+            --white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(30, 41, 59, 0.06);
+            --shadow-medium: 0 8px 40px rgba(30, 41, 59, 0.1);
+            --shadow-glow: 0 0 60px rgba(74, 158, 191, 0.15);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--frost);
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Decorative Background Elements */
+        .bg-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-blob-1 {
+            top: -200px;
+            right: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--ice) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .bg-blob-2 {
+            bottom: 20%;
+            left: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--lavender) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .bg-blob-3 {
+            top: 50%;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--mint) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248, 250, 252, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(30, 41, 59, 0.05);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3);
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-warm);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--blue);
+        }
+
+        .btn-submit {
+            background: var(--charcoal);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background: var(--blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--ice-light);
+            border: 1px solid var(--ice);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--blue-dark);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+
+        .hero h1 span {
+            font-style: italic;
+            color: var(--blue);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-warm);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+        }
+
+        /* Featured Section */
+        .featured-section {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .featured-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .featured-title {
+            font-family: 'Fraunces', serif;
+            font-size: 2.25rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+
+        .featured-subtitle {
+            color: var(--gray-warm);
+            font-size: 1.1rem;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .featured-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(45, 42, 50, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .featured-primary {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--ice-light) 100%);
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-card-badge {
+            display: inline-block;
+            background: var(--blue);
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            width: fit-content;
+        }
+
+        .featured-card-badge.sage {
+            background: #0D9488;
+        }
+
+        .featured-card-badge.coral {
+            background: #6366F1;
+        }
+
+        .featured-primary .featured-card-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .featured-card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+
+        .featured-icon.small {
+            font-size: 2.25rem;
+            margin-bottom: 0;
+        }
+
+        .featured-card-title {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .featured-card-title.small {
+            font-size: 1.35rem;
+        }
+
+        .featured-card-category {
+            font-size: 0.85rem;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .featured-card-desc {
+            font-size: 1.05rem;
+            color: var(--gray-warm);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .featured-card-desc.small {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-card-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: var(--radius-md);
+        }
+
+        .featured-stat {
+            text-align: center;
+        }
+
+        .featured-stat-value {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .featured-stat-label {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+        }
+
+        .featured-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-card-tags span {
+            padding: 0.4rem 0.85rem;
+            background: var(--white);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--gray-warm);
+            border: 1px solid rgba(45, 42, 50, 0.08);
+        }
+
+        .featured-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--charcoal);
+            color: white;
+            border: none;
+            padding: 1rem 1.75rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: fit-content;
+        }
+
+        .featured-btn:hover {
+            background: var(--blue);
+            transform: translateX(4px);
+        }
+
+        .featured-card-decoration {
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--lavender) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .featured-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .featured-secondary {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .featured-secondary-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .featured-secondary-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .featured-secondary-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(45, 42, 50, 0.06);
+        }
+
+        .featured-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .reviews-count {
+            color: var(--gray-light);
+            font-weight: 400;
+            font-size: 0.85rem;
+        }
+
+        .featured-price {
+            font-weight: 600;
+            color: var(--charcoal);
+            padding: 0.4rem 0.9rem;
+            background: var(--frost);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+        }
+
+        .featured-price.free {
+            color: #0D9488;
+            background: rgba(209, 250, 229, 0.5);
+        }
+
+        .featured-visit-btn {
+            padding: 0.5rem 1rem;
+            background: var(--charcoal);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .featured-visit-btn:hover {
+            background: var(--blue);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 900px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-primary {
+                min-height: auto;
+            }
+
+            .featured-column {
+                flex-direction: row;
+            }
+
+            .featured-secondary {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .featured-column {
+                flex-direction: column;
+            }
+
+            .featured-card-stats {
+                gap: 1rem;
+            }
+        }
+
+        /* Search and Filters */
+        .search-section {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+        }
+
+        .search-container {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(45, 42, 50, 0.05);
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        .search-input-wrapper svg {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: var(--gray-light);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3.5rem;
+            border: 2px solid rgba(30, 41, 59, 0.08);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+            background: var(--frost);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--blue);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(74, 158, 191, 0.1);
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(74, 158, 191, 0.35);
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-label {
+            font-size: 0.85rem;
+            color: var(--gray-warm);
+            font-weight: 500;
+        }
+
+        .filter-select {
+            padding: 0.6rem 2.5rem 0.6rem 1rem;
+            border: 2px solid rgba(30, 41, 59, 0.08);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.9rem;
+            background: var(--frost) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 1rem center;
+            cursor: pointer;
+            transition: var(--transition);
+            appearance: none;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-left: auto;
+        }
+
+        .filter-tag {
+            padding: 0.5rem 1rem;
+            background: var(--ice-light);
+            border: 1px solid var(--ice);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: white;
+        }
+
+        /* Results Header */
+        .results-header {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .results-count {
+            font-size: 1rem;
+            color: var(--gray-warm);
+        }
+
+        .results-count strong {
+            color: var(--charcoal);
+        }
+
+        .sort-select {
+            padding: 0.6rem 2.5rem 0.6rem 1rem;
+            border: 2px solid rgba(45, 42, 50, 0.08);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.9rem;
+            background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B6570' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 1rem center;
+            cursor: pointer;
+            appearance: none;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(45, 42, 50, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), var(--lavender));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-medium), var(--shadow-glow);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-icon.peach { background: var(--ice); }
+        .card-icon.sage { background: var(--mint); }
+        .card-icon.lavender { background: var(--lavender); }
+        .card-icon.coral { background: rgba(74, 158, 191, 0.2); }
+
+        .card-title-section {
+            flex: 1;
+        }
+
+        .card-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: var(--charcoal);
+        }
+
+        .card-category {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--frost);
+            padding: 0.4rem 0.75rem;
+            border-radius: var(--radius-sm);
+            height: fit-content;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            width: 14px;
+            height: 14px;
+            color: #FFB800;
+        }
+
+        .star.empty {
+            color: #E0DDE3;
+        }
+
+        .rating-value {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--charcoal);
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: var(--gray-warm);
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-tag {
+            padding: 0.35rem 0.75rem;
+            background: var(--frost);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--gray-warm);
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(45, 42, 50, 0.06);
+        }
+
+        .card-pricing {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-label {
+            font-size: 0.75rem;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-value {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .price-value.free {
+            color: #0D9488;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-rate {
+            width: 42px;
+            height: 42px;
+            border: 2px solid rgba(45, 42, 50, 0.08);
+            border-radius: var(--radius-sm);
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .btn-rate svg {
+            width: 18px;
+            height: 18px;
+            color: var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .btn-rate:hover {
+            border-color: var(--blue);
+            background: var(--ice-light);
+        }
+
+        .btn-rate:hover svg {
+            color: var(--blue);
+        }
+
+        .btn-rate.active {
+            border-color: var(--blue);
+            background: var(--blue);
+        }
+
+        .btn-rate.active svg {
+            color: white;
+        }
+
+        .btn-visit {
+            padding: 0.75rem 1.25rem;
+            background: var(--charcoal);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-visit svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .btn-visit:hover {
+            background: var(--blue);
+            transform: translateY(-2px);
+        }
+
+        /* Rating Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(45, 42, 50, 0.5);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: var(--shadow-medium);
+            animation: modalIn 0.3s ease-out;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header p {
+            color: var(--gray-warm);
+        }
+
+        .rating-input {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .rating-star {
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            color: #E0DDE3;
+            transition: var(--transition);
+        }
+
+        .rating-star:hover,
+        .rating-star.active {
+            color: #FFB800;
+            transform: scale(1.1);
+        }
+
+        .modal-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(45, 42, 50, 0.08);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 100px;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .modal-textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            padding: 1rem;
+            background: var(--frost);
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-cancel:hover {
+            background: var(--ice-light);
+        }
+
+        .btn-submit-rating {
+            flex: 1;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit-rating:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(74, 158, 191, 0.35);
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 1;
+            background: var(--charcoal);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        .footer-logo-text {
+            font-family: 'Fraunces', serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--blue);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-link:hover {
+            background: var(--blue);
+        }
+
+        .social-link:hover svg {
+            fill: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.5s ease-out both;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.15s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+        .card:nth-child(4) { animation-delay: 0.25s; }
+        .card:nth-child(5) { animation-delay: 0.3s; }
+        .card:nth-child(6) { animation-delay: 0.35s; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 3rem 1rem 2rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .search-section {
+                padding: 0 1rem 2rem;
+            }
+
+            .search-container {
+                padding: 1.5rem;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-tags {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            .cards-grid {
+                padding: 0 1rem 3rem;
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--charcoal);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-medium);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast svg {
+            width: 20px;
+            height: 20px;
+            color: #10B981;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Decorations -->
+    <div class="bg-decoration bg-blob-1"></div>
+    <div class="bg-decoration bg-blob-2"></div>
+    <div class="bg-decoration bg-blob-3"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <span class="logo-text">Xchatbots</span>
+            </a>
+            <nav class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="submit.html" class="btn-submit">Submit AI</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Curated directory of adult AI tools
+        </div>
+        <h1>Find your perfect<br><span>NSFW Chatbot</span></h1>
+        <p>Discover the top uncensored NSFW AI chatbots and virtual girlfriends for unlimited sexting, erotic roleplay, nude filter images, undressher-style generation & steamy virtual companions. Curated reviews, ratings & free trials.</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number" id="total-tools">48</div>
+                <div class="stat-label">AI Adult Tools</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">12K+</div>
+                <div class="stat-label">User Reviews</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Categories</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section - Loaded dynamically from Notion -->
+    <section class="featured-section" id="featured-section" style="display: none;">
+        <div class="featured-header">
+            <div class="featured-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Editor's Picks
+            </div>
+            <h2 class="featured-title">Featured NSFW Generators</h2>
+            <p class="featured-subtitle">Hand-picked AI sex chatbots loved by our users</p>
+        </div>
+        <div class="featured-grid" id="featured-grid">
+            <!-- Featured tools loaded dynamically from Notion -->
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-bar">
+                <div class="search-input-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    <input type="text" class="search-input" id="search-input" placeholder="Search AI sex tools by name or features...">
+                </div>
+                <button class="search-btn" onclick="filterCards()">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    Search
+                </button>
+            </div>
+            <div class="filters">
+                <div class="filter-group">
+                    <span class="filter-label">Category:</span>
+                    <select class="filter-select" id="category-filter" onchange="filterCards()">
+                        <option value="">All Categories</option>
+                        <option value="Virtual Girlfriend">Virtual Girlfriend</option>
+                        <option value="Image Generation">Image Generation</option>
+                        <option value="Roleplay">Roleplay</option>
+                        <option value="NSFW">NSFW</option>
+                        <option value="Video Generation">Video Generation</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Pricing:</span>
+                    <select class="filter-select" id="pricing-filter" onchange="filterCards()">
+                        <option value="">Any Price</option>
+                        <option value="free">Free</option>
+                        <option value="freemium">Freemium</option>
+                        <option value="paid">Paid Only</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Rating:</span>
+                    <select class="filter-select" id="rating-filter" onchange="filterCards()">
+                        <option value="">Any Rating</option>
+                        <option value="4.5">4.5+ Stars</option>
+                        <option value="4">4+ Stars</option>
+                        <option value="3.5">3.5+ Stars</option>
+                    </select>
+                </div>
+                <div class="filter-tags">
+                    <span class="filter-tag" data-feature="roleplay" onclick="toggleFeature(this)">Roleplay</span>
+                    <span class="filter-tag" data-feature="sexchat" onclick="toggleFeature(this)">Sexchat</span>
+                    <span class="filter-tag" data-feature="image" onclick="toggleFeature(this)">Image Generation</span>
+                    <span class="filter-tag" data-feature="video" onclick="toggleFeature(this)">Video Generation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Header -->
+    <div class="results-header">
+        <p class="results-count">Showing <strong id="results-count">6</strong> erotic chatbots</p>
+        <select class="sort-select" id="sort-select" onchange="sortCards()">
+            <option value="rating">Sort by: Highest Rated</option>
+            <option value="name">Sort by: Name</option>
+            <option value="price-low">Sort by: Price (Low to High)</option>
+            <option value="newest">Sort by: Newest</option>
+        </select>
+    </div>
+
+    <!-- Cards Grid -->
+    <section class="cards-grid" id="cards-container">
+        <!-- Cards will be dynamically inserted here -->
+    </section>
+
+    <!-- Rating Modal -->
+    <div class="modal-overlay" id="rating-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Rate <span id="modal-tool-name">AI Tool</span></h2>
+                <p>Share your experience to help others</p>
+            </div>
+            <div class="rating-input" id="rating-stars">
+                <svg class="rating-star" data-rating="1" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="rating-star" data-rating="2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="rating-star" data-rating="3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="rating-star" data-rating="4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="rating-star" data-rating="5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <textarea class="modal-textarea" id="review-text" placeholder="Write your review (optional)..."></textarea>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-submit-rating" onclick="submitRating()">Submit Rating</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <span id="toast-message">Rating submitted successfully!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <span class="footer-logo-text">Xchatbots</span>
+                </div>
+                <p>Your trusted directory for discovering NSFW AI chatbots and uncensored virtual companions that deliver steamy, no-limits conversations, intense roleplay and raw intimate fantasies. We carefully review each tool to ensure top-tier quality, uncensored freedom and a thrilling, judgment-free experience.
+</p>
+            </div>
+            <div class="footer-column">
+                <h4>Browse</h4>
+                <ul>
+                    <li><a href="index.html">All NSFW AI Tools</a></li>
+                    <li><a href="virtual-girlfriend.html">Virtual Girlfriend</a></li>
+                    <li><a href="nsfw-image-generation.html">NSFW Image Generation</a></li>
+                    <li><a href="nsfw-video-generation.html">NSFW Video Generation</a></li>
+                    <li><a href="roleplay.html">Roleplay</a></li>
+                    <li><a href="nsfw-chat.html">NSFW Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="submit.html">Submit AI Tool</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Xchatbots. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // API Configuration
+        const API_URL = 'https://test.weissmilch.workers.dev';
+        
+        // AI Tools Data (loaded from Notion)
+        let aiTools = [];
+        let isLoading = true;
+
+        let selectedRating = 0;
+        let currentToolId = null;
+        let activeFeatures = [];
+
+        // Feature mapping for filters
+        const featureMap = {
+            'voice': 'Voice Chat',
+            'memory': 'Memory',
+            'custom': 'Customizable',
+            'mobile': 'Mobile App'
+        };
+
+        // Category mapping
+        const categoryMap = {
+            'Virtual Girlfriend': 'Virtual Girlfriend',
+            'Image Generation': 'Image Generation',
+            'Roleplay': 'Roleplay',
+            'NSFW': 'NSFW',
+            'Video Generation': 'Video Generation'
+        };
+
+        // Icon class mapping based on category
+        const iconClassMap = {
+            'Virtual Girlfriend': 'lavender',
+            'Image Generation': 'sage',
+            'Roleplay': 'peach',
+            'NSFW': 'coral',
+            'Video Generation': 'lavender'
+        };
+
+        // Fetch tools from Notion via Cloudflare Worker
+        async function fetchTools() {
+            try {
+                showLoadingState();
+                const response = await fetch(`${API_URL}/tools`);
+                const data = await response.json();
+                
+                aiTools = data.map(tool => {
+                    const category = tool.category || tool.categories?.[0] || 'Other';
+                    return {
+                        ...tool,
+                        categoryLabel: category,
+                        iconClass: iconClassMap[category] || 'lavender',
+                        tags: tool.features || [],
+                        pricing: (tool.pricing || '').toLowerCase()
+                    };
+                });
+                
+                document.getElementById('total-tools').textContent = aiTools.length;
+                renderCards(aiTools);
+                renderFeaturedTools(aiTools);
+                isLoading = false;
+            } catch (error) {
+                console.error('Error fetching tools:', error);
+                document.getElementById('cards-container').innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;"><p style="color: var(--gray-warm);">Failed to load tools. Please try again later.</p></div>';
+            }
+        }
+
+        // Render featured tools from Notion (tools with featured: true)
+        function renderFeaturedTools(tools) {
+            const featured = tools.filter(t => t.featured).slice(0, 3);
+            
+            // Hide section if no featured tools
+            if (featured.length === 0) {
+                document.getElementById('featured-section').style.display = 'none';
+                return;
+            }
+            
+            // Show the section
+            document.getElementById('featured-section').style.display = 'block';
+            
+            const primary = featured[0];
+            const secondary = featured.slice(1, 3);
+            const badges = ['Most Realistic', 'Best Chatting Experience'];
+            const badgeClasses = ['sage', 'coral'];
+            
+            let html = `
+                <div class="featured-card featured-primary">
+                    <div class="featured-card-badge">Most Popular</div>
+                    <div class="featured-card-content">
+                        <div class="featured-icon">${primary.icon || '🤖'}</div>
+                        <h3 class="featured-card-title">${primary.name}</h3>
+                        <p class="featured-card-category">${primary.categoryLabel}</p>
+                        <p class="featured-card-desc">${primary.description}</p>
+                        <div class="featured-card-stats">
+                            <div class="featured-stat">
+                                <div class="featured-stat-value">${primary.rating}</div>
+                                <div class="featured-stat-label">Rating</div>
+                            </div>
+                            <div class="featured-stat">
+                                <div class="featured-stat-value">${primary.reviews >= 1000 ? (primary.reviews / 1000).toFixed(1) + 'K' : primary.reviews}</div>
+                                <div class="featured-stat-label">Reviews</div>
+                            </div>
+                            <div class="featured-stat">
+                                <div class="featured-stat-value">${primary.pricing === 'free' ? 'Free' : 'Freemium'}</div>
+                                <div class="featured-stat-label">To Start</div>
+                            </div>
+                        </div>
+                        <div class="featured-card-tags">
+                            ${(primary.tags || []).slice(0, 3).map(tag => `<span>${tag}</span>`).join('')}
+                        </div>
+                        <a href="${primary.url || '#'}" target="_blank" rel="noopener noreferrer" class="featured-btn">
+                            Visit
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                    <div class="featured-card-decoration"></div>
+                </div>
+                <div class="featured-column">
+                    ${secondary.map((tool, i) => `
+                        <div class="featured-card featured-secondary">
+                            <div class="featured-secondary-content">
+                                <div class="featured-card-badge ${badgeClasses[i] || ''}">${badges[i] || 'Featured'}</div>
+                                <div class="featured-secondary-left">
+                                    <div class="featured-icon small">${tool.icon || '🤖'}</div>
+                                    <div>
+                                        <h3 class="featured-card-title small">${tool.name}</h3>
+                                        <p class="featured-card-category">${tool.categoryLabel}</p>
+                                    </div>
+                                </div>
+                                <p class="featured-card-desc small">${tool.description}</p>
+                                <div class="featured-secondary-footer">
+                                    <div class="featured-rating">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFB800"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                        <span>${tool.rating}</span>
+                                        <span class="reviews-count">(${(tool.reviews || 0).toLocaleString()} reviews)</span>
+                                    </div>
+                                    <a href="${tool.url || '#'}" target="_blank" rel="noopener noreferrer" class="featured-visit-btn">Visit</a>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            document.getElementById('featured-grid').innerHTML = html;
+        }
+
+        function showLoadingState() {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = `
+                <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⏳</div>
+                    <p style="color: var(--gray-warm); font-size: 1.1rem;">Loading AI tools...</p>
+                </div>
+            `;
+        }
+
+        function showErrorState() {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = `
+                <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">😕</div>
+                    <p style="color: var(--gray-warm); font-size: 1.1rem;">Failed to load tools. Please try again later.</p>
+                    <button onclick="fetchTools()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--blue); color: white; border: none; border-radius: var(--radius-sm); cursor: pointer; font-weight: 600;">Retry</button>
+                </div>
+            `;
+        }
+
+        // Render cards
+        function renderCards(tools) {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = '';
+            
+            if (tools.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                        <p style="color: var(--gray-warm); font-size: 1.1rem;">No AI companions match your filters.</p>
+                        <button onclick="resetFilters()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--blue); color: white; border: none; border-radius: var(--radius-sm); cursor: pointer; font-weight: 600;">Clear Filters</button>
+                    </div>
+                `;
+                document.getElementById('results-count').textContent = '0';
+                return;
+            }
+            
+            tools.forEach((tool, index) => {
+                const stars = renderStars(tool.rating);
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.dataset.id = tool.id;
+                card.style.animationDelay = `${index * 0.05}s`;
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="card-icon ${tool.iconClass}">${tool.icon}</div>
+                        <div class="card-title-section">
+                            <h3 class="card-title">${tool.name}</h3>
+                            <span class="card-category">${tool.categoryLabel}</span>
+                        </div>
+                        <div class="card-rating">
+                            <div class="stars">${stars}</div>
+                            <span class="rating-value">${tool.rating}</span>
+                        </div>
+                    </div>
+                    <p class="card-description">${tool.description}</p>
+                    <div class="card-tags">
+                        ${tool.tags.map(tag => `<span class="card-tag">${tag}</span>`).join('')}
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-pricing">
+                            <span class="price-label">Pricing</span>
+                            <span class="price-value ${tool.pricing === 'free' ? 'free' : ''}">${tool.priceText}</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-rate" onclick="openRatingModal('${tool.id}', '${tool.name.replace(/'/g, "\\'")}')" title="Rate this tool">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </button>
+                            <button class="btn-visit" onclick="window.open('${tool.url}', '_blank')">
+                                Visit
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+            
+            document.getElementById('results-count').textContent = tools.length;
+        }
+
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('category-filter').value = '';
+            document.getElementById('pricing-filter').value = '';
+            document.getElementById('rating-filter').value = '';
+            activeFeatures = [];
+            document.querySelectorAll('.filter-tag').forEach(tag => tag.classList.remove('active'));
+            renderCards(aiTools);
+        }
+
+        function renderStars(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const hasHalf = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < 5; i++) {
+                if (i < fullStars) {
+                    stars += '<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+                } else if (i === fullStars && hasHalf) {
+                    stars += '<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+                } else {
+                    stars += '<svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+                }
+            }
+            return stars;
+        }
+
+        // Filter cards
+        function filterCards() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const categoryFilter = document.getElementById('category-filter').value;
+            const pricingFilter = document.getElementById('pricing-filter').value;
+            const ratingFilter = parseFloat(document.getElementById('rating-filter').value) || 0;
+            
+            let filtered = aiTools.filter(tool => {
+                const matchesSearch = tool.name.toLowerCase().includes(searchTerm) || 
+                                     tool.description.toLowerCase().includes(searchTerm) ||
+                                     tool.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+                const matchesCategory =
+                !categoryFilter ||
+                (tool.categories || []).some(c =>
+                (c || "").toLowerCase() === categoryFilter.toLowerCase()
+                ) ||
+                (tool.category || "").toLowerCase() === categoryFilter.toLowerCase();
+                const matchesPricing = !pricingFilter || tool.pricing === pricingFilter;
+                const matchesRating = tool.rating >= ratingFilter;
+                const matchesFeatures = activeFeatures.length === 0 || 
+                                        activeFeatures.every(f => 
+                                            tool.features.some(tf => tf.toLowerCase() === f.toLowerCase()) ||
+                                            tool.tags.some(tag => tag.toLowerCase().includes(f.toLowerCase()))
+                                        );
+                
+                return matchesSearch && matchesCategory && matchesPricing && matchesRating && matchesFeatures;
+            });
+            
+            sortCards(filtered);
+        }
+
+        // Sort cards
+        function sortCards(tools = null) {
+            const sortValue = document.getElementById('sort-select').value;
+            let toSort = tools || [...aiTools];
+            
+            switch(sortValue) {
+                case 'rating':
+                    toSort.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'name':
+                    toSort.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'price-low':
+                    toSort.sort((a, b) => {
+                        const priceOrder = { free: 0, freemium: 1, paid: 2 };
+                        return priceOrder[a.pricing] - priceOrder[b.pricing];
+                    });
+                    break;
+                case 'newest':
+                    toSort.sort((a, b) => b.id - a.id);
+                    break;
+            }
+            
+            renderCards(toSort);
+        }
+
+        // Toggle feature filter
+        function toggleFeature(element) {
+            const feature = element.dataset.feature;
+            element.classList.toggle('active');
+            
+            if (activeFeatures.includes(feature)) {
+                activeFeatures = activeFeatures.filter(f => f !== feature);
+            } else {
+                activeFeatures.push(feature);
+            }
+            
+            filterCards();
+        }
+
+        // Rating modal functions
+        function openRatingModal(toolId, toolName) {
+            currentToolId = toolId;
+            document.getElementById('modal-tool-name').textContent = toolName;
+            document.getElementById('rating-modal').classList.add('active');
+            selectedRating = 0;
+            updateRatingStars();
+            document.getElementById('review-text').value = '';
+        }
+
+        function closeModal() {
+            document.getElementById('rating-modal').classList.remove('active');
+            currentToolId = null;
+            selectedRating = 0;
+        }
+
+        function updateRatingStars() {
+            const stars = document.querySelectorAll('.rating-star');
+            stars.forEach((star, index) => {
+                if (index < selectedRating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        async function submitRating() {
+            if (selectedRating === 0) {
+                showToast('Please select a rating');
+                return;
+            }
+            
+            const reviewText = document.getElementById('review-text').value;
+            
+            try {
+                // Submit rating to Notion via Cloudflare Worker
+                const response = await fetch(`${API_URL}/rate`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        pageId: currentToolId,
+                        rating: selectedRating,
+                        review: reviewText
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    closeModal();
+                    showToast('Thank you for your rating!');
+                } else {
+                    showToast('Failed to submit rating. Try again.');
+                }
+            } catch (error) {
+                console.error('Error submitting rating:', error);
+                showToast('Failed to submit rating. Try again.');
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Rating stars interaction
+        document.getElementById('rating-stars').addEventListener('click', (e) => {
+            const star = e.target.closest('.rating-star');
+            if (star) {
+                selectedRating = parseInt(star.dataset.rating);
+                updateRatingStars();
+            }
+        });
+
+        document.getElementById('rating-stars').addEventListener('mouseover', (e) => {
+            const star = e.target.closest('.rating-star');
+            if (star) {
+                const hoverRating = parseInt(star.dataset.rating);
+                const stars = document.querySelectorAll('.rating-star');
+                stars.forEach((s, index) => {
+                    if (index < hoverRating) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        document.getElementById('rating-stars').addEventListener('mouseout', () => {
+            updateRatingStars();
+        });
+
+        // Close modal on overlay click
+        document.getElementById('rating-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'rating-modal') {
+                closeModal();
+            }
+        });
+
+        // Search on Enter key
+        document.getElementById('search-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                filterCards();
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check for category filter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryParam = urlParams.get('category');
+            if (categoryParam) {
+                document.getElementById('category-filter').value = categoryParam;
+            }
+            
+            fetchTools();
+        });
+    </script>
+</body>
+</html>

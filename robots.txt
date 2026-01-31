@@ -1,0 +1,126 @@
+# robots.txt for x-chatbots.com
+# Last updated: January 2026
+
+# ===========================================
+# ALLOW ALL SEARCH ENGINES (Default)
+# ===========================================
+User-agent: *
+Allow: /
+
+# Crawl-delay (optional - be gentle on server)
+Crawl-delay: 1
+
+# ===========================================
+# BLOCKED PATHS
+# ===========================================
+# Admin/backend (if applicable)
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /dashboard/
+
+# Private/utility pages
+Disallow: /api/
+Disallow: /cgi-bin/
+Disallow: /_private/
+Disallow: /tmp/
+
+# Search results pages (avoid duplicate content)
+Disallow: /*?q=
+Disallow: /*?search=
+Disallow: /*?filter=
+Disallow: /*?sort=
+
+# Session/tracking parameters
+Disallow: /*?utm_
+Disallow: /*?ref=
+Disallow: /*?source=
+
+# Duplicate/print versions
+Disallow: /print/
+Disallow: /*?print=
+
+# ===========================================
+# GOOGLEBOT SPECIFIC
+# ===========================================
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Allow Google to index images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /assets/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+
+# ===========================================
+# BINGBOT SPECIFIC
+# ===========================================
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# ===========================================
+# BLOCK AI SCRAPERS (Optional - Protect Content)
+# ===========================================
+# Uncomment these if you want to block AI training crawlers
+
+# User-agent: GPTBot
+# Disallow: /
+
+# User-agent: ChatGPT-User
+# Disallow: /
+
+# User-agent: CCBot
+# Disallow: /
+
+# User-agent: anthropic-ai
+# Disallow: /
+
+# User-agent: Claude-Web
+# Disallow: /
+
+# User-agent: Google-Extended
+# Disallow: /
+
+# User-agent: Bytespider
+# Disallow: /
+
+# User-agent: cohere-ai
+# Disallow: /
+
+# ===========================================
+# BLOCK BAD BOTS (Known scrapers/spam)
+# ===========================================
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SearchmetricsBot
+Disallow: /
+
+# ===========================================
+# SITEMAP LOCATION
+# ===========================================
+Sitemap: https://x-chatbots.com/sitemap.xml
+Sitemap: https://x-chatbots.com/sitemap-reviews.xml
+Sitemap: https://x-chatbots.com/sitemap-guides.xml
+
+# ===========================================
+# HOST (Canonical domain)
+# ===========================================
+Host: https://x-chatbots.com

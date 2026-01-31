@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Main sitemap: homepage, categories, best-of lists, comparisons, etc. -->
+  <sitemap>
+    <loc>https://x-chatbots.com/sitemap.xml</loc>
+    <lastmod>2026-01-31</lastmod>
+  </sitemap>
+  
+  <!-- Reviews sitemap: individual tool review pages -->
+  <sitemap>
+    <loc>https://x-chatbots.com/sitemap-reviews.xml</loc>
+    <lastmod>2026-01-31</lastmod>
+  </sitemap>
+  
+  <!-- Guides sitemap: how-to guides and tutorials -->
+  <sitemap>
+    <loc>https://x-chatbots.com/sitemap-guides.xml</loc>
+    <lastmod>2026-01-31</lastmod>
+  </sitemap>
+  
+</sitemapindex>
