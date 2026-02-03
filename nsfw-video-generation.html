@@ -67,8 +67,10 @@
         .card-tag.deepfake { background: #FEE2E2; color: #DC2626; }
         .card-tag.text2video { background: #DDD6FE; color: #7C3AED; }
         .card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid rgba(45, 42, 50, 0.06); }
-        .price-badge { padding: 0.4rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; text-transform: capitalize; }
-        .price-badge.free { background: var(--mint); color: #059669; } .price-badge.freemium { background: var(--lavender); color: #6366F1; } .price-badge.paid { background: #FEF3C7; color: #D97706; }
+        .card-pricing { display: flex; flex-direction: column; }
+        .price-label { font-size: 0.75rem; color: var(--gray-light); text-transform: uppercase; letter-spacing: 0.5px; }
+        .price-value { font-weight: 600; color: var(--charcoal); }
+        .price-value.free { color: #059669; }
         .btn-visit { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); color: white; padding: 0.6rem 1.25rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: var(--transition); }
         .btn-visit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74, 158, 191, 0.35); }
         .btn-visit svg { width: 16px; height: 16px; }
@@ -184,10 +186,10 @@
                     <h3>Browse Categories</h3>
                     <div class="category-links">
                         <a href="virtual-girlfriend.html" class="category-link"><div class="category-link-icon">💜</div>Virtual Girlfriend</a>
-                        <a href="image-generation.html" class="category-link"><div class="category-link-icon">🎨</div>Image Generation</a>
+                        <a href="nsfw-image-generation.html" class="category-link"><div class="category-link-icon">🎨</div>Image Generation</a>
                         <a href="roleplay.html" class="category-link"><div class="category-link-icon">🎭</div>Roleplay</a>
                         <a href="nsfw-chat.html" class="category-link"><div class="category-link-icon">🔥</div>NSFW Chat</a>
-                        <a href="video-generation.html" class="category-link active"><div class="category-link-icon">🎬</div>Video Generation</a>
+                        <a href="nsfw-video-generation.html" class="category-link active"><div class="category-link-icon">🎬</div>Video Generation</a>
                     </div>
                 </div>
                 <div class="sidebar-card">
@@ -216,7 +218,7 @@
                 <div class="footer-logo"><div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><span class="footer-logo-text">Xchatbots</span></div>
                 <p>Your trusted directory for NSFW AI video generators and deepfake tools.</p>
             </div>
-            <div class="footer-column"><h4>Categories</h4><ul><li><a href="virtual-girlfriend.html">Virtual Girlfriend</a></li><li><a href="image-generation.html">Image Generation</a></li><li><a href="roleplay.html">Roleplay</a></li><li><a href="video-generation.html">Video Generation</a></li></ul></div>
+            <div class="footer-column"><h4>Categories</h4><ul><li><a href="virtual-girlfriend.html">Virtual Girlfriend</a></li><li><a href="nsfw-image-generation.html">Image Generation</a></li><li><a href="roleplay.html">Roleplay</a></li><li><a href="nsfw-video-generation.html">Video Generation</a></li></ul></div>
             <div class="footer-column"><h4>Resources</h4><ul><li><a href="about.html">About Us</a></li><li><a href="submit.html">Submit AI Tool</a></li><li><a href="contact.html">Contact</a></li></ul></div>
             <div class="footer-column"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
         </div>
@@ -231,6 +233,7 @@
         let aiTools = [];
         const deepfakeKeywords = ['deepfake', 'face swap', 'faceswap', 'face change'];
         const text2videoKeywords = ['text to video', 'text-to-video', 'prompt', 'generate video'];
+        
         function isDeepfakeTool(tool) {
             const text = (tool.name + ' ' + tool.description + ' ' + (tool.features || []).join(' ')).toLowerCase();
             return deepfakeKeywords.some(function(k) { return text.includes(k); });
@@ -239,6 +242,7 @@
             const text = (tool.name + ' ' + tool.description + ' ' + (tool.features || []).join(' ')).toLowerCase();
             return text2videoKeywords.some(function(k) { return text.includes(k); });
         }
+        
         async function fetchTools() {
             try {
                 const response = await fetch(API_URL + '/tools');
@@ -249,7 +253,9 @@
                 }).map(function(tool) {
                     return {
                         id: tool.id, name: tool.name, description: tool.description, icon: tool.icon || '🎬',
-                        rating: tool.rating, reviews: tool.reviews, pricing: (tool.pricing || '').toLowerCase(),
+                        rating: tool.rating, reviews: tool.reviews, 
+                        pricing: (tool.pricing || '').toLowerCase(),
+                        priceText: tool.priceText || tool.pricing || 'Free',
                         tags: tool.features || [], url: tool.url,
                         isDeepfake: isDeepfakeTool(tool),
                         isText2Video: isText2VideoTool(tool)
@@ -267,6 +273,7 @@
                 document.getElementById('cards-container').innerHTML = '<div class="loading-container"><div style="font-size:3rem;margin-bottom:1rem;">😕</div><p style="color:var(--gray-warm);">Failed to load. Try again later.</p></div>';
             }
         }
+        
         function renderCardsToContainer(tools, containerId, tagType) {
             var container = document.getElementById(containerId);
             if (!tools.length) { 
@@ -278,6 +285,7 @@
                 return createCardHTML(tool, specialTag);
             }).join('');
         }
+        
         function renderCards(tools) {
             var container = document.getElementById('cards-container');
             if (!tools.length) { container.innerHTML = '<div class="loading-container"><div style="font-size:3rem;margin-bottom:1rem;">🔍</div><p style="color:var(--gray-warm);">No tools found yet.</p></div>'; return; }
@@ -288,10 +296,14 @@
                 return createCardHTML(tool, specialTag);
             }).join('');
         }
+        
         function createCardHTML(tool, specialTag) {
-            return '<div class="card"><div class="card-header"><div class="card-icon">' + tool.icon + '</div><div class="card-title-group"><h3 class="card-title">' + tool.name + '</h3><span class="card-category">' + CATEGORY + '</span></div></div><p class="card-description">' + tool.description + '</p><div class="card-rating"><div class="stars">' + renderStars(tool.rating) + '</div><span class="rating-text">' + tool.rating + '</span><span class="reviews-text">(' + tool.reviews.toLocaleString() + ' reviews)</span></div><div class="card-tags">' + specialTag + tool.tags.slice(0,2).map(function(t) { return '<span class="card-tag">' + t + '</span>'; }).join('') + '</div><div class="card-footer"><span class="price-badge ' + tool.pricing + '">' + tool.pricing + '</span><a href="' + tool.url + '" target="_blank" class="btn-visit">Visit<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>';
+            var isFree = tool.pricing === 'free';
+            return '<div class="card"><div class="card-header"><div class="card-icon">' + tool.icon + '</div><div class="card-title-group"><h3 class="card-title">' + tool.name + '</h3><span class="card-category">' + CATEGORY + '</span></div></div><p class="card-description">' + tool.description + '</p><div class="card-rating"><div class="stars">' + renderStars(tool.rating) + '</div><span class="rating-text">' + tool.rating + '</span><span class="reviews-text">(' + tool.reviews.toLocaleString() + ' reviews)</span></div><div class="card-tags">' + specialTag + tool.tags.slice(0,2).map(function(t) { return '<span class="card-tag">' + t + '</span>'; }).join('') + '</div><div class="card-footer"><div class="card-pricing"><span class="price-label">Pricing</span><span class="price-value' + (isFree ? ' free' : '') + '">' + tool.priceText + '</span></div><a href="' + tool.url + '" target="_blank" class="btn-visit">Visit<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>';
         }
+        
         function renderStars(r) { var s=''; for(var i=0;i<5;i++) s+=i<Math.floor(r)?'<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>':'<svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'; return s; }
+        
         function sortCards() {
             var v = document.getElementById('sort-select').value;
             var sorted = aiTools.slice();
@@ -300,6 +312,7 @@
             else if(v==='price-low') { var o={free:0,freemium:1,paid:2}; sorted.sort(function(a,b){return o[a.pricing]-o[b.pricing];}); }
             renderCards(sorted);
         }
+        
         document.addEventListener('DOMContentLoaded', fetchTools);
     </script>
 </body>
