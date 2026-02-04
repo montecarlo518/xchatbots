@@ -219,10 +219,10 @@
     </footer>
     <script>
         const API_URL = 'https://test.weissmilch.workers.dev';
-        const CATEGORY = 'NSFW Chat';
         let aiTools = [];
         const uncensoredKeywords = ['uncensored', 'no filter', 'unrestricted', 'unfiltered', 'explicit'];
         const companionKeywords = ['companion', 'girlfriend', 'boyfriend', 'partner', 'relationship', 'emotional'];
+        const chatFeatures = ['sexchat', 'uncensored chat', 'customizable chat', 'chat'];
         
         function isUncensoredTool(tool) {
             const text = (tool.name + ' ' + tool.description + ' ' + (tool.features || []).join(' ')).toLowerCase();
@@ -232,14 +232,20 @@
             const text = (tool.name + ' ' + tool.description + ' ' + (tool.features || []).join(' ')).toLowerCase();
             return companionKeywords.some(function(k) { return text.includes(k); });
         }
+        function isChatTool(tool) {
+            const categories = tool.categories || [tool.category] || [];
+            const features = tool.features || [];
+            const hasNSFWCategory = categories.some(function(c) { return (c || '').toLowerCase() === 'nsfw'; });
+            const hasChatFeature = features.some(function(f) { return chatFeatures.some(function(cf) { return (f || '').toLowerCase().includes(cf); }); });
+            return hasNSFWCategory || hasChatFeature;
+        }
         
         async function fetchTools() {
             try {
                 const response = await fetch(API_URL + '/tools');
                 const data = await response.json();
                 aiTools = data.filter(function(tool) {
-                    const categories = tool.categories || [tool.category];
-                    return categories.some(function(c) { return (c || '').toLowerCase() === CATEGORY.toLowerCase(); });
+                    return isChatTool(tool);
                 }).map(function(tool) {
                     return {
                         id: tool.id, name: tool.name, description: tool.description, icon: tool.icon || '💬',
