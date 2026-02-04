@@ -1,0 +1,34 @@
+# Xchatbots
+
+> Directory of NSFW AI chatbots and virtual girlfriends at x-chatbots.com
+
+## What we offer
+- Curated reviews of 48+ NSFW AI tools
+- Categories: Virtual Girlfriend, Image Generation, Video Generation, Roleplay, Chat
+- Ratings, pricing comparisons, and feature breakdowns
+- Blog with comparisons, how-to guides, and news
+
+## Top tools we review
+- CandyAI - Video generation, realistic AI girlfriends, voice messages
+- SpicyChat - Millions of community characters, built-in image generation
+- CrushOn.ai - Uncensored roleplay, no filter NSFW chat
+- Promptchan - NSFW image and video generation
+- JuicyChat - Anime-style characters, Janitor AI alternative
+- Xotic AI - Photorealistic companions, voice calls
+
+## Categories
+- /virtual-girlfriend - AI girlfriend and companion apps
+- /nsfw-image-generation - AI nude and NSFW image generators
+- /nsfw-video-generation - AI video and deepfake tools
+- /roleplay - Roleplay and scenario-based chatbots
+- /nsfw-chat - Uncensored chat platforms
+
+## Blog
+- /blog - Expert comparisons, guides, and industry news
+- /blog/candy-ai-vs-spicychat - CandyAI vs SpicyChat comparison
+
+## For AI tool developers
+Submit your AI tool for review: /submit
+
+## Contact
+Website: https://x-chatbots.com
