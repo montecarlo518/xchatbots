@@ -7,70 +7,267 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-N5BKLJR7QJ');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit AI Tool — Xchatbots</title>
+    <meta name="description" content="Submit an AI tool to be featured in our NSFW AI chatbot directory. We review all submissions within 5-7 business days.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://x-chatbots.com/submit">
+    
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --ice: #E8F4F8;
+            --ice-light: #F5FAFB;
+            --blue: #4A9EBF;
+            --blue-dark: #2D7A9C;
+            --slate: #94A3B8;
+            --slate-dark: #64748B;
+            --lavender: #E0E7FF;
+            --mint: #D1FAE5;
+            --frost: #F8FAFC;
+            --charcoal: #1E293B;
+            --gray-warm: #475569;
+            --gray-light: #94A3B8;
+            --white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(30, 41, 59, 0.06);
+            --shadow-medium: 0 8px 40px rgba(30, 41, 59, 0.1);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --error: #DC2626;
+            --success: #059669;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--frost); color: var(--charcoal); line-height: 1.6; }
+        
+        .bg-decoration { position: fixed; pointer-events: none; z-index: 0; }
+        .bg-blob-1 { top: -200px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, var(--ice) 0%, transparent 70%); border-radius: 50%; opacity: 0.7; }
+        .bg-blob-2 { bottom: 20%; left: -200px; width: 500px; height: 500px; background: radial-gradient(circle, var(--lavender) 0%, transparent 70%); border-radius: 50%; opacity: 0.5; }
+        
+        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30, 41, 59, 0.05); }
+        .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3); }
+        .logo-icon svg { width: 24px; height: 24px; fill: white; }
+        .logo-text { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
+        .nav-link:hover { color: var(--blue); }
+        .nav-link.active { color: var(--blue); }
+        .btn-submit-nav { background: var(--charcoal); color: white; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
+        .btn-submit-nav:hover { background: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow-medium); }
+        
+        .page-container { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; padding: 4rem 2rem; }
+        
+        h1 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 400; text-align: center; margin-bottom: 1rem; }
+        .subtitle { text-align: center; color: var(--gray-warm); font-size: 1.1rem; margin-bottom: 3rem; }
+        
+        /* Success Message */
+        .success-message { display: none; background: var(--mint); border: 1px solid var(--success); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2rem; text-align: center; }
+        .success-message.show { display: block; }
+        .success-message h3 { color: var(--success); font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .success-message p { color: var(--charcoal); font-size: 0.95rem; }
+        
+        /* Error Message */
+        .error-message { display: none; background: #FEE2E2; border: 1px solid var(--error); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem; }
+        .error-message.show { display: block; }
+        .error-message p { color: var(--error); font-size: 0.9rem; margin: 0; }
+        
+        /* Form Styles */
+        .form-card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); }
+        
+        .form-section { margin-bottom: 2rem; }
+        .form-section:last-child { margin-bottom: 0; }
+        .form-section-title { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--ice); }
+        
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group:last-child { margin-bottom: 0; }
+        
+        label { display: block; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        label .required { color: var(--error); }
+        .label-hint { font-weight: 400; color: var(--gray-light); font-size: 0.85rem; display: block; margin-top: 0.25rem; }
+        
+        input[type="text"],
+        input[type="url"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--ice);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--charcoal);
+            background: var(--frost);
+            transition: var(--transition);
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(74, 158, 191, 0.1);
+        }
+        
+        input.error,
+        select.error,
+        textarea.error {
+            border-color: var(--error);
+        }
+        
+        textarea { resize: vertical; min-height: 100px; }
+        
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--frost);
+            border: 1px solid var(--ice);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .radio-option:hover { border-color: var(--blue); }
+        .radio-option input[type="radio"] { width: 18px; height: 18px; accent-color: var(--blue); }
+        .radio-option span { font-size: 0.95rem; color: var(--charcoal); }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--charcoal);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .btn-submit:hover:not(:disabled) { background: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow-medium); }
+        .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+        
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        footer { background: var(--charcoal); color: white; padding: 4rem 2rem 2rem; margin-top: 4rem; }
+        .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+        .footer-brand p { color: var(--slate); font-size: 0.95rem; line-height: 1.7; }
+        .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+        .footer-logo-icon { width: 40px; height: 40px; background: var(--blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .footer-logo-icon svg { width: 22px; height: 22px; fill: white; }
+        .footer-logo-text { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; }
+        .footer-column h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.5rem; }
+        .footer-column a { color: var(--slate); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .footer-column a:hover { color: white; }
+        .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; margin-top: 3rem; }
+        .footer-bottom p { font-size: 0.85rem; color: var(--slate); }
+        
+        @media (max-width: 900px) {
+            .footer-content { grid-template-columns: 1fr 1fr; }
+            .nav-links { gap: 1rem; }
+        }
+        @media (max-width: 600px) {
+            .footer-content { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            h1 { font-size: 2rem; }
+            .form-card { padding: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
+    <div class="bg-decoration bg-blob-1"></div>
+    <div class="bg-decoration bg-blob-2"></div>
+
     <header>
         <div class="header-content">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <div class="logo-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                 </div>
                 <span class="logo-text">Xchatbots</span>
             </a>
             <nav class="nav-links">
-                <a href="about.html" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-                <a href="submit.html" class="btn-primary">Submit AI</a>
+                <a href="/" class="nav-link">Home</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/nsfw-chat" class="nav-link">Chat</a>
+                <a href="/virtual-girlfriend" class="nav-link">Virtual GF</a>
+                <a href="/nsfw-image-generation" class="nav-link">Images</a>
+                <a href="/nsfw-video-generation" class="nav-link">Videos</a>
+                <a href="/submit" class="btn-submit-nav active">Submit AI</a>
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <div class="page-container">
         <h1>Submit an AI Tool</h1>
-        <p>Know an AI NSFW tool that should be in our directory? Let us know and we'll review it for inclusion.</p>
-    </section>
+        <p class="subtitle">Know an AI NSFW tool that should be in our directory? Let us know and we'll review it for inclusion.</p>
 
-    <!-- Content -->
-    <div class="content-container">
-        <div class="content-card">
-            <div class="success-message" id="success-message">
-                <span>✅</span>
-                <span>Thank you! Your submission has been received. We'll review it within 5-7 business days.</span>
-            </div>
+        <div class="success-message" id="successMessage">
+            <h3>✅ Thank you!</h3>
+            <p>Your submission has been received. We'll review it within 5-7 business days.</p>
+        </div>
 
-            <form id="submit-form" onsubmit="handleSubmit(event)">
-                <h2>Tool Information</h2>
-                
-                <div class="form-row">
+        <div class="error-message" id="errorMessage">
+            <p id="errorText">Something went wrong. Please try again.</p>
+        </div>
+
+        <div class="form-card" id="formCard">
+            <form id="submitForm">
+                <div class="form-section">
+                    <h2 class="form-section-title">Tool Information</h2>
+                    
                     <div class="form-group">
-                        <label for="tool-name">Tool Name *</label>
-                        <input type="text" id="tool-name" name="tool-name" required placeholder="e.g., Deepnude">
+                        <label for="toolName">Tool Name <span class="required">*</span></label>
+                        <input type="text" id="toolName" name="toolName" required placeholder="e.g., SpicyChat AI">
                     </div>
+                    
                     <div class="form-group">
-                        <label for="tool-url">Website URL *</label>
-                        <input type="url" id="tool-url" name="tool-url" required placeholder="https://example.com">
+                        <label for="websiteUrl">Website URL <span class="required">*</span></label>
+                        <input type="url" id="websiteUrl" name="websiteUrl" required placeholder="https://example.com">
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="description">Description *</label>
-                    <textarea id="description" name="description" required placeholder="Briefly describe what the AI tool does and who it's for..."></textarea>
-                    <p class="form-hint">150-300 characters recommended</p>
-                </div>
-
-                <div class="form-row">
+                    
                     <div class="form-group">
-                        <label for="category">Category *</label>
+                        <label for="description">
+                            Description <span class="required">*</span>
+                            <span class="label-hint">150-300 characters recommended</span>
+                        </label>
+                        <textarea id="description" name="description" required placeholder="Describe what this AI tool does and its main features..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Category <span class="required">*</span></label>
                         <select id="category" name="category" required>
                             <option value="">Select a category</option>
                             <option value="Sexchat">Sexchat</option>
@@ -78,60 +275,71 @@
                             <option value="Roleplay">Roleplay</option>
                             <option value="Video Generation">Video Generation</option>
                             <option value="Image Generation">Image Generation</option>
-                            <option value="Uncensored chat">Uncensored Chat</option>
+                            <option value="Uncensored Chat">Uncensored Chat</option>
                         </select>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="pricing">Pricing Model *</label>
-                        <select id="pricing" name="pricing" required>
+                        <label for="pricingModel">Pricing Model <span class="required">*</span></label>
+                        <select id="pricingModel" name="pricingModel" required>
                             <option value="">Select pricing</option>
                             <option value="Free">Free</option>
                             <option value="Freemium">Freemium (Free + Paid tiers)</option>
-                            <option value="Paid">Paid Only</option>
+                            <option value="Paid Only">Paid Only</option>
                         </select>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="price-details">Pricing Details</label>
-                    <input type="text" id="price-details" name="price-details" placeholder="e.g., Free / $9.99/mo for Pro">
-                </div>
-
-                <h2 style="margin-top: 2.5rem;">Your Information</h2>
-                
-                <div class="form-row">
+                    
                     <div class="form-group">
-                        <label for="submitter-name">Your Name *</label>
-                        <input type="text" id="submitter-name" name="submitter-name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="submitter-email">Your Email *</label>
-                        <input type="email" id="submitter-email" name="submitter-email" required placeholder="john@example.com">
+                        <label for="pricingDetails">Pricing Details</label>
+                        <input type="text" id="pricingDetails" name="pricingDetails" placeholder="e.g., Free / $9.99/mo">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="relationship">Your Relationship to the Tool</label>
-                    <select id="relationship" name="relationship">
-                        <option value="user">I'm a user of this tool</option>
-                        <option value="creator">I created/work on this tool</option>
-                        <option value="other">Other</option>
-                    </select>
+                <div class="form-section">
+                    <h2 class="form-section-title">Your Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="submitterName">Your Name <span class="required">*</span></label>
+                        <input type="text" id="submitterName" name="submitterName" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="submitterEmail">Your Email <span class="required">*</span></label>
+                        <input type="email" id="submitterEmail" name="submitterEmail" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Your Relationship to the Tool</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="relationship" value="User" checked>
+                                <span>I'm a user of this tool</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="relationship" value="Creator/Team">
+                                <span>I created/work on this tool</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="relationship" value="Other">
+                                <span>Other</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" name="additionalInfo" placeholder="Any other details you'd like to share..."></textarea>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="additional-info">Additional Information</label>
-                    <textarea id="additional-info" name="additional-info" placeholder="Anything else we should know about this tool?"></textarea>
-                </div>
-
-                <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">
-                    Submit for Review
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <span id="btnText">Submit for Review</span>
+                    <div class="spinner" id="spinner" style="display: none;"></div>
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
@@ -141,58 +349,106 @@
                     </div>
                     <span class="footer-logo-text">Xchatbots</span>
                 </div>
-                <p>Your trusted directory for discovering NSFW AI chatbots and uncensored virtual companions that deliver steamy, no-limits conversations, intense roleplay and raw intimate fantasies. We carefully review each tool to ensure top-tier quality, uncensored freedom and a thrilling, judgment-free experience.</p>
+                <p>Your trusted directory for discovering NSFW AI chatbots and uncensored virtual companions.</p>
             </div>
             <div class="footer-column">
-                <h4>Browse</h4>
+                <h4>Categories</h4>
                 <ul>
-                    <li><a href="index.html">All AI Tools</a></li>
-                    <li><a href="index.html">Virtual Girlfriend</a></li>
-                    <li><a href="index.html">NSFW Image Generation</a></li>
-                    <li><a href="index.html">NSFW Video Generation</a></li>
+                    <li><a href="/nsfw-chat">NSFW Chat</a></li>
+                    <li><a href="/virtual-girlfriend">Virtual Girlfriend</a></li>
+                    <li><a href="/nsfw-image-generation">Image Generation</a></li>
+                    <li><a href="/nsfw-video-generation">Video Generation</a></li>
+                    <li><a href="/roleplay">Roleplay</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="submit.html">Submit AI Tool</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/submit">Submit AI Tool</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Xchatbots. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" class="social-link">
-                    <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-                </a>
-                <a href="#" class="social-link">
-                    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-            </div>
         </div>
     </footer>
 
     <script>
-        function handleSubmit(event) {
-            event.preventDefault();
+        const form = document.getElementById('submitForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const spinner = document.getElementById('spinner');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorText = document.getElementById('errorText');
+        const formCard = document.getElementById('formCard');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // In a real app, you'd send this to your backend/Notion
-            // For now, just show success message
-            document.getElementById('success-message').classList.add('show');
-            document.getElementById('submit-form').reset();
+            // Reset messages
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
             
-            // Scroll to top to show message
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Submitting...';
+            spinner.style.display = 'block';
+            
+            // Gather form data
+            const formData = {
+                toolName: document.getElementById('toolName').value.trim(),
+                websiteUrl: document.getElementById('websiteUrl').value.trim(),
+                description: document.getElementById('description').value.trim(),
+                category: document.getElementById('category').value,
+                pricingModel: document.getElementById('pricingModel').value,
+                pricingDetails: document.getElementById('pricingDetails').value.trim(),
+                submitterName: document.getElementById('submitterName').value.trim(),
+                submitterEmail: document.getElementById('submitterEmail').value.trim(),
+                relationship: document.querySelector('input[name="relationship"]:checked').value,
+                additionalInfo: document.getElementById('additionalInfo').value.trim()
+            };
+            
+            try {
+                const response = await fetch('/submit-tool', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Show success message
+                    successMessage.classList.add('show');
+                    formCard.style.display = 'none';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    throw new Error(result.error || 'Submission failed');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                errorText.textContent = error.message || 'Something went wrong. Please try again.';
+                errorMessage.classList.add('show');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.textContent = 'Submit for Review';
+                spinner.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
