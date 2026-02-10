@@ -7,228 +7,327 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-N5BKLJR7QJ');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories — Companion AI</title>
+    <title>NSFW AI Categories - AI Chatbots, Image & Video Generation | Xchatbots</title>
+    <meta name="description" content="Browse all NSFW AI tool categories: Virtual Girlfriend, AI Image Generation, AI Video Generation, Roleplay chatbots, and more. Find the perfect AI tool for your needs.">
+    <meta name="keywords" content="NSFW AI categories, AI chatbot types, AI girlfriend, AI image generator, AI video generator, roleplay AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://x-chatbots.com/categories">
+    
+    <meta property="og:title" content="NSFW AI Categories - Browse All AI Tool Types">
+    <meta property="og:description" content="Browse all NSFW AI tool categories: Virtual Girlfriend, AI Image Generation, AI Video Generation, Roleplay chatbots, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://x-chatbots.com/categories">
+    
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <style>
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+        :root {
+            --ice: #E8F4F8; --ice-light: #F5FAFB; --blue: #4A9EBF; --blue-dark: #2D7A9C;
+            --slate: #94A3B8; --lavender: #E0E7FF; --mint: #D1FAE5; --frost: #F8FAFC;
+            --charcoal: #1E293B; --gray-warm: #475569; --gray-light: #94A3B8; --white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(30, 41, 59, 0.06);
+            --shadow-medium: 0 8px 40px rgba(30, 41, 59, 0.1);
+            --radius-sm: 12px; --radius-md: 20px; --radius-lg: 32px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .category-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(30, 41, 59, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            display: block;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--frost); color: var(--charcoal); line-height: 1.6; overflow-x: hidden; }
+        
+        .bg-decoration { position: fixed; pointer-events: none; z-index: 0; }
+        .bg-blob-1 { top: -200px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, var(--ice) 0%, transparent 70%); border-radius: 50%; opacity: 0.7; }
+        .bg-blob-2 { bottom: 20%; left: -200px; width: 500px; height: 500px; background: radial-gradient(circle, var(--lavender) 0%, transparent 70%); border-radius: 50%; opacity: 0.5; }
+        
+        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30, 41, 59, 0.05); }
+        .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3); }
+        .logo-icon svg { width: 24px; height: 24px; fill: white; }
+        .logo-text { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
+        .nav-link:hover { color: var(--blue); }
+        .nav-link.active { color: var(--blue); }
+        .btn-submit { background: var(--charcoal); color: white; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
+        .btn-submit:hover { background: var(--blue); transform: translateY(-2px); }
+        
+        .hero { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
+        .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.2; margin-bottom: 1rem; }
+        .hero h1 span { font-style: italic; color: var(--blue); }
+        .hero p { font-size: 1.15rem; color: var(--gray-warm); max-width: 600px; margin: 0 auto; }
+        
+        .categories-section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+        
+        .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
+        
+        .category-card { background: var(--white); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); transition: var(--transition); text-decoration: none; display: block; position: relative; overflow: hidden; }
+        .category-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--blue), var(--lavender)); opacity: 0; transition: var(--transition); }
+        .category-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-medium); }
+        .category-card:hover::before { opacity: 1; }
+        
+        .category-icon { width: 64px; height: 64px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1.25rem; }
+        .category-icon.girlfriend { background: linear-gradient(135deg, #FDF2F8 0%, #FCE7F3 100%); }
+        .category-icon.image { background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%); }
+        .category-icon.video { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); }
+        .category-icon.roleplay { background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); }
+        .category-icon.chat { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
+        
+        .category-card h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.75rem; }
+        .category-card p { font-size: 0.95rem; color: var(--gray-warm); line-height: 1.6; margin-bottom: 1.25rem; }
+        
+        .category-stats { display: flex; gap: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--ice); }
+        .category-stat { }
+        .category-stat-value { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 500; color: var(--blue); }
+        .category-stat-label { font-size: 0.8rem; color: var(--gray-light); }
+        
+        .category-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--blue); font-weight: 600; font-size: 0.9rem; }
+        .category-link svg { width: 16px; height: 16px; transition: var(--transition); }
+        .category-card:hover .category-link svg { transform: translateX(4px); }
+        
+        /* Features Section */
+        .features-section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+        .features-title { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 400; color: var(--charcoal); text-align: center; margin-bottom: 2rem; }
+        .features-title span { color: var(--blue); }
+        
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+        .feature-tag { background: var(--white); border-radius: var(--radius-md); padding: 1rem 1.25rem; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); text-align: center; transition: var(--transition); text-decoration: none; }
+        .feature-tag:hover { transform: translateY(-2px); box-shadow: var(--shadow-medium); border-color: var(--blue); }
+        .feature-tag span { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+        .feature-tag h3 { font-size: 0.95rem; font-weight: 600; color: var(--charcoal); margin: 0; }
+        
+        footer { background: var(--charcoal); color: white; padding: 4rem 2rem 2rem; margin-top: 4rem; }
+        .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+        .footer-brand p { color: var(--slate); font-size: 0.95rem; line-height: 1.7; }
+        .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+        .footer-logo-icon { width: 40px; height: 40px; background: var(--blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .footer-logo-icon svg { width: 22px; height: 22px; fill: white; }
+        .footer-logo-text { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; }
+        .footer-column h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.5rem; }
+        .footer-column a { color: var(--slate); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .footer-column a:hover { color: white; }
+        .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; margin-top: 3rem; }
+        .footer-bottom p { font-size: 0.85rem; color: var(--slate); }
+        
+        @media (max-width: 900px) {
+            .footer-content { grid-template-columns: 1fr 1fr; }
+            .categories-grid { grid-template-columns: 1fr; }
         }
-
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 40px rgba(30, 41, 59, 0.1);
-        }
-
-        .category-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .category-icon.purple { background: var(--lavender); }
-        .category-icon.green { background: var(--mint); }
-        .category-icon.pink { background: #FCE7F3; }
-        .category-icon.blue { background: var(--ice); }
-        .category-icon.orange { background: #FEF3C7; }
-        .category-icon.yellow { background: #FEF9C3; }
-
-        .category-card h3 {
-            font-family: 'Fraunces', serif;
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: var(--charcoal);
-            margin-bottom: 0.5rem;
-        }
-
-        .category-card p {
-            color: var(--gray-warm);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .category-count {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--blue);
-            font-weight: 600;
-        }
-
-        .category-count svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .content-container.wide {
-            max-width: 1200px;
+        @media (max-width: 600px) {
+            .footer-content { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <div class="bg-decoration bg-blob-1"></div>
+    <div class="bg-decoration bg-blob-2"></div>
+
     <header>
         <div class="header-content">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                </div>
-                <span class="logo-text">Companion AI</span>
+            <a href="/" class="logo">
+                <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="logo-text">Xchatbots</span>
             </a>
             <nav class="nav-links">
-                <a href="categories.html" class="nav-link active">Categories</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="/" class="nav-link">Home</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/nsfw-chat" class="nav-link">Chat</a>
+                <a href="/virtual-girlfriend" class="nav-link">Virtual GF</a>
+                <a href="/nsfw-image-generation" class="nav-link">Images</a>
                 <a href="/advertise" class="nav-link">Advertise</a>
-                <a href="submit.html" class="btn-primary">Submit AI</a>
+                <a href="/submit" class="btn-submit">Submit AI</a>
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <h1>Browse by Category</h1>
-        <p>Find the perfect AI companion for your needs — from emotional support to creative roleplay.</p>
+    <section class="hero">
+        <h1>Browse <span>AI Tool</span> Categories</h1>
+        <p>Explore our curated collection of NSFW AI tools organized by category. Find the perfect AI companion for your needs.</p>
     </section>
 
-    <!-- Content -->
-    <div class="content-container wide">
+    <section class="categories-section">
         <div class="categories-grid">
-            <a href="index.html?category=companion" class="category-card">
-                <div class="category-icon purple">💜</div>
-                <h3>Companion</h3>
-                <p>AI friends designed for meaningful conversations, emotional support, and genuine connection. Perfect for daily chats and building a lasting relationship.</p>
-                <span class="category-count">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    5 tools
-                </span>
+            <a href="/virtual-girlfriend" class="category-card">
+                <div class="category-icon girlfriend">💕</div>
+                <h2>Virtual Girlfriend</h2>
+                <p>AI companions for meaningful conversations, emotional connection, and intimate roleplay experiences. Build relationships with customizable AI personalities.</p>
+                <div class="category-stats">
+                    <div class="category-stat">
+                        <div class="category-stat-value" id="vgf-count">—</div>
+                        <div class="category-stat-label">Tools</div>
+                    </div>
+                    <div class="category-link">
+                        Browse All <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
             </a>
-
-            <a href="index.html?category=therapy" class="category-card">
-                <div class="category-icon green">🌿</div>
-                <h3>Therapy & Mental Health</h3>
-                <p>Evidence-based AI tools for anxiety, depression, and emotional wellness. Many use CBT techniques, mood tracking, and guided exercises.</p>
-                <span class="category-count">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    3 tools
-                </span>
+            
+            <a href="/nsfw-image-generation" class="category-card">
+                <div class="category-icon image">🎨</div>
+                <h2>Image Generation</h2>
+                <p>Create stunning AI-generated images from text prompts. Includes undress AI, nude generators, anime/hentai art, and realistic photo generation.</p>
+                <div class="category-stats">
+                    <div class="category-stat">
+                        <div class="category-stat-value" id="img-count">—</div>
+                        <div class="category-stat-label">Tools</div>
+                    </div>
+                    <div class="category-link">
+                        Browse All <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
             </a>
-
-            <a href="index.html?category=romance" class="category-card">
-                <div class="category-icon pink">💕</div>
-                <h3>Romantic</h3>
-                <p>AI partners for romantic connections and relationships. Customizable personalities, appearances, and relationship dynamics.</p>
-                <span class="category-count">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    2 tools
-                </span>
+            
+            <a href="/nsfw-video-generation" class="category-card">
+                <div class="category-icon video">🎬</div>
+                <h2>Video Generation</h2>
+                <p>Generate AI videos and animations. Create short clips, deepfakes (ethical use only), and animated content with cutting-edge AI video technology.</p>
+                <div class="category-stats">
+                    <div class="category-stat">
+                        <div class="category-stat-value" id="vid-count">—</div>
+                        <div class="category-stat-label">Tools</div>
+                    </div>
+                    <div class="category-link">
+                        Browse All <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
             </a>
-
-            <a href="index.html?category=friendship" class="category-card">
-                <div class="category-icon blue">☕</div>
-                <h3>Friendship</h3>
-                <p>Casual AI friends for fun conversations, entertainment, and companionship. Great for when you need someone to chat with.</p>
-                <span class="category-count">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    2 tools
-                </span>
+            
+            <a href="/roleplay" class="category-card">
+                <div class="category-icon roleplay">🎭</div>
+                <h2>Roleplay</h2>
+                <p>Immersive AI roleplay platforms for creative storytelling and scenario-based interactions. Create custom characters and explore fantasy worlds.</p>
+                <div class="category-stats">
+                    <div class="category-stat">
+                        <div class="category-stat-value" id="rp-count">—</div>
+                        <div class="category-stat-label">Tools</div>
+                    </div>
+                    <div class="category-link">
+                        Browse All <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
             </a>
-
-            <a href="index.html?category=coach" class="category-card">
-                <div class="category-icon orange">🎯</div>
-                <h3>Life Coach</h3>
-                <p>AI mentors focused on personal development, goal setting, and motivation. Get guidance on career, habits, and life decisions.</p>
-                <span class="category-count">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    Coming soon
-                </span>
-            </a>
-
-            <a href="index.html?category=roleplay" class="category-card">
-                <div class="category-icon yellow">🎭</div>
-                <h3>Roleplay</h3>
-                <p>Creative AI characters for storytelling, roleplay scenarios, and immersive conversations. Endless personalities to explore.</p>
-                <span class="category-count">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    1 tool
-                </span>
+            
+            <a href="/nsfw-chat" class="category-card">
+                <div class="category-icon chat">💬</div>
+                <h2>NSFW Chat</h2>
+                <p>Uncensored AI chatbots for adult conversations without filters. Sexting, dirty talk, and explicit conversations with no restrictions.</p>
+                <div class="category-stats">
+                    <div class="category-stat">
+                        <div class="category-stat-value" id="nsfw-count">—</div>
+                        <div class="category-stat-label">Tools</div>
+                    </div>
+                    <div class="category-link">
+                        Browse All <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
             </a>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
+    <section class="features-section">
+        <h2 class="features-title">Browse by <span>Feature</span></h2>
+        <div class="features-grid">
+            <a href="/virtual-girlfriend" class="feature-tag">
+                <span>💬</span>
+                <h3>Customizable Chat</h3>
+            </a>
+            <a href="/roleplay" class="feature-tag">
+                <span>🎭</span>
+                <h3>Roleplay</h3>
+            </a>
+            <a href="/nsfw-chat" class="feature-tag">
+                <span>🔥</span>
+                <h3>Sexchat</h3>
+            </a>
+            <a href="/nsfw-video-generation" class="feature-tag">
+                <span>🎬</span>
+                <h3>Video Generation</h3>
+            </a>
+            <a href="/nsfw-chat" class="feature-tag">
+                <span>🔓</span>
+                <h3>Uncensored Chat</h3>
+            </a>
+            <a href="/nsfw-image-generation" class="feature-tag">
+                <span>🖼️</span>
+                <h3>Image Generation</h3>
+            </a>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <div class="footer-logo-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    </div>
-                    <span class="footer-logo-text">Companion AI</span>
+                    <div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                    <span class="footer-logo-text">Xchatbots</span>
                 </div>
-                <p>Your trusted directory for discovering AI companions that provide meaningful conversations and genuine connection.</p>
+                <p>Your trusted directory for discovering NSFW AI chatbots and uncensored AI tools.</p>
             </div>
             <div class="footer-column">
-                <h4>Browse</h4>
+                <h4>Categories</h4>
                 <ul>
-                    <li><a href="index.html">All AI Tools</a></li>
-                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="/nsfw-chat">NSFW Chat</a></li>
+                    <li><a href="/virtual-girlfriend">Virtual Girlfriend</a></li>
+                    <li><a href="/nsfw-image-generation">Image Generation</a></li>
+                    <li><a href="/nsfw-video-generation">Video Generation</a></li>
+                    <li><a href="/roleplay">Roleplay</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/submit">Submit AI Tool</a></li>
                     <li><a href="/advertise">Advertise</a></li>
-                    <li><a href="submit.html">Submit AI Tool</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Companion AI. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" class="social-link">
-                    <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-                </a>
-                <a href="#" class="social-link">
-                    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-            </div>
+            <p>&copy; 2026 Xchatbots. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        async function loadCategoryCounts() {
+            try {
+                const response = await fetch('/tools');
+                const tools = await response.json();
+                
+                // Count tools per category
+                const vgfCount = tools.filter(t => t.categories?.includes('Virtual Girlfriend')).length;
+                const imgCount = tools.filter(t => t.categories?.includes('Image Generation')).length;
+                const vidCount = tools.filter(t => t.categories?.includes('Video Generation')).length;
+                const rpCount = tools.filter(t => t.categories?.includes('Roleplay') || t.features?.includes('Roleplay')).length;
+                const nsfwCount = tools.filter(t => t.categories?.includes('NSFW') || t.features?.includes('Sexchat') || t.features?.includes('Uncensored Chat')).length;
+                
+                // Update the UI
+                document.getElementById('vgf-count').textContent = vgfCount;
+                document.getElementById('img-count').textContent = imgCount;
+                document.getElementById('vid-count').textContent = vidCount;
+                document.getElementById('rp-count').textContent = rpCount;
+                document.getElementById('nsfw-count').textContent = nsfwCount;
+                
+            } catch (error) {
+                console.error('Error loading category counts:', error);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadCategoryCounts);
+    </script>
 </body>
 </html>
