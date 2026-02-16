@@ -40,6 +40,8 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --error: #DC2626;
             --success: #059669;
+            --paypal-blue: #0070BA;
+            --paypal-yellow: #FFC439;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -65,7 +67,46 @@
         .page-container { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; padding: 4rem 2rem; }
         
         h1 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 400; text-align: center; margin-bottom: 1rem; }
-        .subtitle { text-align: center; color: var(--gray-warm); font-size: 1.1rem; margin-bottom: 3rem; }
+        .subtitle { text-align: center; color: var(--gray-warm); font-size: 1.1rem; margin-bottom: 1.5rem; }
+        
+        /* Pricing Banner */
+        .pricing-banner {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #334155 100%);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: white;
+        }
+        .pricing-banner .price {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .pricing-banner .price-note {
+            font-size: 0.95rem;
+            color: var(--slate);
+        }
+        .pricing-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .pricing-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--ice);
+        }
+        .pricing-feature svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--mint);
+        }
         
         /* Success Message */
         .success-message { display: none; background: var(--mint); border: 1px solid var(--success); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2rem; text-align: center; }
@@ -149,7 +190,68 @@
         .radio-option input[type="radio"] { width: 18px; height: 18px; accent-color: var(--blue); }
         .radio-option span { font-size: 0.95rem; color: var(--charcoal); }
         
-        .btn-submit {
+        /* PayPal Section */
+        .payment-section {
+            background: var(--ice-light);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border: 1px solid var(--ice);
+        }
+        .payment-section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .payment-section-title svg {
+            width: 24px;
+            height: 24px;
+        }
+        .payment-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
+        }
+        .payment-summary-label {
+            font-weight: 500;
+            color: var(--gray-warm);
+        }
+        .payment-summary-price {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+        
+        #paypal-button-container {
+            min-height: 55px;
+        }
+        
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-light);
+        }
+        .secure-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--gray-light);
+        }
+        
+        .btn-validate {
             width: 100%;
             padding: 1rem 2rem;
             background: var(--charcoal);
@@ -161,13 +263,19 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
-        .btn-submit:hover:not(:disabled) { background: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow-medium); }
-        .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+        .btn-validate:hover { background: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow-medium); }
+        
+        .validation-error {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        .validation-error.show {
+            display: block;
+        }
         
         .spinner {
             width: 20px;
@@ -203,6 +311,7 @@
             .nav-links { display: none; }
             h1 { font-size: 2rem; }
             .form-card { padding: 1.5rem; }
+            .pricing-features { flex-direction: column; gap: 0.75rem; }
         }
     </style>
 </head>
@@ -232,11 +341,31 @@
 
     <div class="page-container">
         <h1>Submit an AI Tool</h1>
-        <p class="subtitle">Know an AI NSFW tool that should be in our directory? Let us know and we'll review it for inclusion.</p>
+        <p class="subtitle">Get your AI tool featured in our directory and reach thousands of potential users.</p>
+
+        <!-- Pricing Banner -->
+        <div class="pricing-banner">
+            <div class="price">$49</div>
+            <div class="price-note">One-time submission fee</div>
+            <div class="pricing-features">
+                <div class="pricing-feature">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    <span>Priority Review</span>
+                </div>
+                <div class="pricing-feature">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    <span>Permanent Listing</span>
+                </div>
+                <div class="pricing-feature">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    <span>5-7 Day Turnaround</span>
+                </div>
+            </div>
+        </div>
 
         <div class="success-message" id="successMessage">
-            <h3>✅ Thank you!</h3>
-            <p>Your submission has been received. We'll review it within 5-7 business days.</p>
+            <h3>✅ Payment Successful!</h3>
+            <p>Your submission has been received. We'll review it within 5-7 business days and notify you via email.</p>
         </div>
 
         <div class="error-message" id="errorMessage">
@@ -309,33 +438,36 @@
                     </div>
                     
                     <div class="form-group">
-                        <label>Your Relationship to the Tool</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="relationship" value="User" checked>
-                                <span>I'm a user of this tool</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="relationship" value="Creator/Team">
-                                <span>I created/work on this tool</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="relationship" value="Other">
-                                <span>Other</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
                         <label for="additionalInfo">Additional Information</label>
                         <textarea id="additionalInfo" name="additionalInfo" placeholder="Any other details you'd like to share..."></textarea>
                     </div>
                 </div>
 
-                <button type="submit" class="btn-submit" id="submitBtn">
-                    <span id="btnText">Submit for Review</span>
-                    <div class="spinner" id="spinner" style="display: none;"></div>
-                </button>
+                <!-- Payment Section -->
+                <div class="payment-section">
+                    <div class="payment-section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                        Complete Payment
+                    </div>
+                    
+                    <div class="payment-summary">
+                        <span class="payment-summary-label">Submission Fee</span>
+                        <span class="payment-summary-price">$49.00</span>
+                    </div>
+                    
+                    <p class="validation-error" id="validationError">Please fill in all required fields before proceeding to payment.</p>
+                    
+                    <!-- PayPal Button Container -->
+                    <div id="paypal-button-container"></div>
+                    
+                    <div class="secure-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                        <span>Secure payment powered by PayPal</span>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -383,30 +515,84 @@
         </div>
     </footer>
 
+    <!-- PayPal SDK -->
+    <!-- IMPORTANT: Replace YOUR_CLIENT_ID with your actual PayPal Client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AYayieWYx3oyfpflRnCWwcewRLhCgTTCC_OP4btu9x04u8K87U9L35uTrEuIuzdfvZQopBOS6EDojxHT&currency=USD"></script>
+    
     <script>
         const form = document.getElementById('submitForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const spinner = document.getElementById('spinner');
         const successMessage = document.getElementById('successMessage');
         const errorMessage = document.getElementById('errorMessage');
         const errorText = document.getElementById('errorText');
         const formCard = document.getElementById('formCard');
+        const validationError = document.getElementById('validationError');
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Reset messages
-            successMessage.classList.remove('show');
-            errorMessage.classList.remove('show');
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            btnText.textContent = 'Submitting...';
-            spinner.style.display = 'block';
-            
-            // Gather form data
-            const formData = {
+        // Form validation function
+        function validateForm() {
+            const requiredFields = [
+                { id: 'toolName', name: 'Tool Name' },
+                { id: 'websiteUrl', name: 'Website URL' },
+                { id: 'description', name: 'Description' },
+                { id: 'category', name: 'Category' },
+                { id: 'pricingModel', name: 'Pricing Model' },
+                { id: 'submitterName', name: 'Your Name' },
+                { id: 'submitterEmail', name: 'Your Email' }
+            ];
+
+            let isValid = true;
+            let missingFields = [];
+
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field.id);
+                const value = element.value.trim();
+                
+                if (!value) {
+                    isValid = false;
+                    missingFields.push(field.name);
+                    element.classList.add('error');
+                } else {
+                    element.classList.remove('error');
+                }
+            });
+
+            // Validate email format
+            const emailField = document.getElementById('submitterEmail');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailField.value && !emailRegex.test(emailField.value)) {
+                isValid = false;
+                emailField.classList.add('error');
+                if (!missingFields.includes('Your Email')) {
+                    missingFields.push('Valid Email');
+                }
+            }
+
+            // Validate URL format
+            const urlField = document.getElementById('websiteUrl');
+            try {
+                if (urlField.value) {
+                    new URL(urlField.value);
+                }
+            } catch {
+                isValid = false;
+                urlField.classList.add('error');
+                if (!missingFields.includes('Website URL')) {
+                    missingFields.push('Valid URL');
+                }
+            }
+
+            if (!isValid) {
+                validationError.textContent = `Please complete: ${missingFields.join(', ')}`;
+                validationError.classList.add('show');
+            } else {
+                validationError.classList.remove('show');
+            }
+
+            return isValid;
+        }
+
+        // Gather form data
+        function getFormData() {
+            return {
                 toolName: document.getElementById('toolName').value.trim(),
                 websiteUrl: document.getElementById('websiteUrl').value.trim(),
                 description: document.getElementById('description').value.trim(),
@@ -415,39 +601,125 @@
                 pricingDetails: document.getElementById('pricingDetails').value.trim(),
                 submitterName: document.getElementById('submitterName').value.trim(),
                 submitterEmail: document.getElementById('submitterEmail').value.trim(),
-                relationship: document.querySelector('input[name="relationship"]:checked').value,
                 additionalInfo: document.getElementById('additionalInfo').value.trim()
             };
+        }
+
+        // Initialize PayPal Buttons
+        paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color: 'gold',
+                shape: 'rect',
+                label: 'pay',
+                height: 55
+            },
             
-            try {
-                const response = await fetch('/submit-tool', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok && result.success) {
-                    // Show success message
-                    successMessage.classList.add('show');
-                    formCard.style.display = 'none';
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                    throw new Error(result.error || 'Submission failed');
+            // Validate form before creating order
+            onClick: function(data, actions) {
+                if (!validateForm()) {
+                    return actions.reject();
                 }
-            } catch (error) {
-                console.error('Submission error:', error);
-                errorText.textContent = error.message || 'Something went wrong. Please try again.';
+                return actions.resolve();
+            },
+            
+            // Create order
+            createOrder: function(data, actions) {
+                const formData = getFormData();
+                
+                return actions.order.create({
+                    purchase_units: [{
+                        description: `AI Tool Submission: ${formData.toolName}`,
+                        amount: {
+                            currency_code: 'USD',
+                            value: '49.00'
+                        },
+                        custom_id: JSON.stringify({
+                            toolName: formData.toolName,
+                            email: formData.submitterEmail
+                        })
+                    }]
+                });
+            },
+            
+            // On approval - capture the order and submit form data
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(async function(orderData) {
+                    console.log('Payment successful:', orderData);
+                    
+                    const formData = getFormData();
+                    formData.paypalOrderId = orderData.id;
+                    formData.paymentStatus = 'completed';
+                    formData.paymentAmount = '49.00';
+                    
+                    try {
+                        // Submit the form data to your server
+                        const response = await fetch('/submit-tool', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(formData)
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (response.ok && result.success) {
+                            // Show success message
+                            successMessage.classList.add('show');
+                            formCard.style.display = 'none';
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        } else {
+                            // Payment succeeded but submission failed
+                            // Still show success since payment went through
+                            successMessage.innerHTML = `
+                                <h3>✅ Payment Successful!</h3>
+                                <p>Your payment was processed successfully. If there was an issue saving your submission, please contact us at support@x-chatbots.com with your PayPal Order ID: ${orderData.id}</p>
+                            `;
+                            successMessage.classList.add('show');
+                            formCard.style.display = 'none';
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    } catch (error) {
+                        console.error('Submission error:', error);
+                        // Payment succeeded but network error
+                        successMessage.innerHTML = `
+                            <h3>✅ Payment Successful!</h3>
+                            <p>Your payment was processed. Please contact support@x-chatbots.com with your PayPal Order ID: ${orderData.id} to confirm your submission.</p>
+                        `;
+                        successMessage.classList.add('show');
+                        formCard.style.display = 'none';
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            },
+            
+            // Handle errors
+            onError: function(err) {
+                console.error('PayPal error:', err);
+                errorText.textContent = 'Payment failed. Please try again or contact support.';
                 errorMessage.classList.add('show');
-            } finally {
-                // Reset button state
-                submitBtn.disabled = false;
-                btnText.textContent = 'Submit for Review';
-                spinner.style.display = 'none';
+            },
+            
+            // Handle cancel
+            onCancel: function(data) {
+                console.log('Payment cancelled:', data);
+                // User cancelled - no action needed
             }
+            
+        }).render('#paypal-button-container');
+
+        // Remove error styling on input
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('input', function() {
+                this.classList.remove('error');
+                validationError.classList.remove('show');
+            });
+        });
+
+        // Prevent form submission (handled by PayPal)
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
         });
     </script>
 </body>
