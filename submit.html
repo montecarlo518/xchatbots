@@ -108,6 +108,51 @@
             fill: var(--mint);
         }
         
+        /* Advertise Banner */
+        .advertise-banner {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            color: white;
+            transition: var(--transition);
+        }
+        .advertise-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        .advertise-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .advertise-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+        .advertise-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .advertise-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .advertise-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
         /* Success Message */
         .success-message { display: none; background: var(--mint); border: 1px solid var(--success); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2rem; text-align: center; }
         .success-message.show { display: block; }
@@ -362,6 +407,19 @@
                 </div>
             </div>
         </div>
+
+        <!-- Advertise CTA -->
+        <a href="https://x-chatbots.com/advertise" class="advertise-banner">
+            <div class="advertise-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+            </div>
+            <div class="advertise-text">
+                <span class="advertise-title">Want more visibility?</span>
+                <span class="advertise-subtitle">Explore our advertising options for premium placement →</span>
+            </div>
+        </a>
 
         <div class="success-message" id="successMessage">
             <h3>✅ Payment Successful!</h3>
