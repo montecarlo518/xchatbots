@@ -7,161 +7,406 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-N5BKLJR7QJ');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us — Xchatbots</title>
+    <meta name="description" content="Get in touch with Xchatbots. Contact us for advertising inquiries, partnerships, bug reports, or general questions.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://x-chatbots.com/contact">
+    
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --ice: #E8F4F8; --ice-light: #F5FAFB; --blue: #4A9EBF; --blue-dark: #2D7A9C;
+            --slate: #94A3B8; --lavender: #E0E7FF; --mint: #D1FAE5; --frost: #F8FAFC;
+            --charcoal: #1E293B; --gray-warm: #475569; --gray-light: #94A3B8; --white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(30, 41, 59, 0.06);
+            --shadow-medium: 0 8px 40px rgba(30, 41, 59, 0.1);
+            --radius-sm: 12px; --radius-md: 20px; --radius-lg: 32px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --error: #DC2626; --success: #059669;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--frost); color: var(--charcoal); line-height: 1.6; }
+        
+        .bg-decoration { position: fixed; pointer-events: none; z-index: 0; }
+        .bg-blob-1 { top: -200px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, var(--ice) 0%, transparent 70%); border-radius: 50%; opacity: 0.7; }
+        .bg-blob-2 { bottom: 20%; left: -200px; width: 500px; height: 500px; background: radial-gradient(circle, var(--lavender) 0%, transparent 70%); border-radius: 50%; opacity: 0.5; }
+        
+        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30, 41, 59, 0.05); }
+        .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3); }
+        .logo-icon svg { width: 24px; height: 24px; fill: white; }
+        .logo-text { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
+        .nav-link:hover { color: var(--blue); }
+        .nav-link.active { color: var(--blue); }
+        .btn-submit { background: var(--charcoal); color: white; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
+        .btn-submit:hover { background: var(--blue); transform: translateY(-2px); }
+        
+        .page-container { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+        
+        h1 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 400; text-align: center; margin-bottom: 1rem; }
+        h1 span { color: var(--blue); font-style: italic; }
+        .subtitle { text-align: center; color: var(--gray-warm); font-size: 1.1rem; margin-bottom: 3rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        
+        /* Contact Options */
+        .contact-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
+        .contact-option { background: var(--white); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); transition: var(--transition); text-decoration: none; }
+        .contact-option:hover { transform: translateY(-2px); box-shadow: var(--shadow-medium); border-color: var(--blue); }
+        .contact-option .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .contact-option h3 { font-size: 1rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.25rem; }
+        .contact-option p { font-size: 0.85rem; color: var(--gray-light); margin: 0; }
+        
+        /* Success/Error Messages */
+        .message { display: none; border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2rem; text-align: center; }
+        .message.show { display: block; }
+        .message.success { background: var(--mint); border: 1px solid var(--success); }
+        .message.success h3 { color: var(--success); margin-bottom: 0.5rem; }
+        .message.error { background: #FEE2E2; border: 1px solid var(--error); }
+        .message.error h3 { color: var(--error); margin-bottom: 0.5rem; }
+        .message p { color: var(--charcoal); font-size: 0.95rem; margin: 0; }
+        
+        /* Form */
+        .form-card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); }
+        .form-card h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; margin-bottom: 1.5rem; }
+        
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group.full { grid-column: 1 / -1; }
+        
+        label { display: block; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        label .required { color: var(--error); }
+        
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--ice);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--charcoal);
+            background: var(--frost);
+            transition: var(--transition);
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(74, 158, 191, 0.1);
+        }
+        input.error, select.error, textarea.error { border-color: var(--error); }
+        
+        textarea { resize: vertical; min-height: 150px; }
+        
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+        
+        .btn-send {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--charcoal);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .btn-send:hover:not(:disabled) { background: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow-medium); }
+        .btn-send:disabled { opacity: 0.7; cursor: not-allowed; }
+        
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* Additional Info */
+        .additional-info { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--ice); }
+        .additional-info h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; }
+        .additional-info p { color: var(--gray-warm); font-size: 0.95rem; margin-bottom: 0.5rem; }
+        .additional-info a { color: var(--blue); text-decoration: none; }
+        .additional-info a:hover { text-decoration: underline; }
+        
+        footer { background: var(--charcoal); color: white; padding: 4rem 2rem 2rem; margin-top: 4rem; }
+        .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+        .footer-brand p { color: var(--slate); font-size: 0.95rem; line-height: 1.7; }
+        .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+        .footer-logo-icon { width: 40px; height: 40px; background: var(--blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .footer-logo-icon svg { width: 22px; height: 22px; fill: white; }
+        .footer-logo-text { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; }
+        .footer-column h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.5rem; }
+        .footer-column a { color: var(--slate); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .footer-column a:hover { color: white; }
+        .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; margin-top: 3rem; }
+        .footer-bottom p { font-size: 0.85rem; color: var(--slate); }
+        
+        @media (max-width: 900px) {
+            .footer-content { grid-template-columns: 1fr 1fr; }
+            .contact-options { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .footer-content { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            h1 { font-size: 2rem; }
+            .form-card { padding: 1.5rem; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
+    <div class="bg-decoration bg-blob-1"></div>
+    <div class="bg-decoration bg-blob-2"></div>
+
     <header>
         <div class="header-content">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                </div>
+            <a href="/" class="logo">
+                <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
                 <span class="logo-text">Xchatbots</span>
             </a>
             <nav class="nav-links">
                 <a href="/" class="nav-link">Home</a>
-                <a href="/nsfw-chat" class="nav-link">Sex Chat</a>
-                <a href="/virtual-girlfriend" class="nav-link">Virtual GF</a>
-                <a href="/nsfw-image-generation" class="nav-link">NSFW Images</a>
-                <a href="/nsfw-video-generation" class="nav-link">NSFW Videos</a>
                 <a href="/blog" class="nav-link">Blog</a>
-                <a href="/submit" class="btn-submit-nav active">Submit AI</a>
+                <a href="/nsfw-chat" class="nav-link">Chat</a>
+                <a href="/virtual-girlfriend" class="nav-link">Virtual GF</a>
+                <a href="/nsfw-image-generation" class="nav-link">Images</a>
+                <a href="/nsfw-video-generation" class="nav-link">Videos</a>
+                <a href="/submit" class="btn-submit">Submit AI</a>
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <h1>Contact Us</h1>
-        <p>Have questions, feedback, or want to partner with us? We'd love to hear from you.</p>
-    </section>
+    <div class="page-container">
+        <h1>Get in <span>Touch</span></h1>
+        <p class="subtitle">Have a question, feedback, or want to work with us? We'd love to hear from you.</p>
 
-    <!-- Content -->
-    <div class="content-container">
-        <div class="content-card">
-            <div class="success-message" id="success-message">
-                <span>✅</span>
-                <span>Thank you for your message! We'll get back to you within 24-48 hours.</span>
-            </div>
+        <!-- Quick Contact Options -->
+        <div class="contact-options">
+            <a href="/advertise" class="contact-option">
+                <div class="icon">📢</div>
+                <h3>Advertise</h3>
+                <p>Promote your AI tool</p>
+            </a>
+            <a href="/submit" class="contact-option">
+                <div class="icon">🚀</div>
+                <h3>Submit Tool</h3>
+                <p>Get listed in our directory</p>
+            </a>
+            <a href="mailto:hello@x-chatbots.com" class="contact-option">
+                <div class="icon">✉️</div>
+                <h3>Email Us</h3>
+                <p>hello@x-chatbots.com</p>
+            </a>
+        </div>
 
-            <h2>Send Us a Message</h2>
-            <form id="contact-form" onsubmit="handleSubmit(event)">
+        <!-- Messages -->
+        <div class="message success" id="successMessage">
+            <h3>✅ Message Sent!</h3>
+            <p>Thank you for reaching out. We'll get back to you within 24-48 hours.</p>
+        </div>
+        <div class="message error" id="errorMessage">
+            <h3>❌ Oops!</h3>
+            <p id="errorText">Something went wrong. Please try again or email us directly.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="form-card" id="formCard">
+            <h2>Send us a Message</h2>
+            <form id="contactForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="name">Your Name *</label>
+                        <label for="name">Your Name <span class="required">*</span></label>
                         <input type="text" id="name" name="name" required placeholder="John Doe">
                     </div>
                     <div class="form-group">
-                        <label for="email">Your Email *</label>
+                        <label for="email">Your Email <span class="required">*</span></label>
                         <input type="email" id="email" name="email" required placeholder="john@example.com">
                     </div>
                 </div>
-
+                
                 <div class="form-group">
-                    <label for="subject">Subject *</label>
+                    <label for="subject">Subject <span class="required">*</span></label>
                     <select id="subject" name="subject" required>
                         <option value="">Select a subject</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="feedback">Feedback / Suggestion</option>
-                        <option value="partnership">Partnership / Business</option>
-                        <option value="bug">Report an Issue</option>
-                        <option value="tool-update">Update Tool Information</option>
-                        <option value="other">Other</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Advertising">Advertising</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Bug Report">Bug Report</option>
+                        <option value="Feature Request">Feature Request</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
-
+                
                 <div class="form-group">
-                    <label for="message">Message *</label>
+                    <label for="message">Message <span class="required">*</span></label>
                     <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
                 </div>
-
-                <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">
-                    Send Message
+                
+                <button type="submit" class="btn-send" id="submitBtn">
+                    <span id="btnText">Send Message</span>
+                    <div class="spinner" id="spinner" style="display: none;"></div>
                 </button>
             </form>
-
-            <h2 style="margin-top: 3rem;">Frequently Asked Questions</h2>
             
-            <h3>How do I submit a new AI tool?</h3>
-            <p>Visit our <a href="submit.html">Submit AI Tool</a> page and fill out the form. We review all submissions within 5-7 business days.</p>
-            
-            <h3>How do you evaluate AI tools?</h3>
-            <p>We assess tools based on conversation quality, safety, privacy practices, features, pricing, and user feedback. See our <a href="about.html">About page</a> for more details.</p>
-            
-            <h3>Can I update information about my tool?</h3>
-            <p>Yes! Use this contact form with the subject "Update Tool Information" and let us know what needs to be changed.</p>
-            
-            <h3>Do you accept sponsored listings?</h3>
-            <p>We offer featured placements for quality tools. Check the Advertise section to learn more.</p>
+            <div class="additional-info">
+                <h3>Other Ways to Reach Us</h3>
+                <p>📧 Email: <a href="mailto:info@x-chatbots.com">info@x-chatbots.com</a></p>
+                <p>🐦 Twitter/X: <a href="https://twitter.com/xchatbots" target="_blank" rel="noopener">@xchatbots</a></p>
+                <p>We typically respond within 24-48 hours on business days.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <div class="footer-logo-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    </div>
+                    <div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
                     <span class="footer-logo-text">Xchatbots</span>
                 </div>
-                <p>Your trusted directory for discovering NSFW AI chatbots and uncensored virtual companions that deliver steamy, no-limits conversations, intense roleplay and raw intimate fantasies. We carefully review each tool to ensure top-tier quality, uncensored freedom and a thrilling, judgment-free experience.</p>
+                <p>Your trusted directory for discovering NSFW AI chatbots and uncensored AI tools.</p>
             </div>
             <div class="footer-column">
-                <h4>Browse</h4>
+                <h4>Categories</h4>
                 <ul>
-                    <li><a href="index.html">All AI Tools</a></li>
-                    <li><a href="index.html">Virtual Girlfriend</a></li>
-                    <li><a href="index.html">NSFW Image Generation</a></li>
-                    <li><a href="index.html">NSFW Video Generation</a></li>
+                    <li><a href="/nsfw-chat">NSFW Chat</a></li>
+                    <li><a href="/virtual-girlfriend">Virtual Girlfriend</a></li>
+                    <li><a href="/nsfw-image-generation">Image Generation</a></li>
+                    <li><a href="/nsfw-video-generation">Video Generation</a></li>
+                    <li><a href="/roleplay">Roleplay</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="submit.html">Submit AI Tool</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/submit">Submit AI Tool</a></li>
+                    <li><a href="/advertise">Advertise</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Xchatbots. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" class="social-link">
-                    <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-                </a>
-                <a href="#" class="social-link">
-                    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-            </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function handleSubmit(event) {
-            event.preventDefault();
+    <script>
+        // Notion Database Configuration
+        // IMPORTANT: You need to set up a backend endpoint to handle the Notion API call
+        // The Notion API requires server-side authentication with your Integration Token
+        // 
+        // Database ID: 130785d591e84f9681caedc42bbfadb5
+        // Data Source ID: b5d39ec7-e634-4ec9-84a8-97076719b00f
+        //
+        // Your backend should:
+        // 1. Receive the form data
+        // 2. Call the Notion API to create a page in the database
+        // 3. Return success/error to the frontend
+
+        const NOTION_DATABASE_ID = 'b5d39ec7-e634-4ec9-84a8-97076719b00f';
+        
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const spinner = document.getElementById('spinner');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorText = document.getElementById('errorText');
+        const formCard = document.getElementById('formCard');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // Simulate form submission success
-            document.getElementById('contact-form').style.display = 'none';
-            document.getElementById('success-message').style.display = 'flex';
-        }
+            // Reset messages
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Sending...';
+            spinner.style.display = 'block';
+            
+            // Gather form data
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value.trim(),
+                submittedAt: new Date().toISOString()
+            };
+            
+            try {
+                // Send to your backend endpoint that handles Notion API
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Show success message
+                    successMessage.classList.add('show');
+                    formCard.style.display = 'none';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    throw new Error(result.error || 'Failed to send message');
+                }
+            } catch (error) {
+                console.error('Contact form error:', error);
+                errorText.textContent = error.message || 'Something went wrong. Please try again or email us directly.';
+                errorMessage.classList.add('show');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.textContent = 'Send Message';
+                spinner.style.display = 'none';
+            }
+        });
+
+        // Remove error styling on input
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('input', function() {
+                this.classList.remove('error');
+            });
+        });
     </script>
 </body>
 </html>
