@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5BKLJR7QJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -11,6 +10,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <title>Contact Us — Xchatbots</title>
     <meta name="description" content="Get in touch with Xchatbots. Contact us for advertising inquiries, partnerships, bug reports, or general questions.">
     <meta name="robots" content="index, follow">
@@ -35,26 +36,46 @@
         .bg-blob-1 { top: -200px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, var(--ice) 0%, transparent 70%); border-radius: 50%; opacity: 0.7; }
         .bg-blob-2 { bottom: 20%; left: -200px; width: 500px; height: 500px; background: radial-gradient(circle, var(--lavender) 0%, transparent 70%); border-radius: 50%; opacity: 0.5; }
         
-        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30, 41, 59, 0.05); }
-        .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        /* Header with Dropdowns */
+        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 250, 252, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30, 41, 59, 0.05); overflow: visible; }
+        .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; overflow: visible; }
         .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
         .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3); }
         .logo-icon svg { width: 24px; height: 24px; fill: white; }
         .logo-text { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); }
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
-        .nav-link:hover { color: var(--blue); }
-        .nav-link.active { color: var(--blue); }
-        .btn-submit { background: var(--charcoal); color: white; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
+        
+        .nav-links { display: flex; gap: 0.5rem; align-items: center; overflow: visible; }
+        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); padding: 0.5rem 1rem; border-radius: var(--radius-sm); }
+        .nav-link:hover, .nav-link.active { color: var(--blue); background: var(--ice-light); }
+        
+        .nav-dropdown { position: relative; overflow: visible; }
+        .nav-dropdown-toggle { display: flex; align-items: center; gap: 0.35rem; cursor: pointer; text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); padding: 0.5rem 1rem; border-radius: var(--radius-sm); background: none; border: none; font-family: inherit; }
+        .nav-dropdown-toggle:hover { color: var(--blue); background: var(--ice-light); }
+        .nav-dropdown-toggle svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
+        .nav-dropdown:hover .nav-dropdown-toggle svg { transform: rotate(180deg); }
+        
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 260px; background: var(--white); border-radius: var(--radius-md); box-shadow: 0 10px 40px rgba(30, 41, 59, 0.15); padding: 0.5rem; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s ease; z-index: 1000; }
+        .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        
+        .dropdown-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: var(--radius-sm); text-decoration: none; color: var(--charcoal); font-size: 0.9rem; transition: var(--transition); }
+        .dropdown-item:hover { background: var(--ice-light); color: var(--blue); }
+        .dropdown-item-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; background: var(--ice-light); flex-shrink: 0; }
+        .dropdown-item:hover .dropdown-item-icon { background: var(--ice); }
+        .dropdown-item-text { display: flex; flex-direction: column; }
+        .dropdown-item-title { font-weight: 600; font-size: 0.9rem; }
+        .dropdown-item-desc { font-size: 0.75rem; color: var(--gray-light); }
+        .dropdown-divider { height: 1px; background: var(--ice); margin: 0.5rem 0; }
+        
+        .btn-submit { background: var(--charcoal); color: white; padding: 0.6rem 1.25rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); margin-left: 0.5rem; }
         .btn-submit:hover { background: var(--blue); transform: translateY(-2px); }
         
-        .page-container { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+        @media (max-width: 900px) { .nav-links { display: none; } }
         
+        .page-container { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
         h1 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 400; text-align: center; margin-bottom: 1rem; }
         h1 span { color: var(--blue); font-style: italic; }
         .subtitle { text-align: center; color: var(--gray-warm); font-size: 1.1rem; margin-bottom: 3rem; max-width: 500px; margin-left: auto; margin-right: auto; }
         
-        /* Contact Options */
         .contact-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
         .contact-option { background: var(--white); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); transition: var(--transition); text-decoration: none; }
         .contact-option:hover { transform: translateY(-2px); box-shadow: var(--shadow-medium); border-color: var(--blue); }
@@ -62,7 +83,6 @@
         .contact-option h3 { font-size: 1rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.25rem; }
         .contact-option p { font-size: 0.85rem; color: var(--gray-light); margin: 0; }
         
-        /* Success/Error Messages */
         .message { display: none; border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2rem; text-align: center; }
         .message.show { display: block; }
         .message.success { background: var(--mint); border: 1px solid var(--success); }
@@ -71,80 +91,21 @@
         .message.error h3 { color: var(--error); margin-bottom: 0.5rem; }
         .message p { color: var(--charcoal); font-size: 0.95rem; margin: 0; }
         
-        /* Form */
         .form-card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); }
         .form-card h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; margin-bottom: 1.5rem; }
-        
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .form-group { margin-bottom: 1.25rem; }
-        .form-group.full { grid-column: 1 / -1; }
-        
         label { display: block; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; font-size: 0.95rem; }
         label .required { color: var(--error); }
-        
-        input[type="text"],
-        input[type="email"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid var(--ice);
-            border-radius: var(--radius-sm);
-            font-family: inherit;
-            font-size: 1rem;
-            color: var(--charcoal);
-            background: var(--frost);
-            transition: var(--transition);
-        }
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--blue);
-            background: var(--white);
-            box-shadow: 0 0 0 3px rgba(74, 158, 191, 0.1);
-        }
-        input.error, select.error, textarea.error { border-color: var(--error); }
-        
+        input[type="text"], input[type="email"], select, textarea { width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--ice); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; color: var(--charcoal); background: var(--frost); transition: var(--transition); }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--blue); background: var(--white); box-shadow: 0 0 0 3px rgba(74, 158, 191, 0.1); }
         textarea { resize: vertical; min-height: 150px; }
-        
-        select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            padding-right: 2.5rem;
-        }
-        
-        .btn-send {
-            width: 100%;
-            padding: 1rem 2rem;
-            background: var(--charcoal);
-            color: white;
-            border: none;
-            border-radius: var(--radius-md);
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        .btn-send:hover:not(:disabled) { background: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow-medium); }
+        select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+        .btn-send { width: 100%; padding: 1rem 2rem; background: var(--charcoal); color: white; border: none; border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .btn-send:hover:not(:disabled) { background: var(--blue); transform: translateY(-2px); }
         .btn-send:disabled { opacity: 0.7; cursor: not-allowed; }
-        
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
+        .spinner { width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        
-        /* Additional Info */
         .additional-info { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--ice); }
         .additional-info h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; }
         .additional-info p { color: var(--gray-warm); font-size: 0.95rem; margin-bottom: 0.5rem; }
@@ -165,18 +126,8 @@
         .footer-column a:hover { color: white; }
         .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; margin-top: 3rem; }
         .footer-bottom p { font-size: 0.85rem; color: var(--slate); }
-        
-        @media (max-width: 900px) {
-            .footer-content { grid-template-columns: 1fr 1fr; }
-            .contact-options { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 600px) {
-            .footer-content { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-            h1 { font-size: 2rem; }
-            .form-card { padding: 1.5rem; }
-            .form-row { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 900px) { .footer-content { grid-template-columns: 1fr 1fr; } .contact-options { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { .footer-content { grid-template-columns: 1fr; } h1 { font-size: 2rem; } .form-card { padding: 1.5rem; } .form-row { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -185,17 +136,31 @@
 
     <header>
         <div class="header-content">
-            <a href="/" class="logo">
-                <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-                <span class="logo-text">Xchatbots</span>
-            </a>
+            <a href="/" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><span class="logo-text">Xchatbots</span></a>
             <nav class="nav-links">
                 <a href="/" class="nav-link">Home</a>
                 <a href="/blog" class="nav-link">Blog</a>
-                <a href="/nsfw-chat" class="nav-link">Chat</a>
-                <a href="/virtual-girlfriend" class="nav-link">Virtual GF</a>
-                <a href="/nsfw-image-generation" class="nav-link">Images</a>
-                <a href="/nsfw-video-generation" class="nav-link">Videos</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">Categories <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="/virtual-girlfriend" class="dropdown-item"><div class="dropdown-item-icon">💕</div><div class="dropdown-item-text"><span class="dropdown-item-title">Virtual Girlfriend</span><span class="dropdown-item-desc">AI companions & dating</span></div></a>
+                        <a href="/nsfw-chat" class="dropdown-item"><div class="dropdown-item-icon">💬</div><div class="dropdown-item-text"><span class="dropdown-item-title">NSFW Chat</span><span class="dropdown-item-desc">Adult AI chatbots</span></div></a>
+                        <a href="/nsfw-image-generation" class="dropdown-item"><div class="dropdown-item-icon">🎨</div><div class="dropdown-item-text"><span class="dropdown-item-title">NSFW Image Generation</span><span class="dropdown-item-desc">AI art & porn generators</span></div></a>
+                        <a href="/nsfw-video-generation" class="dropdown-item"><div class="dropdown-item-icon">🎬</div><div class="dropdown-item-text"><span class="dropdown-item-title">NSFW Video Generation</span><span class="dropdown-item-desc">AI video & deepfakes</span></div></a>
+                        <a href="/roleplay" class="dropdown-item"><div class="dropdown-item-icon">🎭</div><div class="dropdown-item-text"><span class="dropdown-item-title">Roleplay</span><span class="dropdown-item-desc">ERP & storytelling</span></div></a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">Alternatives <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="/alternatives/character-ai-alternatives" class="dropdown-item"><div class="dropdown-item-icon">🔄</div><div class="dropdown-item-text"><span class="dropdown-item-title">Character AI Alternatives</span><span class="dropdown-item-desc">Uncensored CAI replacements</span></div></a>
+                        <a href="/alternatives/janitor-ai-alternatives" class="dropdown-item"><div class="dropdown-item-icon">🧹</div><div class="dropdown-item-text"><span class="dropdown-item-title">Janitor AI Alternatives</span><span class="dropdown-item-desc">Similar NSFW chatbots</span></div></a>
+                        <a href="/alternatives/crushon-ai-alternatives" class="dropdown-item"><div class="dropdown-item-icon">❤️</div><div class="dropdown-item-text"><span class="dropdown-item-title">CrushOn AI Alternatives</span><span class="dropdown-item-desc">Romantic AI options</span></div></a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/best/nsfw-ai-chatbots" class="dropdown-item"><div class="dropdown-item-icon">🏆</div><div class="dropdown-item-text"><span class="dropdown-item-title">Best NSFW AI Chatbots</span><span class="dropdown-item-desc">Top rated for 2026</span></div></a>
+                    </div>
+                </div>
+                <a href="/advertise" class="nav-link">Advertise</a>
                 <a href="/submit" class="btn-submit">Submit AI</a>
             </nav>
         </div>
@@ -204,75 +169,26 @@
     <div class="page-container">
         <h1>Get in <span>Touch</span></h1>
         <p class="subtitle">Have a question, feedback, or want to work with us? We'd love to hear from you.</p>
-
-        <!-- Quick Contact Options -->
         <div class="contact-options">
-            <a href="/advertise" class="contact-option">
-                <div class="icon">📢</div>
-                <h3>Advertise</h3>
-                <p>Promote your AI tool</p>
-            </a>
-            <a href="/submit" class="contact-option">
-                <div class="icon">🚀</div>
-                <h3>Submit Tool</h3>
-                <p>Get listed in our directory</p>
-            </a>
-            <a href="mailto:info@x-chatbots.com" class="contact-option">
-                <div class="icon">✉️</div>
-                <h3>Email Us</h3>
-                <p>info@x-chatbots.com</p>
-            </a>
+            <a href="/advertise" class="contact-option"><div class="icon">📢</div><h3>Advertise</h3><p>Promote your AI tool</p></a>
+            <a href="/submit" class="contact-option"><div class="icon">🚀</div><h3>Submit Tool</h3><p>Get listed in our directory</p></a>
+            <a href="mailto:info@x-chatbots.com" class="contact-option"><div class="icon">✉️</div><h3>Email Us</h3><p>info@x-chatbots.com</p></a>
         </div>
-
-        <!-- Messages -->
-        <div class="message success" id="successMessage">
-            <h3>✅ Message Sent!</h3>
-            <p>Thank you for reaching out. We'll get back to you within 24-48 hours.</p>
-        </div>
-        <div class="message error" id="errorMessage">
-            <h3>❌ Oops!</h3>
-            <p id="errorText">Something went wrong. Please try again or email us directly.</p>
-        </div>
-
-        <!-- Contact Form -->
+        <div class="message success" id="successMessage"><h3>✅ Message Sent!</h3><p>Thank you for reaching out. We'll get back to you within 24-48 hours.</p></div>
+        <div class="message error" id="errorMessage"><h3>❌ Oops!</h3><p id="errorText">Something went wrong. Please try again or email us directly.</p></div>
         <div class="form-card" id="formCard">
             <h2>Send us a Message</h2>
             <form id="contactForm">
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Your Name <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="john@example.com">
-                    </div>
+                    <div class="form-group"><label for="name">Your Name <span class="required">*</span></label><input type="text" id="name" name="name" required placeholder="John Doe"></div>
+                    <div class="form-group"><label for="email">Your Email <span class="required">*</span></label><input type="email" id="email" name="email" required placeholder="john@example.com"></div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject <span class="required">*</span></label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select a subject</option>
-                        <option value="General Inquiry">General Inquiry</option>
-                        <option value="Advertising">Advertising</option>
-                        <option value="Partnership">Partnership</option>
-                        <option value="Bug Report">Bug Report</option>
-                        <option value="Feature Request">Feature Request</option>
-                        <option value="Other">Other</option>
-                    </select>
+                <div class="form-group"><label for="subject">Subject <span class="required">*</span></label>
+                    <select id="subject" name="subject" required><option value="">Select a subject</option><option value="General Inquiry">General Inquiry</option><option value="Advertising">Advertising</option><option value="Partnership">Partnership</option><option value="Bug Report">Bug Report</option><option value="Feature Request">Feature Request</option><option value="Other">Other</option></select>
                 </div>
-                
-                <div class="form-group">
-                    <label for="message">Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
-                </div>
-                
-                <button type="submit" class="btn-send" id="submitBtn">
-                    <span id="btnText">Send Message</span>
-                    <div class="spinner" id="spinner" style="display: none;"></div>
-                </button>
+                <div class="form-group"><label for="message">Message <span class="required">*</span></label><textarea id="message" name="message" required placeholder="How can we help you?"></textarea></div>
+                <button type="submit" class="btn-send" id="submitBtn"><span id="btnText">Send Message</span><div class="spinner" id="spinner" style="display: none;"></div></button>
             </form>
-            
             <div class="additional-info">
                 <h3>Other Ways to Reach Us</h3>
                 <p>📧 Email: <a href="mailto:info@x-chatbots.com">info@x-chatbots.com</a></p>
@@ -284,129 +200,22 @@
 
     <footer>
         <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-                    <span class="footer-logo-text">Xchatbots</span>
-                </div>
-                <p>Your trusted directory for discovering NSFW AI chatbots and uncensored AI tools.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Categories</h4>
-                <ul>
-                    <li><a href="/nsfw-chat">NSFW Chat</a></li>
-                    <li><a href="/virtual-girlfriend">Virtual Girlfriend</a></li>
-                    <li><a href="/nsfw-image-generation">Image Generation</a></li>
-                    <li><a href="/nsfw-video-generation">Video Generation</a></li>
-                    <li><a href="/roleplay">Roleplay</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/faq">FAQ</a></li>
-                    <li><a href="/submit">Submit AI Tool</a></li>
-                    <li><a href="/advertise">Advertise</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="/privacy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms of Service</a></li>
-                </ul>
-            </div>
+            <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><span class="footer-logo-text">Xchatbots</span></div><p>Your trusted directory for discovering NSFW AI chatbots and uncensored AI tools.</p></div>
+            <div class="footer-column"><h4>Categories</h4><ul><li><a href="/nsfw-chat">NSFW Chat</a></li><li><a href="/virtual-girlfriend">Virtual Girlfriend</a></li><li><a href="/nsfw-image-generation">Image Generation</a></li><li><a href="/nsfw-video-generation">Video Generation</a></li><li><a href="/roleplay">Roleplay</a></li></ul></div>
+            <div class="footer-column"><h4>Resources</h4><ul><li><a href="/blog">Blog</a></li><li><a href="/faq">FAQ</a></li><li><a href="/submit">Submit AI Tool</a></li><li><a href="/advertise">Advertise</a></li><li><a href="/contact">Contact</a></li></ul></div>
+            <div class="footer-column"><h4>Legal</h4><ul><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li></ul></div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Xchatbots. All rights reserved.</p>
-        </div>
+        <div class="footer-bottom"><p>© 2026 Xchatbots. All rights reserved.</p></div>
     </footer>
 
     <script>
-        // Notion Database Configuration
-        // IMPORTANT: You need to set up a backend endpoint to handle the Notion API call
-        // The Notion API requires server-side authentication with your Integration Token
-        // 
-        // Database ID: 130785d591e84f9681caedc42bbfadb5
-        // Data Source ID: b5d39ec7-e634-4ec9-84a8-97076719b00f
-        //
-        // Your backend should:
-        // 1. Receive the form data
-        // 2. Call the Notion API to create a page in the database
-        // 3. Return success/error to the frontend
-
-        const NOTION_DATABASE_ID = 'b5d39ec7-e634-4ec9-84a8-97076719b00f';
-        
-        const form = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const spinner = document.getElementById('spinner');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-        const errorText = document.getElementById('errorText');
-        const formCard = document.getElementById('formCard');
-
+        const form = document.getElementById('contactForm'), submitBtn = document.getElementById('submitBtn'), btnText = document.getElementById('btnText'), spinner = document.getElementById('spinner'), successMessage = document.getElementById('successMessage'), errorMessage = document.getElementById('errorMessage'), errorText = document.getElementById('errorText'), formCard = document.getElementById('formCard');
         form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Reset messages
-            successMessage.classList.remove('show');
-            errorMessage.classList.remove('show');
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            btnText.textContent = 'Sending...';
-            spinner.style.display = 'block';
-            
-            // Gather form data
-            const formData = {
-                name: document.getElementById('name').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value.trim(),
-                submittedAt: new Date().toISOString()
-            };
-            
-            try {
-                // Send to your backend endpoint that handles Notion API
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok && result.success) {
-                    // Show success message
-                    successMessage.classList.add('show');
-                    formCard.style.display = 'none';
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                    throw new Error(result.error || 'Failed to send message');
-                }
-            } catch (error) {
-                console.error('Contact form error:', error);
-                errorText.textContent = error.message || 'Something went wrong. Please try again or email us directly.';
-                errorMessage.classList.add('show');
-            } finally {
-                // Reset button state
-                submitBtn.disabled = false;
-                btnText.textContent = 'Send Message';
-                spinner.style.display = 'none';
-            }
+            e.preventDefault(); successMessage.classList.remove('show'); errorMessage.classList.remove('show'); submitBtn.disabled = true; btnText.textContent = 'Sending...'; spinner.style.display = 'block';
+            const formData = { name: document.getElementById('name').value.trim(), email: document.getElementById('email').value.trim(), subject: document.getElementById('subject').value, message: document.getElementById('message').value.trim(), submittedAt: new Date().toISOString() };
+            try { const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) }); const result = await response.json(); if (response.ok && result.success) { successMessage.classList.add('show'); formCard.style.display = 'none'; window.scrollTo({ top: 0, behavior: 'smooth' }); } else { throw new Error(result.error || 'Failed to send message'); } } catch (error) { errorText.textContent = error.message || 'Something went wrong.'; errorMessage.classList.add('show'); } finally { submitBtn.disabled = false; btnText.textContent = 'Send Message'; spinner.style.display = 'none'; }
         });
-
-        // Remove error styling on input
-        document.querySelectorAll('input, select, textarea').forEach(element => {
-            element.addEventListener('input', function() {
-                this.classList.remove('error');
-            });
-        });
+        document.querySelectorAll('input, select, textarea').forEach(el => { el.addEventListener('input', function() { this.classList.remove('error'); }); });
     </script>
 </body>
 </html>
