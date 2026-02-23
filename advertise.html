@@ -41,17 +41,41 @@
         .bg-blob-1 { top: -200px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, var(--ice) 0%, transparent 70%); border-radius: 50%; opacity: 0.7; }
         .bg-blob-2 { bottom: 20%; left: -200px; width: 500px; height: 500px; background: radial-gradient(circle, var(--lavender) 0%, transparent 70%); border-radius: 50%; opacity: 0.5; }
         
-        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30, 41, 59, 0.05); }
-        .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 250, 252, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30, 41, 59, 0.05); overflow: visible; }
+        .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; overflow: visible; }
         .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-        .logo-icon { width: 44px; height: 44px; background: var(--gradient-primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3); }
+        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3); }
         .logo-icon svg { width: 24px; height: 24px; fill: white; }
         .logo-text { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); }
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
-        .nav-link:hover { color: var(--blue); }
-        .btn-submit { background: var(--charcoal); color: white; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
+        
+        .nav-links { display: flex; gap: 0.5rem; align-items: center; overflow: visible; }
+        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); padding: 0.5rem 1rem; border-radius: var(--radius-sm); }
+        .nav-link:hover, .nav-link.active { color: var(--blue); background: var(--ice-light); }
+        
+        /* Dropdown Styles */
+        .nav-dropdown { position: relative; overflow: visible; }
+        .nav-dropdown-toggle { display: flex; align-items: center; gap: 0.35rem; cursor: pointer; text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); padding: 0.5rem 1rem; border-radius: var(--radius-sm); background: none; border: none; font-family: inherit; }
+        .nav-dropdown-toggle:hover { color: var(--blue); background: var(--ice-light); }
+        .nav-dropdown-toggle svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
+        .nav-dropdown:hover .nav-dropdown-toggle svg { transform: rotate(180deg); }
+        
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 260px; background: var(--white); border-radius: var(--radius-md); box-shadow: 0 10px 40px rgba(30, 41, 59, 0.15); padding: 0.5rem; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s ease; z-index: 1000; }
+        .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        
+        .dropdown-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: var(--radius-sm); text-decoration: none; color: var(--charcoal); font-size: 0.9rem; transition: var(--transition); }
+        .dropdown-item:hover { background: var(--ice-light); color: var(--blue); }
+        .dropdown-item-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; background: var(--ice-light); flex-shrink: 0; }
+        .dropdown-item:hover .dropdown-item-icon { background: var(--ice); }
+        .dropdown-item-text { display: flex; flex-direction: column; }
+        .dropdown-item-title { font-weight: 600; font-size: 0.9rem; }
+        .dropdown-item-desc { font-size: 0.75rem; color: var(--gray-light); }
+        
+        .dropdown-divider { height: 1px; background: var(--ice); margin: 0.5rem 0; }
+        
+        .btn-submit { background: var(--charcoal); color: white; padding: 0.6rem 1.25rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); margin-left: 0.5rem; }
         .btn-submit:hover { background: var(--blue); transform: translateY(-2px); }
+        
+        @media (max-width: 900px) { .nav-links { display: none; } }
         
         .hero { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 5rem 2rem 4rem; text-align: center; }
         .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.2; margin-bottom: 1rem; }
@@ -162,20 +186,104 @@
 
     <header>
         <div class="header-content">
-            <a href="/" class="logo">
-                <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-                <span class="logo-text">Xchatbots</span>
-            </a>
-            <nav class="nav-links">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/blog" class="nav-link">Blog</a>
-                <a href="/nsfw-chat" class="nav-link">Chat</a>
-                <a href="/virtual-girlfriend" class="nav-link">Virtual GF</a>
-                <a href="/nsfw-image-generation" class="nav-link">Images</a>
-                <a href="/advertise" class="nav-link">Advertise</a>
-                <a href="/submit" class="btn-submit">Submit AI</a>
-            </nav>
-        </div>
+        <a href="/" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <span class="logo-text">Xchatbots</span>
+        </a>
+        <nav class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            
+            <!-- Categories Dropdown -->
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle">
+                    Categories
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="/virtual-girlfriend" class="dropdown-item">
+                        <div class="dropdown-item-icon">💕</div>
+                        <div class="dropdown-item-text">
+                            <span class="dropdown-item-title">Virtual Girlfriend</span>
+                            <span class="dropdown-item-desc">AI companions & dating</span>
+                        </div>
+                    </a>
+                    <a href="/nsfw-chat" class="dropdown-item">
+                        <div class="dropdown-item-icon">💬</div>
+                        <div class="dropdown-item-text">
+                            <span class="dropdown-item-title">NSFW Chat</span>
+                            <span class="dropdown-item-desc">Adult AI chatbots</span>
+                        </div>
+                    </a>
+                    <a href="/nsfw-image-generation" class="dropdown-item">
+                        <div class="dropdown-item-icon">🎨</div>
+                        <div class="dropdown-item-text">
+                            <span class="dropdown-item-title">NSFW Image Generation</span>
+                            <span class="dropdown-item-desc">AI art & porn generators</span>
+                        </div>
+                    </a>
+                    <a href="/nsfw-video-generation" class="dropdown-item">
+                        <div class="dropdown-item-icon">🎬</div>
+                        <div class="dropdown-item-text">
+                            <span class="dropdown-item-title">NSFW Video Generation</span>
+                            <span class="dropdown-item-desc">AI video & deepfakes</span>
+                        </div>
+                    </a>
+                    <a href="/roleplay" class="dropdown-item">
+                        <div class="dropdown-item-icon">🎭</div>
+                        <div class="dropdown-item-text">
+                            <span class="dropdown-item-title">Roleplay</span>
+                            <span class="dropdown-item-desc">ERP & storytelling</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Alternatives Dropdown -->
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle">
+                    Alternatives
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="/alternatives/character-ai-alternatives" class="dropdown-item">
+                        <div class="dropdown-item-icon">🔄</div>
+                        <div class="dropdown-item-text">
+                            <span class="dropdown-item-title">Character AI Alternatives</span>
+                            <span class="dropdown-item-desc">Uncensored CAI replacements</span>
+                        </div>
+                    </a>
+                    <a href="/alternatives/janitor-ai-alternatives" class="dropdown-item">
+                        <div class="dropdown-item-icon">🧹</div>
+                        <div class="dropdown-item-text">
+                            <span class="dropdown-item-title">Janitor AI Alternatives</span>
+                            <span class="dropdown-item-desc">Similar NSFW chatbots</span>
+                        </div>
+                    </a>
+                    <a href="/alternatives/crushon-ai-alternatives" class="dropdown-item">
+                        <div class="dropdown-item-icon">❤️</div>
+                        <div class="dropdown-item-text">
+                            <span class="dropdown-item-title">CrushOn AI Alternatives</span>
+                            <span class="dropdown-item-desc">Romantic AI options</span>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="/best/nsfw-ai-chatbots" class="dropdown-item">
+                        <div class="dropdown-item-icon">🏆</div>
+                        <div class="dropdown-item-text">
+                            <span class="dropdown-item-title">Best NSFW AI Chatbots</span>
+                            <span class="dropdown-item-desc">Top rated for 2026</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <a href="/advertise" class="nav-link">Advertise</a>
+            <a href="/submit" class="btn-submit">Submit AI</a>
+        </nav>
+    </div>
     </header>
 
     <section class="hero">
