@@ -345,7 +345,10 @@
                     <li>Permanent archive</li>
                     <li>SEO optimized content</li>
                 </ul>
-                <div class="paypal-container" id="paypal-container-UULBV5F6BVDZU"></div>
+                <a href="https://www.paypal.com/ncp/payment/UULBV5F6BVDZU" target="_blank" class="btn-pricing primary" style="background: #0070ba; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .757-.629h6.724c2.332 0 4.063.644 5.14 1.913.997 1.178 1.39 2.755 1.168 4.683-.023.195-.05.39-.084.584-.565 3.184-2.455 5.054-5.633 5.567a8.39 8.39 0 0 1-1.14.078H9.12a.77.77 0 0 0-.757.629l-.96 5.545a.641.641 0 0 1-.633.54h-1.39l-.304 1.707zm7.149-13.1c-.193 1.167-.97 1.167-1.755 1.167h-.446l.313-1.98a.385.385 0 0 1 .38-.324h.204c.534 0 1.038 0 1.297.304.155.182.203.452.007 1.833z"/></svg>
+                    Pay with PayPal
+                </a>
             </div>
             
             <div class="pricing-card">
@@ -467,9 +470,6 @@
     <!-- PayPal SDK for Subscriptions (Featured Listing) -->
     <script src="https://www.paypal.com/sdk/js?client-id=AYayieWYx3oyfpflRnCWwcewRLhCgTTCC_OP4btu9x04u8K87U9L35uTrEuIuzdfvZQopBOS6EDojxHT&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
     
-    <!-- PayPal SDK for Hosted Buttons (Sponsored Post) -->
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAe_a29Udw9acdvlxdyatzuCqiK2FwH8r6HMpMs1EtemHVsh8NyR7yK2rUBcV0wDTMEBa1kWf01s9m0&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
-    
     <script>
         // Featured Listing - Subscription Button ($149/month)
         paypal.Buttons({
@@ -493,11 +493,6 @@
                 alert('There was an error processing your subscription. Please try again or contact us.');
             }
         }).render('#paypal-button-container-featured');
-
-        // Sponsored Post - Hosted Button ($399 one-time)
-        paypal.HostedButtons({
-            hostedButtonId: "UULBV5F6BVDZU",
-        }).render("#paypal-container-UULBV5F6BVDZU");
 
         // Contact Form
         const form = document.getElementById('advertiseForm');
