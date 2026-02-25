@@ -113,6 +113,9 @@
         .btn-pricing.secondary { background: var(--frost); color: var(--charcoal); border: 1px solid var(--ice); }
         .btn-pricing.secondary:hover { background: var(--ice); }
         
+        /* PayPal Button Container */
+        .paypal-container { margin-top: 1rem; min-height: 55px; }
+        
         /* Contact Section */
         .contact-section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
         .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; background: var(--white); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); }
@@ -280,7 +283,7 @@
                 </div>
             </div>
             
-            <a href="/advertise" class="nav-link">Advertise</a>
+            <a href="/advertise" class="nav-link active">Advertise</a>
             <a href="/submit" class="btn-submit">Submit AI</a>
         </nav>
     </div>
@@ -325,21 +328,23 @@
                     <li>Top placement in category</li>
                     <li>Homepage visibility</li>
                     <li>Monthly analytics report</li>
+                    <li>Cancel anytime</li>
                 </ul>
-                <a href="https://www.paypal.com/ncp/payment/WSTL4DD822MJ8" target="_blank" class="btn-pricing secondary">Pay with PayPal</a>
+                <div class="paypal-container" id="paypal-button-container-featured"></div>
             </div>
             
             <div class="pricing-card popular">
                 <div class="popular-badge">Popular</div>
                 <div class="pricing-icon">🚀</div>
                 <h3>Sponsored Post</h3>
-                <div class="pricing-price">$399<span>/post</span></div>
+                <div class="pricing-price">$399<span>/one-time</span></div>
                 <ul class="pricing-features">
                     <li>Dedicated blog post review</li>
                     <li>Featured on homepage</li>
                     <li>Permanent archive</li>
+                    <li>SEO optimized content</li>
                 </ul>
-                <a href="https://www.paypal.com/ncp/payment/WSTL4DD822MJ8" target="_blank" class="btn-pricing primary">Pay with PayPal</a>
+                <a href="#inquiry" class="btn-pricing primary">Get Started</a>
             </div>
             
             <div class="pricing-card">
@@ -389,6 +394,11 @@
                     <div class="form-group">
                         <label>Email <span class="required">*</span></label>
                         <input type="email" id="email" required placeholder="you@company.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Website URL</label>
+                        <input type="url" id="websiteUrl" placeholder="https://your-tool.com">
                     </div>
                     
                     <div class="form-group">
@@ -453,7 +463,35 @@
         </div>
     </footer>
 
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AYayieWYx3oyfpflRnCWwcewRLhCgTTCC_OP4btu9x04u8K87U9L35uTrEuIuzdfvZQopBOS6EDojxHT&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+    
     <script>
+        // PayPal Subscription Button for Featured Listing
+        paypal.Buttons({
+            style: {
+                shape: 'rect',
+                color: 'blue',
+                layout: 'horizontal',
+                label: 'subscribe',
+                tagline: false
+            },
+            createSubscription: function(data, actions) {
+                return actions.subscription.create({
+                    plan_id: 'P-07G307761H0789608NGPMPFA'
+                });
+            },
+            onApprove: function(data, actions) {
+                // Redirect to success page or show message
+                window.location.href = '/advertise/success?subscription_id=' + data.subscriptionID;
+            },
+            onError: function(err) {
+                console.error('PayPal error:', err);
+                alert('There was an error processing your subscription. Please try again or contact us.');
+            }
+        }).render('#paypal-button-container-featured');
+
+        // Contact Form
         const form = document.getElementById('advertiseForm');
         const successMessage = document.getElementById('successMessage');
         const submitBtn = form.querySelector('button[type="submit"]');
@@ -464,6 +502,7 @@
             const formData = {
                 companyName: document.getElementById('companyName').value.trim(),
                 email: document.getElementById('email').value.trim(),
+                websiteUrl: document.getElementById('websiteUrl').value.trim(),
                 adType: document.getElementById('adType').value,
                 message: document.getElementById('message').value.trim()
             };
