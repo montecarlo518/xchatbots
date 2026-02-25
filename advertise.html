@@ -333,6 +333,7 @@
                 <div class="paypal-container" id="paypal-button-container-featured"></div>
             </div>
             
+            <!-- Sponsored Post - One-time Payment -->
             <div class="pricing-card popular">
                 <div class="popular-badge">Popular</div>
                 <div class="pricing-icon">🚀</div>
@@ -344,7 +345,7 @@
                     <li>Permanent archive</li>
                     <li>SEO optimized content</li>
                 </ul>
-                <a href="#inquiry" class="btn-pricing primary">Get Started</a>
+                <div class="paypal-container" id="paypal-container-UULBV5F6BVDZU"></div>
             </div>
             
             <div class="pricing-card">
@@ -463,11 +464,14 @@
         </div>
     </footer>
 
-    <!-- PayPal SDK -->
+    <!-- PayPal SDK for Subscriptions (Featured Listing) -->
     <script src="https://www.paypal.com/sdk/js?client-id=AYayieWYx3oyfpflRnCWwcewRLhCgTTCC_OP4btu9x04u8K87U9L35uTrEuIuzdfvZQopBOS6EDojxHT&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
     
+    <!-- PayPal SDK for Hosted Buttons (Sponsored Post) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAe_a29Udw9acdvlxdyatzuCqiK2FwH8r6HMpMs1EtemHVsh8NyR7yK2rUBcV0wDTMEBa1kWf01s9m0&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+    
     <script>
-        // PayPal Subscription Button for Featured Listing
+        // Featured Listing - Subscription Button ($149/month)
         paypal.Buttons({
             style: {
                 shape: 'rect',
@@ -482,14 +486,18 @@
                 });
             },
             onApprove: function(data, actions) {
-                // Redirect to success page or show message
-                window.location.href = '/advertise/success?subscription_id=' + data.subscriptionID;
+                window.location.href = '/advertise/success?subscription_id=' + data.subscriptionID + '&type=featured';
             },
             onError: function(err) {
                 console.error('PayPal error:', err);
                 alert('There was an error processing your subscription. Please try again or contact us.');
             }
         }).render('#paypal-button-container-featured');
+
+        // Sponsored Post - Hosted Button ($399 one-time)
+        paypal.HostedButtons({
+            hostedButtonId: "UULBV5F6BVDZU",
+        }).render("#paypal-container-UULBV5F6BVDZU");
 
         // Contact Form
         const form = document.getElementById('advertiseForm');
