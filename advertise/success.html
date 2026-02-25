@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5BKLJR7QJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N5BKLJR7QJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful! | Xchatbots</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ice: #E8F4F8; --ice-light: #F5FAFB; --blue: #4A9EBF; --blue-dark: #2D7A9C;
+            --slate: #94A3B8; --lavender: #E0E7FF; --mint: #D1FAE5; --frost: #F8FAFC;
+            --charcoal: #1E293B; --gray-warm: #475569; --gray-light: #94A3B8; --white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(30, 41, 59, 0.06);
+            --shadow-medium: 0 8px 40px rgba(30, 41, 59, 0.1);
+            --radius-sm: 12px; --radius-md: 20px; --radius-lg: 32px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --gradient-primary: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--frost); color: var(--charcoal); line-height: 1.6; min-height: 100vh; }
+        
+        .bg-decoration { position: fixed; pointer-events: none; z-index: 0; }
+        .bg-blob-1 { top: -200px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, var(--mint) 0%, transparent 70%); border-radius: 50%; opacity: 0.7; }
+        .bg-blob-2 { bottom: 20%; left: -200px; width: 500px; height: 500px; background: radial-gradient(circle, var(--lavender) 0%, transparent 70%); border-radius: 50%; opacity: 0.5; }
+        
+        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 250, 252, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30, 41, 59, 0.05); }
+        .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3); }
+        .logo-icon svg { width: 24px; height: 24px; fill: white; }
+        .logo-text { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); }
+        
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
+        .nav-link:hover { color: var(--blue); }
+        
+        @media (max-width: 768px) { .nav-links { display: none; } }
+        
+        .success-container { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; padding: 4rem 2rem; }
+        
+        .success-card { background: var(--white); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-medium); border: 1px solid rgba(30, 41, 59, 0.05); text-align: center; }
+        
+        .success-icon { width: 80px; height: 80px; background: var(--mint); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; }
+        
+        .success-card h1 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; }
+        
+        .success-card .subtitle { font-size: 1.1rem; color: var(--gray-warm); margin-bottom: 2rem; }
+        
+        .package-badge { display: inline-block; background: var(--ice); color: var(--blue-dark); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; }
+        
+        .divider { height: 1px; background: var(--ice); margin: 2rem 0; }
+        
+        .next-steps { text-align: left; }
+        .next-steps h2 { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1.5rem; text-align: center; }
+        
+        .step { display: flex; gap: 1rem; margin-bottom: 1.25rem; }
+        .step-number { width: 32px; height: 32px; background: var(--gradient-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; }
+        .step-content h3 { font-size: 1rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.25rem; }
+        .step-content p { font-size: 0.9rem; color: var(--gray-warm); }
+        
+        .details-form { margin-top: 2rem; text-align: left; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .form-group label .required { color: #DC2626; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--ice); border-radius: var(--radius-sm);
+            font-family: inherit; font-size: 1rem; color: var(--charcoal); background: var(--frost); transition: var(--transition);
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--blue); background: var(--white); box-shadow: 0 0 0 3px rgba(74, 158, 191, 0.1);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
+        }
+        .form-group small { display: block; margin-top: 0.35rem; font-size: 0.8rem; color: var(--gray-light); }
+        
+        .btn-submit { width: 100%; padding: 1rem 2rem; background: var(--charcoal); color: white; border: none; border-radius: var(--radius-md);
+            font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
+        .btn-submit:hover { background: var(--blue); transform: translateY(-2px); }
+        
+        .confirmation-message { display: none; background: var(--mint); border: 1px solid #059669; border-radius: var(--radius-md); padding: 1.5rem; text-align: center; margin-top: 1.5rem; }
+        .confirmation-message.show { display: block; }
+        .confirmation-message h4 { color: #059669; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .confirmation-message p { color: var(--charcoal); font-size: 0.95rem; }
+        
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2rem; color: var(--blue); text-decoration: none; font-weight: 500; transition: var(--transition); }
+        .back-link:hover { color: var(--blue-dark); }
+        .back-link svg { width: 18px; height: 18px; }
+        
+        /* Hide fields based on type */
+        .sponsored-only { display: none; }
+        body.type-sponsored .sponsored-only { display: block; }
+        
+        footer { background: var(--charcoal); color: white; padding: 2rem; margin-top: 4rem; text-align: center; }
+        footer p { font-size: 0.85rem; color: var(--slate); }
+    </style>
+</head>
+<body>
+    <div class="bg-decoration bg-blob-1"></div>
+    <div class="bg-decoration bg-blob-2"></div>
+
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <span class="logo-text">Xchatbots</span>
+            </a>
+            <nav class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/advertise" class="nav-link">Advertise</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="success-container">
+        <div class="success-card">
+            <div class="success-icon">🎉</div>
+            <h1>Payment Successful!</h1>
+            <div class="package-badge" id="packageBadge">Featured Listing</div>
+            <p class="subtitle" id="subtitleText">Thank you for your purchase. Please complete the form below so we can activate your listing.</p>
+            
+            <div class="divider"></div>
+            
+            <div class="next-steps" id="nextSteps">
+                <!-- Steps will be populated by JavaScript -->
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="details-form">
+                <h2 style="font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1.5rem; text-align: center;">Your Details</h2>
+                
+                <div class="confirmation-message" id="confirmationMessage">
+                    <h4>✅ Details Submitted!</h4>
+                    <p id="confirmationText">We'll activate your Featured listing within 24 hours. You'll receive an email confirmation.</p>
+                </div>
+                
+                <form id="detailsForm">
+                    <input type="hidden" id="packageType" name="packageType">
+                    <input type="hidden" id="transactionId" name="transactionId">
+                    
+                    <div class="form-group">
+                        <label>Tool/Company Name <span class="required">*</span></label>
+                        <input type="text" id="toolName" required placeholder="e.g., SpicyChat AI">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Website URL <span class="required">*</span></label>
+                        <input type="url" id="websiteUrl" required placeholder="https://your-tool.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Contact Email <span class="required">*</span></label>
+                        <input type="email" id="email" required placeholder="you@company.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Category <span class="required">*</span></label>
+                        <select id="category" required>
+                            <option value="">Select a category</option>
+                            <option value="Virtual Girlfriend">Virtual Girlfriend</option>
+                            <option value="NSFW Chat">NSFW Chat</option>
+                            <option value="Image Generation">NSFW Image Generation</option>
+                            <option value="Video Generation">NSFW Video Generation</option>
+                            <option value="Roleplay">Roleplay</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Is your tool already listed on Xchatbots?</label>
+                        <select id="alreadyListed">
+                            <option value="yes">Yes, it's already in the directory</option>
+                            <option value="no">No, please add it first</option>
+                            <option value="not-sure">Not sure</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Sponsored Post specific fields -->
+                    <div class="sponsored-only">
+                        <div class="form-group">
+                            <label>Brief Description <span class="required">*</span></label>
+                            <textarea id="toolDescription" placeholder="Describe your tool in 2-3 sentences. What makes it unique?"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Key Features to Highlight</label>
+                            <textarea id="keyFeatures" placeholder="List 3-5 features you'd like us to focus on in the blog post..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Target Audience</label>
+                            <input type="text" id="targetAudience" placeholder="e.g., Users looking for uncensored AI chat">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Competitors to Compare Against</label>
+                            <input type="text" id="competitors" placeholder="e.g., Character AI, Janitor AI">
+                            <small>We can position your tool favorably against these</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Any Specific Requests?</label>
+                            <textarea id="specialRequests" placeholder="Anything else you'd like us to know or include in the post..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Submit Details</button>
+                </form>
+            </div>
+            
+            <a href="/" class="back-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Homepage
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Xchatbots. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        let packageType = urlParams.get('type') || localStorage.getItem('pendingAdType') || 'featured';
+        const transactionId = urlParams.get('subscription_id') || urlParams.get('tx') || '';
+        
+        // Clear localStorage after reading
+        localStorage.removeItem('pendingAdType');
+        
+        // Set hidden fields
+        document.getElementById('packageType').value = packageType;
+        document.getElementById('transactionId').value = transactionId;
+        
+        // Configure page based on package type
+        const config = {
+            featured: {
+                badge: '⭐ Featured Listing',
+                subtitle: 'Thank you for subscribing! Please complete the form below so we can activate your featured listing.',
+                confirmation: "We'll activate your Featured listing within 24 hours. You'll receive an email confirmation.",
+                steps: [
+                    { title: 'Submit your tool details', desc: 'Fill out the form below so we know which listing to feature.' },
+                    { title: 'We activate your listing', desc: 'Within 24 hours, we\'ll add the Featured badge and move your listing to the top.' },
+                    { title: 'Monthly analytics', desc: 'You\'ll receive a monthly report with impressions, clicks, and engagement data.' }
+                ]
+            },
+            sponsored: {
+                badge: '🚀 Sponsored Post',
+                subtitle: 'Thank you for your purchase! Please provide details about your tool so we can write an amazing blog post.',
+                confirmation: "We'll start working on your sponsored post within 48 hours. You'll receive a draft for review before publishing.",
+                steps: [
+                    { title: 'Submit your tool details', desc: 'Fill out the form below with information about your tool and what to highlight.' },
+                    { title: 'We write your post', desc: 'Our team will create an SEO-optimized blog post reviewing your tool (2-3 business days).' },
+                    { title: 'Review & publish', desc: 'You\'ll receive a draft for approval. Once approved, we publish and feature it on our homepage.' }
+                ]
+            }
+        };
+        
+        const currentConfig = config[packageType] || config.featured;
+        
+        // Update page content
+        document.getElementById('packageBadge').textContent = currentConfig.badge;
+        document.getElementById('subtitleText').textContent = currentConfig.subtitle;
+        document.getElementById('confirmationText').textContent = currentConfig.confirmation;
+        
+        // Add type class to body for CSS
+        if (packageType === 'sponsored') {
+            document.body.classList.add('type-sponsored');
+        }
+        
+        // Build steps HTML
+        const stepsHtml = currentConfig.steps.map((step, i) => `
+            <div class="step">
+                <div class="step-number">${i + 1}</div>
+                <div class="step-content">
+                    <h3>${step.title}</h3>
+                    <p>${step.desc}</p>
+                </div>
+            </div>
+        `).join('');
+        document.getElementById('nextSteps').innerHTML = '<h2>What happens next?</h2>' + stepsHtml;
+        
+        // Track conversion in GA
+        gtag('event', 'purchase', {
+            'transaction_id': transactionId,
+            'value': packageType === 'sponsored' ? 399 : 149,
+            'currency': 'USD',
+            'items': [{ 'item_name': currentConfig.badge, 'price': packageType === 'sponsored' ? 399 : 149 }]
+        });
+        
+        // Make sponsored fields required when visible
+        if (packageType === 'sponsored') {
+            document.getElementById('toolDescription').required = true;
+        }
+        
+        // Form submission
+        const form = document.getElementById('detailsForm');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                packageType: document.getElementById('packageType').value,
+                transactionId: document.getElementById('transactionId').value,
+                toolName: document.getElementById('toolName').value.trim(),
+                websiteUrl: document.getElementById('websiteUrl').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                category: document.getElementById('category').value,
+                alreadyListed: document.getElementById('alreadyListed').value
+            };
+            
+            // Add sponsored post fields if applicable
+            if (packageType === 'sponsored') {
+                formData.toolDescription = document.getElementById('toolDescription').value.trim();
+                formData.keyFeatures = document.getElementById('keyFeatures').value.trim();
+                formData.targetAudience = document.getElementById('targetAudience').value.trim();
+                formData.competitors = document.getElementById('competitors').value.trim();
+                formData.specialRequests = document.getElementById('specialRequests').value.trim();
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            try {
+                const response = await fetch('/api/advertise-activation', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    confirmationMessage.classList.add('show');
+                    form.style.display = 'none';
+                } else {
+                    throw new Error(result.error || 'Failed to submit details');
+                }
+            } catch (error) {
+                // Even if API fails, show success (we'll receive PayPal notification anyway)
+                confirmationMessage.classList.add('show');
+                form.style.display = 'none';
+                console.error('API error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
