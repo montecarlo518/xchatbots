@@ -174,6 +174,15 @@
         .hero h1 span { font-style: italic; color: var(--blue); }
         .hero > p { font-size: 1.1rem; color: var(--gray-warm); max-width: 800px; }
         
+        /* Key Takeaways Banner */
+        .takeaways-banner { max-width: 1400px; margin: 0 auto 2rem; padding: 0 2rem; position: relative; z-index: 1; }
+        .takeaways-content { background: var(--mint); border: 1px solid rgba(5, 150, 105, 0.2); border-radius: var(--radius-lg); padding: 1.5rem 2rem; }
+        .takeaways-content h4 { font-size: 1rem; font-weight: 600; color: #047857; margin-bottom: 1rem; }
+        .takeaways-content ul { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 2rem; }
+        .takeaways-content li { font-size: 0.95rem; color: #065F46; padding-left: 1.5rem; position: relative; }
+        .takeaways-content li::before { content: '✓'; position: absolute; left: 0; color: #059669; font-weight: bold; }
+        .takeaways-content strong { color: #047857; }
+        
         .content-grid { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; max-width: 1400px; margin: 0 auto; padding: 0 2rem 4rem; position: relative; z-index: 1; }
         
         /* Sidebar */
@@ -183,12 +192,6 @@
         .sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
         .sidebar-nav a { display: block; padding: 0.6rem 0.85rem; border-radius: var(--radius-sm); text-decoration: none; color: var(--gray-warm); font-size: 0.9rem; transition: var(--transition); }
         .sidebar-nav a:hover { background: var(--ice-light); color: var(--blue); }
-        
-        .takeaways { background: var(--ice-light); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem; }
-        .takeaways h4 { font-size: 0.85rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
-        .takeaways ul { list-style: none; font-size: 0.85rem; }
-        .takeaways li { padding: 0.4rem 0; color: var(--gray-warm); padding-left: 1.25rem; position: relative; }
-        .takeaways li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: bold; }
         
         /* Main Content */
         .main-content { min-width: 0; }
@@ -306,8 +309,8 @@
         .cta-section { background: linear-gradient(135deg, var(--charcoal) 0%, #0f172a 100%); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; margin: 3rem 0; }
         .cta-section h3 { font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 500; color: white; margin-bottom: 0.75rem; }
         .cta-section p { color: var(--slate); font-size: 1rem; margin-bottom: 1.5rem; }
-        .cta-btn { display: inline-block; background: var(--blue); color: white; padding: 0.9rem 1.75rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; transition: var(--transition); }
-        .cta-btn:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(74, 158, 191, 0.35); }
+        .cta-btn { display: inline-block; background: var(--blue); color: #FFFFFF !important; padding: 0.9rem 1.75rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; transition: var(--transition); }
+        .cta-btn:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(74, 158, 191, 0.35); color: #FFFFFF !important; }
         
         footer { background: var(--charcoal); color: white; padding: 4rem 2rem 2rem; margin-top: 4rem; }
         .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
@@ -328,6 +331,7 @@
             .content-grid { grid-template-columns: 1fr; }
             .sidebar-box { position: relative; top: 0; }
             .related-guides { grid-template-columns: 1fr 1fr; }
+            .takeaways-content ul { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .footer-content { grid-template-columns: 1fr 1fr; }
@@ -376,7 +380,7 @@
                         <a href="/alternatives/spicychat-alternatives">SpicyChat Alternatives</a>
                     </div>
                 </div>
-                <a href="/best/nsfw-ai-chatbots" class="nav-link">Best NSFW AI Chatbots</a>
+                <a href="/best/nsfw-ai-chatbots" class="nav-link">Best AI Chatbots</a>
                 <a href="/submit" class="btn-submit">Submit AI</a>
             </nav>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -403,6 +407,18 @@
         <p>Tired of setting up API keys and dealing with Janitor AI's technical complexity? We tested 10+ alternatives that work out of the box—no OpenAI account needed, no API costs, just instant NSFW chat and roleplay.</p>
     </section>
 
+    <div class="takeaways-banner">
+        <div class="takeaways-content">
+            <h4>⚡ Key Takeaways</h4>
+            <ul>
+                <li><strong>SpicyChat</strong> is the best overall—works instantly, no API needed</li>
+                <li>Most alternatives have <strong>generous free tiers</strong> (30-50 msgs/day)</li>
+                <li><strong>No technical setup</strong>—just sign up and start chatting</li>
+                <li>All platforms are <strong>18+ only</strong> with full NSFW support</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="content-grid">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -418,16 +434,6 @@
                     <li><a href="#migration">Migrating from Janitor AI</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
-                
-                <div class="takeaways">
-                    <h4>⚡ Key Takeaways</h4>
-                    <ul>
-                        <li><strong>SpicyChat</strong> is the best overall—works instantly, no API needed</li>
-                        <li>Most alternatives have <strong>generous free tiers</strong> (30-50 msgs/day)</li>
-                        <li><strong>No technical setup</strong>—just sign up and start chatting</li>
-                        <li>All platforms are <strong>18+ only</strong> with full NSFW support</li>
-                    </ul>
-                </div>
             </div>
         </aside>
 
