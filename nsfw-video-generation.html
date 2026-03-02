@@ -570,16 +570,18 @@
         const API_URL = 'https://test.weissmilch.workers.dev';
         const CATEGORY = 'Video Generation';
         let aiTools = [];
-        const deepfakeKeywords = ['deepfake', 'face swap', 'faceswap', 'face change'];
-        const text2videoKeywords = ['text to video', 'text-to-video', 'prompt', 'generate video'];
+        // Featured affiliate tools for Deepfake section (prioritized in order)
+        const featuredDeepfakeTools = ['ourdream', 'candyai', 'candy', 'promptchan', 'aimour', 'joi ai'];
+        // Featured affiliate tools for Text-to-Video section (prioritized in order)
+        const featuredText2VideoTools = ['candyai', 'candy', 'promptchan', 'ourdream', 'aimour', 'joi ai'];
         
         function isDeepfakeTool(tool) {
-            const text = (tool.name + ' ' + tool.description + ' ' + (tool.features || []).join(' ')).toLowerCase();
-            return deepfakeKeywords.some(function(k) { return text.includes(k); });
+            const toolName = (tool.name || '').toLowerCase().replace(/<br>/g, '').replace(/\s+/g, '').trim();
+            return featuredDeepfakeTools.some(function(k) { return toolName.includes(k.replace(/\s+/g, '')); });
         }
         function isText2VideoTool(tool) {
-            const text = (tool.name + ' ' + tool.description + ' ' + (tool.features || []).join(' ')).toLowerCase();
-            return text2videoKeywords.some(function(k) { return text.includes(k); });
+            const toolName = (tool.name || '').toLowerCase().replace(/<br>/g, '').replace(/\s+/g, '').trim();
+            return featuredText2VideoTools.some(function(k) { return toolName.includes(k.replace(/\s+/g, '')); });
         }
         
         async function fetchTools() {
@@ -602,9 +604,9 @@
                 });
                 document.getElementById('tool-count').textContent = aiTools.length;
                 document.getElementById('results-count').textContent = aiTools.length;
-                var deepfakeTools = aiTools.filter(function(t) { return t.isDeepfake; });
+                var deepfakeTools = aiTools.filter(function(t) { return t.isDeepfake; }).sort(function(a,b) { return b.rating - a.rating; });
                 renderCardsToContainer(deepfakeTools, 'deepfake-container', 'deepfake');
-                var text2videoTools = aiTools.filter(function(t) { return t.isText2Video; });
+                var text2videoTools = aiTools.filter(function(t) { return t.isText2Video; }).sort(function(a,b) { return b.rating - a.rating; });
                 renderCardsToContainer(text2videoTools, 'text2video-container', 'text2video');
                 renderCards(aiTools);
             } catch (error) {
