@@ -570,10 +570,10 @@
         const API_URL = 'https://test.weissmilch.workers.dev';
         const CATEGORY = 'Video Generation';
         let aiTools = [];
-        // Featured affiliate tools for Deepfake section (prioritized in order)
-        const featuredDeepfakeTools = ['ourdream', 'candyai', 'candy', 'promptchan', 'aimour', 'joi ai'];
-        // Featured affiliate tools for Text-to-Video section (prioritized in order)
-        const featuredText2VideoTools = ['candyai', 'candy', 'promptchan', 'ourdream', 'aimour', 'joi ai'];
+        // Featured affiliate tools for Deepfake section (face swap focus)
+        const featuredDeepfakeTools = ['ourdream', 'aimour', 'joi ai'];
+        // Featured affiliate tools for Text-to-Video section (video generation focus)
+        const featuredText2VideoTools = ['candyai', 'candy', 'promptchan'];
         
         function isDeepfakeTool(tool) {
             const toolName = (tool.name || '').toLowerCase().replace(/<br>/g, '').replace(/\s+/g, '').trim();
