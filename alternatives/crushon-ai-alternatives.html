@@ -692,7 +692,7 @@
                 </div>
                 
                 <div class="tool-actions">
-                    <a href="https://candy.ai?utm_source=xchatbots" target="_blank" rel="nofollow noopener" class="btn-visit">Visit CandyAI →</a>
+                    <a href="https://t.vlmai-3.com/406118/8025?aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit">Visit CandyAI →</a>
                     <a href="/virtual-girlfriend" class="btn-secondary">More AI Girlfriends</a>
                 </div>
             </article>
@@ -825,7 +825,7 @@
                 </div>
                 
                 <div class="tool-actions">
-                    <a href="https://luvr.ai?utm_source=xchatbots" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Luvr AI →</a>
+                    <a href="https://t.vlmai-3.com/406118/7944?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Luvr AI →</a>
                     <a href="/roleplay" class="btn-secondary">More Roleplay AIs</a>
                 </div>
             </article>
@@ -1080,10 +1080,12 @@
     </footer>
 
     <script>
+        const API_URL = 'https://test.weissmilch.workers.dev';
+        
         // Fetch tool data from API
         async function fetchToolData() {
             try {
-                const response = await fetch('/api/tools');
+                const response = await fetch(API_URL + '/tools');
                 if (!response.ok) throw new Error('Failed to fetch tools');
                 const tools = await response.json();
                 return tools;
