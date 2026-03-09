@@ -107,6 +107,37 @@
             .footer-content{grid-template-columns:1fr!important}
         }
 
+    
+        /* Mobile overflow fix */
+        html,body{overflow-x:hidden;width:100%}
+        .content-section{max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
+        .content-section p,.content-section li,.content-section h2,.content-section h3{max-width:100%}
+        .key-takeaways{overflow:hidden}
+        .key-takeaways li{padding-right:.5rem}
+        .hero{overflow:hidden}
+        .hero h1{word-wrap:break-word}
+        @media(max-width:768px){
+            .key-takeaways{padding:1.25rem;margin:0 0 1.5rem}
+            .key-takeaways h3{font-size:1rem}
+            .key-takeaways li{font-size:.85rem;line-height:1.5}
+            .content-section h2{font-size:1.35rem;word-wrap:break-word}
+            .content-section>p{font-size:.95rem}
+            .featured-tool{padding:1.25rem;margin:1rem 0}
+            .featured-header{flex-direction:column;gap:1rem}
+            .featured-icon{width:56px;height:56px;font-size:1.75rem}
+            .featured-name{font-size:1.25rem}
+            .featured-badge{position:static;display:inline-block;margin-bottom:.75rem}
+            .featured-tags{gap:.35rem}
+            .featured-tag{font-size:.7rem;padding:.25rem .5rem}
+            .info-box{padding:1.25rem}
+            .faq-item{padding:1.25rem}
+            .faq-item h4{font-size:.95rem}
+            .faq-item p{font-size:.9rem}
+            .cta-section{padding:1.5rem;margin:1.5rem 0}
+            .cta-section h3{font-size:1.25rem}
+            footer{padding:2rem 1rem 1.5rem;margin-top:2rem}
+        }
+
     </style>
 </head>
 <body>
