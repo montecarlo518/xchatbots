@@ -170,14 +170,11 @@
         
         /* Dropdown Navigation */
         .nav-dropdown { position: relative; }
-        .dropdown-toggle { display: flex; align-items: center; gap: 0.35rem; cursor: pointer; }
-        .dropdown-toggle svg { transition: var(--transition); }
-        .nav-dropdown:hover .dropdown-toggle svg { transform: rotate(180deg); }
-        .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-medium); padding: 0.5rem; min-width: 220px; opacity: 0; visibility: hidden; transition: var(--transition); z-index: 100; }
-        .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-        .dropdown-menu a { display: block; padding: 0.65rem 1rem; color: var(--gray-warm); text-decoration: none; border-radius: var(--radius-sm); font-size: 0.9rem; transition: var(--transition); white-space: nowrap; }
-        .dropdown-menu a:hover { background: var(--ice-light); color: var(--blue); }
+
+        .nav-dropdown:hover 
         
+        .nav-dropdown:hover 
+
         /* Mobile Menu Button */
         .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
         .mobile-menu-btn span { display: block; width: 24px; height: 2px; background: var(--charcoal); margin: 5px 0; transition: var(--transition); }
@@ -431,7 +428,6 @@
             .footer-content{grid-template-columns:1fr!important}
         }
 
-    
         /* Mobile overflow fix */
         html,body{overflow-x:hidden;width:100%}
         .content-section{max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
@@ -460,6 +456,22 @@
             .cta-section{padding:1.5rem;margin:1.5rem 0}
             .cta-section h3{font-size:1.25rem}
             footer{padding:2rem 1rem 1.5rem;margin-top:2rem}
+        }
+
+        /* Hamburger visibility fix */
+        @media(max-width:900px){
+            .mobile-nav-toggle{display:block!important}
+            .hamburger{display:block!important}
+        }
+        /* Tool card mobile fix */
+        .tool-card{max-width:100%;overflow:hidden}
+        .tool-description{overflow-wrap:break-word;word-wrap:break-word}
+        @media(max-width:768px){
+            .tool-card-header{flex-wrap:wrap}
+            .tool-description{font-size:.85rem;line-height:1.6}
+            .tool-tags{flex-wrap:wrap}
+            .btn-visit{width:100%;text-align:center}
+            .tool-footer{flex-direction:column;gap:.75rem;align-items:stretch}
         }
 
     </style>
