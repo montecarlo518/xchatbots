@@ -242,10 +242,11 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
         if (!response.ok) throw new Error('Failed to fetch');
         const tools = await response.json();
         
-        // Filter for NSFW/chat category
+        // Filter for NSFW/chat category - handle both string and array
         const nsfwTools = tools.filter(t => {
-            const cats = [].concat(t.category || t.Category || []).join(' ').toLowerCase();
-            return cats.includes('nsfw') || cats.includes('roleplay') || cats.includes('virtual girlfriend');
+            const catRaw = t.category || t.Category || t.categories || [];
+            const cats = Array.isArray(catRaw) ? catRaw.join(' ').toLowerCase() : String(catRaw).toLowerCase();
+            return cats.includes('nsfw') || cats.includes('roleplay') || cats.includes('virtual girlfriend') || cats.includes('chat');
         });
         
         // Update tool count
@@ -316,18 +317,33 @@ function createToolCard(tool, rank) {
 function updateAffiliateLinks(tools) {
     const linksMap = {};
     tools.forEach(t => {
-        const name = (t.name || t.Name || '').replace(/<br\s*\/?>/gi, '').trim().toLowerCase();
-        const url = t.websiteUrl || t['Website URL'];
+        const name = (t.name || t.Name || '').replace(/<br\s*\/?>/gi, '').trim();
+        const url = t.url || t.websiteUrl || t['Website URL'];
         if (name && url) {
-            linksMap[name] = url;
-            linksMap[name.replace(/\s+ai$/i, '')] = url;
-            linksMap[name.replace(/\s+/g, '')] = url;
+            // Create multiple key variations for matching
+            const key = name.toLowerCase();
+            linksMap[key] = url;
+            linksMap[key.replace(/\s+/g, '')] = url;  // "candy ai" -> "candyai"
+            linksMap[key.replace(/\s+ai$/i, '')] = url;  // "candy ai" -> "candy"
+            linksMap[key.replace(/\./g, '')] = url;  // "crushon.ai" -> "crushonai"
+            linksMap[key.replace(/[\s\.]+/g, '')] = url;  // "crushon.ai" -> "crushonai"
+            
+            // Special mappings
+            if (key.includes('candy')) linksMap['candyai'] = url;
+            if (key.includes('spicy')) linksMap['spicychat'] = url;
+            if (key.includes('juicy')) linksMap['juicychat'] = url;
+            if (key.includes('crush')) linksMap['crushon'] = url;
         }
     });
     
+    console.log('Links map:', linksMap);  // Debug
+    
     document.querySelectorAll('a[data-tool]').forEach(a => {
         const tool = a.dataset.tool.toLowerCase();
-        if (linksMap[tool]) a.href = linksMap[tool];
+        if (linksMap[tool]) {
+            a.href = linksMap[tool];
+            console.log('Updated link for', tool, ':', linksMap[tool]);  // Debug
+        }
     });
 }
 </script>
