@@ -244,7 +244,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
         
         // Filter for NSFW/chat category
         const nsfwTools = tools.filter(t => {
-            const cats = (t.category || t.Category || []).join(' ').toLowerCase();
+            const cats = [].concat(t.category || t.Category || []).join(' ').toLowerCase();
             return cats.includes('nsfw') || cats.includes('roleplay') || cats.includes('virtual girlfriend');
         });
         
