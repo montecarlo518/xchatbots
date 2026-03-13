@@ -97,7 +97,7 @@
                 "name": "What is cheaper than CrushOn AI?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Perchance AI is completely free. SpicyChat ($5/mo) is slightly more expensive than CrushOn ($4.90/mo) but offers more features. Luvr AI ($5.99/mo) includes a Scenario Builder. For the best value, SpicyChat's free tier gives you 50 daily messages vs CrushOn's 30."
+                    "text": "Perchance AI is completely free. SpicyChat ($4.95/mo) is slightly more expensive than CrushOn ($4.90/mo) but offers more features. Luvr AI ($4.17/mo) includes a Scenario Builder. For the best value, SpicyChat's free tier gives you 50 daily messages vs CrushOn's 30."
                 }
             },
             {
@@ -372,112 +372,55 @@
             .tool-stats { grid-template-columns: 1fr; gap: 0.75rem; }
         }
             
-        /* Submit AI Button */
-        .btn-submit-nav{background:var(--charcoal);color:#fff!important;padding:.75rem 1.5rem;border-radius:var(--radius-sm);text-decoration:none;font-weight:600;font-size:.9rem;transition:all .2s;display:inline-block}
-        .btn-submit-nav:hover{background:var(--blue);transform:translateY(-2px)}
+        
 
-        /* Mobile Navigation */
-        .mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);opacity:0;visibility:hidden;transition:all .3s;z-index:99}
-        .mobile-overlay.active{opacity:1;visibility:visible}
-        .mobile-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:101}
-        .hamburger{display:block;width:24px;height:2px;background:var(--charcoal);position:relative;transition:all .3s}
-        .hamburger::before,.hamburger::after{content:'';position:absolute;width:24px;height:2px;background:var(--charcoal);left:0;transition:all .3s}
-        .hamburger::before{top:-7px}.hamburger::after{top:7px}
-        .mobile-nav-toggle.active .hamburger{background:transparent}
-        .mobile-nav-toggle.active .hamburger::before{transform:rotate(45deg);top:0}
-        .mobile-nav-toggle.active .hamburger::after{transform:rotate(-45deg);top:0}
-        .nav-dropdown{position:relative}
-        .nav-dropdown-toggle{display:flex;align-items:center;gap:.35rem;text-decoration:none;color:var(--gray-warm);font-weight:500;cursor:pointer;background:none;border:none;font-size:1rem;font-family:inherit;padding:0}
-        .nav-dropdown-toggle:hover{color:var(--blue)}
-        .nav-dropdown-toggle svg{width:12px;height:12px;transition:transform .2s}
-        .nav-dropdown:hover .nav-dropdown-toggle svg{transform:rotate(180deg)}
-        .nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--white);border-radius:var(--radius-sm);box-shadow:var(--shadow-medium);min-width:200px;padding:.5rem 0;opacity:0;visibility:hidden;transition:all .2s;margin-top:.75rem;z-index:100}
-        .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}
-        .nav-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--white)}
-        .nav-dropdown-item{display:flex;align-items:center;gap:.75rem;padding:.75rem 1.25rem;text-decoration:none;color:var(--charcoal);font-size:.9rem;font-weight:500;transition:all .15s}
-        .nav-dropdown-item:hover{background:var(--ice);color:var(--blue)}
-        .nav-dropdown-item span{font-size:1rem}
-        @media(max-width:900px){
-            .mobile-nav-toggle{display:block}
-            .nav-links{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);flex-direction:column;align-items:stretch;padding:5rem 1.5rem 2rem;gap:0;box-shadow:var(--shadow-medium);transition:right .3s;overflow-y:auto;z-index:100}
-            .nav-links.active{right:0}
-            .nav-link{padding:1rem 0;border-bottom:1px solid rgba(30,41,59,.08);font-size:1.1rem}
-            .nav-dropdown{border-bottom:1px solid rgba(30,41,59,.08)}
-            .nav-dropdown-toggle{width:100%;justify-content:space-between;padding:1rem 0;font-size:1.1rem}
-            .nav-dropdown-menu{position:static;transform:none;box-shadow:none;opacity:1;visibility:visible;display:none;margin:0;padding:0 0 .5rem 1rem;background:transparent}
-            .nav-dropdown-menu::before{display:none}
-            .nav-dropdown.active .nav-dropdown-menu{display:block}
-            .nav-dropdown-item{padding:.75rem 0;font-size:.95rem}
-            .btn-submit-nav{margin-top:1rem;text-align:center;display:block}
-        }
-        @media(max-width:768px){
-            .header-content{padding:.875rem 1rem}
-            .logo-text{font-size:1.25rem}
-            .hero{padding:2.5rem 1rem 2rem}
-            .hero h1{font-size:1.75rem}
-            .hero>p{font-size:1rem}
-            .quick-picks{padding:0 1rem}
-            .quick-picks-inner{padding:1.25rem;flex-direction:column;text-align:center}
-            .quick-picks-list{justify-content:center}
-            .main-layout{grid-template-columns:1fr;padding:0 1rem 2rem}
-            .side-nav{position:static;display:none}
-            .featured-stats{grid-template-columns:repeat(2,1fr)}
-            .featured-pros{flex-direction:column;gap:1rem}
-            .featured-actions{flex-direction:column}
-            .tools-grid{grid-template-columns:1fr}
-            .key-takeaways ul{grid-template-columns:1fr}
-            .comparison-table-wrapper{margin:1.5rem -1rem}
-            .tool-card{padding:1.25rem}
-            .content-section{padding:0}
-            footer .footer-content{flex-direction:column;text-align:center;gap:1.5rem}
-            .footer-content{grid-template-columns:1fr!important}
-        }
 
-        /* Mobile overflow fix */
-        html,body{overflow-x:hidden;width:100%}
-        .content-section{max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
-        .content-section p,.content-section li,.content-section h2,.content-section h3{max-width:100%}
-        .key-takeaways{overflow:hidden}
-        .key-takeaways li{padding-right:.5rem}
-        .hero{overflow:hidden}
-        .hero h1{word-wrap:break-word}
-        @media(max-width:768px){
-            .key-takeaways{padding:1.25rem;margin:0 0 1.5rem}
-            .key-takeaways h3{font-size:1rem}
-            .key-takeaways li{font-size:.85rem;line-height:1.5}
-            .content-section h2{font-size:1.35rem;word-wrap:break-word}
-            .content-section>p{font-size:.95rem}
-            .featured-tool{padding:1.25rem;margin:1rem 0}
-            .featured-header{flex-direction:column;gap:1rem}
-            .featured-icon{width:56px;height:56px;font-size:1.75rem}
-            .featured-name{font-size:1.25rem}
-            .featured-badge{position:static;display:inline-block;margin-bottom:.75rem}
-            .featured-tags{gap:.35rem}
-            .featured-tag{font-size:.7rem;padding:.25rem .5rem}
-            .info-box{padding:1.25rem}
-            .faq-item{padding:1.25rem}
-            .faq-item h4{font-size:.95rem}
-            .faq-item p{font-size:.9rem}
-            .cta-section{padding:1.5rem;margin:1.5rem 0}
-            .cta-section h3{font-size:1.25rem}
-            footer{padding:2rem 1rem 1.5rem;margin-top:2rem}
-        }
+    
 
-        /* Hamburger visibility fix */
-        @media(max-width:900px){
-            .mobile-nav-toggle{display:block!important}
-            .hamburger{display:block!important}
-        }
-        /* Tool card mobile fix */
-        .tool-card{max-width:100%;overflow:hidden}
-        .tool-description{overflow-wrap:break-word;word-wrap:break-word}
-        @media(max-width:768px){
-            .tool-card-header{flex-wrap:wrap}
-            .tool-description{font-size:.85rem;line-height:1.6}
-            .tool-tags{flex-wrap:wrap}
-            .btn-visit{width:100%;text-align:center}
-            .tool-footer{flex-direction:column;gap:.75rem;align-items:stretch}
-        }
+
+    
+/* ========== MOBILE NAVIGATION FIX ========== */
+.mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.25);opacity:0;visibility:hidden;transition:all .3s ease;z-index:998;pointer-events:none}
+.mobile-overlay.active{opacity:1;visibility:visible;pointer-events:auto}
+.mobile-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}
+.hamburger{display:block;width:22px;height:2px;background:#1E293B;position:relative;transition:all .3s}
+.hamburger::before,.hamburger::after{content:'';position:absolute;width:22px;height:2px;background:#1E293B;left:0;transition:all .3s}
+.hamburger::before{top:-6px}
+.hamburger::after{top:6px}
+.mobile-nav-toggle.active .hamburger{background:transparent}
+.mobile-nav-toggle.active .hamburger::before{transform:rotate(45deg);top:0}
+.mobile-nav-toggle.active .hamburger::after{transform:rotate(-45deg);top:0}
+.nav-dropdown{position:relative}
+.nav-dropdown-toggle{display:flex;align-items:center;gap:4px;color:#475569;font-weight:500;cursor:pointer;background:none;border:none;font-size:1rem;font-family:inherit;padding:0}
+.nav-dropdown-toggle:hover{color:#4A9EBF}
+.nav-dropdown-toggle svg{width:12px;height:12px;transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-toggle svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.12);min-width:200px;padding:8px 0;opacity:0;visibility:hidden;transition:all .2s;margin-top:12px;z-index:100}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1E293B;font-size:.9rem;font-weight:500;transition:background .15s}
+.nav-dropdown-item:hover{background:#E8F4F8;color:#4A9EBF}
+.btn-submit-nav{background:#1E293B;color:#fff!important;padding:10px 20px;border-radius:10px;text-decoration:none!important;font-weight:600;font-size:.85rem;display:inline-block;transition:all .2s}
+.btn-submit-nav:hover{background:#4A9EBF;transform:translateY(-1px)}
+@media(max-width:900px){
+.mobile-nav-toggle{display:flex!important;align-items:center;justify-content:center}
+.nav-links{position:fixed;top:0;right:-300px;width:280px;height:100vh;height:100dvh;background:#fff;flex-direction:column;align-items:stretch;padding:70px 20px 30px;gap:0;box-shadow:-4px 0 20px rgba(0,0,0,.1);transition:right .3s ease;overflow-y:auto;z-index:1000;display:flex}
+.nav-links.active{right:0}
+.nav-link{padding:16px 0;border-bottom:1px solid #f1f5f9;font-size:1.05rem;display:block;color:#1E293B}
+.nav-dropdown{border-bottom:1px solid #f1f5f9}
+.nav-dropdown-toggle{width:100%;justify-content:space-between;padding:16px 0;font-size:1.05rem;color:#1E293B}
+.nav-dropdown-menu{position:static;transform:none;box-shadow:none;opacity:1;visibility:visible;display:none;margin:0;padding:0 0 12px 16px;background:transparent;border-radius:0}
+.nav-dropdown-menu::before{display:none}
+.nav-dropdown.active .nav-dropdown-menu{display:block}
+.nav-dropdown-item{padding:12px 0;font-size:.95rem;display:block}
+.btn-submit-nav{margin-top:20px;text-align:center;display:block;width:100%;padding:14px 20px}
+}
+@media(max-width:768px){
+html,body{overflow-x:hidden;width:100%;max-width:100vw}
+.header-content{padding:12px 16px}
+.logo-text{font-size:1.2rem}
+}
+/* ========== END MOBILE FIX ========== */
 
     </style>
 </head>
@@ -485,6 +428,7 @@
     <div class="bg-decoration bg-blob-1"></div>
     <div class="bg-decoration bg-blob-2"></div>
     <div class="bg-decoration bg-blob-3"></div>
+
     <header>
         <div class="header-content">
             <a href="/" class="logo">
@@ -502,10 +446,11 @@
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
                     </button>
                     <div class="nav-dropdown-menu">
-                        <a href="/virtual-girlfriend" class="nav-dropdown-item"><span>💕</span> AI Girlfriend</a>
-                        <a href="/nsfw-chat" class="nav-dropdown-item"><span>🔥</span> NSFW Chat</a>
-                        <a href="/nsfw-image-generation" class="nav-dropdown-item"><span>🖼️</span> NSFW Images</a>
-                        <a href="/nsfw-video-generation" class="nav-dropdown-item"><span>🎬</span> NSFW Videos</a>
+                        <a href="/virtual-girlfriend" class="nav-dropdown-item"> AI Girlfriend</a>
+                        <a href="/nsfw-chat" class="nav-dropdown-item"> NSFW Chat</a>
+                        <a href="/nsfw-image-generation" class="nav-dropdown-item"> NSFW Images</a>
+                        <a href="/nsfw-video-generation" class="nav-dropdown-item"> NSFW Videos</a>
+                    
                     </div>
                 </div>
                 <div class="nav-dropdown">
@@ -538,7 +483,7 @@
     </nav>
 
     <section class="hero">
-        <div class="hero-badge">❤️ Updated February 2026</div>
+        <div class="hero-badge">❤️ Updated March 2026</div>
         <h1>10 Best CrushOn AI Alternatives for <span>NSFW Roleplay</span> (2026)</h1>
         <p>Love CrushOn AI's uncensored roleplay but want more features, better free tiers, or image generation? We tested 10+ alternatives that deliver superior NSFW experiences—from SpicyChat's massive character library to CandyAI's video generation capabilities.</p>
     </section>
@@ -628,7 +573,7 @@
                         <tr class="highlight-row">
                             <td class="platform-name">🍬 CandyAI</td>
                             <td>20/day</td>
-                            <td>$5.99/mo</td>
+                            <td>$3.99/mo</td>
                             <td class="check">✓ + Video</td>
                             <td>Curated</td>
                             <td>Best Overall</td>
@@ -636,7 +581,7 @@
                         <tr>
                             <td class="platform-name">🔥 SpicyChat</td>
                             <td>50/day</td>
-                            <td>$5/mo</td>
+                            <td>$4.95/mo</td>
                             <td class="check">✓ Nudifier</td>
                             <td>100K+</td>
                             <td>Free Characters</td>
@@ -652,7 +597,7 @@
                         <tr>
                             <td class="platform-name">💜 Luvr AI</td>
                             <td>Daily tokens</td>
-                            <td>$5.99/mo</td>
+                            <td>$4.17/mo</td>
                             <td class="check">✓</td>
                             <td>100+</td>
                             <td>Scenario Builder</td>
@@ -702,7 +647,7 @@
                     </div>
                     <div class="stat-item">
                         <div class="stat-label">Premium</div>
-                        <div class="stat-value">$5.99/month</div>
+                        <div class="stat-value">$3.99/month</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-label">Video Gen</div>
@@ -802,7 +747,7 @@
                 </div>
                 
                 <div class="tool-actions">
-                    <a href="https://spicychat.ai?utm_source=xchatbots" target="_blank" rel="nofollow noopener" class="btn-visit">Visit SpicyChat →</a>
+                    <a href="https://spicychat.ai?ref=odhkmgf" data-tool="spicychat" target="_blank" rel="nofollow noopener" class="btn-visit">Visit SpicyChat →</a>
                     <a href="/alternatives/spicychat-alternatives" class="btn-secondary">SpicyChat Alternatives</a>
                 </div>
             </article>
@@ -868,7 +813,7 @@
                 </div>
                 
                 <div class="tool-actions">
-                    <a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" target="_blank" rel="nofollow noopener" class="btn-visit">Visit JuicyChat →</a>
+                    <a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" data-tool="juicychat" target="_blank" rel="nofollow noopener" class="btn-visit">Visit JuicyChat →</a>
                     <a href="/nsfw-chat" class="btn-secondary">More NSFW Chats</a>
                 </div>
             </article>
@@ -904,7 +849,7 @@
                     </div>
                     <div class="stat-item">
                         <div class="stat-label">Premium</div>
-                        <div class="stat-value">$5.99/month</div>
+                        <div class="stat-value">$3.99/month</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-label">Characters</div>
@@ -935,7 +880,7 @@
                 </div>
                 
                 <div class="tool-actions">
-                    <a href="https://t.vlmai-3.com/406118/7944?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Luvr AI →</a>
+                    <a href="https://t.vlmai-3.com/406118/7944?aff_sub5=SF_006OG000004lmDN" data-tool="luvr" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Luvr AI →</a>
                     <a href="/roleplay" class="btn-secondary">More Roleplay AIs</a>
                 </div>
             </article>
@@ -1029,7 +974,7 @@
                 </div>
                 <p class="tool-description">Adult-only AI companion built for chat, roleplay, and NSFW visuals. Create customizable virtual girlfriends with personalized looks, personalities, and kinks. Features uncensored chat, image generation, and video creation.</p>
                 <div class="tool-actions">
-                    <a href="https://t.vlmai-3.com/406118/7761?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Joi AI →</a>
+                    <a href="https://t.vlmai-3.com/406118/7761?aff_sub5=SF_006OG000004lmDN" data-tool="joi" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Joi AI →</a>
                     <a href="/virtual-girlfriend" class="btn-secondary">More AI Girlfriends</a>
                 </div>
             </article>
@@ -1056,7 +1001,7 @@
                 </div>
                 <p class="tool-description">NSFW AI companion platform with diverse character options including unique body types and personalities. Features video generation, voice messages, and relationship progression system with no content restrictions.</p>
                 <div class="tool-actions">
-                    <a href="https://t.vlmai-3.com/406118/7986?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Aimour AI →</a>
+                    <a href="https://t.vlmai-3.com/406118/7986?aff_sub5=SF_006OG000004lmDN" data-tool="aimour" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Aimour AI →</a>
                     <a href="/nsfw-video-generation" class="btn-secondary">More Video AI</a>
                 </div>
             </article>
@@ -1083,7 +1028,7 @@
                 </div>
                 <p class="tool-description">Unleash completely uncensored AI conversations with zero judgment. Enjoy raw, unlimited sexting and build deep, flirty relationships with an adaptive virtual girlfriend that learns your preferences.</p>
                 <div class="tool-actions">
-                    <a href="https://t.vlmai-3.com/406118/7477?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">Visit GirlfriendGPT →</a>
+                    <a href="https://t.vlmai-3.com/406118/7477?aff_sub5=SF_006OG000004lmDN" data-tool="girlfriendgpt" target="_blank" rel="nofollow noopener" class="btn-visit">Visit GirlfriendGPT →</a>
                     <a href="/virtual-girlfriend" class="btn-secondary">More AI Girlfriends</a>
                 </div>
             </article>
@@ -1110,7 +1055,7 @@
                 </div>
                 <p class="tool-description">Next-level NSFW AI chat with ultra-realistic virtual companions. Built for explicit roleplay, filthy dirty talk, and voice calls. Features photorealistic NSFW image generation and fully customizable erotic experiences.</p>
                 <div class="tool-actions">
-                    <a href="https://t.vlmai-3.com/406118/10349/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Xotic AI →</a>
+                    <a href="https://t.vlmai-3.com/406118/10349/0?aff_sub5=SF_006OG000004lmDN" data-tool="xotic" target="_blank" rel="nofollow noopener" class="btn-visit">Visit Xotic AI →</a>
                     <a href="/nsfw-chat" class="btn-secondary">More NSFW Chat</a>
                 </div>
             </article>
@@ -1137,7 +1082,7 @@
                 </div>
                 <p class="tool-description">The ultimate adult AI playground to craft dream companions with Undress AI style features. Generate wild custom NSFW images and videos with face swap for endless scenarios.</p>
                 <div class="tool-actions">
-                    <a href="https://t.vlmai-3.com/406118/7709?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">Visit ourdream.ai →</a>
+                    <a href="https://t.vlmai-3.com/406118/7709?aff_sub5=SF_006OG000004lmDN" data-tool="ourdream" target="_blank" rel="nofollow noopener" class="btn-visit">Visit ourdream.ai →</a>
                     <a href="/nsfw-image-generation" class="btn-secondary">More Image Gen</a>
                 </div>
             </article>
@@ -1268,7 +1213,7 @@
                 
                 <div class="faq-item">
                     <h4>What's the cheapest CrushOn alternative?</h4>
-                    <p><strong>Perchance AI</strong> is completely free with unlimited messages. For paid platforms, <strong>CrushOn itself at $4.90/mo</strong> is actually the cheapest, followed by <strong>SpicyChat at $5/mo</strong> and <strong>Luvr AI at $5.99/mo</strong>. Consider free tier generosity when comparing value.</p>
+                    <p><strong>Perchance AI</strong> is completely free with unlimited messages. For paid platforms, <strong>CrushOn itself at $4.90/mo</strong> is actually the cheapest, followed by <strong>SpicyChat at $4.95/mo</strong> and <strong>Luvr AI at $4.17/mo</strong>. Consider free tier generosity when comparing value.</p>
                 </div>
             </div>
 
@@ -1401,42 +1346,62 @@
         document.addEventListener('DOMContentLoaded', init);
     </script>
 
-    <script>
-        // Mobile Navigation
-        const mobileToggle = document.querySelector('.mobile-nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const overlay = document.querySelector('.mobile-overlay');
-        const dropdowns = document.querySelectorAll('.nav-dropdown');
-        
-        if (mobileToggle) {
-            mobileToggle.addEventListener('click', () => {
-                mobileToggle.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                overlay.classList.toggle('active');
-                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-            });
-        }
-        
-        if (overlay) {
-            overlay.addEventListener('click', () => {
-                mobileToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        }
-        
-        dropdowns.forEach(dropdown => {
-            const toggle = dropdown.querySelector('.nav-dropdown-toggle');
-            if (toggle) {
-                toggle.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 900) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('active');
-                    }
-                });
-            }
+    
+
+<!-- Dynamic Affiliate Links from Notion -->
+<script>
+(async function(){
+    try {
+        const r = await fetch('https://test.weissmilch.workers.dev/affiliate-links');
+        if(!r.ok) return;
+        const links = await r.json();
+        document.querySelectorAll('a[data-tool]').forEach(function(a){
+            const t = a.dataset.tool.toLowerCase();
+            if(links[t]) a.href = links[t];
         });
-    </script>
+    } catch(e) { console.warn('Links not loaded'); }
+})();
+</script>
+
+
+
+
+
+<!-- Mobile Navigation Script -->
+<script>
+(function() {
+    var toggle = document.querySelector('.mobile-nav-toggle');
+    var nav = document.querySelector('.nav-links');
+    var overlay = document.querySelector('.mobile-overlay');
+    
+    // Hamburger toggle
+    if (toggle) {
+        toggle.onclick = function() {
+            toggle.classList.toggle('active');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+        };
+    }
+    
+    // Overlay closes menu
+    if (overlay) {
+        overlay.onclick = function() {
+            toggle.classList.remove('active');
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+        };
+    }
+    
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    for (var i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].onclick = function(e) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        };
+    }
+})();
+</script>
+
 </body>
 </html>
