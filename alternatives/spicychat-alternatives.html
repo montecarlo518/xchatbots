@@ -11,6 +11,70 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+(function() {
+  // Map affiliate link patterns to tool names & IDs
+  var affiliateTools = [
+    { id: 'candy_ai',           name: 'CandyAI',                  pattern: 't.vlmai-3.com/406118/10022' },
+    { id: 'funy_ai',            name: 'Funy AI',                  pattern: 'funy.ai' },
+    { id: 'craveu_ai',          name: 'CraveU AI',                pattern: 'craveu.ai' },
+    { id: 'dream_companion',    name: 'Dream Companion AI',       pattern: 'mydreamcompanion.com' },
+    { id: 'eroplay_ai',         name: 'EroPlay.ai',               pattern: 'eroplay.ai' },
+    { id: 'promptchan',         name: 'Promptchan',               pattern: 't.vlmai-3.com/406118/10338' },
+    { id: 'lusychat',           name: 'LusyChat',                 pattern: 'lusychat.ai' },
+    { id: 'soulkyn',            name: 'Soulkyn',                  pattern: 'soulkyn.com' },
+    { id: 'ourdream_ai',        name: 'ourdream.ai',              pattern: 't.vlmai-3.com/406118/10138' },
+    { id: 'girlfriendgpt',      name: 'GirlfriendGPT',            pattern: 't.vlmai-3.com/406118/7477' },
+    { id: 'xotic_ai',           name: 'Xotic AI',                 pattern: 't.vlmai-3.com/406118/10349' },
+    { id: 'spicychat_ai',       name: 'SpicyChat AI',             pattern: 'spicychat.ai' },
+    { id: 'juicychat_ai',       name: 'JuicyChat.ai',             pattern: 'lowest-prices.eu' },
+    { id: 'crushon_ai',         name: 'CrushOn.ai',               pattern: 'crushon.ai' },
+    { id: 'dreambf_ai',         name: 'DreamBF AI',               pattern: 't.vlmai-3.com/406118/6559' },
+    { id: 'aimour_ai',          name: 'Aimour AI',                pattern: 't.vlmai-3.com/406118/7986' },
+    { id: 'fanfinity_ai',       name: 'Fanfinity AI',             pattern: 't.vlmai-3.com/406118/7722' },
+    { id: 'luvr_ai',            name: 'Luvr AI',                  pattern: 't.vlmai-3.com/406118/7944' },
+    { id: 'joi_ai',             name: 'Joi AI',                   pattern: 't.vlmai-3.com/406118/10163' }
+  ];
+  function getToolForUrl(url) {
+    for (var i = 0; i < affiliateTools.length; i++) {
+      if (url.indexOf(affiliateTools[i].pattern) !== -1) {
+        return affiliateTools[i];
+      }
+    }
+    return null;
+  }
+  function handleAffiliateClick(url) {
+    var tool = getToolForUrl(url);
+    if (!tool) return;
+    // Fire as a GA4 'purchase' event with the tool as a product
+    gtag('event', 'purchase', {
+      transaction_id: 'aff_' + tool.id + '_' + Date.now(),
+      currency: 'USD',
+      value: 1,
+      items: [{
+        item_id:       tool.id,
+        item_name:     tool.name,
+        item_category: 'Affiliate Tool',
+        quantity:      1,
+        price:         1
+      }]
+    });
+    // Also fire a dedicated affiliate_click event for custom reporting
+    gtag('event', 'affiliate_click', {
+      tool_id:   tool.id,
+      tool_name: tool.name,
+      link_url:  url
+    });
+  }
+  // Listen for all link clicks
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('a');
+    if (!el) return;
+    var href = el.href || '';
+    if (href) handleAffiliateClick(href);
+  }, true);
+})();
+</script>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/favicon.png">
     <title>Top 12 SpicyChat Alternatives for NSFW AI Chat & Sexting in 2026</title>
