@@ -5,66 +5,16 @@
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-N5BKLJR7QJ');</script>
     <script>
 (function() {
-  // Map affiliate link patterns to tool names & IDs
   var affiliateTools = [
-    { id: 'candy_ai',           name: 'CandyAI',                  pattern: 't.vlmai-3.com/406118/10022' },
-    { id: 'funy_ai',            name: 'Funy AI',                  pattern: 'funy.ai' },
-    { id: 'craveu_ai',          name: 'CraveU AI',                pattern: 'craveu.ai' },
-    { id: 'dream_companion',    name: 'Dream Companion AI',       pattern: 'mydreamcompanion.com' },
-    { id: 'eroplay_ai',         name: 'EroPlay.ai',               pattern: 'eroplay.ai' },
-    { id: 'promptchan',         name: 'Promptchan',               pattern: 't.vlmai-3.com/406118/10338' },
-    { id: 'lusychat',           name: 'LusyChat',                 pattern: 'lusychat.ai' },
-    { id: 'soulkyn',            name: 'Soulkyn',                  pattern: 'soulkyn.com' },
-    { id: 'ourdream_ai',        name: 'ourdream.ai',              pattern: 't.vlmai-3.com/406118/10138' },
-    { id: 'girlfriendgpt',      name: 'GirlfriendGPT',            pattern: 't.vlmai-3.com/406118/7477' },
-    { id: 'xotic_ai',           name: 'Xotic AI',                 pattern: 't.vlmai-3.com/406118/10349' },
-    { id: 'spicychat_ai',       name: 'SpicyChat AI',             pattern: 'spicychat.ai' },
-    { id: 'juicychat_ai',       name: 'JuicyChat.ai',             pattern: 'lowest-prices.eu' },
-    { id: 'crushon_ai',         name: 'CrushOn.ai',               pattern: 'crushon.ai' },
-    { id: 'dreambf_ai',         name: 'DreamBF AI',               pattern: 't.vlmai-3.com/406118/6559' },
-    { id: 'aimour_ai',          name: 'Aimour AI',                pattern: 't.vlmai-3.com/406118/7986' },
-    { id: 'fanfinity_ai',       name: 'Fanfinity AI',             pattern: 't.vlmai-3.com/406118/7722' },
-    { id: 'luvr_ai',            name: 'Luvr AI',                  pattern: 't.vlmai-3.com/406118/7944' },
-    { id: 'joi_ai',             name: 'Joi AI',                   pattern: 't.vlmai-3.com/406118/10163' }
+    { id: 'candy_ai', name: 'CandyAI', pattern: 't.vlmai-3.com/406118/10022' },
+    { id: 'spicychat_ai', name: 'SpicyChat AI', pattern: 'spicychat.ai' },
+    { id: 'juicychat_ai', name: 'JuicyChat.ai', pattern: 'lowest-prices.eu' },
+    { id: 'crushon_ai', name: 'CrushOn.ai', pattern: 'crushon.ai' },
+    { id: 'luvr_ai', name: 'Luvr AI', pattern: 't.vlmai-3.com/406118/7944' }
   ];
-  function getToolForUrl(url) {
-    for (var i = 0; i < affiliateTools.length; i++) {
-      if (url.indexOf(affiliateTools[i].pattern) !== -1) {
-        return affiliateTools[i];
-      }
-    }
-    return null;
-  }
-  function handleAffiliateClick(url) {
-    var tool = getToolForUrl(url);
-    if (!tool) return;
-    // Fire as a GA4 'purchase' event with the tool as a product
-    gtag('event', 'purchase', {
-      transaction_id: 'aff_' + tool.id + '_' + Date.now(),
-      currency: 'USD',
-      value: 1,
-      items: [{
-        item_id:       tool.id,
-        item_name:     tool.name,
-        item_category: 'Affiliate Tool',
-        quantity:      1,
-        price:         1
-      }]
-    });
-    // Also fire a dedicated affiliate_click event for custom reporting
-    gtag('event', 'affiliate_click', {
-      tool_id:   tool.id,
-      tool_name: tool.name,
-      link_url:  url
-    });
-  }
-  // Listen for all link clicks
-  document.addEventListener('click', function(e) {
-    var el = e.target.closest('a');
-    if (!el) return;
-    var href = el.href || '';
-    if (href) handleAffiliateClick(href);
-  }, true);
+  function getToolForUrl(url) { for (var i = 0; i < affiliateTools.length; i++) { if (url.indexOf(affiliateTools[i].pattern) !== -1) return affiliateTools[i]; } return null; }
+  function handleAffiliateClick(url) { var tool = getToolForUrl(url); if (!tool) return; gtag('event', 'purchase', { transaction_id: 'aff_' + tool.id + '_' + Date.now(), currency: 'USD', value: 1, items: [{ item_id: tool.id, item_name: tool.name, item_category: 'Affiliate Tool', quantity: 1, price: 1 }] }); gtag('event', 'affiliate_click', { tool_id: tool.id, tool_name: tool.name, link_url: url }); }
+  document.addEventListener('click', function(e) { var el = e.target.closest('a'); if (!el) return; var href = el.href || ''; if (href) handleAffiliateClick(href); }, true);
 })();
 </script>
     <meta charset="UTF-8">
@@ -74,6 +24,7 @@
     <title>Best NSFW Roleplay AI & ERP Chatbots (2026)</title>
     <meta name="description" content="Discover the best Janitor AI alternatives and Poly AI style chatbots. Uncensored NSFW roleplay, fantasy ERP, and Joyland AI competitors for 2026.">
     <meta name="keywords" content="janitor ai alternative, poly ai, joyland ai, nsfw erp, ai roleplay, novelai alternative, character ai nsfw, uncensored roleplay">
+    <link rel="canonical" href="https://x-chatbots.com/roleplay">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root { --ice: #E8F4F8; --ice-light: #F5FAFB; --blue: #4A9EBF; --blue-dark: #2D7A9C; --slate: #94A3B8; --slate-dark: #64748B; --lavender: #E0E7FF; --mint: #D1FAE5; --frost: #F8FAFC; --charcoal: #1E293B; --gray-warm: #475569; --gray-light: #94A3B8; --white: #FFFFFF; --shadow-soft: 0 4px 20px rgba(30, 41, 59, 0.06); --shadow-medium: 0 8px 40px rgba(30, 41, 59, 0.1); --shadow-glow: 0 0 60px rgba(74, 158, 191, 0.15); --radius-sm: 12px; --radius-md: 20px; --radius-lg: 32px; --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -89,11 +40,11 @@
         .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3); }
         .logo-icon svg { width: 24px; height: 24px; fill: white; }
         .logo-text { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); }
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
-        .nav-link:hover { color: var(--blue); }
-        .btn-submit { background: var(--charcoal); color: white; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
-        .btn-submit:hover { background: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow-medium); }
+        .nav-links { display: flex; gap: 0.5rem; align-items: center; }
+        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); padding: 0.5rem 1rem; border-radius: var(--radius-sm); }
+        .nav-link:hover { color: var(--blue); background: var(--ice-light); }
+        @media (max-width: 900px) { .nav-links { display: none; } }
+
         .category-hero { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 4rem 2rem 3rem; }
         .category-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ice-light); border: 1px solid var(--ice); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; color: var(--blue-dark); font-weight: 600; margin-bottom: 1.5rem; }
         .category-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.2; margin-bottom: 0.75rem; }
@@ -168,33 +119,125 @@
         .footer-column li { margin-bottom: 0.5rem; }
         .footer-column a { color: var(--slate); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
         .footer-column a:hover { color: white; }
-        .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; }
         .footer-bottom p { font-size: 0.85rem; color: var(--slate); }
-        .social-links { display: flex; gap: 1rem; }
-        .social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
-        .social-link:hover { background: var(--blue); }
-        .social-link svg { width: 18px; height: 18px; fill: white; }
         .loading-container { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 2rem; text-align: center; }
+
+/* ===== MOBILE OPTIMIZATION ===== */
+html,body{overflow-x:hidden;width:100%;max-width:100vw}
+*{box-sizing:border-box}
+
+.mobile-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:101}
+.hamburger{display:block;width:24px;height:2px;background:var(--charcoal);position:relative;transition:all .3s}
+.hamburger::before,.hamburger::after{content:'';position:absolute;width:24px;height:2px;background:var(--charcoal);left:0;transition:all .3s}
+.hamburger::before{top:-7px}
+.hamburger::after{top:7px}
+.mobile-nav-toggle.active .hamburger{background:transparent}
+.mobile-nav-toggle.active .hamburger::before{transform:rotate(45deg);top:0}
+.mobile-nav-toggle.active .hamburger::after{transform:rotate(-45deg);top:0}
+
+.nav-dropdown{position:relative}
+.nav-dropdown-toggle{display:flex;align-items:center;gap:.35rem;text-decoration:none;color:var(--gray-warm);font-weight:500;cursor:pointer;background:none;border:none;font-size:1rem;font-family:inherit;padding:0}
+.nav-dropdown-toggle:hover{color:var(--blue)}
+.nav-dropdown-toggle svg{width:12px;height:12px;transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-toggle svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--white);border-radius:var(--radius-sm);box-shadow:var(--shadow-medium);min-width:200px;padding:.5rem 0;opacity:0;visibility:hidden;transition:all .2s;margin-top:.75rem;z-index:100}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--white)}
+.nav-dropdown-item{display:flex;align-items:center;gap:.75rem;padding:.75rem 1.25rem;text-decoration:none;color:var(--charcoal);font-size:.9rem;font-weight:500;transition:all .15s}
+.nav-dropdown-item:hover{background:var(--ice);color:var(--blue)}
+.nav-dropdown-item span{font-size:1rem}
+
+.btn-submit-nav{background:var(--charcoal);color:#fff!important;padding:.6rem 1.25rem;border-radius:var(--radius-sm);text-decoration:none;font-weight:600;font-size:.85rem;transition:all .2s;display:inline-block;white-space:nowrap}
+.btn-submit-nav:hover{background:var(--blue);transform:translateY(-2px)}
+
+@media(max-width:900px){
+    .mobile-nav-toggle{display:block!important}
+    .nav-links{position:fixed!important;top:0;right:-100%;width:280px;height:100vh;background:var(--white);flex-direction:column!important;align-items:stretch!important;padding:5rem 1.5rem 2rem;gap:0!important;box-shadow:var(--shadow-medium);transition:right .3s;overflow-y:auto;z-index:100;display:flex!important}
+    .nav-links.active{right:0}
+    .nav-link{padding:1rem 0;border-bottom:1px solid rgba(30,41,59,.08);font-size:1.1rem;display:block}
+    .nav-dropdown{border-bottom:1px solid rgba(30,41,59,.08)}
+    .nav-dropdown-toggle{width:100%;justify-content:space-between;padding:1rem 0;font-size:1.1rem}
+    .nav-dropdown-menu{position:static;transform:none;box-shadow:none;opacity:1;visibility:visible;display:none;margin:0;padding:0 0 .5rem 1rem;background:transparent}
+    .nav-dropdown-menu::before{display:none}
+    .nav-dropdown.active .nav-dropdown-menu{display:block}
+    .nav-dropdown-item{padding:.75rem 0;font-size:.95rem}
+    .btn-submit-nav{margin-top:1rem;text-align:center;display:block;width:100%}
+}
+
+@media(max-width:768px){
+    .header-content{padding:.875rem 1rem!important}
+    .logo-text{font-size:1.25rem!important}
+    .category-hero{padding:2rem 1rem 1.5rem!important}
+    .category-hero h1{font-size:1.6rem!important;line-height:1.3}
+    .hero-subtitle{font-size:1rem!important}
+    .category-hero>p{font-size:.95rem!important}
+    .category-stats{gap:1.5rem}
+    .category-stat-number{font-size:1.5rem}
+    .content-section{padding:0 1rem 2rem!important}
+    .content-grid{gap:2rem!important}
+    .section-header h2{font-size:1.4rem!important}
+    .cards-grid{grid-template-columns:1fr!important;gap:1rem}
+    .card{padding:1.25rem!important}
+    .card-icon{width:48px!important;height:48px!important;font-size:1.5rem!important}
+    .card-title{font-size:1.1rem!important}
+    .card-description{font-size:.9rem!important}
+    .sidebar{display:none}
+    .faq-section{padding:2rem 1rem!important}
+    .faq-section h2{font-size:1.5rem!important}
+    .faq-grid{grid-template-columns:1fr!important;gap:1rem}
+    .faq-item{padding:1.25rem!important}
+    .faq-item h3{font-size:.95rem!important}
+    .faq-item p{font-size:.9rem!important}
+    .footer-content{grid-template-columns:1fr!important;gap:2rem!important;text-align:center}
+    footer{padding:2.5rem 1rem 1.5rem!important}
+}
+
+@media(max-width:480px){
+    .category-hero h1{font-size:1.4rem!important}
+    .card{padding:1rem!important}
+    .btn-visit{padding:.5rem 1rem;font-size:.8rem}
+}
+/* ===== END MOBILE OPTIMIZATION ===== */
     </style>
 </head>
 <body>
     <div class="bg-decoration bg-blob-1"></div>
     <div class="bg-decoration bg-blob-2"></div>
     <div class="bg-decoration bg-blob-3"></div>
+    
     <header>
         <div class="header-content">
             <a href="/" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><span class="logo-text">Xchatbots</span></a>
+            <button class="mobile-nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
             <nav class="nav-links">
                 <a href="/" class="nav-link">Home</a>
                 <a href="/blog" class="nav-link">Blog</a>
-                <a href="nsfw-chat.html" class="nav-link">Chat</a>
-                <a href="virtual-girlfriend.html" class="nav-link">Virtual GF</a>
-                <a href="nsfw-image-generation.html" class="nav-link">Images</a>
-                <a href="nsfw-video-generation.html" class="nav-link">Videos</a>
-                <a href="submit.html" class="btn-submit">Submit AI</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">Categories<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="/virtual-girlfriend" class="nav-dropdown-item"><span>💕</span> Virtual Girlfriend</a>
+                        <a href="/nsfw-chat" class="nav-dropdown-item"><span>💬</span> NSFW Chat</a>
+                        <a href="/nsfw-image-generation" class="nav-dropdown-item"><span>🎨</span> NSFW Images</a>
+                        <a href="/nsfw-video-generation" class="nav-dropdown-item"><span>🎬</span> NSFW Videos</a>
+                        <a href="/roleplay" class="nav-dropdown-item"><span>🎭</span> Roleplay</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">Alternatives<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="/alternatives/character-ai-alternatives" class="nav-dropdown-item"><span>🔄</span> Character AI</a>
+                        <a href="/alternatives/janitor-ai-alternatives" class="nav-dropdown-item"><span>🧹</span> Janitor AI</a>
+                        <a href="/alternatives/crushon-ai-alternatives" class="nav-dropdown-item"><span>💕</span> CrushOn AI</a>
+                        <a href="/alternatives/spicychat-alternatives" class="nav-dropdown-item"><span>🌶️</span> SpicyChat</a>
+                        <a href="/alternatives/perchance-ai-alternatives" class="nav-dropdown-item"><span>🎲</span> Perchance AI</a>
+                    </div>
+                </div>
+                <a href="/submit" class="btn-submit-nav">Submit AI</a>
             </nav>
         </div>
     </header>
+
     <section class="category-hero">
         <div class="category-badge">🎭 NSFW ERP Roleplay</div>
         <h1>Best <span>Janitor AI Alternatives</span> & NSFW Roleplay</h1>
@@ -206,6 +249,7 @@
             <div class="category-stat"><div class="category-stat-number">∞</div><div class="category-stat-label">Scenarios</div></div>
         </div>
     </section>
+
     <section class="content-section">
         <div class="content-grid">
             <main>
@@ -218,35 +262,38 @@
             </main>
             <aside class="sidebar">
                 <div class="sidebar-card"><h3>Browse Categories</h3><div class="category-links">
-                    <a href="nsfw-chat.html" class="category-link"><div class="category-link-icon">💬</div>AI Sex Chat</a>
-                    <a href="virtual-girlfriend.html" class="category-link"><div class="category-link-icon">💕</div>Virtual Girlfriend</a>
-                    <a href="nsfw-image-generation.html" class="category-link"><div class="category-link-icon">🎨</div>Image Generation</a>
-                    <a href="nsfw-video-generation.html" class="category-link"><div class="category-link-icon">🎬</div>Video Generation</a>
-                    <a href="roleplay.html" class="category-link active"><div class="category-link-icon">🎭</div>ERP Roleplay</a>
+                    <a href="/nsfw-chat" class="category-link"><div class="category-link-icon">💬</div>AI Sex Chat</a>
+                    <a href="/virtual-girlfriend" class="category-link"><div class="category-link-icon">💕</div>Virtual Girlfriend</a>
+                    <a href="/nsfw-image-generation" class="category-link"><div class="category-link-icon">🎨</div>Image Generation</a>
+                    <a href="/nsfw-video-generation" class="category-link"><div class="category-link-icon">🎬</div>Video Generation</a>
+                    <a href="/roleplay" class="category-link active"><div class="category-link-icon">🎭</div>ERP Roleplay</a>
                 </div></div>
                 <div class="sidebar-card"><h3>What is NSFW ERP?</h3><p>ERP (Erotic Roleplay) lets you create immersive adult scenarios with AI. Many users search for Janitor AI or Poly AI for these experiences, but our list features the best uncensored alternatives with no content restrictions.</p></div>
                 <div class="sidebar-card"><h3>Janitor AI vs Alternatives</h3><p>While Janitor AI is popular, alternatives like CrushOn.ai and SpicyChat offer truly uncensored NSFW roleplay. Compare Joyland AI competitors and find your perfect ERP platform.</p></div>
             </aside>
         </div>
     </section>
+
     <section class="faq-section">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-grid">
             <div class="faq-item"><h3>What are the best Janitor AI alternatives?</h3><p>Top Janitor AI alternatives include CrushOn.ai, SpicyChat, and JuicyChat. These platforms offer uncensored NSFW roleplay without the content restrictions found on Janitor AI.</p></div>
             <div class="faq-item"><h3>Is there an uncensored version of Poly AI?</h3><p>Poly AI itself has content filters, but alternatives like the apps listed here offer similar character-driven experiences with full NSFW ERP capabilities and no restrictions.</p></div>
-            <div class="faq-item"><h3>What is ERP roleplay?</h3><p>ERP (Erotic Roleplay) is interactive storytelling with adult themes. AI ERP platforms let you create custom scenarios, characters, and fantasies with uncensored AI companions that respond naturally to your inputs.</p></div>
-            <div class="faq-item"><h3>Are there NovelAI alternatives for NSFW content?</h3><p>Yes, several platforms offer NovelAI-style story generation with NSFW capabilities. These include AI Dungeon alternatives and dedicated adult story generators for fantasy ERP and creative writing.</p></div>
+            <div class="faq-item"><h3>What is ERP roleplay?</h3><p>ERP (Erotic Roleplay) is interactive storytelling with adult themes. AI ERP platforms let you create custom scenarios, characters, and fantasies with uncensored AI companions.</p></div>
+            <div class="faq-item"><h3>Are there NovelAI alternatives for NSFW content?</h3><p>Yes, several platforms offer NovelAI-style story generation with NSFW capabilities. These include AI Dungeon alternatives and dedicated adult story generators.</p></div>
         </div>
     </section>
+
     <footer>
         <div class="footer-content">
             <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><span class="footer-logo-text">Xchatbots</span></div><p>Your trusted directory for AI roleplay apps and interactive storytelling platforms.</p></div>
-            <div class="footer-column"><h4>Categories</h4><ul><li><a href="nsfw-chat.html">NSFW Chat</a></li><li><a href="nsfw-image-generation.html">Image Generation</a></li><li><a href="virtual-girlfriend.html">Virtual Girlfriend</a></li><li><a href="nsfw-video-generation.html">Video Generation</a></li></ul></div>
-            <div class="footer-column"><h4>Resources</h4><ul><li><a href="about.html">About Us</a></li><li><a href="submit.html">Submit AI Tool</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-            <div class="footer-column"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+            <div class="footer-column"><h4>Categories</h4><ul><li><a href="/nsfw-chat">NSFW Chat</a></li><li><a href="/nsfw-image-generation">Image Generation</a></li><li><a href="/virtual-girlfriend">Virtual Girlfriend</a></li><li><a href="/nsfw-video-generation">Video Generation</a></li></ul></div>
+            <div class="footer-column"><h4>Resources</h4><ul><li><a href="/about">About Us</a></li><li><a href="/submit">Submit AI Tool</a></li><li><a href="/contact">Contact</a></li></ul></div>
+            <div class="footer-column"><h4>Legal</h4><ul><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li></ul></div>
         </div>
-        <div class="footer-bottom"><p>© 2026 Xchatbots. All rights reserved.</p><div class="social-links"><a href="#" class="social-link"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a><a href="#" class="social-link"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div></div>
+        <div class="footer-bottom"><p>© 2026 Xchatbots. All rights reserved.</p></div>
     </footer>
+
     <script>
         const API_URL = 'https://test.weissmilch.workers.dev';
         let aiTools = [];
@@ -256,33 +303,49 @@
         function isJanitorAlt(tool) { const text = (tool.name + ' ' + tool.description + ' ' + (tool.tags || []).join(' ')).toLowerCase(); return janitorAltKeywords.some(function(k) { return text.includes(k); }); }
         function isPolyAlt(tool) { const text = (tool.name + ' ' + tool.description + ' ' + (tool.tags || []).join(' ')).toLowerCase(); return polyAltKeywords.some(function(k) { return text.includes(k); }); }
         function isNovelAlt(tool) { const text = (tool.name + ' ' + tool.description + ' ' + (tool.tags || []).join(' ')).toLowerCase(); return novelAltKeywords.some(function(k) { return text.includes(k); }); }
-        function hasRoleplayTag(tool) {
-            const categories = tool.categories || [tool.category] || [];
-            const features = tool.features || [];
-            const hasInCategory = categories.some(function(c) { return (c || '').toLowerCase() === 'roleplay'; });
-            const hasInFeatures = features.some(function(f) { return (f || '').toLowerCase() === 'roleplay'; });
-            return hasInCategory || hasInFeatures;
-        }
+        function hasRoleplayTag(tool) { const categories = tool.categories || [tool.category] || []; const features = tool.features || []; const hasInCategory = categories.some(function(c) { return (c || '').toLowerCase() === 'roleplay'; }); const hasInFeatures = features.some(function(f) { return (f || '').toLowerCase() === 'roleplay'; }); return hasInCategory || hasInFeatures; }
         async function fetchTools() {
             try {
                 const response = await fetch(API_URL + '/tools');
                 const data = await response.json();
-                aiTools = data.filter(function(tool) { return hasRoleplayTag(tool); }).map(function(tool) {
-                    return { id: tool.id, name: tool.name, description: tool.description, icon: tool.icon || '🎭', rating: tool.rating, reviews: tool.reviews, pricing: (tool.pricing || '').toLowerCase(), priceText: tool.priceText || tool.pricing || 'Free', tags: tool.features || [], url: tool.url, isJanitorAlt: isJanitorAlt(tool), isPolyAlt: isPolyAlt(tool), isNovelAlt: isNovelAlt(tool) };
-                });
+                aiTools = data.filter(function(tool) { return hasRoleplayTag(tool); }).map(function(tool) { return { id: tool.id, name: tool.name, description: tool.description, icon: tool.icon || '🎭', rating: tool.rating, reviews: tool.reviews, pricing: (tool.pricing || '').toLowerCase(), priceText: tool.priceText || tool.pricing || 'Free', tags: tool.features || [], url: tool.url, isJanitorAlt: isJanitorAlt(tool), isPolyAlt: isPolyAlt(tool), isNovelAlt: isNovelAlt(tool) }; });
                 document.getElementById('tool-count').textContent = aiTools.length;
                 var janitorTools = aiTools.filter(function(t) { return t.isJanitorAlt; });
                 renderCardsToContainer(janitorTools, 'fantasy-container', 'janitor');
                 var polyTools = aiTools.filter(function(t) { return t.isPolyAlt; });
                 renderCardsToContainer(polyTools, 'scenario-container', 'poly');
                 renderCards(aiTools);
-            } catch (error) { console.error('Error:', error); document.getElementById('cards-container').innerHTML = '<div class="loading-container"><div style="font-size:3rem;margin-bottom:1rem;">😕</div><p style="color:var(--gray-warm);">Failed to load. Try again later.</p></div>'; }
+            } catch (error) { console.error('Error:', error); document.getElementById('cards-container').innerHTML = '<div class="loading-container"><p style="color:var(--gray-warm);">Failed to load. Try again later.</p></div>'; }
         }
-        function renderCardsToContainer(tools, containerId, tagType) { var container = document.getElementById(containerId); if (!tools.length) { container.innerHTML = '<div class="loading-container"><p style="color:var(--gray-warm);">No tools found in this section yet. Check the full list below.</p></div>'; return; } container.innerHTML = tools.slice(0, 3).map(function(tool) { var specialTag = tagType === 'janitor' ? '<span class="card-tag fantasy">Janitor AI Alt</span>' : '<span class="card-tag scenario">Poly AI Style</span>'; return createCardHTML(tool, specialTag); }).join(''); }
-        function renderCards(tools) { var container = document.getElementById('cards-container'); if (!tools.length) { container.innerHTML = '<div class="loading-container"><div style="font-size:3rem;margin-bottom:1rem;">🔍</div><p style="color:var(--gray-warm);">No tools found yet.</p></div>'; return; } container.innerHTML = tools.map(function(tool) { var specialTag = ''; if (tool.isJanitorAlt) specialTag += '<span class="card-tag fantasy">Janitor AI Alt</span>'; if (tool.isNovelAlt) specialTag += '<span class="card-tag scenario">Story ERP</span>'; return createCardHTML(tool, specialTag); }).join(''); }
+        function renderCardsToContainer(tools, containerId, tagType) { var container = document.getElementById(containerId); if (!tools.length) { container.innerHTML = '<div class="loading-container"><p style="color:var(--gray-warm);">No tools found. Check the full list below.</p></div>'; return; } container.innerHTML = tools.slice(0, 3).map(function(tool) { var specialTag = tagType === 'janitor' ? '<span class="card-tag fantasy">Janitor AI Alt</span>' : '<span class="card-tag scenario">Poly AI Style</span>'; return createCardHTML(tool, specialTag); }).join(''); }
+        function renderCards(tools) { var container = document.getElementById('cards-container'); if (!tools.length) { container.innerHTML = '<div class="loading-container"><p style="color:var(--gray-warm);">No tools found yet.</p></div>'; return; } container.innerHTML = tools.map(function(tool) { var specialTag = ''; if (tool.isJanitorAlt) specialTag += '<span class="card-tag fantasy">Janitor AI Alt</span>'; if (tool.isNovelAlt) specialTag += '<span class="card-tag scenario">Story ERP</span>'; return createCardHTML(tool, specialTag); }).join(''); }
         function createCardHTML(tool, specialTag) { var isFree = tool.pricing === 'free'; return '<div class="card"><div class="card-header"><div class="card-icon">' + tool.icon + '</div><div class="card-title-group"><h3 class="card-title">' + tool.name + '</h3></div></div><p class="card-description">' + tool.description + '</p><div class="card-rating"><div class="stars">' + renderStars(tool.rating) + '</div><span class="rating-text">' + tool.rating + '</span><span class="reviews-text">(' + tool.reviews.toLocaleString() + ' reviews)</span></div><div class="card-tags">' + specialTag + tool.tags.slice(0,2).map(function(t) { return '<span class="card-tag">' + t + '</span>'; }).join('') + '</div><div class="card-footer"><div class="card-pricing"><span class="price-label">Pricing</span><span class="price-value' + (isFree ? ' free' : '') + '">' + tool.priceText + '</span></div><a href="' + tool.url + '" target="_blank" class="btn-visit">Visit<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>'; }
         function renderStars(r) { var s=''; for(var i=0;i<5;i++) s+=i<Math.floor(r)?'<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>':'<svg class="star empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'; return s; }
         document.addEventListener('DOMContentLoaded', fetchTools);
+
+        // Mobile nav
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function() {
+                    mobileToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                });
+            }
+            dropdownToggles.forEach(function(toggle) {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 900) {
+                        e.preventDefault();
+                        const dropdown = this.closest('.nav-dropdown');
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
