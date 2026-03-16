@@ -906,25 +906,15 @@
         document.addEventListener('DOMContentLoaded', loadTools);
         
         // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
+        const mobileToggle = document.querySelector('.mobile-nav-toggle');
         const navLinks = document.querySelector('.nav-links');
         const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
         
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
                 navLinks.classList.toggle('active');
-                if (mobileOverlay) mobileOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-            });
-        }
-        
-        if (mobileOverlay) {
-            mobileOverlay.addEventListener('click', () => {
-                if (hamburger) hamburger.classList.remove('active');
-                if (navLinks) navLinks.classList.remove('active');
-                mobileOverlay.classList.remove('active');
-                document.body.style.overflow = '';
             });
         }
         
