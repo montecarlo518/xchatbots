@@ -9,70 +9,6 @@
         gtag('js', new Date());
         gtag('config', 'G-N5BKLJR7QJ');
     </script>
-    <script>
-(function() {
-  // Map affiliate link patterns to tool names & IDs
-  var affiliateTools = [
-    { id: 'candy_ai',           name: 'CandyAI',                  pattern: 't.vlmai-3.com/406118/10022' },
-    { id: 'funy_ai',            name: 'Funy AI',                  pattern: 'funy.ai' },
-    { id: 'craveu_ai',          name: 'CraveU AI',                pattern: 'craveu.ai' },
-    { id: 'dream_companion',    name: 'Dream Companion AI',       pattern: 'mydreamcompanion.com' },
-    { id: 'eroplay_ai',         name: 'EroPlay.ai',               pattern: 'eroplay.ai' },
-    { id: 'promptchan',         name: 'Promptchan',               pattern: 't.vlmai-3.com/406118/10338' },
-    { id: 'lusychat',           name: 'LusyChat',                 pattern: 'lusychat.ai' },
-    { id: 'soulkyn',            name: 'Soulkyn',                  pattern: 'soulkyn.com' },
-    { id: 'ourdream_ai',        name: 'ourdream.ai',              pattern: 't.vlmai-3.com/406118/10138' },
-    { id: 'girlfriendgpt',      name: 'GirlfriendGPT',            pattern: 't.vlmai-3.com/406118/7477' },
-    { id: 'xotic_ai',           name: 'Xotic AI',                 pattern: 't.vlmai-3.com/406118/10349' },
-    { id: 'spicychat_ai',       name: 'SpicyChat AI',             pattern: 'spicychat.ai' },
-    { id: 'juicychat_ai',       name: 'JuicyChat.ai',             pattern: 'lowest-prices.eu' },
-    { id: 'crushon_ai',         name: 'CrushOn.ai',               pattern: 'crushon.ai' },
-    { id: 'dreambf_ai',         name: 'DreamBF AI',               pattern: 't.vlmai-3.com/406118/6559' },
-    { id: 'aimour_ai',          name: 'Aimour AI',                pattern: 't.vlmai-3.com/406118/7986' },
-    { id: 'fanfinity_ai',       name: 'Fanfinity AI',             pattern: 't.vlmai-3.com/406118/7722' },
-    { id: 'luvr_ai',            name: 'Luvr AI',                  pattern: 't.vlmai-3.com/406118/7944' },
-    { id: 'joi_ai',             name: 'Joi AI',                   pattern: 't.vlmai-3.com/406118/10163' }
-  ];
-  function getToolForUrl(url) {
-    for (var i = 0; i < affiliateTools.length; i++) {
-      if (url.indexOf(affiliateTools[i].pattern) !== -1) {
-        return affiliateTools[i];
-      }
-    }
-    return null;
-  }
-  function handleAffiliateClick(url) {
-    var tool = getToolForUrl(url);
-    if (!tool) return;
-    // Fire as a GA4 'purchase' event with the tool as a product
-    gtag('event', 'purchase', {
-      transaction_id: 'aff_' + tool.id + '_' + Date.now(),
-      currency: 'USD',
-      value: 1,
-      items: [{
-        item_id:       tool.id,
-        item_name:     tool.name,
-        item_category: 'Affiliate Tool',
-        quantity:      1,
-        price:         1
-      }]
-    });
-    // Also fire a dedicated affiliate_click event for custom reporting
-    gtag('event', 'affiliate_click', {
-      tool_id:   tool.id,
-      tool_name: tool.name,
-      link_url:  url
-    });
-  }
-  // Listen for all link clicks
-  document.addEventListener('click', function(e) {
-    var el = e.target.closest('a');
-    if (!el) return;
-    var href = el.href || '';
-    if (href) handleAffiliateClick(href);
-  }, true);
-})();
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -121,7 +57,8 @@
                 "name": "What is the best undress AI app in 2026?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Based on our testing, CandyAI offers the best all-in-one experience combining AI girlfriend chat with image and video generation. SpicyChat AI has the best dedicated nudifier feature. OurDream.ai specializes in deepnude-style features and undress AI capabilities."                }
+                    "text": "Based on our testing, SpicyChat AI offers the best nudifier with its built-in AI image generation. OurDream.ai specializes in deepnude-style features and undress AI capabilities. CandyAI combines AI girlfriend chat with high-quality NSFW image generation."
+                }
             },
             {
                 "@type": "Question",
@@ -219,7 +156,7 @@
         .toc-list a::before { content: '→'; color: var(--gray-light); }
         
         /* Main layout with sidebar */
-        .main-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; max-width: 1400px; margin: 0 auto; padding: 0 2rem 3rem; position: relative; z-index: 1; }
+        .main-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; max-width: 1400px; margin: 0 auto; padding: 0 2rem 3rem; position: relative; z-index: 1; width: 100%; box-sizing: border-box; }
         
         /* Side Navigation */
         .side-nav { position: sticky; top: 100px; height: fit-content; }
@@ -232,7 +169,7 @@
         .side-nav-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; background: var(--frost); flex-shrink: 0; }
         .side-nav-link.active .side-nav-icon { background: var(--ice); }
         
-        .content-section { }
+        .content-section { width: 100%; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; word-wrap: break-word; }
         .content-section h2 { font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1rem; margin-top: 2.5rem; display: flex; align-items: center; gap: 0.75rem; }
         .content-section h2:first-child { margin-top: 0; }
         .content-section h3 { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; color: var(--charcoal); margin: 2rem 0 1rem; }
@@ -411,11 +348,111 @@
         }
         @media (max-width: 600px) {
             .footer-content { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
+            
             .hero h1 { font-size: 2rem; }
             .hero-stats { flex-direction: column; gap: 1rem; }
             .side-nav-list { flex-direction: column; }
         }
+            
+        
+
+
+    
+
+
+    
+/* ========== MOBILE NAVIGATION FIX ========== */
+.mobile-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}
+.hamburger{display:block;width:22px;height:2px;background:#1E293B;position:relative;transition:all .3s}
+.hamburger::before,.hamburger::after{content:'';position:absolute;width:22px;height:2px;background:#1E293B;left:0;transition:all .3s}
+.hamburger::before{top:-6px}
+.hamburger::after{top:6px}
+.mobile-nav-toggle.active .hamburger{background:transparent}
+.mobile-nav-toggle.active .hamburger::before{transform:rotate(45deg);top:0}
+.mobile-nav-toggle.active .hamburger::after{transform:rotate(-45deg);top:0}
+.nav-dropdown{position:relative}
+.nav-dropdown-toggle{display:flex;align-items:center;gap:4px;color:#475569;font-weight:500;cursor:pointer;background:none;border:none;font-size:1rem;font-family:inherit;padding:0}
+.nav-dropdown-toggle:hover{color:#4A9EBF}
+.nav-dropdown-toggle svg{width:12px;height:12px;transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-toggle svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.12);min-width:200px;padding:8px 0;opacity:0;visibility:hidden;transition:all .2s;margin-top:12px;z-index:100}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1E293B;font-size:.9rem;font-weight:500;transition:background .15s}
+.nav-dropdown-item:hover{background:#E8F4F8;color:#4A9EBF}
+.btn-submit-nav{background:#1E293B;color:#fff!important;padding:10px 20px;border-radius:10px;text-decoration:none!important;font-weight:600;font-size:.85rem;display:inline-block;transition:all .2s}
+.btn-submit-nav:hover{background:#4A9EBF;transform:translateY(-1px)}
+@media(max-width:900px){
+.mobile-nav-toggle{display:flex!important;align-items:center;justify-content:center}
+.nav-links{position:fixed;top:0;right:-300px;width:280px;height:100vh;height:100dvh;background:#fff;flex-direction:column;align-items:stretch;padding:70px 20px 30px;gap:0;box-shadow:-4px 0 20px rgba(0,0,0,.1);transition:right .3s ease;overflow-y:auto;z-index:1000;display:flex}
+.nav-links.active{right:0}
+.nav-link{padding:16px 0;border-bottom:1px solid #f1f5f9;font-size:1.05rem;display:block;color:#1E293B}
+.nav-dropdown{border-bottom:1px solid #f1f5f9}
+.nav-dropdown-toggle{width:100%;justify-content:space-between;padding:16px 0;font-size:1.05rem;color:#1E293B}
+.nav-dropdown-menu{position:static;transform:none;box-shadow:none;opacity:1;visibility:visible;display:none;margin:0;padding:0 0 12px 16px;background:transparent;border-radius:0}
+.nav-dropdown-menu::before{display:none}
+.nav-dropdown.active .nav-dropdown-menu{display:block}
+.nav-dropdown-item{padding:12px 0;font-size:.95rem;display:block}
+.btn-submit-nav{margin-top:20px;text-align:center;display:block;width:100%;padding:14px 20px}
+.main-layout{grid-template-columns:1fr}
+.side-nav{display:none}
+}
+@media(max-width:768px){
+html,body{overflow-x:hidden;width:100%;max-width:100vw}
+.header-content{padding:12px 16px}
+.logo-text{font-size:1.2rem}
+.hero{padding:2rem 1rem;max-width:100%}
+.hero h1{font-size:1.75rem;line-height:1.3}
+.hero>p{font-size:0.95rem;max-width:100%}
+.toc{margin:0 1rem 2rem;max-width:100%;box-sizing:border-box}
+.toc-list{grid-template-columns:1fr}
+.main-layout{padding:0 1rem 2rem;grid-template-columns:1fr;max-width:100%}
+.side-nav{display:none!important}
+.content-section{max-width:100%}
+.content-section h2{font-size:1.4rem;flex-wrap:wrap}
+.content-section h3{font-size:1.2rem}
+.content-section>p{font-size:0.95rem;max-width:100%}
+.tools-grid{gap:1rem}
+.tool-card{padding:1.25rem;max-width:100%;box-sizing:border-box}
+.tool-icon{width:48px;height:48px;font-size:1.4rem}
+.tool-name{font-size:1.1rem}
+.tool-description{font-size:0.9rem}
+.tool-tags{gap:0.35rem;flex-wrap:wrap}
+.tool-tag{font-size:0.7rem;padding:0.2rem 0.5rem}
+.tool-footer{flex-direction:column;gap:0.75rem;align-items:stretch}
+.btn-visit{width:100%;justify-content:center;padding:0.75rem 1rem}
+.comparison-table-wrapper{margin:1rem -1rem;padding:0 1rem;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:calc(100% + 2rem)}
+.comparison-table{font-size:0.75rem;min-width:600px}
+.comparison-table th,.comparison-table td{padding:0.6rem 0.4rem}
+.pros-cons{grid-template-columns:1fr;gap:1rem}
+.pros-box,.cons-box{padding:1.25rem}
+.pricing-breakdown{padding:1.5rem 1rem;max-width:100%;box-sizing:border-box}
+.pricing-grid{grid-template-columns:1fr;gap:1rem}
+.pricing-tier{padding:1.25rem}
+.pricing-tier .price{font-size:1.75rem}
+.feature-box{padding:1.25rem;max-width:100%;box-sizing:border-box}
+.feature-box h3{font-size:1.1rem}
+.feature-box ul{padding-left:1.25rem}
+.feature-box li{font-size:0.9rem}
+.faq-grid{grid-template-columns:1fr;gap:1rem}
+.faq-card{padding:1.25rem}
+.faq-card h4{font-size:0.95rem}
+.faq-card p{font-size:0.9rem}
+.cta-section{padding:1.75rem 1rem;margin:1.5rem 0;max-width:100%;box-sizing:border-box}
+.cta-section h3{font-size:1.25rem}
+.cta-section p{font-size:0.9rem}
+.cta-btn{padding:0.75rem 1.25rem;font-size:0.9rem}
+.disclaimer-box{padding:1.25rem;max-width:100%;box-sizing:border-box}
+.footer-content{grid-template-columns:1fr;gap:2rem;text-align:center}
+footer{padding:2.5rem 1rem 1.5rem}
+}
+@media(max-width:480px){
+.hero h1{font-size:1.4rem}
+.tool-card{padding:1rem}
+.pricing-tier .price{font-size:1.5rem}
+}
+/* ========== END MOBILE FIX ========== */
+
     </style>
 </head>
 <body>
@@ -423,22 +460,46 @@
     <div class="bg-decoration bg-blob-2"></div>
     <div class="bg-decoration bg-blob-3"></div>
 
+        
     <header>
         <div class="header-content">
             <a href="/" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                </div>
-                <span class="logo-text">Xchatbots</span>
+                <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="logo-text">xchatbots</span>
             </a>
+            <button class="mobile-nav-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
             <nav class="nav-links">
                 <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">
+                        Categories
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="/virtual-girlfriend" class="nav-dropdown-item"><span>💕</span> AI Girlfriend</a>
+                        <a href="/nsfw-chat" class="nav-dropdown-item"><span>🔥</span> NSFW Chat</a>
+                        <a href="/nsfw-image-generation" class="nav-dropdown-item"><span>🖼️</span> AI Images</a>
+                        <a href="/nsfw-video-generation" class="nav-dropdown-item"><span>🎬</span> AI Videos</a>
+                        <a href="/uncensored-ai" class="nav-dropdown-item"><span>🔓</span> Uncensored AI</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">
+                        Alternatives
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="/alternatives/character-ai-alternatives" class="nav-dropdown-item"><span>🎭</span> Character AI</a>
+                        <a href="/alternatives/janitor-ai-alternatives" class="nav-dropdown-item"><span>🧹</span> Janitor AI</a>
+                        <a href="/alternatives/crushon-ai-alternatives" class="nav-dropdown-item"><span>❤️</span> CrushOn AI</a>
+                        <a href="/alternatives/spicychat-alternatives" class="nav-dropdown-item"><span>🌶️</span> SpicyChat</a>
+                        <a href="/alternatives/perchance-ai-alternatives" class="nav-dropdown-item"><span>🎲</span> Perchance AI</a>
+                    </div>
+                </div>
                 <a href="/blog" class="nav-link">Blog</a>
-                <a href="/nsfw-chat" class="nav-link">Chat</a>
-                <a href="/virtual-girlfriend" class="nav-link">Virtual GF</a>
-                <a href="/nsfw-image-generation" class="nav-link active">Images</a>
-                <a href="/nsfw-video-generation" class="nav-link">Videos</a>
-                <a href="/submit" class="btn-submit">Submit AI</a>
+                <a href="/submit" class="btn-submit-nav">Submit AI</a>
             </nav>
         </div>
     </header>
@@ -507,46 +568,9 @@
             <p>After extensive testing, these platforms consistently delivered the best NSFW image generation with nudifier features, deepnude-style capabilities, and undress AI functionality. Each offers unique strengths—the "best" choice depends on whether you prioritize photorealism, character variety, or combined chat + image features.</p>
             
             <div class="tools-grid">
-<!-- CandyAI -->
-                <article class="tool-card featured">
-                    <span class="tool-badge">🍬 Editor's Choice</span>
-                    <div class="tool-card-header">
-                        <div class="tool-icon">🍬</div>
-                        <div class="tool-info">
-                            <h3 class="tool-name">CandyAI</h3>
-                            <div class="tool-rating">
-                                <div class="stars">
-                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                </div>
-                                <span class="rating-value">4.9</span>
-                                <span class="reviews-count">(5,063)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="tool-description">AI Girlfriend platform with NSFW video generation and AI porn generator. Create high-quality videos of your wildest fantasies.</p>
-                    <div class="tool-tags">
-                        <span class="tool-tag">AI Girlfriend</span>
-                        <span class="tool-tag">Video Gen</span>
-                        <span class="tool-tag">Sexchat</span>
-                    </div>
-                    <div class="tool-footer">
-                        <div class="tool-pricing">
-                            <span class="price-label">Pricing</span>
-                            <span class="price-value">Free / $5.99/mo</span>
-                        </div>
-                        <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">
-                            Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                        </a>
-                    </div>
-                </article>
-                
                 <!-- SpicyChat AI -->
-                <article class="tool-card">
-                    <span class="tool-badge editor">🔥 Best Nudifier</span>
+                <article class="tool-card featured">
+                    <span class="tool-badge editor">🔥 Editor's Choice</span>
                     <div class="tool-card-header">
                         <div class="tool-icon">🔥</div>
                         <div class="tool-info">
@@ -559,7 +583,7 @@
                                     <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                                     <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                                 </div>
-                                <span class="rating-value">4.6</span>
+                                <span class="rating-value">4.9</span>
                                 <span class="reviews-count">(9,575)</span>
                             </div>
                         </div>
@@ -576,7 +600,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $5.00/mo</span>
                         </div>
-                        <a href="https://spicychat.ai?ref=odhkmgf" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://spicychat.ai?ref=odhkmgf" data-tool="spicychat" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -614,7 +638,44 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $9.99/mo</span>
                         </div>
-                        <a href="https://t.vlmai-3.com/406118/7709?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://t.vlmai-3.com/406118/7709?aff_sub5=SF_006OG000004lmDN" data-tool="ourdream" target="_blank" rel="nofollow noopener" class="btn-visit">
+                            Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- CandyAI -->
+                <article class="tool-card">
+                    <span class="tool-badge">⭐ Featured</span>
+                    <div class="tool-card-header">
+                        <div class="tool-icon">🍬</div>
+                        <div class="tool-info">
+                            <h3 class="tool-name">CandyAI</h3>
+                            <div class="tool-rating">
+                                <div class="stars">
+                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="rating-value">4.6</span>
+                                <span class="reviews-count">(5,063)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tool-description">AI Girlfriend platform with NSFW video generation and AI porn generator. Create high-quality videos of your wildest fantasies.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">AI Girlfriend</span>
+                        <span class="tool-tag">Video Gen</span>
+                        <span class="tool-tag">Sexchat</span>
+                    </div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing">
+                            <span class="price-label">Pricing</span>
+                            <span class="price-value">Free / $5.99/mo</span>
+                        </div>
+                        <a href="https://t.vlmai-3.com/406118/8025?aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -650,7 +711,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $9.99/mo</span>
                         </div>
-                        <a href="https://t.vlmai-3.com/406118/7761?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://t.vlmai-3.com/406118/7761?aff_sub5=SF_006OG000004lmDN" data-tool="joi" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -686,7 +747,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $7.49/mo</span>
                         </div>
-                        <a href="https://t.vlmai-3.com/406118/10349/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://t.vlmai-3.com/406118/10349/0?aff_sub5=SF_006OG000004lmDN" data-tool="xotic" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -722,7 +783,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $5.99/mo</span>
                         </div>
-                        <a href="https://t.vlmai-3.com/406118/7944?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://t.vlmai-3.com/406118/7944?aff_sub5=SF_006OG000004lmDN" data-tool="luvr" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -747,23 +808,15 @@
                     </thead>
                     <tbody>
                         <tr class="highlight-row">
-                            <td class="platform-name">CandyAI</td>
-                            <td>⭐ 4.6</td>
-                            <td>Free / $5.99/mo</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                            <td>Best Overall</td>
-                        </tr>
-                        <tr>
-                            <td class="platform-name">SpicyChat AI</td>
+                            <td class="platform-name">🔥 SpicyChat AI</td>
                             <td>⭐ 4.9</td>
                             <td>Free / $5/mo</td>
                             <td class="check">✓ Nudifier</td>
                             <td class="cross">✗</td>
-                            <td>Best Nudifier</td>
+                            <td>Best Overall</td>
                         </tr>
                         <tr>
-                            <td class="platform-name">OurDream.ai</td>
+                            <td class="platform-name">💕 OurDream.ai</td>
                             <td>⭐ 4.4</td>
                             <td>Free / $9.99/mo</td>
                             <td class="check">✓ Undress AI</td>
@@ -771,7 +824,15 @@
                             <td>Deepnude Alternative</td>
                         </tr>
                         <tr>
-                            <td class="platform-name"> Joi AI</td>
+                            <td class="platform-name">🍬 CandyAI</td>
+                            <td>⭐ 4.6</td>
+                            <td>Free / $5.99/mo</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td>AI Girlfriend + Images</td>
+                        </tr>
+                        <tr>
+                            <td class="platform-name">💋 Joi AI</td>
                             <td>⭐ 4.5</td>
                             <td>Free / $9.99/mo</td>
                             <td class="check">✓</td>
@@ -779,7 +840,7 @@
                             <td>iOS App</td>
                         </tr>
                         <tr>
-                            <td class="platform-name"> Aimour AI</td>
+                            <td class="platform-name">💕 Aimour AI</td>
                             <td>⭐ 4.3</td>
                             <td>Free / $9.99/mo</td>
                             <td class="check">✓</td>
@@ -787,7 +848,7 @@
                             <td>54+ Models</td>
                         </tr>
                         <tr>
-                            <td class="platform-name"> Xotic AI</td>
+                            <td class="platform-name">🔮 Xotic AI</td>
                             <td>⭐ 4.0</td>
                             <td>Free / $7.49/mo</td>
                             <td class="check">✓ Photorealistic</td>
@@ -795,7 +856,7 @@
                             <td>Realism</td>
                         </tr>
                         <tr>
-                            <td class="platform-name"> Luvr AI</td>
+                            <td class="platform-name">💜 Luvr AI</td>
                             <td>⭐ 4.2</td>
                             <td>Free / $5.99/mo</td>
                             <td class="check">✓</td>
@@ -803,7 +864,7 @@
                             <td>Scenario Builder</td>
                         </tr>
                         <tr>
-                            <td class="platform-name"> JuicyChat</td>
+                            <td class="platform-name">🧃 JuicyChat</td>
                             <td>⭐ 3.8</td>
                             <td>Free / $12.99/mo</td>
                             <td class="check">✓ Deepnude-style</td>
@@ -833,7 +894,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $9.99/mo</span>
                         </div>
-                        <a href="https://t.vlmai-3.com/406118/7709?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://t.vlmai-3.com/406118/7709?aff_sub5=SF_006OG000004lmDN" data-tool="ourdream" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -853,7 +914,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $12.99/mo</span>
                         </div>
-                        <a href="https://www.juicychat.ai?utm_source=xchatbots" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" data-tool="juicychat" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -873,7 +934,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $9.99/mo</span>
                         </div>
-                        <a href="https://t.vlmai-3.com/406118/7986?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://t.vlmai-3.com/406118/7986?aff_sub5=SF_006OG000004lmDN" data-tool="aimour" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -925,7 +986,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $5.00/mo</span>
                         </div>
-                        <a href="https://spicychat.ai?utm_source=xchatbots" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://spicychat.ai?ref=odhkmgf" data-tool="spicychat" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -945,7 +1006,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $7.49/mo</span>
                         </div>
-                        <a href="https://t.vlmai-3.com/406118/10349/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://t.vlmai-3.com/406118/10349/0?aff_sub5=SF_006OG000004lmDN" data-tool="xotic" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -965,7 +1026,7 @@
                             <span class="price-label">Pricing</span>
                             <span class="price-value">Free / $5.99/mo</span>
                         </div>
-                        <a href="https://t.vlmai-3.com/406118/7944?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">
+                        <a href="https://t.vlmai-3.com/406118/7944?aff_sub5=SF_006OG000004lmDN" data-tool="luvr" target="_blank" rel="nofollow noopener" class="btn-visit">
                             Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                         </a>
                     </div>
@@ -1078,8 +1139,9 @@
             <div class="feature-box">
                 <h3>How to Choose the Right Tool</h3>
                 <p>With many options available, here's a decision framework based on your primary use case:</p>
+                <p><strong>Choose SpicyChat AI if:</strong> You want the best overall experience with a built-in nudifier, massive character library, and the most generous free tier at just $5/mo for premium.</p>
+                <p><strong>Choose OurDream.ai if:</strong> You specifically want deepnude-style features, undress AI capabilities, and face swap for creating custom scenarios with AI characters.</p>
                 <p><strong>Choose CandyAI if:</strong> You want an <a href="/virtual-girlfriend">AI girlfriend experience</a> combined with high-quality image and video generation—chat, images, and relationship in one platform. See our <a href="/blog/candy-ai-vs-spicychat">CandyAI vs SpicyChat comparison</a> for details.</p>
-                <p><strong>Choose SpicyChat AI if:</strong> You want a dedicated nudifier with a massive character library and the most generous free tier at just $5/mo for premium.</p>
                 <p><strong>Choose Xotic AI if:</strong> Photorealistic image quality is your top priority and you want ultra-realistic virtual companions with voice call features.</p>
                 <p><strong>Choose Luvr AI if:</strong> You value the Scenario Builder for custom roleplay and want fetish filters to find characters that match specific preferences.</p>
                 <p><strong>Choose JuicyChat if:</strong> You prefer anime and game-style characters with <a href="/alternatives/janitor-ai-alternatives">Janitor AI style</a> roleplay and deepnude-style image generation.</p>
@@ -1114,7 +1176,7 @@
         <div class="faq-grid">
             <div class="faq-card">
                 <h4>What is the best undress AI app in 2026?</h4>
-                <p>Based on our testing, <strong>CandyAI</strong> offers the best all-in-one experience — combining AI girlfriend chat with image and video generation at $5.99/mo. <strong>SpicyChat AI</strong> has the best dedicated nudifier for just $5/mo. <strong>OurDream.ai</strong> specializes in deepnude-style features and undress AI with face swap.</p> 
+                <p>Based on our testing, <strong>SpicyChat AI</strong> offers the best nudifier with built-in AI image generation for just $5/mo. For dedicated deepnude-style features, <strong>OurDream.ai</strong> specializes in undress AI capabilities with face swap. <strong>CandyAI</strong> is best if you want combined <a href="/virtual-girlfriend">AI girlfriend</a> chat with image generation.</p>
             </div>
             <div class="faq-card">
                 <h4>Is undress AI legal?</h4>
@@ -1197,5 +1259,55 @@
             <p>&copy; 2026 Xchatbots. All rights reserved. All users must be 18+ to access this site.</p>
         </div>
     </footer>
+
+    
+
+<!-- Dynamic Affiliate Links from Notion -->
+<script>
+(async function(){
+    try {
+        const r = await fetch('https://test.weissmilch.workers.dev/affiliate-links');
+        if(!r.ok) return;
+        const links = await r.json();
+        document.querySelectorAll('a[data-tool]').forEach(function(a){
+            const t = a.dataset.tool.toLowerCase();
+            if(links[t]) a.href = links[t];
+        });
+    } catch(e) { console.warn('Links not loaded'); }
+})();
+</script>
+
+
+
+
+
+<!-- Mobile Navigation Script -->
+<script>
+(function() {
+    var toggle = document.querySelector('.mobile-nav-toggle');
+    var nav = document.querySelector('.nav-links');
+    
+    // Hamburger toggle
+    if (toggle && nav) {
+        toggle.onclick = function() {
+            toggle.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        };
+    }
+    
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    for (var i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].onclick = function(e) {
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+                this.parentElement.classList.toggle('active');
+            }
+        };
+    }
+})();
+</script>
+
 </body>
 </html>
