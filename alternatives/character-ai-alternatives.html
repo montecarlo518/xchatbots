@@ -11,7 +11,6 @@
     </script>
     <script>
 (function() {
-  // Map affiliate link patterns to tool names & IDs
   var affiliateTools = [
     { id: 'candy_ai',           name: 'CandyAI',                  pattern: 't.vlmai-3.com/406118/10022' },
     { id: 'funy_ai',            name: 'Funy AI',                  pattern: 'funy.ai' },
@@ -35,36 +34,20 @@
   ];
   function getToolForUrl(url) {
     for (var i = 0; i < affiliateTools.length; i++) {
-      if (url.indexOf(affiliateTools[i].pattern) !== -1) {
-        return affiliateTools[i];
-      }
+      if (url.indexOf(affiliateTools[i].pattern) !== -1) return affiliateTools[i];
     }
     return null;
   }
   function handleAffiliateClick(url) {
     var tool = getToolForUrl(url);
     if (!tool) return;
-    // Fire as a GA4 'purchase' event with the tool as a product
     gtag('event', 'purchase', {
       transaction_id: 'aff_' + tool.id + '_' + Date.now(),
-      currency: 'USD',
-      value: 1,
-      items: [{
-        item_id:       tool.id,
-        item_name:     tool.name,
-        item_category: 'Affiliate Tool',
-        quantity:      1,
-        price:         1
-      }]
+      currency: 'USD', value: 1,
+      items: [{ item_id: tool.id, item_name: tool.name, item_category: 'Affiliate Tool', quantity: 1, price: 1 }]
     });
-    // Also fire a dedicated affiliate_click event for custom reporting
-    gtag('event', 'affiliate_click', {
-      tool_id:   tool.id,
-      tool_name: tool.name,
-      link_url:  url
-    });
+    gtag('event', 'affiliate_click', { tool_id: tool.id, tool_name: tool.name, link_url: url });
   }
-  // Listen for all link clicks
   document.addEventListener('click', function(e) {
     var el = e.target.closest('a');
     if (!el) return;
@@ -83,34 +66,24 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://x-chatbots.com/alternatives/character-ai-alternatives">
     
-    <!-- Open Graph -->
     <meta property="og:title" content="10 Best Character AI Alternatives (No Filter & NSFW) 2026">
     <meta property="og:description" content="Looking for Character AI alternatives without filters? Compare 15+ uncensored AI chatbots that allow NSFW content, roleplay, and unrestricted conversations.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://x-chatbots.com/alternatives/character-ai-alternatives">
     
-    <!-- Article Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "10 Best Character AI Alternatives (No Filter & NSFW) 2026",
         "description": "Comprehensive guide to the best Character AI alternatives without filters. Compare uncensored AI chatbots for NSFW roleplay and unrestricted conversations.",
-        "author": {
-            "@type": "Organization",
-            "name": "Xchatbots"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Xchatbots",
-            "url": "https://x-chatbots.com"
-        },
+        "author": { "@type": "Organization", "name": "Xchatbots" },
+        "publisher": { "@type": "Organization", "name": "Xchatbots", "url": "https://x-chatbots.com" },
         "datePublished": "2025-12-01",
         "dateModified": "2026-03-04"
     }
     </script>
     
-    <!-- FAQ Schema for Rich Snippets -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -119,42 +92,27 @@
             {
                 "@type": "Question",
                 "name": "Why do people look for Character AI alternatives?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Character AI has strict content filters that block NSFW content, romantic scenarios, and even mild violence. Many users want alternatives that allow uncensored roleplay, adult conversations, and creative freedom without constant filter interruptions."
-                }
+                "acceptedAnswer": { "@type": "Answer", "text": "Character AI has strict content filters that block NSFW content, romantic scenarios, and even mild violence. Many users want alternatives that allow uncensored roleplay, adult conversations, and creative freedom without constant filter interruptions." }
             },
             {
                 "@type": "Question",
                 "name": "What is the best Character AI alternative without filters?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "SpicyChat.ai is widely considered the best Character AI alternative for NSFW content, offering similar character creation tools with no content restrictions. CrushOn.AI and JanitorAI are also excellent options with large character libraries and uncensored conversations."
-                }
+                "acceptedAnswer": { "@type": "Answer", "text": "SpicyChat.ai is widely considered the best Character AI alternative for NSFW content, offering similar character creation tools with no content restrictions. CrushOn.AI and JanitorAI are also excellent options with large character libraries and uncensored conversations." }
             },
             {
                 "@type": "Question",
                 "name": "Are there free Character AI alternatives?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, several alternatives offer free tiers. SpicyChat offers 50 free messages daily, CrushOn.AI provides 30 free messages, and JanitorAI has a generous free tier. JuicyChat and others also offer limited free access."
-                }
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes, several alternatives offer free tiers. SpicyChat offers 50 free messages daily, CrushOn.AI provides 30 free messages, and JanitorAI has a generous free tier. JuicyChat and others also offer limited free access." }
             },
             {
                 "@type": "Question",
                 "name": "Can I import my Character AI characters to alternatives?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Most alternatives don't support direct imports, but you can recreate characters using similar description formats. Many platforms like SpicyChat and CrushOn.AI use similar character definition structures, making recreation straightforward."
-                }
+                "acceptedAnswer": { "@type": "Answer", "text": "Most alternatives don't support direct imports, but you can recreate characters using similar description formats. Many platforms like SpicyChat and CrushOn.AI use similar character definition structures, making recreation straightforward." }
             },
             {
                 "@type": "Question",
                 "name": "Is Character AI getting more censored?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, Character AI has progressively increased its content filters since 2023, blocking more types of content including mild romance, violence in fiction, and even some non-adult themes. This has driven many users to seek alternatives."
-                }
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes, Character AI has progressively increased its content filters since 2023, blocking more types of content including mild romance, violence in fiction, and even some non-adult themes. This has driven many users to seek alternatives." }
             }
         ]
     }
@@ -163,41 +121,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ice: #E8F4F8;
-            --ice-light: #F5FAFB;
-            --blue: #4A9EBF;
-            --blue-dark: #2D7A9C;
-            --slate: #94A3B8;
-            --slate-dark: #64748B;
-            --lavender: #E0E7FF;
-            --mint: #D1FAE5;
-            --frost: #F8FAFC;
-            --charcoal: #1E293B;
-            --gray-warm: #475569;
-            --gray-light: #94A3B8;
-            --white: #FFFFFF;
-            --shadow-soft: 0 4px 20px rgba(30, 41, 59, 0.06);
-            --shadow-medium: 0 8px 40px rgba(30, 41, 59, 0.1);
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 32px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --green: #10B981;
-            --red: #EF4444;
-            --orange: #F59E0B;
+            --ice: #E8F4F8; --ice-light: #F5FAFB; --blue: #4A9EBF; --blue-dark: #2D7A9C;
+            --slate: #94A3B8; --slate-dark: #64748B; --lavender: #E0E7FF; --mint: #D1FAE5;
+            --frost: #F8FAFC; --charcoal: #1E293B; --gray-warm: #475569; --gray-light: #94A3B8;
+            --white: #FFFFFF; --shadow-soft: 0 4px 20px rgba(30,41,59,0.06);
+            --shadow-medium: 0 8px 40px rgba(30,41,59,0.1); --radius-sm: 12px;
+            --radius-md: 20px; --radius-lg: 32px; --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            --green: #10B981; --red: #EF4444; --orange: #F59E0B;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; background: var(--frost); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
-        
         .bg-decoration { position: fixed; pointer-events: none; z-index: 0; }
         .bg-blob-1 { top: -200px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, var(--ice) 0%, transparent 70%); border-radius: 50%; opacity: 0.7; }
         .bg-blob-2 { bottom: 20%; left: -200px; width: 500px; height: 500px; background: radial-gradient(circle, var(--lavender) 0%, transparent 70%); border-radius: 50%; opacity: 0.5; }
-        
-        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30, 41, 59, 0.05); }
+        header { position: sticky; top: 0; z-index: 100; background: rgba(248,250,252,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30,41,59,0.05); }
         .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74, 158, 191, 0.3); }
+        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(74,158,191,0.3); }
         .logo-icon svg { width: 24px; height: 24px; fill: white; }
         .logo-text { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
@@ -205,47 +145,37 @@
         .nav-link:hover { color: var(--blue); }
         .btn-submit { background: var(--charcoal); color: white; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
         .btn-submit:hover { background: var(--blue); transform: translateY(-2px); }
-        
         .hero { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 4rem 2rem 3rem; text-align: center; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--mint); border: 1px solid rgba(5, 150, 105, 0.2); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; color: #047857; margin-bottom: 1.5rem; font-weight: 500; }
-        .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--mint); border: 1px solid rgba(5,150,105,0.2); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; color: #047857; margin-bottom: 1.5rem; font-weight: 500; }
+        .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem,5vw,3rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; }
         .hero h1 span { font-style: italic; color: var(--blue); }
         .hero > p { font-size: 1.15rem; color: var(--gray-warm); max-width: 700px; margin: 0 auto 2rem; }
-        
-        /* Breadcrumb */
         .breadcrumb { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
         .breadcrumb ul { display: flex; list-style: none; gap: 0.5rem; font-size: 0.85rem; }
         .breadcrumb a { color: var(--blue); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
         .breadcrumb span { color: var(--gray-light); }
-        
-        /* Table of Contents */
         .toc { background: var(--white); border-radius: var(--radius-lg); padding: 1.5rem 2rem; margin: 2rem auto; max-width: 900px; box-shadow: var(--shadow-soft); }
         .toc-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--charcoal); }
-        .toc-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 2rem; }
+        .toc-list { list-style: none; display: grid; grid-template-columns: repeat(2,1fr); gap: 0.5rem 2rem; }
         .toc-list a { color: var(--blue); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
         .toc-list a:hover { text-decoration: underline; }
         .toc-list a::before { content: '→'; color: var(--gray-light); }
-        
-        /* Main Content */
         .main-content { max-width: 900px; margin: 0 auto; padding: 0 2rem 3rem; position: relative; z-index: 1; }
-        
         .content-section h2 { font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 500; color: var(--charcoal); margin: 3rem 0 1rem; padding-top: 1rem; }
         .content-section h3 { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; color: var(--charcoal); margin: 2rem 0 1rem; }
         .content-section p { font-size: 1rem; color: var(--gray-warm); line-height: 1.8; margin-bottom: 1.25rem; }
         .content-section a { color: var(--blue); text-decoration: none; }
         .content-section a:hover { text-decoration: underline; }
-        
-        /* Key Takeaways Box */
         .key-takeaways { background: linear-gradient(135deg, var(--ice) 0%, var(--lavender) 100%); border-radius: var(--radius-lg); padding: 1.75rem; margin: 2rem 0; }
         .key-takeaways h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; margin-bottom: 1rem; color: var(--charcoal); }
         .key-takeaways ul { list-style: none; }
         .key-takeaways li { padding: 0.6rem 0; font-size: 0.95rem; color: var(--charcoal); display: flex; align-items: flex-start; gap: 0.75rem; line-height: 1.6; }
         .key-takeaways li::before { content: '✓'; color: var(--green); font-weight: bold; font-size: 1.1rem; flex-shrink: 0; }
         .key-takeaways li strong { font-weight: 600; }
-        
-        /* Tool Cards */
-        .tool-card { background: var(--white); border-radius: var(--radius-lg); padding: 1.75rem; margin: 1.5rem 0; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); transition: var(--transition); }
+        .key-takeaways a { color: var(--charcoal); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(30,41,59,0.3); }
+        .key-takeaways a:hover { border-bottom-color: var(--blue); color: var(--blue); }
+        .tool-card { background: var(--white); border-radius: var(--radius-lg); padding: 1.75rem; margin: 1.5rem 0; box-shadow: var(--shadow-soft); border: 1px solid rgba(30,41,59,0.05); transition: var(--transition); }
         .tool-card:hover { box-shadow: var(--shadow-medium); }
         .tool-card-header { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
         .tool-icon { width: 60px; height: 60px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; flex-shrink: 0; background: var(--ice); }
@@ -255,19 +185,15 @@
         .tool-rating { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
         .stars { color: #FFB800; font-size: 0.9rem; }
         .rating-text { font-size: 0.85rem; color: var(--gray-warm); }
-        
         .tool-description { font-size: 0.95rem; color: var(--gray-warm); line-height: 1.7; margin-bottom: 1.25rem; }
-        
         .tool-features { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
         .tool-feature { padding: 0.35rem 0.75rem; background: var(--frost); border-radius: 50px; font-size: 0.8rem; color: var(--gray-warm); }
         .tool-feature.highlight { background: var(--mint); color: #047857; font-weight: 500; }
-        
-        .tool-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--ice); border-bottom: 1px solid var(--ice); margin-bottom: 1rem; }
+        .tool-meta { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--ice); border-bottom: 1px solid var(--ice); margin-bottom: 1rem; }
         .tool-meta-item { text-align: center; }
         .tool-meta-label { font-size: 0.7rem; color: var(--gray-light); text-transform: uppercase; letter-spacing: 0.5px; }
         .tool-meta-value { font-weight: 600; color: var(--charcoal); font-size: 0.9rem; }
         .tool-meta-value.free { color: var(--green); }
-        
         .tool-pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
         .tool-pros, .tool-cons { font-size: 0.85rem; }
         .tool-pros h4, .tool-cons h4 { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -277,57 +203,46 @@
         .tool-pros li, .tool-cons li { padding: 0.25rem 0; color: var(--gray-warm); display: flex; align-items: flex-start; gap: 0.4rem; font-size: 0.85rem; }
         .tool-pros li::before { content: '+'; color: var(--green); font-weight: bold; }
         .tool-cons li::before { content: '−'; color: var(--red); font-weight: bold; }
-        
         .tool-cta { display: flex; gap: 1rem; align-items: center; }
         .btn-visit { padding: 0.75rem 1.5rem; background: var(--charcoal); color: white; border: none; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: var(--transition); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
         .btn-visit:hover { background: var(--blue); transform: translateY(-2px); text-decoration: none; }
         .btn-secondary { padding: 0.75rem 1.5rem; background: transparent; color: var(--blue); border: 2px solid var(--blue); border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: var(--transition); }
         .btn-secondary:hover { background: var(--ice); text-decoration: none; }
-        
-        /* Comparison Table */
         .comparison-table-wrapper { overflow-x: auto; margin: 2rem 0; }
         .comparison-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-soft); min-width: 700px; }
         .comparison-table th { background: var(--charcoal); color: white; padding: 1rem; text-align: left; font-weight: 600; font-size: 0.85rem; }
-        .comparison-table td { padding: 1rem; border-bottom: 1px solid rgba(30, 41, 59, 0.06); font-size: 0.9rem; color: var(--gray-warm); }
+        .comparison-table td { padding: 1rem; border-bottom: 1px solid rgba(30,41,59,0.06); font-size: 0.9rem; color: var(--gray-warm); }
         .comparison-table tr:last-child td { border-bottom: none; }
         .comparison-table tr:hover td { background: var(--ice-light); }
         .comparison-table .platform-name { font-weight: 600; color: var(--charcoal); }
+        .comparison-table .platform-name a { color: var(--charcoal); text-decoration: none; }
+        .comparison-table .platform-name a:hover { color: var(--blue); text-decoration: underline; }
         .comparison-table .check { color: var(--green); font-weight: bold; }
         .comparison-table .cross { color: var(--red); }
-        .comparison-table .highlight-row td { background: rgba(16, 185, 129, 0.1); }
-        
-        /* Info Boxes */
+        .comparison-table .highlight-row td { background: rgba(16,185,129,0.1); }
         .info-box { background: var(--white); border-radius: var(--radius-lg); padding: 1.5rem; margin: 2rem 0; box-shadow: var(--shadow-soft); border-left: 4px solid var(--blue); }
         .info-box h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--charcoal); }
         .info-box p { font-size: 0.95rem; color: var(--gray-warm); margin-bottom: 0.5rem; }
         .info-box p:last-child { margin-bottom: 0; }
-        
         .warning-box { background: #FEF3C7; border-left-color: var(--orange); }
         .warning-box h3 { color: #92400E; }
         .warning-box p { color: #92400E; }
-        
-        /* Internal Links Section */
         .related-content { background: var(--ice-light); border-radius: var(--radius-lg); padding: 1.75rem; margin: 2rem 0; }
         .related-content h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; margin-bottom: 1rem; color: var(--charcoal); }
-        .related-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+        .related-links { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.75rem; }
         .related-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--white); border-radius: var(--radius-sm); text-decoration: none; color: var(--charcoal); font-weight: 500; font-size: 0.9rem; transition: var(--transition); }
         .related-link:hover { transform: translateX(4px); box-shadow: var(--shadow-soft); }
         .related-link span { font-size: 1.25rem; }
-        
-        /* FAQ Section */
         .faq-section { margin-top: 3rem; }
         .faq-section > h2 { text-align: center; margin-bottom: 2rem; }
         .faq-item { background: var(--white); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow-soft); }
         .faq-item h4 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.75rem; }
         .faq-item p { font-size: 0.95rem; color: var(--gray-warm); line-height: 1.7; }
-        
-        /* CTA Section */
         .cta-section { background: linear-gradient(135deg, var(--charcoal) 0%, #0f172a 100%); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; margin: 3rem 0; }
         .cta-section h3 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: white; margin-bottom: 0.75rem; }
         .cta-section p { color: var(--slate); font-size: 1rem; margin-bottom: 1.25rem; }
-        .cta-btn { display: inline-block; background: var(--blue); color: white !important; padding: 0.9rem 1.75rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; transition: var(--transition); text-shadow: none; }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(74, 158, 191, 0.35); color: white !important; }
-        
+        .cta-btn { display: inline-block; background: var(--blue); color: white !important; padding: 0.9rem 1.75rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; transition: var(--transition); }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(74,158,191,0.35); color: white !important; }
         footer { background: var(--charcoal); color: white; padding: 4rem 2rem 2rem; margin-top: 4rem; }
         .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
         .footer-brand p { color: var(--slate); font-size: 0.95rem; line-height: 1.7; }
@@ -342,9 +257,7 @@
         .footer-column a:hover { color: white; }
         .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; margin-top: 3rem; }
         .footer-bottom p { font-size: 0.85rem; color: var(--slate); }
-        
         @media (max-width: 768px) {
-            
             .toc-list { grid-template-columns: 1fr; }
             .tool-meta { grid-template-columns: 1fr; gap: 0.5rem; }
             .tool-pros-cons { grid-template-columns: 1fr; }
@@ -352,14 +265,7 @@
             .footer-content { grid-template-columns: 1fr; }
             .tool-cta { flex-direction: column; }
         }
-            
-        
 
-
-    
-
-
-    
 /* ========== MOBILE NAVIGATION FIX ========== */
 .mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.25);opacity:0;visibility:hidden;transition:all .3s ease;z-index:998;pointer-events:none}
 .mobile-overlay.active{opacity:1;visibility:visible;pointer-events:auto}
@@ -402,7 +308,6 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
 .logo-text{font-size:1.2rem}
 }
 /* ========== END MOBILE FIX ========== */
-
     </style>
 </head>
 <body>
@@ -451,7 +356,6 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
         </div>
     </header>
 
-    <!-- Breadcrumb -->
     <nav class="breadcrumb" style="padding-top: 1.5rem;">
         <ul>
             <li><a href="/">Home</a></li>
@@ -468,7 +372,6 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
         <p>Frustrated with Character AI's strict content filters? You're not alone. We've tested 30+ platforms to find the best uncensored alternatives that actually let you have unrestricted conversations, NSFW roleplay, and creative freedom.</p>
     </section>
 
-    <!-- Table of Contents -->
     <div class="toc" style="margin-left: 2rem; margin-right: 2rem;">
         <h3 class="toc-title">📑 Quick Navigation</h3>
         <ul class="toc-list">
@@ -490,7 +393,8 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
             <div class="key-takeaways">
                 <h3>⚡ Key Takeaways</h3>
                 <ul>
-                    <li><strong>Candy AI</strong> is the best overall Character AI alternative with a similar interface, huge character library, and no NSFW filters</li>
+                    <!-- PATCH 1: Candy AI in Key Takeaways linked to Notion affiliate URL -->
+                    <li><strong><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">Candy AI</a></strong> is the best overall Character AI alternative with a similar interface, huge character library, and no NSFW filters</li>
                     <li><strong>CrushOn.AI</strong> offers the closest experience to Character AI with better roleplay capabilities</li>
                     <li>Most alternatives offer <strong>free tiers with 20-50 messages daily</strong> which is enough to test before paying</li>
                     <li>Unlike Character AI, these platforms <strong>won't interrupt your conversations</strong> with filter warnings</li>
@@ -532,6 +436,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Character AI: no affiliate, plain text -->
                         <tr>
                             <td class="platform-name">Character AI</td>
                             <td class="cross">✗ Blocked</td>
@@ -540,40 +445,45 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                             <td>Huge</td>
                             <td>SFW only</td>
                         </tr>
+                        <!-- PATCH 2: CandyAI row linked to Notion affiliate URL -->
                         <tr class="highlight-row">
-                            <td class="platform-name">🏆 CandyAI</td>
+                            <td class="platform-name"><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">🏆 CandyAI</a></td>
                             <td class="check">✓ Full</td>
                             <td>20/day</td>
                             <td>$3.99/mo</td>
                             <td>Curated</td>
                             <td>Best Overall</td>
                         </tr>
+                        <!-- PATCH 3: SpicyChat row linked to Notion affiliate URL -->
                         <tr>
-                            <td class="platform-name">SpicyChat</td>
+                            <td class="platform-name"><a href="https://spicychat.ai?ref=odhkmgf" target="_blank" rel="nofollow noopener">SpicyChat</a></td>
                             <td class="check">✓ Full</td>
                             <td>50/day</td>
                             <td>$4.95/mo</td>
                             <td>100K+</td>
                             <td>Free Characters</td>
                         </tr>
+                        <!-- PATCH 4: CrushOn.AI row linked to Notion affiliate URL -->
                         <tr>
-                            <td class="platform-name">CrushOn.AI</td>
+                            <td class="platform-name"><a href="https://crushon.ai/?ref=ogu1ytm&mist=1" target="_blank" rel="nofollow noopener">CrushOn.AI</a></td>
                             <td class="check">✓ Full</td>
                             <td>30/day</td>
                             <td>$4.90/mo</td>
                             <td>50K+</td>
                             <td>Roleplay</td>
                         </tr>
+                        <!-- JanitorAI: not in Notion, keep existing link -->
                         <tr>
-                            <td class="platform-name">JanitorAI</td>
+                            <td class="platform-name"><a href="https://janitorai.com/?utm_source=xchatbots&utm_medium=alternatives&utm_campaign=character-ai" target="_blank" rel="noopener">JanitorAI</a></td>
                             <td class="check">✓ Full</td>
                             <td>Varies</td>
                             <td>Free/API</td>
                             <td>Large</td>
                             <td>Free Option</td>
                         </tr>
+                        <!-- PATCH 5: JuicyChat row linked to Notion affiliate URL -->
                         <tr>
-                            <td class="platform-name">JuicyChat</td>
+                            <td class="platform-name"><a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" target="_blank" rel="nofollow noopener">JuicyChat</a></td>
                             <td class="check">✓ Full</td>
                             <td>40/day</td>
                             <td>$12.99/mo</td>
@@ -650,7 +560,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                 </div>
                 
                 <div class="tool-cta">
-                    <a href="https://t.vlmai-3.com/406118/8025?aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit">Visit CandyAI →</a>
+                    <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" class="btn-visit">Visit CandyAI →</a>
                     <a href="/virtual-girlfriend" class="btn-secondary">More AI Girlfriends</a>
                 </div>
             </div>
@@ -722,7 +632,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                 </div>
             </div>
 
-            <!-- Tool 2: CrushOn -->
+            <!-- Tool 3: CrushOn -->
             <div class="tool-card" id="crushon">
                 <div class="tool-card-header">
                     <div class="tool-icon">💕</div>
@@ -782,12 +692,12 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                 </div>
                 
                 <div class="tool-cta">
-                    <a href="https://crushon.ai?utm_source=xchatbots" data-tool="crushon" target="_blank" rel="noopener" class="btn-visit">Visit CrushOn.AI →</a>
+                    <a href="https://crushon.ai/?ref=ogu1ytm&mist=1" data-tool="crushon" target="_blank" rel="noopener" class="btn-visit">Visit CrushOn.AI →</a>
                     <a href="/roleplay" class="btn-secondary">More Roleplay AIs</a>
                 </div>
             </div>
 
-            <!-- Tool 3: JanitorAI -->
+            <!-- Tool 4: JanitorAI -->
             <div class="tool-card" id="janitorai">
                 <div class="tool-card-header">
                     <div class="tool-icon">🧹</div>
@@ -1246,28 +1156,15 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
             <div class="related-content">
                 <h3>📚 Related Guides You Might Find Helpful</h3>
                 <div class="related-links">
-                    <a href="/best/nsfw-ai-chatbots" class="related-link">
-                        <span>🏆</span> Best NSFW AI Chatbots 2026
-                    </a>
-                    <a href="/alternatives/spicychat-alternatives" class="related-link">
-                        <span>🌶️</span> SpicyChat Alternatives
-                    </a>
-                    <a href="/nsfw-chat" class="related-link">
-                        <span>💬</span> All NSFW Chat Platforms
-                    </a>
-                    <a href="/virtual-girlfriend" class="related-link">
-                        <span>💕</span> AI Girlfriend Apps
-                    </a>
-                    <a href="/roleplay" class="related-link">
-                        <span>🎭</span> AI Roleplay Platforms
-                    </a>
-                    <a href="/nsfw-image-generation" class="related-link">
-                        <span>🎨</span> NSFW Image Generators
-                    </a>
+                    <a href="/best/nsfw-ai-chatbots" class="related-link"><span>🏆</span> Best NSFW AI Chatbots 2026</a>
+                    <a href="/alternatives/spicychat-alternatives" class="related-link"><span>🌶️</span> SpicyChat Alternatives</a>
+                    <a href="/nsfw-chat" class="related-link"><span>💬</span> All NSFW Chat Platforms</a>
+                    <a href="/virtual-girlfriend" class="related-link"><span>💕</span> AI Girlfriend Apps</a>
+                    <a href="/roleplay" class="related-link"><span>🎭</span> AI Roleplay Platforms</a>
+                    <a href="/nsfw-image-generation" class="related-link"><span>🎨</span> NSFW Image Generators</a>
                 </div>
             </div>
 
-            <!-- Why Users Leave Character AI -->
             <h2 id="why-users-leave">Why Users Leave Character AI (The Filter Problem)</h2>
             
             <p>Character AI's content filter has become increasingly aggressive, and it's the #1 reason users search for <strong>Character AI alternatives without NSFW filter</strong>. Here's what's driving the exodus:</p>
@@ -1302,7 +1199,6 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
             
             <p>The filter has become so aggressive that users report it breaking mid-conversation for seemingly innocent content. This unpredictability is what drives users to seek <strong>best Character AI alternatives without NSFW filter</strong> — platforms where they can actually finish their stories.</p>
 
-            <!-- Character AI vs SpicyChat -->
             <h2 id="character-ai-vs-spicychat">Character AI vs SpicyChat: Side-by-Side Comparison</h2>
             
             <p>SpicyChat is the most direct Character AI replacement, offering nearly identical features minus the restrictions. Here's how they compare:</p>
@@ -1317,46 +1213,14 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">NSFW Content</td>
-                            <td style="padding: 14px; text-align: center; color: #ef4444;">❌ Blocked</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ Fully Allowed</td>
-                        </tr>
-                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Romance/Intimacy</td>
-                            <td style="padding: 14px; text-align: center; color: #ef4444;">❌ Filter Triggers</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ No Restrictions</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Character Library</td>
-                            <td style="padding: 14px; text-align: center;">Millions</td>
-                            <td style="padding: 14px; text-align: center;">100K+ NSFW-friendly</td>
-                        </tr>
-                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Free Messages</td>
-                            <td style="padding: 14px; text-align: center;">Unlimited</td>
-                            <td style="padding: 14px; text-align: center;">50/day</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Image Generation</td>
-                            <td style="padding: 14px; text-align: center; color: #ef4444;">❌ No</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ Built-in Nudifier</td>
-                        </tr>
-                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Premium Price</td>
-                            <td style="padding: 14px; text-align: center;">$4.95/mo</td>
-                            <td style="padding: 14px; text-align: center;">$4.95/mo</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Mobile App</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ iOS & Android</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ iOS & Android</td>
-                        </tr>
-                        <tr style="background: #f9fafb;">
-                            <td style="padding: 14px; font-weight: 600;">Custom Characters</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ Yes</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ Yes</td>
-                        </tr>
+                        <tr style="border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">NSFW Content</td><td style="padding: 14px; text-align: center; color: #ef4444;">❌ Blocked</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ Fully Allowed</td></tr>
+                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Romance/Intimacy</td><td style="padding: 14px; text-align: center; color: #ef4444;">❌ Filter Triggers</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ No Restrictions</td></tr>
+                        <tr style="border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Character Library</td><td style="padding: 14px; text-align: center;">Millions</td><td style="padding: 14px; text-align: center;">100K+ NSFW-friendly</td></tr>
+                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Free Messages</td><td style="padding: 14px; text-align: center;">Unlimited</td><td style="padding: 14px; text-align: center;">50/day</td></tr>
+                        <tr style="border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Image Generation</td><td style="padding: 14px; text-align: center; color: #ef4444;">❌ No</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ Built-in Nudifier</td></tr>
+                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Premium Price</td><td style="padding: 14px; text-align: center;">$4.95/mo</td><td style="padding: 14px; text-align: center;">$4.95/mo</td></tr>
+                        <tr style="border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Mobile App</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ iOS & Android</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ iOS & Android</td></tr>
+                        <tr style="background: #f9fafb;"><td style="padding: 14px; font-weight: 600;">Custom Characters</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ Yes</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ Yes</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1367,7 +1231,6 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                 <a href="https://spicychat.ai?ref=odhkmgf" target="_blank" rel="nofollow noopener" style="display: inline-block; background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white; padding: 14px 32px; border-radius: 8px; font-weight: 600; text-decoration: none;">Try SpicyChat Free →</a>
             </div>
 
-            <!-- Character AI vs Candy AI -->
             <h2 id="character-ai-vs-candy">Character AI vs Candy AI: Which Is Better?</h2>
             
             <p>Candy AI takes a different approach than Character AI — instead of community characters, it focuses on premium AI companions with advanced features. Here's how they compare:</p>
@@ -1382,46 +1245,14 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Primary Use</td>
-                            <td style="padding: 14px; text-align: center;">General Roleplay</td>
-                            <td style="padding: 14px; text-align: center;">AI Girlfriend/Boyfriend</td>
-                        </tr>
-                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">NSFW Content</td>
-                            <td style="padding: 14px; text-align: center; color: #ef4444;">❌ Blocked</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ Fully Allowed</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Image Generation</td>
-                            <td style="padding: 14px; text-align: center; color: #ef4444;">❌ No</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ NSFW Images</td>
-                        </tr>
-                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Video Generation</td>
-                            <td style="padding: 14px; text-align: center; color: #ef4444;">❌ No</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ AI Videos</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Voice Messages</td>
-                            <td style="padding: 14px; text-align: center; color: #ef4444;">❌ No</td>
-                            <td style="padding: 14px; text-align: center; color: #10B981;">✓ Voice Chat</td>
-                        </tr>
-                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Memory System</td>
-                            <td style="padding: 14px; text-align: center;">Basic</td>
-                            <td style="padding: 14px; text-align: center;">Adaptive Long-term</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #e5e7eb;">
-                            <td style="padding: 14px; font-weight: 600;">Character Library</td>
-                            <td style="padding: 14px; text-align: center;">Millions</td>
-                            <td style="padding: 14px; text-align: center;">Curated Companions</td>
-                        </tr>
-                        <tr style="background: #f9fafb;">
-                            <td style="padding: 14px; font-weight: 600;">Premium Price</td>
-                            <td style="padding: 14px; text-align: center;">$4.95/mo</td>
-                            <td style="padding: 14px; text-align: center;">$3.99/mo</td>
-                        </tr>
+                        <tr style="border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Primary Use</td><td style="padding: 14px; text-align: center;">General Roleplay</td><td style="padding: 14px; text-align: center;">AI Girlfriend/Boyfriend</td></tr>
+                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">NSFW Content</td><td style="padding: 14px; text-align: center; color: #ef4444;">❌ Blocked</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ Fully Allowed</td></tr>
+                        <tr style="border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Image Generation</td><td style="padding: 14px; text-align: center; color: #ef4444;">❌ No</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ NSFW Images</td></tr>
+                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Video Generation</td><td style="padding: 14px; text-align: center; color: #ef4444;">❌ No</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ AI Videos</td></tr>
+                        <tr style="border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Voice Messages</td><td style="padding: 14px; text-align: center; color: #ef4444;">❌ No</td><td style="padding: 14px; text-align: center; color: #10B981;">✓ Voice Chat</td></tr>
+                        <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Memory System</td><td style="padding: 14px; text-align: center;">Basic</td><td style="padding: 14px; text-align: center;">Adaptive Long-term</td></tr>
+                        <tr style="border-bottom: 1px solid #e5e7eb;"><td style="padding: 14px; font-weight: 600;">Character Library</td><td style="padding: 14px; text-align: center;">Millions</td><td style="padding: 14px; text-align: center;">Curated Companions</td></tr>
+                        <tr style="background: #f9fafb;"><td style="padding: 14px; font-weight: 600;">Premium Price</td><td style="padding: 14px; text-align: center;">$4.95/mo</td><td style="padding: 14px; text-align: center;">$3.99/mo</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1471,7 +1302,6 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                 <p>All Character AI alternatives listed here are <strong>18+ platforms</strong> designed for adult users. They contain or allow explicit content. Only use these platforms if you are of legal adult age in your jurisdiction.</p>
             </div>
 
-            <!-- FAQ Section -->
             <section class="faq-section" id="faq">
                 <h2>Frequently Asked Questions</h2>
                 
@@ -1516,7 +1346,6 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                 </div>
             </section>
 
-            <!-- CTA Section -->
             <div class="cta-section">
                 <h3>Ready to Try an Uncensored Alternative?</h3>
                 <p>Browse our complete directory of NSFW AI chatbots, or check out our detailed reviews to find the perfect platform for you.</p>
@@ -1530,9 +1359,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <div class="footer-logo-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    </div>
+                    <div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
                     <span class="footer-logo-text">Xchatbots</span>
                 </div>
                 <p>Your trusted directory for discovering Character AI alternatives, NSFW chatbots, and uncensored AI tools.</p>
@@ -1571,17 +1398,10 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
     
     <script>
         const API_URL = 'https://test.weissmilch.workers.dev';
-        
         async function fetchToolData() {
-            try {
-                const response = await fetch(API_URL + '/tools');
-                return await response.json();
-            } catch (error) {
-                console.error('Error fetching tools:', error);
-                return [];
-            }
+            try { const response = await fetch(API_URL + '/tools'); return await response.json(); }
+            catch (error) { console.error('Error fetching tools:', error); return []; }
         }
-        
         function findTool(tools, searchName) {
             const searchLower = searchName.toLowerCase().replace(/[-\s]/g, '');
             return tools.find(tool => {
@@ -1589,19 +1409,15 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                 return toolName.includes(searchLower) || searchLower.includes(toolName);
             });
         }
-        
         function updateToolCard(cardElement, tool) {
             if (!tool) return;
             const visitBtn = cardElement.querySelector('.btn-visit');
-            if (visitBtn && tool.url && tool.url !== '#') {
-                visitBtn.href = tool.url;
-            }
+            if (visitBtn && tool.url && tool.url !== '#') visitBtn.href = tool.url;
             const ratingValue = cardElement.querySelector('.rating-value');
             const reviewsCount = cardElement.querySelector('.reviews-count');
             if (ratingValue && tool.rating) ratingValue.textContent = tool.rating + '/5';
             if (reviewsCount && tool.reviews) reviewsCount.textContent = '(' + tool.reviews.toLocaleString() + ' reviews)';
         }
-        
         async function init() {
             const tools = await fetchToolData();
             if (!tools || !tools.length) return;
@@ -1612,11 +1428,8 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                 if (tool && toolCards[index]) updateToolCard(toolCards[index], tool);
             });
         }
-        
         document.addEventListener('DOMContentLoaded', init);
     </script>
-
-    
 
 <!-- Dynamic Affiliate Links from Notion -->
 <script>
@@ -1633,27 +1446,19 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
 })();
 </script>
 
-
-
-
-
 <!-- Mobile Navigation Script -->
 <script>
 (function() {
     var toggle = document.querySelector('.mobile-nav-toggle');
     var nav = document.querySelector('.nav-links');
     var overlay = document.querySelector('.mobile-overlay');
-    
-    // Hamburger toggle
     if (toggle) {
         toggle.onclick = function() {
             toggle.classList.toggle('active');
             nav.classList.toggle('active');
-            overlay.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
         };
     }
-    
-    // Overlay closes menu
     if (overlay) {
         overlay.onclick = function() {
             toggle.classList.remove('active');
@@ -1661,8 +1466,6 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
             overlay.classList.remove('active');
         };
     }
-    
-    // Dropdown toggles
     var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
     for (var i = 0; i < dropdowns.length; i++) {
         dropdowns[i].onclick = function(e) {
