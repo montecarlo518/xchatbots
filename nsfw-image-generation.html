@@ -182,7 +182,14 @@
         .footer-column a:hover { color: white; }
         .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; margin-top: 3rem; }
         .footer-bottom p { font-size: 0.85rem; color: var(--slate); }
+        .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; text-align:center; }
+        .fvp-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; font-size:.9rem; }
         @media (max-width: 768px) {
+            .pricing-grid { grid-template-columns:1fr 1fr 1fr; gap:.5rem; }
+            .pricing-grid > div { padding:.5rem !important; }
+            .pricing-grid .price-big { font-size:1.2rem !important; }
+            .pricing-grid .price-big span { font-size:.75rem !important; }
+            .fvp-grid { grid-template-columns:1fr; gap:1rem; }
             .toc-list { grid-template-columns: 1fr; }
             .tool-meta { grid-template-columns: 1fr; gap: 0.5rem; }
             .tool-pros-cons { grid-template-columns: 1fr; }
@@ -285,7 +292,7 @@
             <!-- Conversion box: Why free isn't enough -->
             <div style="background:linear-gradient(135deg,#1E293B,#0f172a);border-radius:20px;padding:1.75rem;margin:0 0 2rem;color:white;">
                 <h3 style="font-family:'Fraunces',serif;font-size:1.15rem;margin-bottom:1rem;color:#fff;">🔒 Free Tier vs Premium — What You're Actually Missing</h3>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;font-size:.9rem;">
+                <div class="fvp-grid">
                     <div><div style="color:#EF4444;font-weight:600;margin-bottom:.5rem;">❌ Free Tier Limitations</div><div style="color:#94A3B8;line-height:1.8;">3-5 images per day max<br>Low resolution (512×512)<br>Long queue times (2-5 min)<br>Watermarks on most platforms<br>No video generation<br>Basic styles only</div></div>
                     <div><div style="color:#10B981;font-weight:600;margin-bottom:.5rem;">✓ What Premium Unlocks ($3.99-12/mo)</div><div style="color:#D1FAE5;line-height:1.8;">Unlimited generations<br>Full 4K resolution output<br>Priority queue (instant)<br>Zero watermarks ever<br>Video generation included<br>All styles + advanced controls</div></div>
                 </div>
@@ -311,7 +318,7 @@
                 <table class="comparison-table">
                     <thead><tr><th>Platform</th><th>Best For</th><th>Free Demo</th><th>Price</th><th>Quality</th></tr></thead>
                     <tbody>
-                        <tr class="highlight-row"><td class="platform-name">🏆 <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank">CandyAI</a></td><td>Best Overall</td><td class="check">✓ Yes</td><td>$3.99/mo</td><td>★★★★★</td></tr>
+                        <tr class="highlight-row"><td class="platform-name">🏆 <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank">CandyAI</a></td><td>Best Overall</td><td class="check">✓ Trial</td><td>$13.99/mo</td><td>★★★★★</td></tr>
                         <tr><td class="platform-name"><a href="https://t.vlmai-3.com/406118/7477?aff_sub5=SF_006OG000004lmDN" target="_blank">GirlfriendGPT</a></td><td>Chat + Image Combo</td><td class="check">✓ Yes</td><td>$12.00/mo</td><td>★★★★★</td></tr>
                         <tr><td class="platform-name"><a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" target="_blank">JuicyChat</a></td><td>Chat + Images</td><td class="check">✓ Yes</td><td>$43.99/mo</td><td>★★★★☆</td></tr>
                     </tbody>
@@ -334,26 +341,26 @@
                 <div class="tool-features"><span class="tool-feature highlight">AI Girlfriend</span><span class="tool-feature highlight">Image Gen</span><span class="tool-feature highlight">Video Gen</span><span class="tool-feature">Voice Messages</span><span class="tool-feature">Character Memory</span><span class="tool-feature">Sexchat</span></div>
                 <div class="tool-meta"><div class="tool-meta-item"><div class="tool-meta-label">Free Demo</div><div class="tool-meta-value" style="color:var(--orange)">Limited trial</div></div><div class="tool-meta-item"><div class="tool-meta-label">Premium</div><div class="tool-meta-value">$13.99/month</div></div><div class="tool-meta-item"><div class="tool-meta-label">Best For</div><div class="tool-meta-value">All-in-One Experience</div></div></div>
                 <!-- CandyAI Pricing Tiers -->
-                <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:16px;padding:1.25rem;margin:1rem 0 1.25rem;">
-                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center;">
+                <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:16px;padding:1.25rem;margin:1rem 0 1.25rem;overflow:hidden;">
+                    <div class="pricing-grid">
                         <div style="background:rgba(16,185,129,.15);border:2px solid #10B981;border-radius:12px;padding:.75rem;position:relative;">
-                            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#FF6B8A;color:#fff;font-size:.65rem;font-weight:700;padding:2px 10px;border-radius:50px;">BEST CHOICE</div>
-                            <div style="color:#94A3B8;font-size:.8rem;margin-top:4px;">12 months</div>
-                            <div style="color:#10B981;font-size:.7rem;font-weight:600;">70% OFF</div>
-                            <div style="color:#fff;font-size:1.5rem;font-weight:700;">$3<span style="font-size:.9rem;">.99</span><span style="color:#94A3B8;font-size:.7rem;">/mo</span></div>
-                            <div style="color:#64748B;font-size:.7rem;text-decoration:line-through;">$13.99</div>
+                            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#FF6B8A;color:#fff;font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:50px;white-space:nowrap;">BEST CHOICE</div>
+                            <div style="color:#94A3B8;font-size:.75rem;margin-top:4px;">12 months</div>
+                            <div style="color:#10B981;font-size:.65rem;font-weight:600;">70% OFF</div>
+                            <div class="price-big" style="color:#fff;font-size:1.5rem;font-weight:700;">$3<span style="font-size:.85rem;">.99</span><span style="color:#94A3B8;font-size:.65rem;">/mo</span></div>
+                            <div style="color:#64748B;font-size:.65rem;text-decoration:line-through;">$13.99</div>
                         </div>
                         <div style="border:1px solid #334155;border-radius:12px;padding:.75rem;">
-                            <div style="color:#94A3B8;font-size:.8rem;">3 months</div>
-                            <div style="color:#F59E0B;font-size:.7rem;font-weight:600;">35% OFF</div>
-                            <div style="color:#fff;font-size:1.5rem;font-weight:700;">$8<span style="font-size:.9rem;">.99</span><span style="color:#94A3B8;font-size:.7rem;">/mo</span></div>
-                            <div style="color:#64748B;font-size:.7rem;text-decoration:line-through;">$13.99</div>
+                            <div style="color:#94A3B8;font-size:.75rem;">3 months</div>
+                            <div style="color:#F59E0B;font-size:.65rem;font-weight:600;">35% OFF</div>
+                            <div class="price-big" style="color:#fff;font-size:1.5rem;font-weight:700;">$8<span style="font-size:.85rem;">.99</span><span style="color:#94A3B8;font-size:.65rem;">/mo</span></div>
+                            <div style="color:#64748B;font-size:.65rem;text-decoration:line-through;">$13.99</div>
                         </div>
                         <div style="border:1px solid #334155;border-radius:12px;padding:.75rem;">
-                            <div style="color:#94A3B8;font-size:.8rem;">1 month</div>
-                            <div style="color:#64748B;font-size:.7rem;">No discount</div>
-                            <div style="color:#fff;font-size:1.5rem;font-weight:700;">$13<span style="font-size:.9rem;">.99</span><span style="color:#94A3B8;font-size:.7rem;">/mo</span></div>
-                            <div style="color:#64748B;font-size:.7rem;">Full price</div>
+                            <div style="color:#94A3B8;font-size:.75rem;">1 month</div>
+                            <div style="color:#64748B;font-size:.65rem;">No discount</div>
+                            <div class="price-big" style="color:#fff;font-size:1.5rem;font-weight:700;">$13<span style="font-size:.85rem;">.99</span><span style="color:#94A3B8;font-size:.65rem;">/mo</span></div>
+                            <div style="color:#64748B;font-size:.65rem;">Full price</div>
                         </div>
                     </div>
                 </div>
@@ -651,18 +658,13 @@
         <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#10B981;color:#fff;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;width:100%;max-width:400px;">🍬 CandyAI 70% Off — $3.99/mo (Limited Time) →</a>
     </div>
     <script>
-    // Show sticky CTA after scrolling past hero
+    // Show sticky CTA after scrolling — mobile only
     (function(){
         var sticky = document.getElementById('stickyCta');
-        var shown = false;
+        if(!sticky || window.innerWidth > 768) return;
         window.addEventListener('scroll', function(){
-            if(window.scrollY > 800 && !shown){
-                sticky.style.display = 'block';
-                shown = true;
-            }
+            sticky.style.display = window.scrollY > 600 ? 'block' : 'none';
         });
-        // Only show on mobile
-        if(window.innerWidth > 768) sticky.style.display = 'none !important';
     })();
     </script>
 </body>
