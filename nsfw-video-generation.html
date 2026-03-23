@@ -317,7 +317,10 @@
         .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
         .results-count { font-size: 1rem; color: var(--gray-warm); } .results-count strong { color: var(--charcoal); }
         .sort-select { padding: 0.6rem 2.5rem 0.6rem 1rem; border: 2px solid rgba(45, 42, 50, 0.08); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.9rem; cursor: pointer; appearance: none; background: var(--white); }
-        @media (max-width: 768px) {  .category-hero { padding: 3rem 1.5rem 2rem; } .content-section { padding: 0 1.5rem 2rem; } .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; } .key-takeaways { margin: 0 1.5rem 2rem; } .internal-links-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { 
+            .category-hero { padding: 3rem 1.5rem 2rem; }
+            [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr 1fr 1fr !important; gap: .5rem !important; }
+            [style*="grid-template-columns:1fr 1fr;gap:1.5rem"] { grid-template-columns: 1fr !important; } .content-section { padding: 0 1.5rem 2rem; } .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; } .key-takeaways { margin: 0 1.5rem 2rem; } .internal-links-grid { grid-template-columns: 1fr; } }
             
         
 /* ===== MOBILE OPTIMIZATION ===== */
@@ -513,13 +516,45 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
     
     <!-- Key Takeaways -->
     <div class="key-takeaways">
-        <h3>Key Takeaways</h3>
+        <h3>⚡ Key Takeaways</h3>
         <ul>
-            <li>AI video generators can create NSFW content from text prompts, images, or by animating existing footage</li>
-            <li>Deepfake tools should only be used ethically with fictional characters or consenting adults</li>
-            <li>Most tools offer free tiers with limited generation; premium unlocks higher quality and longer videos</li>
-            <li>Quality ranges from basic animations to photorealistic 4K video depending on the platform</li>
+            <li><strong><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#047857">CandyAI</a></strong> — Best all-in-one: AI video + images + chat for <strong>just $3.99/mo</strong> (70% off annual plan)</li>
+            <li><strong><a href="https://t.vlmai-3.com/406118/10163/39867?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#047857">Joi AI</a></strong> — Video + image gen with iOS app, from <strong>$9.99/mo</strong></li>
+            <li>Free tiers are extremely limited (low res, watermarks, short clips) — premium starts at the price of a coffee</li>
+            <li>Only use deepfake tools ethically with fictional characters or consenting adults</li>
         </ul>
+    </div>
+
+    <!-- Free vs Premium comparison box -->
+    <div style="background:linear-gradient(135deg,#1E293B,#0f172a);border-radius:20px;padding:1.75rem;margin:0 2rem 2rem;max-width:1368px;color:white;position:relative;z-index:1;">
+        <h3 style="font-family:'Fraunces',serif;font-size:1.15rem;margin-bottom:1rem;color:#fff;">🔒 Free vs Premium AI Video — What You're Missing</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;font-size:.9rem;">
+            <div><div style="color:#EF4444;font-weight:600;margin-bottom:.5rem;">❌ Free Tier Reality</div><div style="color:#94A3B8;line-height:1.8;">5-10 second clips max<br>480p resolution with watermarks<br>1-3 generations per day<br>Long queue times (5-15 min)<br>Basic styles only, no face swap<br>No deepfake capabilities</div></div>
+            <div><div style="color:#10B981;font-weight:600;margin-bottom:.5rem;">✓ What Premium Unlocks ($3.99-10/mo)</div><div style="color:#D1FAE5;line-height:1.8;">Full-length video generation<br>Up to 4K resolution, no watermarks<br>Unlimited or high daily limits<br>Priority processing (instant)<br>All styles + face swap + deepfake<br>Combined with chat &amp; image gen</div></div>
+        </div>
+        <!-- CandyAI pricing tiers -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center;margin-top:1.25rem;">
+            <div style="background:rgba(16,185,129,.15);border:2px solid #10B981;border-radius:12px;padding:.6rem;position:relative;">
+                <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#FF6B8A;color:#fff;font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:50px;white-space:nowrap;">BEST DEAL</div>
+                <div style="color:#94A3B8;font-size:.75rem;margin-top:4px;">12 months</div>
+                <div style="color:#10B981;font-size:.65rem;font-weight:600;">70% OFF</div>
+                <div style="color:#fff;font-size:1.3rem;font-weight:700;">$3<span style="font-size:.8rem;">.99</span><span style="color:#94A3B8;font-size:.65rem;">/mo</span></div>
+                <div style="color:#64748B;font-size:.65rem;text-decoration:line-through;">$13.99</div>
+            </div>
+            <div style="border:1px solid #334155;border-radius:12px;padding:.6rem;">
+                <div style="color:#94A3B8;font-size:.75rem;">3 months</div>
+                <div style="color:#F59E0B;font-size:.65rem;font-weight:600;">35% OFF</div>
+                <div style="color:#fff;font-size:1.3rem;font-weight:700;">$8<span style="font-size:.8rem;">.99</span><span style="color:#94A3B8;font-size:.65rem;">/mo</span></div>
+                <div style="color:#64748B;font-size:.65rem;text-decoration:line-through;">$13.99</div>
+            </div>
+            <div style="border:1px solid #334155;border-radius:12px;padding:.6rem;">
+                <div style="color:#94A3B8;font-size:.75rem;">1 month</div>
+                <div style="color:#64748B;font-size:.65rem;">Full price</div>
+                <div style="color:#fff;font-size:1.3rem;font-weight:700;">$13<span style="font-size:.8rem;">.99</span><span style="color:#94A3B8;font-size:.65rem;">/mo</span></div>
+                <div style="color:#64748B;font-size:.65rem;">No discount</div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:1rem;"><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#10B981;color:#fff;padding:.75rem 2rem;border-radius:12px;text-decoration:none;font-weight:600;font-size:.95rem;">Get CandyAI Video Gen — 70% Off →</a></div>
     </div>
     
     <section class="content-section">
@@ -605,6 +640,12 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                                 <td>$15-100/month</td>
                                 <td>$5-30/month</td>
                             </tr>
+                            <tr>
+                                <td><strong>Best Value Pick</strong></td>
+                                <td><a href="https://t.vlmai-3.com/406118/10138/38989?aff_sub=ourdream&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">ourdream.ai ($9.99/mo)</a></td>
+                                <td><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">CandyAI ($3.99/mo)</a></td>
+                                <td><a href="https://t.vlmai-3.com/406118/10163/39867?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">Joi AI ($9.99/mo)</a></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -625,6 +666,13 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                     <div class="loading-container"><div class="loading-spinner">🎬</div><p style="color: var(--gray-warm);">Loading video generators...</p></div>
                 </div>
                 
+                <div style="background:linear-gradient(135deg,#10B981 0%,#059669 100%);border-radius:20px;padding:1.75rem;margin:2rem 0;border:none;">
+                    <h3 style="font-family:'Fraunces',serif;font-size:1.15rem;margin-bottom:.75rem;color:#fff;">💡 Our Honest Recommendation</h3>
+                    <p style="color:#D1FAE5;font-size:.95rem;line-height:1.7;margin-bottom:.75rem;"><strong style="color:#fff;">Don't waste time with free tiers for video.</strong> Free video generation is painfully limited — 5-second clips at 480p with watermarks. You'll spend more time waiting in queues than actually creating content.</p>
+                    <p style="color:#D1FAE5;font-size:.95rem;line-height:1.7;margin-bottom:1rem;"><strong style="color:#fff;">Best value by far:</strong> <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#fff;text-decoration:underline;">CandyAI annual plan at $3.99/mo</a> (70% off) gives you unlimited video gen, 4K images, voice chat, and AI companions. For dedicated face swap, <a href="https://t.vlmai-3.com/406118/10138/38989?aff_sub=ourdream&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#fff;text-decoration:underline;">ourdream.ai at $9.99/mo</a> is the deepfake specialist.</p>
+                    <div style="text-align:center;"><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#fff;color:#059669;padding:.75rem 1.75rem;border-radius:12px;text-decoration:none;font-weight:700;font-size:.95rem;">Get CandyAI Premium — $3.99/mo →</a></div>
+                </div>
+
                 <div class="feature-box">
                     <h3>Choosing the Right AI Video Generator</h3>
                     <p>Selecting the best tool depends on your specific needs and the type of content you want to create. Consider these factors when evaluating platforms:</p>
@@ -635,7 +683,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                         <li><strong>Processing Speed:</strong> Real-time generation vs. queue-based processing affects workflow</li>
                         <li><strong>Content Restrictions:</strong> Verify the platform allows the specific type of adult content you want to create</li>
                     </ul>
-                    <p>For beginners, we recommend starting with platforms that offer free trials so you can evaluate output quality before committing to a subscription.</p>
+                    <p>For beginners, we recommend going straight to <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">CandyAI's annual plan ($3.99/mo)</a> — the quality gap between free and premium is massive for video, and the price is less than a coffee.</p>
                 </div>
                 
                 <div class="prose-content">
@@ -663,10 +711,17 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                     </div>
                 </div>
                 
-                <div class="cta-section">
-                    <h3>Explore Our Full Directory</h3>
-                    <p>Browse our complete collection of NSFW AI tools including chatbots, image generators, and more.</p>
-                    <a href="/" class="cta-btn">View All AI Tools →</a>
+                <div style="background:linear-gradient(135deg,#10B981 0%,#059669 100%);border-radius:20px;padding:2.5rem;text-align:center;margin:2.5rem 0;">
+                    <h3 style="font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;color:white;margin-bottom:.75rem;">🍬 Skip Free Tiers — Get CandyAI Premium</h3>
+                    <p style="color:#D1FAE5;font-size:1rem;margin-bottom:.5rem;">Unlimited 4K video generation + AI images + voice chat + companions — all in one subscription.</p>
+                    <p style="color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:1.25rem;">70% Off Annual Plan → Just $3.99/mo <span style="color:#D1FAE5;font-size:.9rem;font-weight:400;text-decoration:line-through;">$13.99</span></p>
+                    <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#fff;color:#059669;padding:.9rem 2rem;border-radius:12px;text-decoration:none;font-weight:700;font-size:1rem;">Get CandyAI — $3.99/mo →</a>
+                </div>
+
+                <div class="cta-section" style="margin-top:1.5rem;">
+                    <h3>Explore More NSFW AI Tools</h3>
+                    <p>Browse AI chatbots, image generators, virtual girlfriends, and roleplay platforms.</p>
+                    <a href="/" class="cta-btn">View Full Directory →</a>
                 </div>
             </div>
             
@@ -692,9 +747,15 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                     </div>
                 </div>
                 
+                <div class="sidebar-card" style="background:linear-gradient(135deg,#059669,#047857);color:white;">
+                    <h3 style="color:#fff;">🏆 Editor's Pick</h3>
+                    <p style="color:#D1FAE5;"><strong style="color:#fff;">CandyAI</strong> — Unlimited video gen, 4K images, voice chat & AI companions. Annual plan: <strong style="color:#fff;">$3.99/mo (70% off)</strong></p>
+                    <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:block;background:#fff;color:#059669;padding:.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:.85rem;text-align:center;margin-top:.75rem;">Get CandyAI →</a>
+                </div>
+                
                 <div class="sidebar-card">
                     <h3>About AI Video Generation</h3>
-                    <p>NSFW AI video generators use advanced machine learning to create realistic or stylized videos from text prompts, images, or existing footage. These tools can animate still images, create deepfakes, or generate entirely new video content for adult entertainment.</p>
+                    <p>NSFW AI video generators use advanced machine learning to create realistic or stylized videos from text prompts, images, or existing footage. Premium plans unlock 4K quality, longer clips, and instant processing.</p>
                 </div>
                 
                 <div class="sidebar-card">
@@ -927,6 +988,21 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
             if (links[tool]) a.href = links[tool];
         });
     } catch (e) { console.warn('Affiliate links not loaded:', e); }
+})();
+</script>
+
+
+<!-- Sticky Mobile CTA -->
+<div id="stickyCta" style="display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1E293B,#0f172a);padding:12px 16px;z-index:99;box-shadow:0 -4px 20px rgba(0,0,0,.3);text-align:center;">
+    <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#10B981;color:#fff;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;width:100%;max-width:400px;">🍬 CandyAI Video — 70% Off ($3.99/mo) →</a>
+</div>
+<script>
+(function(){
+    var sticky = document.getElementById('stickyCta');
+    if(!sticky || window.innerWidth > 768) return;
+    window.addEventListener('scroll', function(){
+        sticky.style.display = window.scrollY > 600 ? 'block' : 'none';
+    });
 })();
 </script>
 
