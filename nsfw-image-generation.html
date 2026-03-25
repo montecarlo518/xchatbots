@@ -30,7 +30,8 @@
     { id: 'aimour_ai',          name: 'Aimour AI',                pattern: 't.vlmai-3.com/406118/7986' },
     { id: 'fanfinity_ai',       name: 'Fanfinity AI',             pattern: 't.vlmai-3.com/406118/7722' },
     { id: 'luvr_ai',            name: 'Luvr AI',                  pattern: 't.vlmai-3.com/406118/7944' },
-    { id: 'joi_ai',             name: 'Joi AI',                   pattern: 't.vlmai-3.com/406118/10163' }
+    { id: 'joi_ai',             name: 'Joi AI',                   pattern: 't.vlmai-3.com/406118/10163' },
+    { id: 'secrets_ai',         name: 'Secrets AI',               pattern: 't.vlmai-3.com/406118/10381' }
   ];
   function getToolForUrl(url) { for (var i = 0; i < affiliateTools.length; i++) { if (url.indexOf(affiliateTools[i].pattern) !== -1) return affiliateTools[i]; } return null; }
   function handleAffiliateClick(url) { var tool = getToolForUrl(url); if (!tool) return; gtag('event', 'purchase', { transaction_id: 'aff_' + tool.id + '_' + Date.now(), currency: 'USD', value: 1, items: [{ item_id: tool.id, item_name: tool.name, item_category: 'Affiliate Tool', quantity: 1, price: 1 }] }); gtag('event', 'affiliate_click', { tool_id: tool.id, tool_name: tool.name, link_url: url }); }
@@ -51,10 +52,10 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://x-chatbots.com/nsfw-image-generation">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"10 Best NSFW AI Image Generators, Undress AI & Deepnude Apps 2026","description":"Comprehensive comparison of the best NSFW AI image generators, undress AI apps, and deepnude tools.","author":{"@type":"Organization","name":"Xchatbots"},"publisher":{"@type":"Organization","name":"Xchatbots","url":"https://x-chatbots.com"},"datePublished":"2025-11-15","dateModified":"2026-03-19"}
+    {"@context":"https://schema.org","@type":"Article","headline":"10 Best NSFW AI Image Generators, Undress AI & Deepnude Apps 2026","description":"Comprehensive comparison of the best NSFW AI image generators, undress AI apps, and deepnude tools.","author":{"@type":"Organization","name":"Xchatbots"},"publisher":{"@type":"Organization","name":"Xchatbots","url":"https://x-chatbots.com"},"datePublished":"2025-11-15","dateModified":"2026-03-25"}
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best free NSFW AI image generator?","acceptedAnswer":{"@type":"Answer","text":"SoulGen offers 5 free daily generations with excellent photorealistic quality. Candy AI provides a free trial combining chat and image generation. ourdream.ai includes a free tier for undress AI and face swap features."}},{"@type":"Question","name":"Is undress AI legal to use?","acceptedAnswer":{"@type":"Answer","text":"The legality depends on how it's used. Creating non-consensual intimate imagery of real people is illegal in many jurisdictions. Only use undress AI tools with proper consent, on yourself, or on AI-generated fictional characters."}},{"@type":"Question","name":"What is deepnude AI and how does it work?","acceptedAnswer":{"@type":"Answer","text":"Deepnude AI uses neural networks trained on anatomy datasets to analyze clothed images and generate realistic nude versions. Modern tools use GANs (Generative Adversarial Networks) for photorealistic results with proper lighting and skin texture."}},{"@type":"Question","name":"Which AI image generator produces the most realistic results?","acceptedAnswer":{"@type":"Answer","text":"SoulGen and Candy AI currently produce the most photorealistic NSFW images. For undress AI features, ourdream.ai leads with face swap and nudify capabilities."}},{"@type":"Question","name":"Are my generated images private?","acceptedAnswer":{"@type":"Answer","text":"Privacy varies by platform. Most reputable generators like SoulGen and Candy AI don't store images permanently and offer private generation modes. Always check each platform's privacy policy before uploading personal content."}}]}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best free NSFW AI image generator?","acceptedAnswer":{"@type":"Answer","text":"SoulGen offers 5 free daily generations with excellent photorealistic quality. Candy AI provides a free trial combining chat and image generation. Secrets AI offers premium image and video generation at 50% off ($19.99/mo) with Apple Pay support."}},{"@type":"Question","name":"Is undress AI legal to use?","acceptedAnswer":{"@type":"Answer","text":"The legality depends on how it's used. Creating non-consensual intimate imagery of real people is illegal in many jurisdictions. Only use undress AI tools with proper consent, on yourself, or on AI-generated fictional characters."}},{"@type":"Question","name":"What is deepnude AI and how does it work?","acceptedAnswer":{"@type":"Answer","text":"Deepnude AI uses neural networks trained on anatomy datasets to analyze clothed images and generate realistic nude versions. Modern tools use GANs (Generative Adversarial Networks) for photorealistic results with proper lighting and skin texture."}},{"@type":"Question","name":"Which AI image generator produces the most realistic results?","acceptedAnswer":{"@type":"Answer","text":"SoulGen and Candy AI currently produce the most photorealistic NSFW images. For undress AI features, ourdream.ai leads with face swap and nudify capabilities."}},{"@type":"Question","name":"Are my generated images private?","acceptedAnswer":{"@type":"Answer","text":"Privacy varies by platform. Most reputable generators like SoulGen and Candy AI don't store images permanently and offer private generation modes. Always check each platform's privacy policy before uploading personal content."}}]}
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -98,21 +99,29 @@
         .content-section p { font-size: 1rem; color: var(--gray-warm); line-height: 1.8; margin-bottom: 1.25rem; }
         .content-section a { color: var(--blue); text-decoration: none; }
         .content-section a:hover { text-decoration: underline; }
+
+        /* Key Takeaways — always single column */
         .key-takeaways { background: linear-gradient(135deg, var(--ice) 0%, var(--lavender) 100%); border-radius: var(--radius-lg); padding: 1.75rem; margin: 2rem 0; }
         .key-takeaways h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; margin-bottom: 1rem; color: var(--charcoal); }
-        .key-takeaways ul { list-style: none; }
-        .key-takeaways li { padding: 0.6rem 0; font-size: 0.95rem; color: var(--charcoal); display: flex; align-items: flex-start; gap: 0.75rem; line-height: 1.6; }
+        .key-takeaways ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+        .key-takeaways li { padding: 0.5rem 0; font-size: 0.95rem; color: var(--charcoal); display: flex; align-items: flex-start; gap: 0.75rem; line-height: 1.55; }
         .key-takeaways li::before { content: '✓'; color: var(--green); font-weight: bold; font-size: 1.1rem; flex-shrink: 0; }
+
         .tool-card { background: var(--white); border-radius: var(--radius-lg); padding: 1.75rem; margin: 1.5rem 0; box-shadow: var(--shadow-soft); border: 1px solid rgba(30, 41, 59, 0.05); transition: var(--transition); }
         .tool-card:hover { box-shadow: var(--shadow-medium); }
-        /* Compact card grid — like virtual-girlfriend page */
+
+        /* Compact card grid */
         .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+
+        /* Compact cards: icon inline with title */
         .compact-card { background: var(--white); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-soft); border: 1px solid rgba(30,41,59,.05); display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
         .compact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-medium); }
-        .compact-card .tool-card-header { display: flex; gap: .75rem; margin-bottom: .75rem; }
-        .compact-card .tool-icon { width: 48px; height: 48px; font-size: 1.5rem; }
-        .compact-card .tool-name { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 500; }
-        .compact-card .tool-rank { font-size: .7rem; color: var(--gray-light); font-weight: 500; }
+        .compact-card .tool-card-header { display: flex; flex-direction: row; align-items: center; gap: .6rem; margin-bottom: .6rem; }
+        .compact-card .tool-icon { width: 40px; height: 40px; min-width: 40px; font-size: 1.2rem; flex-shrink: 0; }
+        .compact-card .tool-info { flex: 1; min-width: 0; }
+        .compact-card .tool-rank { font-size: .68rem; line-height: 1.2; margin-bottom: 0; }
+        .compact-card .tool-name { font-family: 'Fraunces', serif; font-size: .95rem; font-weight: 500; line-height: 1.2; margin: 0; }
+        .compact-card .tool-rating { margin-top: 2px; }
         .compact-card .tool-description { font-size: .9rem; color: var(--gray-warm); line-height: 1.6; margin-bottom: .75rem; flex: 1; }
         .compact-card .tool-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .75rem; }
         .compact-card .tool-tag { padding: .2rem .6rem; font-size: .72rem; }
@@ -120,7 +129,11 @@
         .compact-card .card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: .75rem; border-top: 1px solid rgba(30,41,59,.06); margin-top: auto; }
         .compact-card .price-label { font-size: .65rem; }
         .compact-card .price-value { font-size: .8rem; }
-        .compact-card .btn-visit { padding: .5rem 1rem; font-size: .8rem; min-width: auto; }
+
+        /* Visit buttons: narrower */
+        .compact-card .btn-visit,
+        .card-footer .btn-visit { padding: .4rem .7rem !important; font-size: .73rem !important; min-width: auto !important; max-width: 130px !important; white-space: nowrap !important; }
+
         @media (max-width: 768px) { .tools-grid { grid-template-columns: 1fr; } }
         .tool-card-header { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
         .tool-icon { width: 60px; height: 60px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; flex-shrink: 0; background: var(--ice); }
@@ -216,6 +229,10 @@
             .btn-visit,.btn-secondary{width:100%;max-width:320px;text-align:center;padding:14px 20px;margin:0 auto}
             .hero-stats { flex-direction: column; gap: 1rem; }
         }
+        @media (max-width: 480px) {
+            .pricing-grid { gap:.35rem !important; }
+            .pricing-grid > div { padding:.35rem !important; }
+        }
 .mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.25);opacity:0;visibility:hidden;transition:all .3s ease;z-index:998;pointer-events:none}
 .mobile-overlay.active{opacity:1;visibility:visible;pointer-events:auto}
 .mobile-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}
@@ -250,7 +267,7 @@
 .nav-dropdown-item{padding:12px 0;font-size:.95rem;display:block}
 .btn-submit-nav{margin-top:20px;text-align:center;display:block;width:100%;padding:14px 20px}
 }
-@media(max-width:768px){html,body{overflow-x:hidden;width:100%;max-width:100vw}.header-content{padding:12px 16px}.logo-text{font-size:1.2rem}}
+@media(max-width:768px){html,body{overflow-x:hidden;width:100%;max-width:100vw;padding-bottom:60px}.header-content{padding:12px 16px}.logo-text{font-size:1.2rem}footer{margin-bottom:60px}}
     </style>
 </head>
 <body>
@@ -284,14 +301,26 @@
     <main class="main-content">
         <article class="content-section">
             
-            <!-- Key Takeaways — conversion-focused, premium-value-first -->
+            <!-- Key Takeaways — simple stacked list -->
             <div class="key-takeaways" style="border-left:4px solid #10B981;">
                 <h3>⚡ Key Takeaways</h3>
-                <ul>
-                    <li><strong><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener noreferrer" style="color:#047857">CandyAI</a></strong> — #1 pick. Unlimited 4K images, AI video &amp; voice chat for <strong>$3.99/mo</strong> (70% off annual)</li>
-                    <li><strong><a href="https://t.vlmai-3.com/406118/10163/39867?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener noreferrer" style="color:#047857">Joi AI</a></strong> — Only NSFW AI with a native iOS app. Image + video gen built in. <strong>$9.99/mo</strong></li>
-                    <li>All tools are <strong>18+ only</strong> — use ethically on fictional characters or with consent</li>
-                </ul>
+                <div style="display:flex;flex-direction:column;gap:.6rem;">
+                    <div style="display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap;font-size:.95rem;line-height:1.5;">
+                        <span style="color:#10B981;font-weight:bold;flex-shrink:0;">✓</span>
+                        <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener noreferrer" style="color:#047857;font-weight:700;">CandyAI</a>
+                        <span>is our #1 pick. Unlimited 4K images, AI video &amp; voice for just <strong>$3.99/mo</strong> (70% off annual).</span>
+                    </div>
+                    <div style="display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap;font-size:.95rem;line-height:1.5;">
+                        <span style="color:#10B981;font-weight:bold;flex-shrink:0;">✓</span>
+                        <a href="https://t.vlmai-3.com/406118/10163/39867?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener noreferrer" style="color:#047857;font-weight:700;">Joi AI</a>
+                        <span>is the only NSFW AI with a native iOS app. Image + video gen built in. <strong>$9.99/mo</strong>.</span>
+                    </div>
+                    <div style="display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap;font-size:.95rem;line-height:1.5;">
+                        <span style="color:#10B981;font-weight:bold;flex-shrink:0;">✓</span>
+                        <a href="https://t.vlmai-3.com/406118/10381/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener noreferrer" style="color:#047857;font-weight:700;">Secrets AI</a>
+                        <span>offers premium image + video gen. <strong>50% off at $19.99/mo</strong>. Supports 🍎 Apple Pay.</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Conversion box: Why free isn't enough -->
@@ -304,17 +333,18 @@
                 <div style="text-align:center;margin-top:1.25rem;"><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#10B981;color:#fff;padding:.75rem 2rem;border-radius:12px;text-decoration:none;font-weight:600;font-size:.95rem;">Get Unlimited Access — From $3.99/mo →</a></div>
             </div>
 
-            <!-- Comparison Table -->
+            <!-- Comparison Table — Secrets AI instead of JuicyChat -->
             <h2 id="comparison">Quick Comparison: Best NSFW AI Image Generators</h2>
             <p>Here's how the top AI image generators compare on quality, features, and pricing:</p>
             <div class="comparison-table-wrapper">
                 <table class="comparison-table">
                     <thead><tr><th>Platform</th><th>Best For</th><th>Free Demo</th><th>Price</th><th>Quality</th></tr></thead>
                     <tbody>
-                        <tr class="highlight-row"><td class="platform-name">🏆 <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank">CandyAI</a></td><td>Best Overall</td><td class="check">✓ Trial</td><td>$13.99/mo</td><td>★★★★★</td></tr>
+                        <tr class="highlight-row"><td class="platform-name">🏆 <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank">CandyAI</a></td><td>Best Overall</td><td class="check">✓ Yes</td><td>$13.99/mo</td><td>★★★★★</td></tr>
                         <tr><td class="platform-name"><a href="https://t.vlmai-3.com/406118/10163/39867?aff_sub5=SF_006OG000004lmDN" target="_blank">Joi AI</a></td><td>Best iOS + Video</td><td class="check">✓ Yes</td><td>$9.99/mo</td><td>★★★★★</td></tr>
                         <tr><td class="platform-name"><a href="https://t.vlmai-3.com/406118/7477?aff_sub5=SF_006OG000004lmDN" target="_blank">GirlfriendGPT</a></td><td>Chat + Image Combo</td><td class="check">✓ Yes</td><td>$12.00/mo</td><td>★★★★★</td></tr>
-                        <tr><td class="platform-name"><a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" target="_blank">JuicyChat</a></td><td>Chat + Images</td><td class="check">✓ Yes</td><td>$43.99/mo</td><td>★★★★☆</td></tr>
+                        <tr><td class="platform-name"><a href="https://t.vlmai-3.com/406118/10381/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">Secrets AI</a> <span style="background:#6366F1;color:#fff;padding:1px 5px;border-radius:4px;font-size:10px;">50% OFF</span></td><td>Premium Visuals</td><td class="check">✓ Yes</td><td><s style="color:#94A3B8">$39.99</s> $19.99</td><td>★★★★★</td></tr>
+                        <tr><td class="platform-name"><a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" target="_blank" rel="noopener">JuicyChat</a></td><td>Chat + Anime</td><td class="check">✓ Yes</td><td>$43.99/mo</td><td>★★★★☆</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -333,7 +363,7 @@
                 </div>
                 <p class="tool-description">CandyAI combines <a href="/virtual-girlfriend">AI girlfriend chat</a> with the most advanced NSFW image and video generation available. Build deep relationships with AI companions, then generate stunning custom images and videos of them in any scenario. The seamless integration between conversation and visuals, plus industry-leading video generation, makes it our top pick for 2026.</p>
                 <div class="tool-features"><span class="tool-feature highlight">AI Girlfriend</span><span class="tool-feature highlight">Image Gen</span><span class="tool-feature highlight">Video Gen</span><span class="tool-feature">Voice Messages</span><span class="tool-feature">Character Memory</span><span class="tool-feature">Sexchat</span></div>
-                <div class="tool-meta"><div class="tool-meta-item"><div class="tool-meta-label">Free Demo</div><div class="tool-meta-value" style="color:var(--orange)">Limited trial</div></div><div class="tool-meta-item"><div class="tool-meta-label">Premium</div><div class="tool-meta-value">$13.99/month</div></div><div class="tool-meta-item"><div class="tool-meta-label">Best For</div><div class="tool-meta-value">All-in-One Experience</div></div></div>
+                <div class="tool-meta"><div class="tool-meta-item"><div class="tool-meta-label">Free Demo</div><div class="tool-meta-value" style="color:var(--green)">Yes</div></div><div class="tool-meta-item"><div class="tool-meta-label">Premium</div><div class="tool-meta-value">$13.99/month</div></div><div class="tool-meta-item"><div class="tool-meta-label">Best For</div><div class="tool-meta-value">All-in-One Experience</div></div></div>
                 <!-- CandyAI Pricing Tiers -->
                 <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:16px;padding:1.25rem;margin:1rem 0 1.25rem;overflow:hidden;">
                     <div class="pricing-grid">
@@ -359,7 +389,7 @@
                     </div>
                 </div>
                 <div class="tool-pros-cons"><div class="tool-pros"><h4>Pros</h4><ul><li>Best all-in-one platform</li><li>Most affordable premium (from $3.99/mo)</li><li>Excellent video generation</li><li>Deep character memory</li><li>Voice messages included</li></ul></div><div class="tool-cons"><h4>Cons</h4><ul><li>Limited free tier</li><li>Focused on girlfriend RP style</li><li>Fewer standalone image styles</li></ul></div></div>
-                <div class="tool-cta"><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" data-tool="candyai" target="_blank" rel="nofollow noopener" class="btn-visit btn-green">Visit</a><a href="/virtual-girlfriend" class="btn-secondary">More AI Girlfriends</a></div>
+                <div class="tool-cta"><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" data-tool="candyai" target="_blank" rel="nofollow noopener" class="btn-visit btn-green">Visit →</a></div>
             </div>
 
             <!-- Tools #2-10: Compact Grid Cards -->
@@ -373,7 +403,7 @@
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$12/mo</span></div><a href="https://t.vlmai-3.com/406118/7477?aff_sub5=SF_006OG000004lmDN" data-tool="girlfriendgpt" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a></div>
                 </div>
 
-                <!-- #3 Joi AI —  -->
+                <!-- #3 Joi AI -->
                 <div class="compact-card" style="border:2px solid var(--blue);">
                     <div class="tool-card-header"><div class="tool-icon" style="background:#E0E7FF;">💋</div><div class="tool-info"><div class="tool-rank" style="color:var(--blue)">#3 Best iOS Experience</div><h3 class="tool-name">Joi AI</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★★</span><span style="font-size:.8rem;font-weight:600">4.5</span><span style="font-size:.7rem;color:var(--gray-light)">(624)</span></div></div></div>
                     <p class="tool-description">The only NSFW AI with a polished <strong>native iOS app</strong>. Generate stunning images and videos of customizable companions directly from your iPhone. Beautifully designed, fast, and fully uncensored.</p>
@@ -381,23 +411,23 @@
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$9.99/mo</span></div><a href="https://t.vlmai-3.com/406118/10163/39867?aff_sub5=SF_006OG000004lmDN" data-tool="joi" target="_blank" rel="nofollow noopener" class="btn-visit" style="background:var(--blue);">Visit →</a></div>
                 </div>
 
-                <!-- #4 JuicyChat (was #3) -->
+                <!-- #4 Secrets AI -->
+                <div class="compact-card" style="border:2px solid #6366F1;">
+                    <div class="tool-card-header"><div class="tool-icon" style="background:linear-gradient(135deg,#6366F1,#8B5CF6);">🔐</div><div class="tool-info"><div class="tool-rank" style="color:#6366F1">#4 Premium Experience</div><h3 class="tool-name">Secrets AI</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★★</span><span style="font-size:.8rem;font-weight:600">4.7</span><span style="font-size:.7rem;color:var(--gray-light)">(1,240)</span></div></div></div>
+                    <p class="tool-description">Premium NSFW image &amp; video gen with ultra-realistic output. <strong>50% off</strong> — $19.99/mo. Supports 🍎 Apple Pay for instant checkout.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight" style="background:#E0E7FF;color:#4338CA;">🍎 Apple Pay</span><span class="tool-tag highlight">50% OFF</span><span class="tool-tag">Image + Video</span></div>
+                    <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM <s style="color:#94A3B8">$39.99</s></span><span class="price-value" style="font-weight:600;font-size:.85rem;color:#10B981">$19.99/mo</span></div><a href="https://t.vlmai-3.com/406118/10381/0?aff_sub5=SF_006OG000004lmDN" data-tool="secrets" target="_blank" rel="nofollow noopener" class="btn-visit" style="background:#6366F1;">Visit →</a></div>
+                </div>
+
+                <!-- #5 JuicyChat -->
                 <div class="compact-card">
-                    <div class="tool-card-header"><div class="tool-icon">🧃</div><div class="tool-info"><div class="tool-rank">#4 Best for Anime</div><h3 class="tool-name">JuicyChat</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★☆</span><span style="font-size:.8rem;font-weight:600">3.8</span><span style="font-size:.7rem;color:var(--gray-light)">(2,284)</span></div></div></div>
+                    <div class="tool-card-header"><div class="tool-icon">🧃</div><div class="tool-info"><div class="tool-rank">#5 Best for Anime</div><h3 class="tool-name">JuicyChat</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★☆</span><span style="font-size:.8rem;font-weight:600">3.8</span><span style="font-size:.7rem;color:var(--gray-light)">(2,284)</span></div></div></div>
                     <p class="tool-description">Anime-focused NSFW chat with integrated image generation. Specializes in hentai aesthetics and Janitor AI-style roleplay with visual output.</p>
                     <div class="tool-tags"><span class="tool-tag highlight">Anime/Hentai</span><span class="tool-tag">Chat + Images</span><span class="tool-tag">Roleplay</span></div>
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$43.99/mo</span></div><a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" data-tool="juicychat" target="_blank" rel="noopener" class="btn-visit">Visit →</a></div>
                 </div>
 
-                <!-- #5 Seduced.AI (was #4) -->
-                <div class="compact-card">
-                    <div class="tool-card-header"><div class="tool-icon">💋</div><div class="tool-info"><div class="tool-rank">#5 Premium Quality</div><h3 class="tool-name">Seduced.AI</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★☆</span><span style="font-size:.8rem;font-weight:600">4.4</span><span style="font-size:.7rem;color:var(--gray-light)">(890)</span></div></div></div>
-                    <p class="tool-description">Advanced customization with pose editor, body controls, and batch generation. Best for users who want granular control over every detail.</p>
-                    <div class="tool-tags"><span class="tool-tag highlight">Pose Editor</span><span class="tool-tag">4K Output</span><span class="tool-tag">Batch Gen</span></div>
-                    <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$20/mo</span></div><a href="https://seduced.ai/?utm_source=xchatbots&utm_medium=nsfw-images&utm_campaign=image-gen" target="_blank" rel="noopener" class="btn-visit">Visit →</a></div>
-                </div>
-
-                <!-- #6 ourdream.ai (was #5) -->
+                <!-- #6 ourdream.ai -->
                 <div class="compact-card">
                     <div class="tool-card-header"><div class="tool-icon">💕</div><div class="tool-info"><div class="tool-rank">#6 Best Undress AI</div><h3 class="tool-name">ourdream.ai</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★★</span><span style="font-size:.8rem;font-weight:600">4.6</span><span style="font-size:.7rem;color:var(--gray-light)">(4,031)</span></div></div></div>
                     <p class="tool-description">The deepnude alternative with advanced face swap, undress AI features, and video generation. The most complete toolkit for custom NSFW visuals.</p>
@@ -405,7 +435,7 @@
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$9.99/mo</span></div><a href="https://t.vlmai-3.com/406118/10138/38989?aff_sub=ourdream&aff_sub5=SF_006OG000004lmDN" data-tool="ourdream" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a></div>
                 </div>
 
-                <!-- #7 Xotic AI (was #6) -->
+                <!-- #7 Xotic AI -->
                 <div class="compact-card">
                     <div class="tool-card-header"><div class="tool-icon">🔮</div><div class="tool-info"><div class="tool-rank">#7 Most Photorealistic</div><h3 class="tool-name">Xotic AI</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★</span><span style="font-size:.8rem;font-weight:600">4.2</span><span style="font-size:.7rem;color:var(--gray-light)">(532)</span></div></div></div>
                     <p class="tool-description">Ultra-photorealistic NSFW images plus voice calls. A complete adult AI experience with the most lifelike visual output available.</p>
@@ -464,7 +494,7 @@
                 </div>
             </div>
 
-            <!-- Big Comparison Table - -->
+            <!-- Big Comparison Table — Secrets AI replaces Seduced -->
             <h2 id="comparison-table">Best NSFW AI Image Generators 2026 — Quick Comparison</h2>
             <p>Here's a side-by-side comparison of the top NSFW AI image generators to help you choose the right one for your needs:</p>
             <div class="comparison-table-wrapper" style="overflow-x:auto;margin:2rem 0;">
@@ -474,7 +504,7 @@
                         <tr style="background:#f0f9ff;border-bottom:1px solid #e5e7eb;"><td style="padding:14px;font-weight:600;">🍬 <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#2E5A88;text-decoration:none;">Candy AI</a> <span style="background:#10B981;color:white;padding:2px 8px;border-radius:4px;font-size:11px;margin-left:8px;">BEST OVERALL</span></td><td style="padding:14px;text-align:center;">All-in-one (chat + images + video)</td><td style="padding:14px;text-align:center;color:#10B981;font-weight:600;">✓ Yes</td><td style="padding:14px;text-align:center;">$13.99/mo</td><td style="padding:14px;text-align:center;">Realistic & Anime</td><td style="padding:14px;text-align:center;">⭐ 4.9</td></tr>
                         <tr style="background:#f9fafb;border-bottom:1px solid #e5e7eb;"><td style="padding:14px;font-weight:600;">✨ <a href="https://t.vlmai-3.com/406118/8077?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#2E5A88;text-decoration:none;">SoulGen</a></td><td style="padding:14px;text-align:center;">Photorealistic faces</td><td style="padding:14px;text-align:center;color:#10B981;font-weight:600;">✓ 5/day</td><td style="padding:14px;text-align:center;">$9.99/mo</td><td style="padding:14px;text-align:center;">Ultra-realistic</td><td style="padding:14px;text-align:center;">⭐ 4.7</td></tr>
                         <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:14px;font-weight:600;">💕 <a href="https://t.vlmai-3.com/406118/10138/38989?aff_sub=ourdream&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#2E5A88;text-decoration:none;">ourdream.ai</a></td><td style="padding:14px;text-align:center;">Undress AI & face swap</td><td style="padding:14px;text-align:center;color:#10B981;font-weight:600;">✓ Yes</td><td style="padding:14px;text-align:center;">$9.99/mo</td><td style="padding:14px;text-align:center;">Multiple styles</td><td style="padding:14px;text-align:center;">⭐ 4.6</td></tr>
-                        <tr style="background:#f9fafb;border-bottom:1px solid #e5e7eb;"><td style="padding:14px;font-weight:600;">💋 Seduced.AI</td><td style="padding:14px;text-align:center;">Advanced customization</td><td style="padding:14px;text-align:center;color:#10B981;font-weight:600;">✓ 3/day</td><td style="padding:14px;text-align:center;">$20/mo</td><td style="padding:14px;text-align:center;">Customizable</td><td style="padding:14px;text-align:center;">⭐ 4.4</td></tr>
+                        <tr style="background:#f9fafb;border-bottom:1px solid #e5e7eb;"><td style="padding:14px;font-weight:600;">🔐 <a href="https://t.vlmai-3.com/406118/10381/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#2E5A88;text-decoration:none;">Secrets AI</a> <span style="background:#6366F1;color:white;padding:2px 6px;border-radius:4px;font-size:10px;">50% OFF</span></td><td style="padding:14px;text-align:center;">Premium image + video</td><td style="padding:14px;text-align:center;color:#10B981;font-weight:600;">✓ Yes</td><td style="padding:14px;text-align:center;"><s style="color:#94A3B8;">$39.99</s> <strong>$19.99/mo</strong></td><td style="padding:14px;text-align:center;">Ultra-realistic</td><td style="padding:14px;text-align:center;">⭐ 4.7</td></tr>
                         <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:14px;font-weight:600;">🎭 <a href="https://t.vlmai-3.com/406118/10338/0?aff_sub=promptchan&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#2E5A88;text-decoration:none;">Promptchan</a></td><td style="padding:14px;text-align:center;">Anime & hentai styles</td><td style="padding:14px;text-align:center;color:#10B981;font-weight:600;">✓ Limited</td><td style="padding:14px;text-align:center;">$26.99/mo</td><td style="padding:14px;text-align:center;">Anime-focused</td><td style="padding:14px;text-align:center;">⭐ 4.6</td></tr>
                         <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:14px;font-weight:600;">🧃 <a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" target="_blank" rel="noopener" style="color:#2E5A88;text-decoration:none;">JuicyChat</a></td><td style="padding:14px;text-align:center;">Chat + anime images</td><td style="padding:14px;text-align:center;color:#10B981;font-weight:600;">✓ 40 msgs</td><td style="padding:14px;text-align:center;">$43.99/mo</td><td style="padding:14px;text-align:center;">Anime/hentai</td><td style="padding:14px;text-align:center;">⭐ 3.8</td></tr>
                     </tbody>
@@ -493,7 +523,7 @@
             </div>
             <p><strong>Why did Deepnude get shut down?</strong> The original Deepnude app was discontinued in 2019 after massive controversy over its potential for misuse. The creator voluntarily took it down. Since then, the underlying technology has evolved significantly, and new tools have emerged with better safeguards and ethical guidelines.</p>
 
-            <!-- Free vs Paid - Promptchan demoted -->
+            <!-- Free vs Paid -->
             <h2 id="free-vs-paid">Free vs Paid NSFW AI Image Generators</h2>
             <p>Should you use free NSFW AI image generators or pay for premium? Here's an honest breakdown:</p>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin:24px 0;">
@@ -516,7 +546,7 @@
                     <ul style="color:#1e40af;padding-left:20px;margin-bottom:16px;">
                         <li><a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#1e40af;">Candy AI</a> — <strong style="color:#1e40af;">$3.99/mo annual (70% off)</strong>, $8.99/mo quarterly</li>
                         <li><a href="https://t.vlmai-3.com/406118/10138/38989?aff_sub=ourdream&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#1e40af;">ourdream.ai</a> — $9.99/mo, most features</li>
-                        <li>Seduced.AI — $20/mo, premium quality</li>
+                        <li><a href="https://t.vlmai-3.com/406118/10381/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="color:#1e40af;">Secrets AI</a> — <strong style="color:#1e40af;">$19.99/mo (50% off)</strong>, 🍎 Apple Pay</li>
                     </ul>
                     <p style="font-weight:600;color:#1d4ed8;margin-bottom:8px;">Pros:</p>
                     <ul style="color:#1e40af;padding-left:20px;margin-bottom:12px;font-size:14px;"><li>Unlimited or high generation limits</li><li>4K resolution output</li><li>Priority queue (faster)</li><li>Video generation access</li><li>Advanced customization</li></ul>
@@ -550,10 +580,10 @@
                 <div class="faq-item"><h4>What is the best free NSFW AI image generator?</h4><p>SoulGen provides 5 free daily generations with excellent photorealistic quality. Candy AI offers a free trial with chat + image generation. ourdream.ai includes a free tier for undress AI features. Most platforms let you test their capabilities before subscribing.</p></div>
                 <div class="faq-item"><h4>Is undress AI legal to use?</h4><p>The legality depends entirely on usage. Using undress AI on yourself or consenting adults is generally legal. Using it on AI-generated fictional characters is legal. However, creating non-consensual intimate imagery of real people without their consent is illegal in many jurisdictions and can result in criminal charges.</p></div>
                 <div class="faq-item"><h4>How realistic are AI-generated NSFW images?</h4><p>Modern AI generators like SoulGen and Candy AI produce images that are often indistinguishable from real photos at first glance. Quality has improved dramatically in 2025-2026, though trained eyes can still spot AI artifacts in some images.</p></div>
-                <div class="faq-item"><h4>Can I generate anime/hentai images?</h4><p>Yes, most NSFW AI generators support anime and hentai art styles. Promptchan and Seduced.AI have particularly strong anime models. JuicyChat specializes in anime-style content integrated with chat features.</p></div>
+                <div class="faq-item"><h4>Can I generate anime/hentai images?</h4><p>Yes, most NSFW AI generators support anime and hentai art styles. Promptchan has strong anime models, and <a href="https://t.vlmai-3.com/406118/10381/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">Secrets AI</a> offers ultra-realistic output across all styles. JuicyChat specializes in anime-style content integrated with chat features.</p></div>
                 <div class="faq-item"><h4>Are my generated images private?</h4><p>Privacy policies vary by platform. Reputable generators like SoulGen and Candy AI offer private generation modes and don't store images permanently. Always check each platform's privacy policy, especially before uploading personal photos to undress AI tools.</p></div>
                 <div class="faq-item"><h4>What's the difference between nudify and undress AI?</h4><p>They're the same thing with different names. Both terms refer to AI tools that analyze clothed images and generate nude versions by predicting and rendering the body underneath clothing. "Deepnude" is another common term for this technology.</p></div>
-                <div class="faq-item"><h4>How much do NSFW AI image generators cost?</h4><p>Most platforms use subscription models ranging from $3.99/month (Candy.AI) to $26.99/month (Promptchan). Premium tiers typically offer more generations, higher resolution, faster processing, and additional features like video generation.</p></div>
+                <div class="faq-item"><h4>How much do NSFW AI image generators cost?</h4><p>Most platforms use subscription models ranging from $3.99/month (Candy.AI) to $26.99/month (Promptchan). <a href="https://t.vlmai-3.com/406118/10381/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">Secrets AI</a> is currently 50% off at $19.99/mo (normally $39.99) and supports Apple Pay. Premium tiers typically offer more generations, higher resolution, faster processing, and additional features like video generation.</p></div>
                 <div class="faq-item"><h4>Can I use these images commercially?</h4><p>Commercial use policies vary by platform. Some generators grant full commercial rights to generated images, while others restrict usage to personal purposes. Check each platform's terms of service for specific licensing information.</p></div>
                 <div class="faq-item"><h4>What resolution can AI generators produce?</h4><p>Most modern generators support up to 4K resolution (4096x4096 pixels) on premium tiers. Free tiers typically output at 1024x1024 or 2048x2048. Higher resolutions require more processing time and credits.</p></div>
                 <div class="faq-item"><h4>Do I need technical skills to use these tools?</h4><p>No technical skills required. Modern NSFW AI generators have user-friendly interfaces where you simply type a description or upload an image. Advanced features exist for power users, but the basics are accessible to everyone.</p></div>
@@ -578,7 +608,7 @@
         async function fetchToolData() { try { const r = await fetch(API_URL + '/tools'); return await r.json(); } catch(e) { return []; } }
         function findTool(tools, name) { const s = name.toLowerCase().replace(/[-\s]/g, ''); return tools.find(t => { const n = (t.name||'').toLowerCase().replace(/[-\s]/g, '').replace(/<br>/g, '').trim(); return n.includes(s) || s.includes(n); }); }
         function updateToolCard(card, tool) { if(!tool) return; const btn = card.querySelector('.btn-visit'); if(btn && tool.url && tool.url !== '#') btn.href = tool.url; }
-        async function init() { const tools = await fetchToolData(); if(!tools||!tools.length) return; const cards = document.querySelectorAll('.tool-card'); const map = ['candy','girlfriendgpt','juicy','seduced','ourdream','xotic','joi','promptchan','aimour','soulgen']; map.forEach((name,i) => { const tool = findTool(tools, name); if(tool && cards[i]) updateToolCard(cards[i], tool); }); }
+        async function init() { const tools = await fetchToolData(); if(!tools||!tools.length) return; const cards = document.querySelectorAll('.tool-card'); const map = ['candy','girlfriendgpt','juicy','secrets','ourdream','xotic','joi','promptchan','aimour','soulgen']; map.forEach((name,i) => { const tool = findTool(tools, name); if(tool && cards[i]) updateToolCard(cards[i], tool); }); }
         document.addEventListener('DOMContentLoaded', init);
     </script>
     <script>(async function(){ try { const r = await fetch('https://test.weissmilch.workers.dev/affiliate-links'); if(!r.ok) return; const links = await r.json(); document.querySelectorAll('a[data-tool]').forEach(function(a){ const t = a.dataset.tool.toLowerCase(); if(links[t]) a.href = links[t]; }); } catch(e) {} })();</script>
@@ -588,7 +618,6 @@
         <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#10B981;color:#fff;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;width:100%;max-width:400px;">🍬 CandyAI 70% Off — $3.99/mo (Limited Time) →</a>
     </div>
     <script>
-    // Show sticky CTA after scrolling — mobile only
     (function(){
         var sticky = document.getElementById('stickyCta');
         if(!sticky || window.innerWidth > 768) return;
