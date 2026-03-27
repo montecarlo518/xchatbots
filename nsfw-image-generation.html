@@ -31,7 +31,8 @@
     { id: 'fanfinity_ai',       name: 'Fanfinity AI',             pattern: 't.vlmai-3.com/406118/7722' },
     { id: 'luvr_ai',            name: 'Luvr AI',                  pattern: 't.vlmai-3.com/406118/7944' },
     { id: 'joi_ai',             name: 'Joi AI',                   pattern: 't.vlmai-3.com/406118/10163' },
-    { id: 'secrets_ai',         name: 'Secrets AI',               pattern: 't.vlmai-3.com/406118/10381' }
+    { id: 'secrets_ai',         name: 'Secrets AI',               pattern: 't.vlmai-3.com/406118/10381' },
+    { id: 'darlink_ai',         name: 'Darlink AI',               pattern: 't.vlmai-3.com/406118/10345' }
   ];
   function getToolForUrl(url) { for (var i = 0; i < affiliateTools.length; i++) { if (url.indexOf(affiliateTools[i].pattern) !== -1) return affiliateTools[i]; } return null; }
   function handleAffiliateClick(url) { var tool = getToolForUrl(url); if (!tool) return; gtag('event', 'purchase', { transaction_id: 'aff_' + tool.id + '_' + Date.now(), currency: 'USD', value: 1, items: [{ item_id: tool.id, item_name: tool.name, item_category: 'Affiliate Tool', quantity: 1, price: 1 }] }); gtag('event', 'affiliate_click', { tool_id: tool.id, tool_name: tool.name, link_url: url }); }
@@ -342,6 +343,7 @@
                         <tr class="highlight-row"><td class="platform-name">🏆 <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub5=SF_006OG000004lmDN" target="_blank">CandyAI</a></td><td>Best Overall</td><td class="check">✓ Yes</td><td>$13.99/mo</td><td>★★★★★</td></tr>
                         <tr><td class="platform-name"><a href="https://t.vlmai-3.com/406118/10163/39867?aff_sub5=SF_006OG000004lmDN" target="_blank">Joi AI</a></td><td>Best iOS + Video</td><td class="check">✓ Yes</td><td>$9.99/mo</td><td>★★★★★</td></tr>
                         <tr><td class="platform-name"><a href="https://t.vlmai-3.com/406118/10381/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">Secrets AI</a> <span style="background:#6366F1;color:#fff;padding:1px 5px;border-radius:4px;font-size:10px;">50% OFF</span></td><td>Premium Visuals</td><td class="check">✓ Yes</td><td><s style="color:#94A3B8">$39.99</s> $19.99</td><td>★★★★★</td></tr>
+                        <tr><td class="platform-name"><a href="https://t.vlmai-3.com/406118/10345/0?aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener">Darlink AI</a></td><td>Companion Visuals</td><td class="check">✓ Yes</td><td>$12.99/mo</td><td>★★★★★</td></tr>
                         <tr><td class="platform-name"><a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" target="_blank" rel="noopener">JuicyChat</a></td><td>Chat + Anime</td><td class="check">✓ Yes</td><td>$43.99/mo</td><td>★★★★☆</td></tr>
                     </tbody>
                 </table>
@@ -409,60 +411,61 @@
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM <s style="color:#94A3B8">$39.99</s></span><span class="price-value" style="font-weight:600;font-size:.85rem;color:#10B981">$19.99/mo</span></div><a href="https://t.vlmai-3.com/406118/10381/0?aff_sub5=SF_006OG000004lmDN" data-tool="secrets" target="_blank" rel="nofollow noopener" class="btn-visit" style="background:#6366F1;">Visit →</a></div>
                 </div>
 
-                <!-- #4 JuicyChat -->
+                
+                <!-- #4 Darlink AI -->
+                <div class="compact-card" style="border:2px solid #EC4899;">
+                    <div class="tool-card-header"><div class="tool-icon" style="background:linear-gradient(135deg,#EC4899,#DB2777);">💖</div><div class="tool-info"><div class="tool-rank" style="color:#EC4899;">#4 Best Companion Visuals</div><h3 class="tool-name">Darlink AI</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★★</span><span style="font-size:.8rem;font-weight:600">4.6</span><span style="font-size:.7rem;color:var(--gray-light)">(890)</span></div></div></div>
+                    <p class="tool-description">Immersive AI companion with deep emotional intelligence and image generation. Characters adapt to your preferences and remember relationship dynamics. Fully uncensored.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight" style="background:#FCE7F3;color:#BE185D;">Deep Emotional AI</span><span class="tool-tag highlight">Image Gen</span><span class="tool-tag">Uncensored</span></div>
+                    <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$12.99/mo</span></div><a href="https://t.vlmai-3.com/406118/10345/0?aff_sub5=SF_006OG000004lmDN" data-tool="darlink" target="_blank" rel="nofollow noopener" class="btn-visit" style="background:#EC4899;">Visit →</a></div>
+                </div>
+
+                <!-- #5 JuicyChat -->
                 <div class="compact-card">
-                    <div class="tool-card-header"><div class="tool-icon">🧃</div><div class="tool-info"><div class="tool-rank">#4 Best for Anime</div><h3 class="tool-name">JuicyChat</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★☆</span><span style="font-size:.8rem;font-weight:600">3.8</span><span style="font-size:.7rem;color:var(--gray-light)">(2,284)</span></div></div></div>
+                    <div class="tool-card-header"><div class="tool-icon">🧃</div><div class="tool-info"><div class="tool-rank">#5 Best for Anime</div><h3 class="tool-name">JuicyChat</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★☆</span><span style="font-size:.8rem;font-weight:600">3.8</span><span style="font-size:.7rem;color:var(--gray-light)">(2,284)</span></div></div></div>
                     <p class="tool-description">Anime-focused NSFW chat with integrated image generation. Specializes in hentai aesthetics and Janitor AI-style roleplay with visual output.</p>
                     <div class="tool-tags"><span class="tool-tag highlight">Anime/Hentai</span><span class="tool-tag">Chat + Images</span><span class="tool-tag">Roleplay</span></div>
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$43.99/mo</span></div><a href="https://lowest-prices.eu/a/ADlwkf10KAUYoX0" data-tool="juicychat" target="_blank" rel="noopener" class="btn-visit">Visit →</a></div>
                 </div>
 
-                <!-- #5 GirlfriendGPT -->
+                <!-- #6 GirlfriendGPT -->
                 <div class="compact-card">
-                    <div class="tool-card-header"><div class="tool-icon">🌿</div><div class="tool-info"><div class="tool-rank">#5 Best Personalization</div><h3 class="tool-name">GirlfriendGPT</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★★</span><span style="font-size:.8rem;font-weight:600">4.6</span><span style="font-size:.7rem;color:var(--gray-light)">(1,204)</span></div></div></div>
+                    <div class="tool-card-header"><div class="tool-icon">🌿</div><div class="tool-info"><div class="tool-rank">#6 Best Personalization</div><h3 class="tool-name">GirlfriendGPT</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★★</span><span style="font-size:.8rem;font-weight:600">4.6</span><span style="font-size:.7rem;color:var(--gray-light)">(1,204)</span></div></div></div>
                     <p class="tool-description">Adaptive AI that learns your visual preferences over time. Completely uncensored image generation alongside unlimited chat — the more you use it, the better it gets.</p>
                     <div class="tool-tags"><span class="tool-tag highlight">Adaptive AI</span><span class="tool-tag highlight">Image Gen</span><span class="tool-tag">No Filters</span></div>
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$12/mo</span></div><a href="https://t.vlmai-3.com/406118/7477?aff_sub5=SF_006OG000004lmDN" data-tool="girlfriendgpt" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a></div>
                 </div>
 
-                <!-- #6 ourdream.ai -->
+                <!-- #7 ourdream.ai -->
                 <div class="compact-card">
-                    <div class="tool-card-header"><div class="tool-icon">💕</div><div class="tool-info"><div class="tool-rank">#6 Best Undress AI</div><h3 class="tool-name">ourdream.ai</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★★</span><span style="font-size:.8rem;font-weight:600">4.6</span><span style="font-size:.7rem;color:var(--gray-light)">(4,031)</span></div></div></div>
+                    <div class="tool-card-header"><div class="tool-icon">💕</div><div class="tool-info"><div class="tool-rank">#7 Best Undress AI</div><h3 class="tool-name">ourdream.ai</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★★</span><span style="font-size:.8rem;font-weight:600">4.6</span><span style="font-size:.7rem;color:var(--gray-light)">(4,031)</span></div></div></div>
                     <p class="tool-description">The deepnude alternative with advanced face swap, undress AI features, and video generation. The most complete toolkit for custom NSFW visuals.</p>
                     <div class="tool-tags"><span class="tool-tag highlight">Face Swap</span><span class="tool-tag highlight">Undress AI</span><span class="tool-tag">Video Gen</span></div>
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$9.99/mo</span></div><a href="https://t.vlmai-3.com/406118/10138/38989?aff_sub=ourdream&aff_sub5=SF_006OG000004lmDN" data-tool="ourdream" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a></div>
                 </div>
 
-                <!-- #7 Xotic AI -->
+                <!-- #8 Xotic AI -->
                 <div class="compact-card">
-                    <div class="tool-card-header"><div class="tool-icon">🔮</div><div class="tool-info"><div class="tool-rank">#7 Most Photorealistic</div><h3 class="tool-name">Xotic AI</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★</span><span style="font-size:.8rem;font-weight:600">4.2</span><span style="font-size:.7rem;color:var(--gray-light)">(532)</span></div></div></div>
+                    <div class="tool-card-header"><div class="tool-icon">🔮</div><div class="tool-info"><div class="tool-rank">#8 Most Photorealistic</div><h3 class="tool-name">Xotic AI</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★</span><span style="font-size:.8rem;font-weight:600">4.2</span><span style="font-size:.7rem;color:var(--gray-light)">(532)</span></div></div></div>
                     <p class="tool-description">Ultra-photorealistic NSFW images plus voice calls. A complete adult AI experience with the most lifelike visual output available.</p>
                     <div class="tool-tags"><span class="tool-tag highlight">Photorealistic</span><span class="tool-tag">Voice Calls</span><span class="tool-tag">Chat</span></div>
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$7.49/mo</span></div><a href="https://t.vlmai-3.com/406118/10349/0?aff_sub5=SF_006OG000004lmDN" data-tool="xotic" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a></div>
                 </div>
 
-                <!-- #8 Promptchan -->
+                <!-- #9 Promptchan -->
                 <div class="compact-card">
-                    <div class="tool-card-header"><div class="tool-icon">🎭</div><div class="tool-info"><div class="tool-rank">#8 Anime Specialist</div><h3 class="tool-name">Promptchan</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★☆</span><span style="font-size:.8rem;font-weight:600">4.6</span><span style="font-size:.7rem;color:var(--gray-light)">(1,076)</span></div></div></div>
+                    <div class="tool-card-header"><div class="tool-icon">🎭</div><div class="tool-info"><div class="tool-rank">#9 Anime Specialist</div><h3 class="tool-name">Promptchan</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★☆</span><span style="font-size:.8rem;font-weight:600">4.6</span><span style="font-size:.7rem;color:var(--gray-light)">(1,076)</span></div></div></div>
                     <p class="tool-description">Anime and hentai art specialist with multiple styles. Includes video generation and AI chat, but at a premium price point.</p>
                     <div class="tool-tags"><span class="tool-tag">Anime/Hentai</span><span class="tool-tag">Video Gen</span><span class="tool-tag">Text-to-Image</span></div>
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$26.99/mo</span></div><a href="https://t.vlmai-3.com/406118/10338/0?aff_sub=promptchan&aff_sub5=SF_006OG000004lmDN" data-tool="promptchan" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a></div>
                 </div>
 
-                <!-- #9 Aimour AI -->
+                <!-- #10 Aimour AI -->
                 <div class="compact-card">
-                    <div class="tool-card-header"><div class="tool-icon">💕</div><div class="tool-info"><div class="tool-rank">#9 Model Variety</div><h3 class="tool-name">Aimour AI</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★½</span><span style="font-size:.8rem;font-weight:600">4.4</span><span style="font-size:.7rem;color:var(--gray-light)">(121)</span></div></div></div>
+                    <div class="tool-card-header"><div class="tool-icon">💕</div><div class="tool-info"><div class="tool-rank">#10 Model Variety</div><h3 class="tool-name">Aimour AI</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★½</span><span style="font-size:.8rem;font-weight:600">4.4</span><span style="font-size:.7rem;color:var(--gray-light)">(121)</span></div></div></div>
                     <p class="tool-description">54+ diverse AI models with unique body types. Video generation, voice messages, and a relationship progression system.</p>
                     <div class="tool-tags"><span class="tool-tag highlight">54+ Models</span><span class="tool-tag">Video Gen</span><span class="tool-tag">Voice</span></div>
                     <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$9.99/mo</span></div><a href="https://t.vlmai-3.com/406118/7986?aff_sub5=SF_006OG000004lmDN" data-tool="aimour" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a></div>
-                </div>
-
-                <!-- #10 SoulGen -->
-                <div class="compact-card">
-                    <div class="tool-card-header"><div class="tool-icon">✨</div><div class="tool-info"><div class="tool-rank">#10 Most Photorealistic Faces</div><h3 class="tool-name">SoulGen</h3><div class="tool-rating"><span class="stars" style="font-size:.8rem">★★★★★</span><span style="font-size:.8rem;font-weight:600">4.7</span><span style="font-size:.7rem;color:var(--gray-light)">(2,340)</span></div></div></div>
-                    <p class="tool-description">Photorealistic faces nearly indistinguishable from photos. Exceptional skin texture, lighting, and anatomical accuracy. Best for realism purists.</p>
-                    <div class="tool-tags"><span class="tool-tag highlight">Photorealistic</span><span class="tool-tag">Best Faces</span><span class="tool-tag">4K</span></div>
-                    <div class="card-footer"><div class="tool-pricing"><span class="price-label" style="font-size:.65rem;color:var(--gray-light);text-transform:uppercase">PREMIUM</span><span class="price-value" style="font-weight:600;font-size:.85rem">$9.99/mo</span></div><a href="https://t.vlmai-3.com/406118/8077?aff_sub5=SF_006OG000004lmDN" data-tool="soulgen" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a></div>
                 </div>
 
             </div><!-- end tools-grid -->
