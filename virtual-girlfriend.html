@@ -203,7 +203,14 @@
 }
 /* ========== END MOBILE FIX ========== */
 
-    </style>
+    
+/* Pricing grid mobile fix */
+@media(max-width:480px){
+    .pricing-grid{grid-template-columns:1fr!important;gap:.5rem!important;max-width:260px;margin-left:auto!important;margin-right:auto!important;}
+    .pricing-grid>div{padding:.65rem!important;}
+    .premium-compare{grid-template-columns:1fr!important;gap:1rem!important;}
+}
+</style>
 </head>
 <body>
     <header>
@@ -304,12 +311,12 @@
             <!-- Premium conversion box with CandyAI pricing -->
             <div style="background:linear-gradient(135deg,#1E293B,#0f172a);border-radius:20px;padding:1.75rem;margin:0 0 2rem;color:white;">
                 <h3 style="font-family:'Fraunces',serif;font-size:1.15rem;margin-bottom:1rem;color:#fff;">💎 Why Premium AI Girlfriends Are Worth It</h3>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;font-size:.9rem;">
+                <div class="premium-compare" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;font-size:.9rem;">
                     <div><div style="color:#EF4444;font-weight:600;margin-bottom:.5rem;">Free tier reality:</div><div style="color:#94A3B8;line-height:1.8;">Messages run out mid-conversation<br>AI forgets you every session<br>No voice, images, or video<br>Generic personality, no customization<br>Frustrating content restrictions</div></div>
                     <div><div style="color:#10B981;font-weight:600;margin-bottom:.5rem;">What premium unlocks:</div><div style="color:#D1FAE5;line-height:1.8;">Unlimited messaging, all day<br>AI remembers your entire relationship<br>Voice messages, images &amp; video<br>Fully customizable personality &amp; looks<br>Completely uncensored conversations</div></div>
                 </div>
                 <!-- CandyAI pricing tiers -->
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center;margin-top:1.25rem;">
+                <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center;margin-top:1.25rem;">
                     <div style="background:rgba(16,185,129,.15);border:2px solid #10B981;border-radius:12px;padding:.6rem;position:relative;">
                         <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#FF6B8A;color:#fff;font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:50px;">BEST DEAL</div>
                         <div style="color:#94A3B8;font-size:.75rem;margin-top:4px;">12 months</div>
@@ -359,7 +366,7 @@
                 </div>
                 
                 <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:16px;padding:1.25rem;margin:.5rem 0 1.25rem;">
-                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center;">
+                    <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center;">
                         <div style="background:rgba(16,185,129,.15);border:2px solid #10B981;border-radius:12px;padding:.75rem;position:relative;">
                             <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#FF6B8A;color:#fff;font-size:.65rem;font-weight:700;padding:2px 10px;border-radius:50px;">BEST CHOICE</div>
                             <div style="color:#94A3B8;font-size:.8rem;margin-top:4px;">12 months</div>
@@ -839,7 +846,7 @@
 
 <!-- Sticky Mobile CTA -->
 <div id="stickyCta" style="display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1E293B,#0f172a);padding:12px 16px;z-index:99;box-shadow:0 -4px 20px rgba(0,0,0,.3);text-align:center;">
-    <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub2=aigirlfriend&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#10B981;color:#fff;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;width:100%;max-width:400px;">🍬 CandyAI 70% Off — $3.99/mo (Limited) →</a>
+    <a href="https://t.vlmai-3.com/406118/10022/37987?aff_sub2=aigirlfriend&aff_sub5=SF_006OG000004lmDN" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#10B981;color:#fff;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;width:100%;max-width:400px;">🍬 CandyAI 70% Off — $3.99/mo →</a>
 </div>
 <script>
 (function(){
