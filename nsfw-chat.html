@@ -580,6 +580,40 @@ function updateAffiliateLinks(tools) {
     }
 })();
 </script>
-
+<!-- Reddit Community Toast Notification -->
+<style>
+.reddit-toast{position:fixed;bottom:20px;right:20px;background:#1E293B;color:#fff;border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:97;transform:translateY(120%);opacity:0;transition:transform .4s ease,opacity .4s ease;max-width:340px;font-family:'DM Sans',sans-serif;font-size:.85rem;line-height:1.4}
+.reddit-toast.show{transform:translateY(0);opacity:1}
+.reddit-toast svg{width:24px;height:24px;flex-shrink:0;fill:#FF4500}
+.reddit-toast a{color:#FF4500;font-weight:600;text-decoration:none}
+.reddit-toast a:hover{text-decoration:underline}
+.reddit-toast-close{position:absolute;top:6px;right:10px;background:none;border:none;color:#64748B;font-size:16px;cursor:pointer;padding:2px 6px;line-height:1}
+.reddit-toast-close:hover{color:#fff}
+@media(max-width:768px){.reddit-toast{right:12px;left:12px;max-width:none}}
+</style>
+<div class="reddit-toast" id="redditToast">
+    <button class="reddit-toast-close" onclick="document.getElementById('redditToast').classList.remove('show')" aria-label="Close">&times;</button>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 13.38c.15.36.22.75.22 1.15 0 2.65-3.14 4.8-7.01 4.8-3.87 0-7.01-2.15-7.01-4.8 0-.4.08-.79.22-1.15a1.46 1.46 0 0 1-.2-2.35 1.46 1.46 0 0 1 2.06.07 7.27 7.27 0 0 1 3.56-1.15l1.08-3.39a.37.37 0 0 1 .44-.26l2.58.55a1.06 1.06 0 1 1-.1.48l-2.31-.49-.96 3.02a7.24 7.24 0 0 1 3.49 1.14 1.46 1.46 0 0 1 2.43.08 1.46 1.46 0 0 1-.29 2.3zM9.3 13.28a1.07 1.07 0 1 0 0 2.14 1.07 1.07 0 0 0 0-2.14zm5.4 0a1.07 1.07 0 1 0 0 2.14 1.07 1.07 0 0 0 0-2.14zm-5.14 3.92a.32.32 0 0 0 .45 0 3.04 3.04 0 0 0 1.99.66c.78 0 1.49-.23 1.99-.66a.32.32 0 0 0 .45.45c-.63.56-1.47.86-2.44.86s-1.81-.3-2.44-.86a.32.32 0 0 1 0-.45z"/></svg>
+    <span>Join uncensored AI enthusiasts on <a href="https://www.reddit.com/r/XChatbots/" target="_blank" rel="noopener">r/XChatbots</a></span>
+</div>
+<script>
+(function(){
+    if(sessionStorage.getItem('reddit_toast_shown'))return;
+    var toast=document.getElementById('redditToast');
+    var shown=false;
+    function showToast(){
+        if(shown)return;shown=true;
+        sessionStorage.setItem('reddit_toast_shown','1');
+        var sticky=document.getElementById('stickyCta');
+        if(sticky&&sticky.offsetHeight>0&&sticky.style.display!=='none'){
+            toast.style.bottom=(sticky.offsetHeight+12)+'px';
+        }
+        toast.classList.add('show');
+        setTimeout(function(){toast.classList.remove('show')},12000);
+    }
+    window.addEventListener('scroll',function(){var h=document.documentElement;var pct=(h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight);if(pct>.8)showToast();});
+    setTimeout(showToast,60000);
+})();
+</script>
 </body>
 </html>
