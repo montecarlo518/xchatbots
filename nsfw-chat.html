@@ -368,7 +368,7 @@
   window.crs = function(toolId, val) {
     _cr[toolId] = val;
     var stars = document.querySelectorAll('#cs_' + toolId + ' svg');
-    stars.forEach(function(s, i){ s.className = i < val ? 'on' : 'off'; });
+    stars.forEach(function(s, i){ s.setAttribute('class', i < val ? 'on' : 'off'); });
     var btn = document.getElementById('cb_' + toolId);
     if(btn) btn.disabled = false;
   };
@@ -389,13 +389,13 @@
     var btn = document.getElementById('cb_' + toolId);
     if(btn){ btn.disabled = true; btn.textContent = '…'; }
 
-    fetch('https://test.weissmilch.workers.dev/ratings', {
+    fetch('https://test.weissmilch.workers.dev/api/rate', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        tool_id: toolId, tool_name: toolName, rating: val,
-        ip_hash: fp(), page: 'nsfw-chat',
-        submitted_at: new Date().toISOString()
+        toolId: toolId,
+        toolName: toolName,
+        rating: val
       })
     }).then(function(r){
       if(!r.ok) throw new Error(r.status);
