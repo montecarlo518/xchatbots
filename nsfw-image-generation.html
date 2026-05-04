@@ -578,7 +578,7 @@
         async function fetchToolData() { try { const r = await fetch(API_URL + '/tools'); return await r.json(); } catch(e) { return []; } }
         function findTool(tools, name) { const s = name.toLowerCase().replace(/[-\s]/g, ''); return tools.find(t => { const n = (t.name||'').toLowerCase().replace(/[-\s]/g, '').replace(/<br>/g, '').trim(); return n.includes(s) || s.includes(n); }); }
         function updateToolCard(card, tool) { if(!tool) return; const btn = card.querySelector('.btn-visit'); if(btn && tool.url && tool.url !== '#') btn.href = tool.url; }
-        async function init() { const tools = await fetchToolData(); if(!tools||!tools.length) return; const cards = document.querySelectorAll('.tool-card'); const map = ['candy','girlfriendgpt','juicy','secrets','ourdream','xotic','joi','promptchan','aimour','soulgen']; map.forEach((name,i) => { const tool = findTool(tools, name); if(tool && cards[i]) updateToolCard(cards[i], tool); }); }
+        async function init() { const tools = await fetchToolData(); if(!tools||!tools.length) return; const cards = document.querySelectorAll('.tool-card'); const map = [null,'girlfriendgpt','juicy','secrets','ourdream','xotic','joi','promptchan','aimour','soulgen']; map.forEach((name,i) => { const tool = findTool(tools, name); if(tool && cards[i]) updateToolCard(cards[i], tool); }); }
         document.addEventListener('DOMContentLoaded', init);
     </script>
     <script>(async function(){ try { const r = await fetch('https://test.weissmilch.workers.dev/affiliate-links'); if(!r.ok) return; const links = await r.json(); document.querySelectorAll('a[data-tool]').forEach(function(a){ const t = a.dataset.tool.toLowerCase(); if(links[t]) a.href = links[t]; }); } catch(e) {} })();</script>
