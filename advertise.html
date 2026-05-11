@@ -50,34 +50,11 @@
         .logo-icon .logo-img { width: 28px; height: 28px; object-fit: contain; }
         .logo-text { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); }
         
-        .nav-links { display: flex; gap: 0.5rem; align-items: center; overflow: visible; }
-        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); padding: 0.5rem 1rem; border-radius: var(--radius-sm); }
-        .nav-link:hover, .nav-link.active { color: var(--blue); background: var(--ice-light); }
-        
-        /* Dropdown Styles */
-        .nav-dropdown { position: relative; overflow: visible; }
-        .nav-dropdown-toggle { display: flex; align-items: center; gap: 0.35rem; cursor: pointer; text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); padding: 0.5rem 1rem; border-radius: var(--radius-sm); background: none; border: none; font-family: inherit; }
-        .nav-dropdown-toggle:hover { color: var(--blue); background: var(--ice-light); }
-        .nav-dropdown-toggle svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
-        .nav-dropdown:hover .nav-dropdown-toggle svg { transform: rotate(180deg); }
-        
-        .nav-dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 260px; background: var(--white); border-radius: var(--radius-md); box-shadow: 0 10px 40px rgba(30, 41, 59, 0.15); padding: 0.5rem; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s ease; z-index: 1000; }
-        .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        
-        .dropdown-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: var(--radius-sm); text-decoration: none; color: var(--charcoal); font-size: 0.9rem; transition: var(--transition); }
-        .dropdown-item:hover { background: var(--ice-light); color: var(--blue); }
-        .dropdown-item-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; background: var(--ice-light); flex-shrink: 0; }
-        .dropdown-item:hover .dropdown-item-icon { background: var(--ice); }
-        .dropdown-item-text { display: flex; flex-direction: column; }
-        .dropdown-item-title { font-weight: 600; font-size: 0.9rem; }
-        .dropdown-item-desc { font-size: 0.75rem; color: var(--gray-light); }
-        
-        .dropdown-divider { height: 1px; background: var(--ice); margin: 0.5rem 0; }
-        
-        .btn-submit { background: var(--charcoal); color: white; padding: 0.6rem 1.25rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); margin-left: 0.5rem; }
-        .btn-submit:hover { background: var(--blue); transform: translateY(-2px); }
-        
-        @media (max-width: 900px) { .nav-links { display: none; } }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-link { text-decoration: none; color: var(--gray-warm); font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
+        .nav-link:hover, .nav-link.active { color: var(--blue); }
+        .mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.25);opacity:0;visibility:hidden;transition:all .3s ease;z-index:998;pointer-events:none}.mobile-overlay.active{opacity:1;visibility:visible;pointer-events:auto}.mobile-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}.hamburger{display:block;width:22px;height:2px;background:#1E293B;position:relative;transition:all .3s}.hamburger::before,.hamburger::after{content:'';position:absolute;width:22px;height:2px;background:#1E293B;left:0;transition:all .3s}.hamburger::before{top:-6px}.hamburger::after{top:6px}.mobile-nav-toggle.active .hamburger{background:transparent}.mobile-nav-toggle.active .hamburger::before{transform:rotate(45deg);top:0}.mobile-nav-toggle.active .hamburger::after{transform:rotate(-45deg);top:0}.nav-dropdown{position:relative}.nav-dropdown-toggle{display:flex;align-items:center;gap:4px;color:#475569;font-weight:500;cursor:pointer;background:none;border:none;font-size:1rem;font-family:inherit;padding:0}.nav-dropdown-toggle:hover{color:#4A9EBF}.nav-dropdown-toggle svg{width:12px;height:12px;transition:transform .2s}.nav-dropdown:hover .nav-dropdown-toggle svg{transform:rotate(180deg)}.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.12);min-width:200px;padding:8px 0;opacity:0;visibility:hidden;transition:all .2s;margin-top:12px;z-index:100}.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}.nav-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1E293B;font-size:.9rem;font-weight:500;transition:background .15s}.nav-dropdown-item:hover{background:#E8F4F8;color:#4A9EBF}.btn-submit-nav{background:#1E293B;color:#fff!important;padding:10px 20px;border-radius:10px;text-decoration:none!important;font-weight:600;font-size:.85rem;display:inline-block;transition:all .2s}.btn-submit-nav:hover{background:#4A9EBF;transform:translateY(-1px)}
+        @media(max-width:900px){.mobile-nav-toggle{display:flex!important;align-items:center;justify-content:center}.nav-links{position:fixed;top:0;right:-300px;width:280px;height:100vh;height:100dvh;background:#fff;flex-direction:column;align-items:stretch;padding:70px 20px 30px;gap:0;box-shadow:-4px 0 20px rgba(0,0,0,.1);transition:right .3s ease;overflow-y:auto;z-index:1000;display:flex}.nav-links.active{right:0}.nav-link{padding:16px 0;border-bottom:1px solid #f1f5f9;font-size:1.05rem;display:block;color:#1E293B}.nav-dropdown{border-bottom:1px solid #f1f5f9}.nav-dropdown-toggle{width:100%;justify-content:space-between;padding:16px 0;font-size:1.05rem;color:#1E293B}.nav-dropdown-menu{position:static;transform:none;box-shadow:none;opacity:1;visibility:visible;display:none;margin:0;padding:0 0 12px 16px;background:transparent;border-radius:0}.nav-dropdown-menu::before{display:none}.nav-dropdown.active .nav-dropdown-menu{display:block}.nav-dropdown-item{padding:12px 0;font-size:.95rem;display:block}.btn-submit-nav{margin-top:20px;text-align:center;display:block;width:100%;padding:14px 20px}}
         
         .hero { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 5rem 2rem 4rem; text-align: center; }
         .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.2; margin-bottom: 1rem; }
@@ -179,7 +156,6 @@
         }
         @media (max-width: 600px) {
             .footer-content { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
             .stats-grid { grid-template-columns: 1fr 1fr; }
             .hero h1 { font-size: 2rem; }
         }
@@ -189,102 +165,20 @@
     <div class="bg-decoration bg-blob-1"></div>
     <div class="bg-decoration bg-blob-2"></div>
 
+    <div class="mobile-overlay"></div>
     <header>
         <div class="header-content">
         <a href="/" class="logo">
             <div class="logo-icon"><img src="media/XC-2.png" alt="Xchatbots Logo" class="logo-img"></div>
             <span class="logo-text">Xchatbots</span>
         </a>
+        <button class="mobile-nav-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
         <nav class="nav-links">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/blog" class="nav-link">Blog</a>
-            
-            <!-- Categories Dropdown -->
-            <div class="nav-dropdown">
-                <button class="nav-dropdown-toggle">
-                    Categories
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="nav-dropdown-menu">
-                    <a href="/virtual-girlfriend" class="dropdown-item">
-                        <div class="dropdown-item-icon">💕</div>
-                        <div class="dropdown-item-text">
-                            <span class="dropdown-item-title">Virtual Girlfriend</span>
-                            <span class="dropdown-item-desc">AI companions & dating</span>
-                        </div>
-                    </a>
-                    <a href="/nsfw-chat" class="dropdown-item">
-                        <div class="dropdown-item-icon">💬</div>
-                        <div class="dropdown-item-text">
-                            <span class="dropdown-item-title">NSFW Chat</span>
-                            <span class="dropdown-item-desc">Adult AI chatbots</span>
-                        </div>
-                    </a>
-                    <a href="/nsfw-image-generation" class="dropdown-item">
-                        <div class="dropdown-item-icon">🎨</div>
-                        <div class="dropdown-item-text">
-                            <span class="dropdown-item-title">NSFW Image Generation</span>
-                            <span class="dropdown-item-desc">AI art & porn generators</span>
-                        </div>
-                    </a>
-                    <a href="/nsfw-video-generation" class="dropdown-item">
-                        <div class="dropdown-item-icon">🎬</div>
-                        <div class="dropdown-item-text">
-                            <span class="dropdown-item-title">NSFW Video Generation</span>
-                            <span class="dropdown-item-desc">AI video & deepfakes</span>
-                        </div>
-                    </a>
-                    <a href="/roleplay" class="dropdown-item">
-                        <div class="dropdown-item-icon">🎭</div>
-                        <div class="dropdown-item-text">
-                            <span class="dropdown-item-title">Roleplay</span>
-                            <span class="dropdown-item-desc">ERP & storytelling</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Alternatives Dropdown -->
-            <div class="nav-dropdown">
-                <button class="nav-dropdown-toggle">
-                    Alternatives
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="nav-dropdown-menu">
-                    <a href="/alternatives/character-ai-alternatives" class="dropdown-item">
-                        <div class="dropdown-item-icon">🔄</div>
-                        <div class="dropdown-item-text">
-                            <span class="dropdown-item-title">Character AI Alternatives</span>
-                            <span class="dropdown-item-desc">Uncensored CAI replacements</span>
-                        </div>
-                    </a>
-                    <a href="/alternatives/janitor-ai-alternatives" class="dropdown-item">
-                        <div class="dropdown-item-icon">🧹</div>
-                        <div class="dropdown-item-text">
-                            <span class="dropdown-item-title">Janitor AI Alternatives</span>
-                            <span class="dropdown-item-desc">Similar NSFW chatbots</span>
-                        </div>
-                    </a>
-                    <a href="/alternatives/crushon-ai-alternatives" class="dropdown-item">
-                        <div class="dropdown-item-icon">❤️</div>
-                        <div class="dropdown-item-text">
-                            <span class="dropdown-item-title">CrushOn AI Alternatives</span>
-                            <span class="dropdown-item-desc">Romantic AI options</span>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="/best/nsfw-ai-chatbots" class="dropdown-item">
-                        <div class="dropdown-item-icon">🏆</div>
-                        <div class="dropdown-item-text">
-                            <span class="dropdown-item-title">Best NSFW AI Chatbots</span>
-                            <span class="dropdown-item-desc">Top rated for 2026</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            
-            <a href="/advertise" class="nav-link active">Advertise</a>
-            <a href="/submit" class="btn-submit">Submit AI</a>
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown"><button class="nav-dropdown-toggle">Categories<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg></button><div class="nav-dropdown-menu"><a href="/virtual-girlfriend" class="nav-dropdown-item">AI Girlfriend</a><a href="/nsfw-chat" class="nav-dropdown-item">NSFW Chat</a><a href="/nsfw-image-generation" class="nav-dropdown-item">NSFW Images</a><a href="/nsfw-video-generation" class="nav-dropdown-item">NSFW Videos</a><a href="/roleplay" class="nav-dropdown-item">Roleplay</a></div></div>
+                <div class="nav-dropdown"><button class="nav-dropdown-toggle">Alternatives<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg></button><div class="nav-dropdown-menu"><a href="/alternatives/character-ai-alternatives" class="nav-dropdown-item"><span>🎭</span> Character AI</a><a href="/alternatives/janitor-ai-alternatives" class="nav-dropdown-item"><span>🧹</span> Janitor AI</a><a href="/alternatives/crushon-ai-alternatives" class="nav-dropdown-item"><span>❤️</span> CrushOn AI</a><a href="/alternatives/spicychat-alternatives" class="nav-dropdown-item"><span>🌶️</span> SpicyChat</a><a href="/alternatives/perchance-ai-alternatives" class="nav-dropdown-item"><span>🎲</span> Perchance AI</a></div></div>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/submit" class="btn-submit-nav">Submit AI</a>
         </nav>
     </div>
     </header>
@@ -463,6 +357,7 @@
         </div>
     </footer>
 
+    <script>(function(){var toggle=document.querySelector('.mobile-nav-toggle'),nav=document.querySelector('.nav-links'),overlay=document.querySelector('.mobile-overlay');if(toggle){toggle.onclick=function(){toggle.classList.toggle('active');nav.classList.toggle('active');if(overlay)overlay.classList.toggle('active');}}if(overlay){overlay.onclick=function(){toggle.classList.remove('active');nav.classList.remove('active');overlay.classList.remove('active');}}var dd=document.querySelectorAll('.nav-dropdown-toggle');for(var i=0;i<dd.length;i++){dd[i].onclick=function(e){e.preventDefault();this.parentElement.classList.toggle('active');}}})();</script>
     <script>
         const form = document.getElementById('advertiseForm');
         const successMessage = document.getElementById('successMessage');
