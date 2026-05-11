@@ -576,14 +576,14 @@
     </footer>
     
     <script>
-        const API_URL = 'https://test.weissmilch.workers.dev';
+        const API_URL = 'https://api.x-chatbots.com';
         async function fetchToolData() { try { const r = await fetch(API_URL + '/tools'); return await r.json(); } catch(e) { return []; } }
         function findTool(tools, name) { const s = name.toLowerCase().replace(/[-\s]/g, ''); return tools.find(t => { const n = (t.name||'').toLowerCase().replace(/[-\s]/g, '').replace(/<br>/g, '').trim(); return n.includes(s) || s.includes(n); }); }
         function updateToolCard(card, tool) { if(!tool) return; const btn = card.querySelector('.btn-visit'); if(btn && tool.url && tool.url !== '#') btn.href = tool.url; }
         async function init() { const tools = await fetchToolData(); if(!tools||!tools.length) return; const cards = document.querySelectorAll('.tool-card'); const map = [null,'girlfriendgpt','juicy','secrets','ourdream','xotic','joi','promptchan','aimour','soulgen']; map.forEach((name,i) => { const tool = findTool(tools, name); if(tool && cards[i]) updateToolCard(cards[i], tool); }); }
         document.addEventListener('DOMContentLoaded', init);
     </script>
-    <script>(async function(){ try { const r = await fetch('https://test.weissmilch.workers.dev/affiliate-links'); if(!r.ok) return; const links = await r.json(); document.querySelectorAll('a[data-tool]').forEach(function(a){ const t = a.dataset.tool.toLowerCase(); if(links[t]) a.href = links[t]; }); } catch(e) {} })();</script>
+    <script>(async function(){ try { const r = await fetch('https://api.x-chatbots.com/affiliate-links'); if(!r.ok) return; const links = await r.json(); document.querySelectorAll('a[data-tool]').forEach(function(a){ const t = a.dataset.tool.toLowerCase(); if(links[t]) a.href = links[t]; }); } catch(e) {} })();</script>
     <script>(function(){ var toggle=document.querySelector('.mobile-nav-toggle'),nav=document.querySelector('.nav-links'),overlay=document.querySelector('.mobile-overlay'); if(toggle){toggle.onclick=function(){toggle.classList.toggle('active');nav.classList.toggle('active');if(overlay)overlay.classList.toggle('active');}} if(overlay){overlay.onclick=function(){toggle.classList.remove('active');nav.classList.remove('active');overlay.classList.remove('active');}} var dd=document.querySelectorAll('.nav-dropdown-toggle'); for(var i=0;i<dd.length;i++){dd[i].onclick=function(e){e.preventDefault();this.parentElement.classList.toggle('active');}} })();</script>
     <!-- Sticky Mobile CTA -->
     <div id="stickyCta" style="display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1E293B,#0f172a);padding:12px 16px;z-index:99;box-shadow:0 -4px 20px rgba(0,0,0,.3);text-align:center;">
@@ -672,7 +672,7 @@
   document.addEventListener('click',function(e){if(!_open)return;var wrap=e.target.closest('.cr-wrap');if(!wrap)closeAll();},true);
   function closeAll(){if(_open){var p=document.getElementById('cp_'+_open);if(p)p.classList.remove('open');_open=null;}}
   window.crs=function(toolId,val){_cr[toolId]=val;var stars=document.querySelectorAll('#cs_'+toolId+' svg');stars.forEach(function(s,i){s.setAttribute('class',i<val?'on':'off');});var btn=document.getElementById('cb_'+toolId);if(btn)btn.disabled=false;};
-  window.crSubmit=function(toolId,toolName,page){var val=_cr[toolId];if(!val)return;var key='xc_rated_'+toolId+'_'+page;try{if(sessionStorage.getItem(key)){showMsg(toolId,'Already rated!',false);return;}}catch(e){}var btn=document.getElementById('cb_'+toolId);if(btn){btn.disabled=true;btn.textContent='...';}fetch('https://test.weissmilch.workers.dev/api/rate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({toolId:toolId,toolName:toolName,rating:val,page:page})}).then(function(r){if(!r.ok)throw new Error(r.status);onOk(toolId,val,btn,key);}).catch(function(){onOk(toolId,val,btn,key);});};
+  window.crSubmit=function(toolId,toolName,page){var val=_cr[toolId];if(!val)return;var key='xc_rated_'+toolId+'_'+page;try{if(sessionStorage.getItem(key)){showMsg(toolId,'Already rated!',false);return;}}catch(e){}var btn=document.getElementById('cb_'+toolId);if(btn){btn.disabled=true;btn.textContent='...';}fetch('https://api.x-chatbots.com/api/rate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({toolId:toolId,toolName:toolName,rating:val,page:page})}).then(function(r){if(!r.ok)throw new Error(r.status);onOk(toolId,val,btn,key);}).catch(function(){onOk(toolId,val,btn,key);});};
   function onOk(toolId,val,btn,key){try{sessionStorage.setItem(key,'1');}catch(e){}closeAll();var t=document.getElementById('ct_'+toolId);if(t)t.classList.add('done');if(btn){btn.textContent='✓';btn.disabled=true;}showMsg(toolId,val+'★ saved!',true);}
   function showMsg(toolId,txt,ok){var el=document.getElementById('cm_'+toolId);if(el){el.textContent=txt;el.style.color=ok?'#047857':'#DC2626';}}
 })();

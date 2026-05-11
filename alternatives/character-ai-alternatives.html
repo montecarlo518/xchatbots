@@ -1397,7 +1397,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
     </footer>
     
     <script>
-        const API_URL = 'https://test.weissmilch.workers.dev';
+        const API_URL = 'https://api.x-chatbots.com';
         async function fetchToolData() {
             try { const response = await fetch(API_URL + '/tools'); return await response.json(); }
             catch (error) { console.error('Error fetching tools:', error); return []; }
@@ -1435,7 +1435,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
 <script>
 (async function(){
     try {
-        const r = await fetch('https://test.weissmilch.workers.dev/affiliate-links');
+        const r = await fetch('https://api.x-chatbots.com/affiliate-links');
         if(!r.ok) return;
         const links = await r.json();
         document.querySelectorAll('a[data-tool]').forEach(function(a){

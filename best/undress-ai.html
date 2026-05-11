@@ -1266,7 +1266,7 @@ footer{padding:2.5rem 1rem 1.5rem}
 <script>
 (async function(){
     try {
-        const r = await fetch('https://test.weissmilch.workers.dev/affiliate-links');
+        const r = await fetch('https://api.x-chatbots.com/affiliate-links');
         if(!r.ok) return;
         const links = await r.json();
         document.querySelectorAll('a[data-tool]').forEach(function(a){

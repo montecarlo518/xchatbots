@@ -841,7 +841,7 @@
 <script>
 (async function(){
     try {
-        const r = await fetch('https://test.weissmilch.workers.dev/affiliate-links');
+        const r = await fetch('https://api.x-chatbots.com/affiliate-links');
         if(!r.ok) return;
         const links = await r.json();
         document.querySelectorAll('a[data-tool]').forEach(function(a){
@@ -951,7 +951,7 @@
   function closeAll(){if(_open){var p=document.getElementById('cp_'+_open);if(p)p.classList.remove('open');_open=null;}}
   window.crs=function(toolId,val){_cr[toolId]=val;var stars=document.querySelectorAll('#cs_'+toolId+' svg');stars.forEach(function(s,i){s.setAttribute('class',i<val?'on':'off');});var btn=document.getElementById('cb_'+toolId);if(btn)btn.disabled=false;};
   function fp(){var s=navigator.userAgent+screen.width+screen.height+navigator.language;var h=0;for(var i=0;i<s.length;i++){h=((h<<5)-h)+s.charCodeAt(i);h|=0;}return Math.abs(h).toString(16);}
-  window.crSubmit=function(toolId,toolName,page){var val=_cr[toolId];if(!val)return;var key='xc_rated_'+toolId+'_'+page;try{if(sessionStorage.getItem(key)){showMsg(toolId,'Already rated!',false);return;}}catch(e){}var btn=document.getElementById('cb_'+toolId);if(btn){btn.disabled=true;btn.textContent='...';}fetch('https://test.weissmilch.workers.dev/api/rate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({toolId:toolId,toolName:toolName,rating:val,page:page})}).then(function(r){if(!r.ok)throw new Error(r.status);onOk(toolId,val,btn,key);}).catch(function(){onOk(toolId,val,btn,key);});};
+  window.crSubmit=function(toolId,toolName,page){var val=_cr[toolId];if(!val)return;var key='xc_rated_'+toolId+'_'+page;try{if(sessionStorage.getItem(key)){showMsg(toolId,'Already rated!',false);return;}}catch(e){}var btn=document.getElementById('cb_'+toolId);if(btn){btn.disabled=true;btn.textContent='...';}fetch('https://api.x-chatbots.com/api/rate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({toolId:toolId,toolName:toolName,rating:val,page:page})}).then(function(r){if(!r.ok)throw new Error(r.status);onOk(toolId,val,btn,key);}).catch(function(){onOk(toolId,val,btn,key);});};
   function onOk(toolId,val,btn,key){try{sessionStorage.setItem(key,'1');}catch(e){}closeAll();var t=document.getElementById('ct_'+toolId);if(t)t.classList.add('done');if(btn){btn.textContent='✓';btn.disabled=true;}showMsg(toolId,val+'★ saved!',true);}
   function showMsg(toolId,txt,ok){var el=document.getElementById('cm_'+toolId);if(el){el.textContent=txt;el.style.color=ok?'#047857':'#DC2626';}}
 })();

@@ -389,7 +389,7 @@
     var btn = document.getElementById('cb_' + toolId);
     if(btn){ btn.disabled = true; btn.textContent = '…'; }
 
-    fetch('https://test.weissmilch.workers.dev/api/rate', {
+    fetch('https://api.x-chatbots.com/api/rate', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
