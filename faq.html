@@ -206,5 +206,56 @@
             });
         });
     </script>
+<script>
+// Fallback affiliate URLs if worker is unreachable
+const AFFILIATE_FALLBACKS = {
+  // vlmai-1 affiliate links (CrakRevenue)
+  'joi':            'https://t.vlmai-1.com/406118/10163/39867?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'candyai':        'https://t.vlmai-1.com/406118/10022/37987?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'ourdream':       'https://t.vlmai-1.com/406118/10138/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'xotic':          'https://t.vlmai-1.com/406118/10349/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'secrets':        'https://t.vlmai-1.com/406118/10381/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'darlink':        'https://t.vlmai-1.com/406118/10345/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'luvr':           'https://t.vlmai-1.com/406118/9313/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'girlfriendgpt':  'https://t.vlmai-1.com/406118/10046/38604?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'promptchan':     'https://t.vlmai-1.com/406118/10338/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'swipey':         'https://t.vlmai-1.com/406118/10100/40289?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'fanfinity':      'https://t.vlmai-1.com/406118/7722?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'dreambf':        'https://t.vlmai-1.com/406118/6559?aff_sub5=SF_006OG00000LfMLS',
+  'aimour':         'https://t.vlmai-1.com/406118/7986?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+
+  // own affiliate/referral links (not CrakRevenue)
+  'spicychat':      'https://spicychat.ai?ref=odhkmgf',
+  'crushon':        'https://crushon.ai/?ref=ogu1ytm&mist=1',
+  'juicychat':      'https://lowest-prices.eu/a/ADlwkf10KAUYoX0',
+
+  // utm_source=xchatbots (direct partnerships, no tracking network)
+  'dreamcompanion': 'https://www.mydreamcompanion.com/?utm_source=xchatbots',
+  'craveu':         'https://craveu.ai/?utm_source=xchatbots',
+  'eroplay':        'https://eroplay.ai/?utm_source=xchatbots',
+  'funy':           'https://funy.ai/ai-bouncing-boobs-generator/?utm_source=xchatbots',
+  'soulkyn':        'https://soulkyn.com/?utm_source=xchatbots',
+  'lusychat':       'https://lusychat.ai/?utm_source=xchatbots',
+};
+
+(async function() {
+  const WORKER_URL = 'https://api.x-chatbots.com';
+  try {
+    const r = await fetch(WORKER_URL + '/affiliate-links');
+    if (!r.ok) throw new Error('not ok');
+    const links = await r.json();
+    document.querySelectorAll('a[data-tool]').forEach(a => {
+      const t = a.dataset.tool.toLowerCase();
+      if (links[t]) a.href = links[t];
+    });
+  } catch(e) {
+    // Worker down — apply hardcoded fallbacks
+    document.querySelectorAll('a[data-tool]').forEach(a => {
+      const t = a.dataset.tool.toLowerCase();
+      if (AFFILIATE_FALLBACKS[t]) a.href = AFFILIATE_FALLBACKS[t];
+    });
+  }
+})();
+</script>
 </body>
 </html>
