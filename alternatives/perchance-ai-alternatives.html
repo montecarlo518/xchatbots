@@ -294,5 +294,56 @@
     <!-- Sticky Mobile CTA -->
     <div id="stickyCta" style="display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1E293B,#0f172a);padding:12px 16px;z-index:99;box-shadow:0 -4px 20px rgba(0,0,0,.3);text-align:center;"><a href="https://t.vlmai-1.com/406118/10022/37987?aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#10B981;color:#fff;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;width:100%;max-width:400px;">🍬 CandyAI 70% Off — $3.99/mo →</a></div>
     <script>(function(){var sticky=document.getElementById('stickyCta');if(!sticky||window.innerWidth>768)return;window.addEventListener('scroll',function(){sticky.style.display=window.scrollY>600?'block':'none';});})();</script>
+<script>
+// Fallback affiliate URLs if worker is unreachable
+const AFFILIATE_FALLBACKS = {
+  // vlmai-1 affiliate links (CrakRevenue)
+  'joi':            'https://t.vlmai-1.com/406118/10163/39867?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'candyai':        'https://t.vlmai-1.com/406118/10022/37987?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'ourdream':       'https://t.vlmai-1.com/406118/10138/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'xotic':          'https://t.vlmai-1.com/406118/10349/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'secrets':        'https://t.vlmai-1.com/406118/10381/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'darlink':        'https://t.vlmai-1.com/406118/10345/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'luvr':           'https://t.vlmai-1.com/406118/9313/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'girlfriendgpt':  'https://t.vlmai-1.com/406118/10046/38604?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'promptchan':     'https://t.vlmai-1.com/406118/10338/0?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'swipey':         'https://t.vlmai-1.com/406118/10100/40289?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'fanfinity':      'https://t.vlmai-1.com/406118/7722?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+  'dreambf':        'https://t.vlmai-1.com/406118/6559?aff_sub5=SF_006OG00000LfMLS',
+  'aimour':         'https://t.vlmai-1.com/406118/7986?aff_sub2=home&aff_sub5=SF_006OG00000LfMLS',
+
+  // own affiliate/referral links (not CrakRevenue)
+  'spicychat':      'https://spicychat.ai?ref=odhkmgf',
+  'crushon':        'https://crushon.ai/?ref=ogu1ytm&mist=1',
+  'juicychat':      'https://lowest-prices.eu/a/ADlwkf10KAUYoX0',
+
+  // utm_source=xchatbots (direct partnerships, no tracking network)
+  'dreamcompanion': 'https://www.mydreamcompanion.com/?utm_source=xchatbots',
+  'craveu':         'https://craveu.ai/?utm_source=xchatbots',
+  'eroplay':        'https://eroplay.ai/?utm_source=xchatbots',
+  'funy':           'https://funy.ai/ai-bouncing-boobs-generator/?utm_source=xchatbots',
+  'soulkyn':        'https://soulkyn.com/?utm_source=xchatbots',
+  'lusychat':       'https://lusychat.ai/?utm_source=xchatbots',
+};
+
+(async function() {
+  const WORKER_URL = 'https://api.x-chatbots.com';
+  try {
+    const r = await fetch(WORKER_URL + '/affiliate-links');
+    if (!r.ok) throw new Error('not ok');
+    const links = await r.json();
+    document.querySelectorAll('a[data-tool]').forEach(a => {
+      const t = a.dataset.tool.toLowerCase();
+      if (links[t]) a.href = links[t];
+    });
+  } catch(e) {
+    // Worker down — apply hardcoded fallbacks
+    document.querySelectorAll('a[data-tool]').forEach(a => {
+      const t = a.dataset.tool.toLowerCase();
+      if (AFFILIATE_FALLBACKS[t]) a.href = AFFILIATE_FALLBACKS[t];
+    });
+  }
+})();
+</script>
 </body>
 </html>
