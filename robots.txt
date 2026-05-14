@@ -6,6 +6,7 @@
 # ===========================================
 User-agent: *
 Allow: /
+Disallow: /api/
 
 # Crawl-delay (optional - be gentle on server)
 Crawl-delay: 1
