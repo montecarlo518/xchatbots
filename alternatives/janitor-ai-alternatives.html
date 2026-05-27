@@ -111,54 +111,60 @@
     </script>
     
     <!-- FAQ Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is the best Janitor AI alternative without API?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "SpicyChat AI is the best Janitor AI alternative that works without an API key. It offers a similar experience with millions of characters, NSFW content, and a generous free tier - all without any technical setup required."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is there a free alternative to Janitor AI?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, several alternatives offer free tiers. SpicyChat gives 50 free messages daily, CrushOn.AI offers 30, and Perchance AI is completely free with unlimited messages. Unlike Janitor AI, these don't require you to bring your own API key."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why do people look for Janitor AI alternatives?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The main reasons are: API setup complexity (requires OpenAI/Claude API keys), ongoing API costs that add up quickly, technical troubleshooting issues, and inconsistent service when APIs have outages. Alternatives like SpicyChat work instantly without any setup."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Which Janitor AI alternative has the best anime characters?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "JuicyChat specializes in anime-style characters with a Janitor AI aesthetic. SpicyChat also has an extensive anime character library. Both offer NSFW content without API requirements."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I use Janitor AI characters on other platforms?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Character cards from Janitor AI can sometimes be imported to platforms like SillyTavern. However, most alternatives have their own character libraries that are often larger and don't require manual imports."
-                }
-            }
-        ]
+      "@type": "Question",
+      "name": "What is the best Janitor AI alternative without API?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SpicyChat AI is the best Janitor AI alternative that works without an API key. It offers a similar experience with millions of characters, NSFW content, and a generous free tier - all without any technical setup required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free alternative to Janitor AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, several alternatives offer free tiers. SpicyChat gives 50 free messages daily, CrushOn.AI offers 30, and Perchance AI is completely free with unlimited messages. Unlike Janitor AI, these don't require you to bring your own API key."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do people look for Janitor AI alternatives?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The main reasons are: API setup complexity (requires OpenAI/Claude API keys), ongoing API costs that add up quickly, technical troubleshooting issues, and inconsistent service when APIs have outages. Alternatives like SpicyChat work instantly without any setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Janitor AI alternative has the best anime characters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JuicyChat specializes in anime-style characters with a Janitor AI aesthetic. SpicyChat also has an extensive anime character library. Both offer NSFW content without API requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Janitor AI characters on other platforms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Character cards from Janitor AI can sometimes be imported to platforms like SillyTavern. However, most alternatives have their own character libraries that are often larger and don't require manual imports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Xchatbots rank and review tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We test every tool for a minimum of 7 days using a standardized scoring rubric across five dimensions including censorship freedom, roleplay depth, and value for money. Paid placements are always labeled separately from editorial picks. Full methodology at x-chatbots.com/how-we-review."
+      }
     }
-    </script>
+  ]
+}</script>
     
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -1224,7 +1230,10 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                     <h4>Which alternative is cheapest for heavy users?</h4>
                     <p><strong>CrushOn.AI at $4.90/month</strong> is the cheapest premium option with unlimited messages. Compare this to Janitor AI API costs: heavy users easily spend $20-50/month on OpenAI tokens. Even SpicyChat at $4.95/month is more predictable than pay-per-token pricing.</p>
                 </div>
-            </div>
+            
+                
+                <div class="faq-item"><h4>How does Xchatbots rank and review tools?</h4><p>We test every tool for a minimum of 7 days using a standardized scoring rubric across five dimensions including censorship freedom, roleplay depth, and value for money. Paid placements are always labeled separately from editorial picks. <a href="/how-we-review">Full methodology at x-chatbots.com/how-we-review</a>.</p></div>
+</div>
 
             <div class="cta-section">
                 <h3>Ready to Try an Alternative?</h3>
@@ -1270,7 +1279,8 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}
                     <li><a href="/submit">Submit AI Tool</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/privacy">Privacy Policy</a></li>
-                </ul>
+                
+                    <li><a href="/how-we-review">How We Review</a></li></ul>
             </div>
         </div>
         <div class="footer-bottom">

@@ -47,46 +47,52 @@
     </script>
     
     <!-- FAQ Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is the best NSFW AI chatbot in 2026?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Based on our extensive testing, SpicyChat.ai ranks as the best overall NSFW AI chatbot for 2026, offering excellent conversation quality, a vast character library, and strong free tier. CrushOn.ai and Candy.AI are close runners-up with unique strengths in roleplay and virtual girlfriend experiences respectively."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Are NSFW AI chatbots free to use?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Most NSFW AI chatbots offer free tiers with 10-50 daily messages. Premium subscriptions ($5-25/month) unlock unlimited messaging, faster responses, image generation, and advanced AI models. SpicyChat and JuicyChat offer the most generous free tiers."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Are these AI chatbots truly uncensored?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, all platforms in our directory allow explicit adult content without the filters found in mainstream AI like ChatGPT or Character AI. They're specifically designed for NSFW conversations, sexting, and erotic roleplay."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is my privacy protected when using NSFW AI chatbots?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Reputable platforms encrypt conversations and don't share data with third parties. Look for platforms with clear privacy policies, optional anonymous accounts, and secure payment processing. We recommend avoiding platforms that require real names or excessive personal information."
-                }
-            }
-        ]
+      "@type": "Question",
+      "name": "What is the best NSFW AI chatbot in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Based on our extensive testing, SpicyChat.ai ranks as the best overall NSFW AI chatbot for 2026, offering excellent conversation quality, a vast character library, and strong free tier. CrushOn.ai and Candy.AI are close runners-up with unique strengths in roleplay and virtual girlfriend experiences respectively."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are NSFW AI chatbots free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most NSFW AI chatbots offer free tiers with 10-50 daily messages. Premium subscriptions ($5-25/month) unlock unlimited messaging, faster responses, image generation, and advanced AI models. SpicyChat and JuicyChat offer the most generous free tiers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these AI chatbots truly uncensored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all platforms in our directory allow explicit adult content without the filters found in mainstream AI like ChatGPT or Character AI. They're specifically designed for NSFW conversations, sexting, and erotic roleplay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my privacy protected when using NSFW AI chatbots?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reputable platforms encrypt conversations and don't share data with third parties. Look for platforms with clear privacy policies, optional anonymous accounts, and secure payment processing. We recommend avoiding platforms that require real names or excessive personal information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Xchatbots rank and review tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We test every tool for a minimum of 7 days using a standardized scoring rubric across five dimensions including censorship freedom, roleplay depth, and value for money. Paid placements are always labeled separately from editorial picks. Full methodology at x-chatbots.com/how-we-review."
+      }
     }
-    </script>
+  ]
+}</script>
     
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -726,7 +732,12 @@
                 <h4>Can I get a refund if I'm not satisfied?</h4>
                 <p>Refund policies vary by platform. Most offer 7-14 day money-back guarantees on first subscriptions. Always check the specific terms before subscribing, and use the free tier to test a platform before committing to paid plans.</p>
             </div>
-        </div>
+        
+            <div class="faq-card">
+                <h4>How does Xchatbots rank and review tools?</h4>
+                <p>We test every tool for a minimum of 7 days using a standardized scoring rubric across five dimensions including censorship freedom, roleplay depth, and value for money. Paid placements are always labeled separately from editorial picks. <a href="/how-we-review">Full methodology at x-chatbots.com/how-we-review</a>.</p>
+            </div>
+</div>
     </section>
 
     <footer>
@@ -757,7 +768,8 @@
                     <li><a href="/faq">FAQ</a></li>
                     <li><a href="/submit">Submit AI Tool</a></li>
                     <li><a href="/contact">Contact</a></li>
-                </ul>
+                
+                    <li><a href="/how-we-review">How We Review</a></li></ul>
             </div>
             <div class="footer-column">
                 <h4>Legal</h4>
