@@ -22,11 +22,29 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://x-chatbots.com/how-we-review">
 
+    <!-- WebPage schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "How We Review NSFW AI Tools",
+      "url": "https://x-chatbots.com/how-we-review",
+      "description": "Testing methodology, scoring dimensions, and disclosure policy for Xchatbots NSFW AI reviews.",
+      "dateModified": "2026-06-05",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Xchatbots",
+        "url": "https://x-chatbots.com"
+      }
+    }
+    </script>
+
     <!-- FAQ Schema — makes this page citable by ChatGPT and other AI systems -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "dateModified": "2026-06-05",
       "mainEntity": [
         {
           "@type": "Question",
@@ -78,12 +96,9 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; background: var(--frost); color: var(--charcoal); line-height: 1.6; overflow-x: hidden; }
-
         .bg-decoration { position: fixed; pointer-events: none; z-index: 0; }
         .bg-blob-1 { top: -200px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, var(--ice) 0%, transparent 70%); border-radius: 50%; opacity: 0.7; }
         .bg-blob-2 { bottom: 20%; left: -200px; width: 500px; height: 500px; background: radial-gradient(circle, var(--lavender) 0%, transparent 70%); border-radius: 50%; opacity: 0.5; }
-
-        /* ---- Nav (exact copy from advertise.html) ---- */
         header { position: sticky; top: 0; z-index: 100; background: rgba(248,250,252,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30,41,59,0.05); overflow: visible; }
         .header-content { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; overflow: visible; }
         .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
@@ -95,17 +110,11 @@
         .nav-link:hover, .nav-link.active { color: var(--blue); }
         .mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.25);opacity:0;visibility:hidden;transition:all .3s ease;z-index:998;pointer-events:none}.mobile-overlay.active{opacity:1;visibility:visible;pointer-events:auto}.mobile-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}.hamburger{display:block;width:22px;height:2px;background:#1E293B;position:relative;transition:all .3s}.hamburger::before,.hamburger::after{content:'';position:absolute;width:22px;height:2px;background:#1E293B;left:0;transition:all .3s}.hamburger::before{top:-6px}.hamburger::after{top:6px}.mobile-nav-toggle.active .hamburger{background:transparent}.mobile-nav-toggle.active .hamburger::before{transform:rotate(45deg);top:0}.mobile-nav-toggle.active .hamburger::after{transform:rotate(-45deg);top:0}.nav-dropdown{position:relative}.nav-dropdown-toggle{display:flex;align-items:center;gap:4px;color:#475569;font-weight:500;cursor:pointer;background:none;border:none;font-size:1rem;font-family:inherit;padding:0}.nav-dropdown-toggle:hover{color:#4A9EBF}.nav-dropdown-toggle svg{width:12px;height:12px;transition:transform .2s}.nav-dropdown:hover .nav-dropdown-toggle svg{transform:rotate(180deg)}.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.12);min-width:200px;padding:8px 0;opacity:0;visibility:hidden;transition:all .2s;margin-top:12px;z-index:100}.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}.nav-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1E293B;font-size:.9rem;font-weight:500;transition:background .15s}.nav-dropdown-item:hover{background:#E8F4F8;color:#4A9EBF}.btn-submit-nav{background:#1E293B;color:#fff!important;padding:10px 20px;border-radius:10px;text-decoration:none!important;font-weight:600;font-size:.85rem;display:inline-block;transition:all .2s}.btn-submit-nav:hover{background:#4A9EBF;transform:translateY(-1px)}
         @media(max-width:900px){.mobile-nav-toggle{display:flex!important;align-items:center;justify-content:center}.nav-links{position:fixed;top:0;right:-300px;width:280px;height:100vh;height:100dvh;background:#fff;flex-direction:column;align-items:stretch;padding:70px 20px 30px;gap:0;box-shadow:-4px 0 20px rgba(0,0,0,.1);transition:right .3s ease;overflow-y:auto;z-index:1000;display:flex}.nav-links.active{right:0}.nav-link{padding:16px 0;border-bottom:1px solid #f1f5f9;font-size:1.05rem;display:block;color:#1E293B}.nav-dropdown{border-bottom:1px solid #f1f5f9}.nav-dropdown-toggle{width:100%;justify-content:space-between;padding:16px 0;font-size:1.05rem;color:#1E293B}.nav-dropdown-menu{position:static;transform:none;box-shadow:none;opacity:1;visibility:visible;display:none;margin:0;padding:0 0 12px 16px;background:transparent;border-radius:0}.nav-dropdown-menu::before{display:none}.nav-dropdown.active .nav-dropdown-menu{display:block}.nav-dropdown-item{padding:12px 0;font-size:.95rem;display:block}.btn-submit-nav{margin-top:20px;text-align:center;display:block;width:100%;padding:14px 20px}}
-
-        /* ---- Page layout ---- */
         .page-wrap { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
-
-        /* ---- Breadcrumb ---- */
         .breadcrumb { display: flex; align-items: center; gap: 0.4rem; font-size: 0.875rem; color: var(--gray-light); margin-bottom: 2.5rem; }
         .breadcrumb a { color: var(--gray-light); text-decoration: none; transition: var(--transition); }
         .breadcrumb a:hover { color: var(--blue); }
         .breadcrumb span { color: var(--slate); }
-
-        /* ---- Hero ---- */
         .page-hero { text-align: center; margin-bottom: 3.5rem; }
         .hero-label { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--ice); color: var(--blue-dark); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1.25rem; }
         .page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--charcoal); margin-bottom: 1rem; }
@@ -113,24 +122,18 @@
         .page-hero p { font-size: 1.1rem; color: var(--gray-warm); max-width: 580px; margin: 0 auto; }
         .hero-meta { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
         .hero-meta span { font-size: 0.875rem; color: var(--gray-light); display: flex; align-items: center; gap: 0.35rem; }
-
-        /* ---- TL;DR ---- */
         .tldr { background: var(--white); border: 1px solid var(--ice); border-radius: var(--radius-md); padding: 1.75rem 2rem; margin-bottom: 3rem; box-shadow: var(--shadow-soft); }
         .tldr-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--blue); margin-bottom: 1rem; }
         .tldr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem; }
         .tldr-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.925rem; color: var(--gray-warm); }
         .tldr-item::before { content: '✓'; color: #059669; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; margin-top: 2px; }
         @media(max-width:600px){ .tldr-grid { grid-template-columns: 1fr; } }
-
-        /* ---- Section ---- */
         .section { margin-bottom: 3rem; }
         .section-header { margin-bottom: 1.5rem; }
         .section-header h2 { font-family: 'Fraunces', serif; font-size: 1.65rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.35rem; }
         .section-header h2 span { color: var(--blue); font-style: italic; }
         .section-header p { font-size: 0.975rem; color: var(--gray-warm); line-height: 1.65; max-width: 680px; }
         hr.section-divider { border: none; border-top: 1px solid rgba(30,41,59,0.07); margin-bottom: 3rem; }
-
-        /* ---- Scoring cards ---- */
         .scores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
         .score-card { background: var(--white); border: 1px solid rgba(30,41,59,0.06); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-soft); transition: var(--transition); }
         .score-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-medium); }
@@ -139,16 +142,12 @@
         .score-weight { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--ice); color: var(--blue-dark); padding: 0.2rem 0.65rem; border-radius: 50px; }
         .score-name { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.4rem; }
         .score-desc { font-size: 0.875rem; color: var(--gray-warm); line-height: 1.6; }
-
-        /* ---- Process steps ---- */
         .steps { display: flex; flex-direction: column; gap: 1px; background: rgba(30,41,59,0.07); border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(30,41,59,0.07); }
         .step { background: var(--white); padding: 1.25rem 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: background .15s; }
         .step:hover { background: var(--ice-light); }
         .step-num { flex-shrink: 0; width: 30px; height: 30px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: white; margin-top: 2px; }
         .step-title { font-size: 0.975rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.25rem; }
         .step-detail { font-size: 0.875rem; color: var(--gray-warm); line-height: 1.6; }
-
-        /* ---- Censorship test ---- */
         .test-table { width: 100%; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(30,41,59,0.07); box-shadow: var(--shadow-soft); }
         .test-table-header { background: var(--charcoal); padding: 0.85rem 1.5rem; font-size: 0.825rem; font-weight: 600; color: var(--slate); text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between; align-items: center; }
         .test-row { background: var(--white); border-bottom: 1px solid rgba(30,41,59,0.06); padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-size: 0.9rem; transition: background .15s; }
@@ -158,8 +157,6 @@
         .badge-pass { background: var(--mint); color: #065F46; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.7rem; border-radius: 50px; white-space: nowrap; }
         .badge-partial { background: #FEF3C7; color: #92400E; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.7rem; border-radius: 50px; white-space: nowrap; }
         .badge-block { background: #FEE2E2; color: #991B1B; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.7rem; border-radius: 50px; white-space: nowrap; }
-
-        /* ---- Disclosure table ---- */
         .disc-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(30,41,59,0.07); box-shadow: var(--shadow-soft); }
         .disc-table th { background: var(--charcoal); color: var(--slate); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.85rem 1.5rem; text-align: left; }
         .disc-table td { padding: 1rem 1.5rem; font-size: 0.9rem; color: var(--gray-warm); border-bottom: 1px solid rgba(30,41,59,0.06); vertical-align: top; }
@@ -168,22 +165,16 @@
         .badge-editorial { background: var(--mint); color: #065F46; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 50px; white-space: nowrap; }
         .badge-sponsored { background: #FEF3C7; color: #92400E; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 50px; white-space: nowrap; }
         .badge-partner { background: var(--lavender); color: #3730A3; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 50px; white-space: nowrap; }
-
-        /* ---- Won't list ---- */
         .nogo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .nogo-card { background: var(--white); border: 1px solid rgba(30,41,59,0.06); border-left: 3px solid #FCA5A5; border-radius: var(--radius-sm); padding: 1.1rem 1.25rem; box-shadow: var(--shadow-soft); }
         .nogo-title { font-size: 0.925rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.3rem; }
         .nogo-text { font-size: 0.85rem; color: var(--gray-warm); line-height: 1.55; }
         @media(max-width:600px){ .nogo-grid { grid-template-columns: 1fr; } }
-
-        /* ---- Update log ---- */
         .update-log { display: flex; flex-direction: column; }
         .update-entry { display: flex; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid rgba(30,41,59,0.07); }
         .update-entry:last-child { border-bottom: none; }
         .update-date { font-family: 'Fraunces', serif; font-size: 0.875rem; color: var(--blue); font-weight: 500; min-width: 90px; padding-top: 1px; }
         .update-text { font-size: 0.9rem; color: var(--gray-warm); line-height: 1.6; }
-
-        /* ---- Contact box ---- */
         .contact-box { background: var(--white); border: 1px solid rgba(30,41,59,0.06); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-soft); display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
         .contact-box h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.6rem; }
         .contact-box p { font-size: 0.925rem; color: var(--gray-warm); line-height: 1.65; }
@@ -193,8 +184,6 @@
         .contact-link-icon { width: 32px; height: 32px; background: var(--gradient-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
         .contact-note { font-size: 0.825rem; color: var(--gray-light); line-height: 1.6; }
         @media(max-width:700px){ .contact-box { grid-template-columns: 1fr; gap: 1.5rem; } }
-
-        /* ---- Footer (exact from advertise.html) ---- */
         footer { background: var(--charcoal); color: white; padding: 4rem 2rem 2rem; margin-top: 4rem; }
         .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
         .footer-brand p { color: var(--slate); font-size: 0.95rem; line-height: 1.7; }
@@ -217,9 +206,8 @@
 
 <div class="bg-decoration bg-blob-1"></div>
 <div class="bg-decoration bg-blob-2"></div>
+<div class="mobile-overlay"></div>
 
-
-<!-- ===== HEADER ===== -->
 <header>
     <div class="header-content">
         <a href="/" class="logo">
@@ -255,29 +243,25 @@
     </div>
 </header>
 
-<!-- ===== PAGE ===== -->
 <div class="page-wrap">
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <a href="/">Home</a>
         <span>›</span>
         <span style="color:var(--charcoal)">How We Review</span>
     </div>
 
-    <!-- Hero -->
     <div class="page-hero">
         <div class="hero-label">📋 Editorial Policy</div>
         <h1>How We <span>Review & Rank</span><br>NSFW AI Tools</h1>
         <p>Our testing methodology, scoring dimensions, and disclosure policy — everything that determines which tools appear on Xchatbots and how they're ranked.</p>
         <div class="hero-meta">
             <span>✍️ Xchatbots Editorial Team</span>
-            <span>🗓 Last updated: May 2026</span>
+            <span>🗓 Updated June 2026</span>
             <span>⏱ 5 min read</span>
         </div>
     </div>
 
-    <!-- TL;DR -->
     <div class="tldr">
         <div class="tldr-label">⚡ Key Points</div>
         <div class="tldr-grid">
@@ -290,17 +274,15 @@
         </div>
     </div>
 
-    <!-- Section: Who we are -->
     <hr class="section-divider">
     <div class="section">
         <div class="section-header">
             <h2>Who <span>We Are</span></h2>
             <p>Xchatbots is an independent directory and review site for NSFW AI chatbots and virtual companions. We launched because the existing landscape was dominated by lists that ranked tools based on ad spend, not how well they actually worked.</p>
         </div>
-        <p style="font-size:0.925rem;color:var(--gray-warm);line-height:1.7;">Our editorial team tests every AI tool hands-on. We are not affiliated with any of the platforms we review. We pay for subscriptions ourselves when a free review account is not available, and we disclose clearly when one has been provided by the platform.</p>
+        <p style="font-size:0.925rem;color:var(--gray-warm);line-height:1.7;">Our editorial team tests every AI tool hands-on. We are not affiliated with any of the platforms we review. We pay for subscriptions ourselves when a free review account is not available, and we disclose clearly when one has been provided by the platform. For more on how individual tools are selected, see our <a href="/blog" style="color:var(--blue);">review blog</a> or the <a href="/virtual-girlfriend" style="color:var(--blue);">AI girlfriend directory</a>.</p>
     </div>
 
-    <!-- Section: Scoring -->
     <hr class="section-divider">
     <div class="section">
         <div class="section-header">
@@ -309,49 +291,33 @@
         </div>
         <div class="scores-grid">
             <div class="score-card">
-                <div class="score-top">
-                    <div class="score-icon">🔓</div>
-                    <div class="score-weight">30% weight</div>
-                </div>
+                <div class="score-top"><div class="score-icon">🔓</div><div class="score-weight">30% weight</div></div>
                 <div class="score-name">Censorship Freedom</div>
                 <div class="score-desc">How uncensored is the tool across a full session? We run a standardized set of prompts — escalating from mild to explicit — and score based on how far a session can go before filters interrupt or refuse. We test this after 50+ messages too, not just the first few.</div>
             </div>
             <div class="score-card">
-                <div class="score-top">
-                    <div class="score-icon">🎭</div>
-                    <div class="score-weight">25% weight</div>
-                </div>
+                <div class="score-top"><div class="score-icon">🎭</div><div class="score-weight">25% weight</div></div>
                 <div class="score-name">Roleplay Depth</div>
                 <div class="score-desc">Does the AI stay in character? Does it remember plot details and relationship context across a session? We test narrative consistency, character voice, long-session memory, and how it handles complex multi-turn storylines.</div>
             </div>
             <div class="score-card">
-                <div class="score-top">
-                    <div class="score-icon">💰</div>
-                    <div class="score-weight">20% weight</div>
-                </div>
+                <div class="score-top"><div class="score-icon">💰</div><div class="score-weight">20% weight</div></div>
                 <div class="score-name">Value for Money</div>
                 <div class="score-desc">What do you actually get per dollar? We compare message limits, feature gating, free tier generosity, billing clarity, and cancellation ease. Hidden fees and aggressive upsells penalize this score significantly.</div>
             </div>
             <div class="score-card">
-                <div class="score-top">
-                    <div class="score-icon">🔒</div>
-                    <div class="score-weight">15% weight</div>
-                </div>
+                <div class="score-top"><div class="score-icon">🔒</div><div class="score-weight">15% weight</div></div>
                 <div class="score-name">Privacy & Safety</div>
                 <div class="score-desc">Does the platform support anonymous sign-up? Is billing discreet? Do they clearly state how long conversation data is retained? Do they enforce age verification and prohibit non-consensual content? We read the actual privacy policy.</div>
             </div>
             <div class="score-card">
-                <div class="score-top">
-                    <div class="score-icon">🖼️</div>
-                    <div class="score-weight">10% weight</div>
-                </div>
+                <div class="score-top"><div class="score-icon">🖼️</div><div class="score-weight">10% weight</div></div>
                 <div class="score-name">Image & Video Quality</div>
                 <div class="score-desc">For platforms with generation features, we produce a standardized set of outputs and evaluate realism, prompt adherence, consistency, and speed. Text-only platforms have this dimension excluded from their average.</div>
             </div>
         </div>
     </div>
 
-    <!-- Section: Testing process -->
     <hr class="section-divider">
     <div class="section">
         <div class="section-header">
@@ -404,7 +370,6 @@
         </div>
     </div>
 
-    <!-- Section: Censorship test -->
     <hr class="section-divider">
     <div class="section">
         <div class="section-header">
@@ -428,7 +393,6 @@
         <p style="font-size:0.825rem;color:var(--gray-light);margin-top:0.75rem;">The last row is not a standard pass/fail. Any tool that generates sexual content involving characters under 18 is immediately removed from the directory and will not be re-listed.</p>
     </div>
 
-    <!-- Section: Disclosure -->
     <hr class="section-divider">
     <div class="section">
         <div class="section-header">
@@ -437,11 +401,7 @@
         </div>
         <table class="disc-table">
             <thead>
-                <tr>
-                    <th>Label</th>
-                    <th>What it means</th>
-                    <th>Effect on ranking?</th>
-                </tr>
+                <tr><th>Label</th><th>What it means</th><th>Effect on ranking?</th></tr>
             </thead>
             <tbody>
                 <tr>
@@ -464,7 +424,6 @@
         <p style="font-size:0.825rem;color:var(--gray-light);margin-top:0.85rem;">Tools without any label are editorial inclusions with no commercial relationship. We may still use an affiliate link if one is available — this will be disclosed in the individual tool review page.</p>
     </div>
 
-    <!-- Section: Won't list -->
     <hr class="section-divider">
     <div class="section">
         <div class="section-header">
@@ -491,7 +450,6 @@
         </div>
     </div>
 
-    <!-- Section: Update log -->
     <hr class="section-divider">
     <div class="section">
         <div class="section-header">
@@ -499,6 +457,10 @@
             <p>We update this page when our review process changes. Here's the history.</p>
         </div>
         <div class="update-log">
+            <div class="update-entry">
+                <div class="update-date">June 2026</div>
+                <div class="update-text">Updated scoring for Joi AI across all categories following pricing changes ($2.38/mo annual). Added WebPage and dateModified schema for improved AI citation eligibility.</div>
+            </div>
             <div class="update-entry">
                 <div class="update-date">May 2026</div>
                 <div class="update-text">Added Privacy & Safety as a scored dimension (15% weight). Published this methodology page. Introduced Sponsored / Partner / Editor's Pick labeling across all listings. Added standardized 12-prompt censorship test sequence for cross-platform comparison.</div>
@@ -514,7 +476,6 @@
         </div>
     </div>
 
-    <!-- Contact box -->
     <hr class="section-divider">
     <div class="contact-box">
         <div>
@@ -538,13 +499,12 @@
                     </div>
                 </a>
             </div>
-            <p class="contact-note" style="margin-top:1rem;">For editorial corrections or score disputes, use the contact page. We take accuracy seriously and update reviews when platforms change.</p>
+            <p class="contact-note" style="margin-top:1rem;">For editorial corrections or score disputes, use the <a href="/contact" style="color:var(--blue);">contact page</a>. We take accuracy seriously and update reviews when platforms change.</p>
         </div>
     </div>
 
-</div><!-- /page-wrap -->
+</div>
 
-<!-- ===== FOOTER ===== -->
 <footer>
     <div class="footer-content">
         <div class="footer-brand">
@@ -595,6 +555,7 @@
             toggle.classList.toggle('active');
             nav.classList.toggle('active');
             if(overlay)overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
         };
     }
     if(overlay){
@@ -602,13 +563,16 @@
             toggle.classList.remove('active');
             nav.classList.remove('active');
             overlay.classList.remove('active');
+            document.body.style.overflow = '';
         };
     }
     var dd=document.querySelectorAll('.nav-dropdown-toggle');
     for(var i=0;i<dd.length;i++){
         dd[i].onclick=function(e){
-            e.preventDefault();
-            this.parentElement.classList.toggle('active');
+            if(window.innerWidth<=900){
+                e.preventDefault();
+                this.parentElement.classList.toggle('active');
+            }
         };
     }
 })();
