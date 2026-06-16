@@ -252,7 +252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="section-title">
             <h2><span>Advertising</span> Packages</h2>
         </div>
-        <p class="section-subtitle">Pick a package, then tell us about your tool. We'll confirm details and send payment instructions right away.</p>
+        <p class="section-subtitle">Pick a package, tell us about your tool, then complete payment &mdash; you'll get a confirmation right away.</p>
 
         <div class="steps-bar">
             <div class="step-pill"><span class="step-num">1</span> Choose a package</div>
@@ -310,7 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="contact-grid">
             <div class="contact-info">
                 <h3>Get in Touch</h3>
-                <p>Fill out the form and we'll get back to you within 24 hours &mdash; for paid packages, we'll include a direct payment link so you can complete your booking right away.</p>
+                <p>Fill out the form and submit. For paid packages, you'll be taken straight to PayPal to complete payment, then back here to finish setting up your listing details.</p>
 
                 <h4 style="font-family: 'Fraunces', serif; font-size: 1.15rem; margin-bottom: 1rem; color: var(--charcoal);">Why Advertise With Us?</h4>
                 <ul class="why-list">
@@ -427,6 +427,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const PLAN_CONFIG = {
             'Featured Listing ($149/mo)': {
                 cardId: 'featured',
+                shortKey: 'featured',
                 type: 'paypal',
                 priceLabel: '$149/month',
                 payHref: 'https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-07G307761H0789608NGPMPFA',
@@ -435,6 +436,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             },
             'Sponsored Post ($399)': {
                 cardId: 'sponsored',
+                shortKey: 'sponsored',
                 type: 'paypal',
                 priceLabel: '$399 one-time',
                 payHref: 'https://www.paypal.com/ncp/payment/UULBV5F6BVDZU',
@@ -443,12 +445,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             },
             'Premium Partner (Custom)': {
                 cardId: 'premium',
+                shortKey: 'premium',
                 type: 'custom',
                 title: "We'll send a custom proposal",
                 description: "Premium Partner pricing depends on your goals. We'll reply with a tailored proposal and payment options &mdash; no payment needed yet."
             },
             'Other / Not Sure': {
                 cardId: null,
+                shortKey: 'other',
                 type: 'custom',
                 title: "We'll help you choose",
                 description: "We'll reply with package recommendations based on what you tell us &mdash; no payment needed yet."
@@ -514,14 +518,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         selectionClear.addEventListener('click', () => {
             setSelectedPlan('', false);
         });
-
-        // Restore any pending selection from a previous visit
-        try {
-            const pending = localStorage.getItem('pendingAdType');
-            if (pending && PLAN_CONFIG[pending]) {
-                setSelectedPlan(pending, false);
-            }
-        } catch (e) {}
     </script>
 
     <script>
@@ -545,9 +541,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h4>${config.title}</h4>
                     <div class="price-tag">${config.priceLabel}</div>
                     <p>${config.description}</p>
-                    <a href="${config.payHref}" target="_blank" rel="noopener" class="btn-paypal">Continue to PayPal &rarr;</a>
-                    <p class="next-step-note">Prefer to wait for our confirmation email first? That's fine &mdash; we'll include this same link.</p>
+                    <a href="${config.payHref}" target="_blank" rel="noopener" class="btn-paypal" id="paypalContinueBtn">Continue to PayPal &rarr;</a>
+                    <p class="next-step-note">After you pay, PayPal will bring you back here so you can finish setting up your listing.</p>
                 `;
+                const payBtn = document.getElementById('paypalContinueBtn');
+                if (payBtn) {
+                    payBtn.addEventListener('click', () => {
+                        try {
+                            // success.html reads localStorage.pendingAdType as a short key
+                            // ('featured' / 'sponsored'), since PayPal's hosted buttons don't
+                            // reliably forward custom query params on return.
+                            localStorage.setItem('pendingAdType', config.shortKey);
+                        } catch (e) {}
+                    });
+                }
             } else {
                 nextStepCard.innerHTML = `
                     <h4>${config.title}</h4>
@@ -586,7 +593,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     buildNextStep(adType);
                     successMessage.classList.add('show');
                     form.style.display = 'none';
-                    try { localStorage.removeItem('pendingAdType'); } catch (e) {}
                     successMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
                     throw new Error(result.error || 'Failed to send inquiry');
