@@ -110,6 +110,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         /* Hide fields based on type */
         .sponsored-only { display: none; }
         body.type-sponsored .sponsored-only { display: block; }
+
+        /* Package picker shown when we can't determine the package automatically */
+        .package-picker { display: none; text-align: left; margin-bottom: 2rem; }
+        .package-picker.show { display: block; }
+        .package-picker p { font-size: 0.95rem; color: var(--gray-warm); margin-bottom: 1rem; }
+        .package-picker-options { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .package-picker-btn {
+            flex: 1; min-width: 160px; padding: 0.9rem 1rem; border: 2px solid var(--ice); border-radius: var(--radius-md);
+            background: var(--frost); color: var(--charcoal); font-family: inherit; font-weight: 600; font-size: 0.95rem;
+            cursor: pointer; transition: var(--transition); text-align: center;
+        }
+        .package-picker-btn:hover { border-color: var(--blue); background: var(--ice-light); }
         
         footer { background: var(--charcoal); color: white; padding: 2rem; margin-top: 4rem; text-align: center; }
         footer p { font-size: 0.85rem; color: var(--slate); }
@@ -123,7 +135,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="bg-decoration bg-blob-1"></div>
     <div class="bg-decoration bg-blob-2"></div>
 
-    <div class="mobile-overlay"></div>
     <header>
         <div class="header-content">
             <a href="/" class="logo">
@@ -158,6 +169,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <div class="details-form">
                 <h2 style="font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1.5rem; text-align: center;">Your Details</h2>
+
+                <div class="package-picker" id="packagePicker">
+                    <p>We couldn't automatically tell which package you paid for. Please select it below so we send you the right form.</p>
+                    <div class="package-picker-options">
+                        <button type="button" class="package-picker-btn" data-package="featured">⭐ Featured Listing</button>
+                        <button type="button" class="package-picker-btn" data-package="sponsored">🚀 Sponsored Post</button>
+                    </div>
+                </div>
                 
                 <div class="confirmation-message" id="confirmationMessage">
                     <h4>✅ Details Submitted!</h4>
@@ -249,18 +268,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </footer>
 
     <script>
-        // Get URL parameters
+        // ── Resolve package type ─────────────────────────────────────────
+        // Priority: explicit ?type= param (most reliable, survives any number
+        // of page loads) > localStorage.pendingAdType (fallback for PayPal
+        // buttons that don't forward query params) > show a manual picker if
+        // neither is available, rather than silently guessing "featured".
+        //
+        // IMPORTANT: localStorage.pendingAdType is NOT cleared here. It's
+        // cleared only after the details form is successfully submitted
+        // (see the submit handler below), so a page reload, a second tab, or
+        // briefly losing connection doesn't lose track of which package the
+        // person paid for.
         const urlParams = new URLSearchParams(window.location.search);
-        let packageType = urlParams.get('type') || localStorage.getItem('pendingAdType') || 'featured';
+        const typeFromUrl = urlParams.get('type');
+        const typeFromStorage = (() => {
+            try { return localStorage.getItem('pendingAdType'); } catch (e) { return null; }
+        })();
+
+        let packageType = typeFromUrl || typeFromStorage || null;
         const transactionId = urlParams.get('subscription_id') || urlParams.get('tx') || '';
-        
-        // Clear localStorage after reading
-        localStorage.removeItem('pendingAdType');
-        
-        // Set hidden fields
-        document.getElementById('packageType').value = packageType;
-        document.getElementById('transactionId').value = transactionId;
-        
+
+        const packagePicker = document.getElementById('packagePicker');
+        const detailsForm = document.getElementById('detailsForm');
+
         // Configure page based on package type
         const config = {
             featured: {
@@ -284,44 +314,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 ]
             }
         };
-        
-        const currentConfig = config[packageType] || config.featured;
-        
-        // Update page content
-        document.getElementById('packageBadge').textContent = currentConfig.badge;
-        document.getElementById('subtitleText').textContent = currentConfig.subtitle;
-        document.getElementById('confirmationText').textContent = currentConfig.confirmation;
-        
-        // Add type class to body for CSS
-        if (packageType === 'sponsored') {
-            document.body.classList.add('type-sponsored');
-        }
-        
-        // Build steps HTML
-        const stepsHtml = currentConfig.steps.map((step, i) => `
-            <div class="step">
-                <div class="step-number">${i + 1}</div>
-                <div class="step-content">
-                    <h3>${step.title}</h3>
-                    <p>${step.desc}</p>
+
+        function applyPackageType(type) {
+            packageType = type;
+            const currentConfig = config[packageType] || config.featured;
+
+            document.getElementById('packageType').value = packageType;
+            document.getElementById('transactionId').value = transactionId;
+
+            document.getElementById('packageBadge').textContent = currentConfig.badge;
+            document.getElementById('subtitleText').textContent = currentConfig.subtitle;
+            document.getElementById('confirmationText').textContent = currentConfig.confirmation;
+
+            document.body.classList.toggle('type-sponsored', packageType === 'sponsored');
+
+            const stepsHtml = currentConfig.steps.map((step, i) => `
+                <div class="step">
+                    <div class="step-number">${i + 1}</div>
+                    <div class="step-content">
+                        <h3>${step.title}</h3>
+                        <p>${step.desc}</p>
+                    </div>
                 </div>
-            </div>
-        `).join('');
-        document.getElementById('nextSteps').innerHTML = '<h2>What happens next?</h2>' + stepsHtml;
-        
-        // Track conversion in GA
-        gtag('event', 'purchase', {
-            'transaction_id': transactionId,
-            'value': packageType === 'sponsored' ? 399 : 149,
-            'currency': 'USD',
-            'items': [{ 'item_name': currentConfig.badge, 'price': packageType === 'sponsored' ? 399 : 149 }]
-        });
-        
-        // Make sponsored fields required when visible
-        if (packageType === 'sponsored') {
-            document.getElementById('toolDescription').required = true;
+            `).join('');
+            document.getElementById('nextSteps').innerHTML = '<h2>What happens next?</h2>' + stepsHtml;
+
+            // Make sponsored fields required only when actually visible
+            const toolDescField = document.getElementById('toolDescription');
+            if (toolDescField) toolDescField.required = (packageType === 'sponsored');
+
+            packagePicker.classList.remove('show');
+            detailsForm.style.display = '';
         }
-        
+
+        if (packageType === 'featured' || packageType === 'sponsored') {
+            applyPackageType(packageType);
+        } else {
+            // We genuinely don't know which package this is — ask rather than
+            // guess. This avoids silently mis-filing a Sponsored Post payment
+            // as a Featured Listing (or vice versa) in the Notion database.
+            packagePicker.classList.add('show');
+            detailsForm.style.display = 'none';
+            document.getElementById('packageBadge').textContent = 'Confirm your package';
+            document.getElementById('subtitleText').textContent = "Thanks for your payment! We just need to confirm which package you booked.";
+        }
+
+        document.querySelectorAll('.package-picker-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                applyPackageType(btn.dataset.package);
+            });
+        });
+
+        // Track conversion in GA (only once we know the package)
+        if (packageType === 'featured' || packageType === 'sponsored') {
+            gtag('event', 'purchase', {
+                'transaction_id': transactionId,
+                'value': packageType === 'sponsored' ? 399 : 149,
+                'currency': 'USD',
+                'items': [{ 'item_name': config[packageType].badge, 'price': packageType === 'sponsored' ? 399 : 149 }]
+            });
+        }
+
         // Form submission
         const form = document.getElementById('detailsForm');
         const confirmationMessage = document.getElementById('confirmationMessage');
@@ -329,9 +382,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
+            const submittedPackageType = document.getElementById('packageType').value;
+
             const formData = {
-                packageType: document.getElementById('packageType').value,
+                packageType: submittedPackageType,
                 transactionId: document.getElementById('transactionId').value,
                 toolName: document.getElementById('toolName').value.trim(),
                 websiteUrl: document.getElementById('websiteUrl').value.trim(),
@@ -341,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             };
             
             // Add sponsored post fields if applicable
-            if (packageType === 'sponsored') {
+            if (submittedPackageType === 'sponsored') {
                 formData.toolDescription = document.getElementById('toolDescription').value.trim();
                 formData.keyFeatures = document.getElementById('keyFeatures').value.trim();
                 formData.targetAudience = document.getElementById('targetAudience').value.trim();
@@ -362,16 +417,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 const result = await response.json();
                 
                 if (response.ok && result.success) {
+                    // Only clear the pending flag once we know the details
+                    // actually made it to the server successfully.
+                    try { localStorage.removeItem('pendingAdType'); } catch (e) {}
                     confirmationMessage.classList.add('show');
                     form.style.display = 'none';
                 } else {
                     throw new Error(result.error || 'Failed to submit details');
                 }
             } catch (error) {
-                // Even if API fails, show success (we'll receive PayPal notification anyway)
-                confirmationMessage.classList.add('show');
-                form.style.display = 'none';
+                // Network or server error: keep pendingAdType intact so a retry
+                // (reload, or coming back later) still knows the right package.
+                // Surface the failure instead of silently claiming success, so
+                // the person knows to retry or contact support.
                 console.error('API error:', error);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Details';
+                alert("We couldn't save your details just now. Please try again, or contact us with your payment confirmation if this keeps happening.");
             }
         });
     </script>
