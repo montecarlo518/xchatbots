@@ -76,27 +76,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .step-content p { font-size: 0.9rem; color: var(--gray-warm); }
         
         .details-form { margin-top: 2rem; text-align: left; }
-        .form-group { margin-bottom: 1.25rem; }
-        .form-group label { display: block; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; font-size: 0.95rem; }
-        .form-group label .required { color: #DC2626; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--ice); border-radius: var(--radius-sm);
-            font-family: inherit; font-size: 1rem; color: var(--charcoal); background: var(--frost); transition: var(--transition);
-        }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none; border-color: var(--blue); background: var(--white); box-shadow: 0 0 0 3px rgba(74, 158, 191, 0.1);
-        }
-        .form-group textarea { resize: vertical; min-height: 100px; }
-        .form-group select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-            background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
-        }
-        .form-group small { display: block; margin-top: 0.35rem; font-size: 0.8rem; color: var(--gray-light); }
-        
-        .btn-submit { width: 100%; padding: 1rem 2rem; background: var(--charcoal); color: white; border: none; border-radius: var(--radius-md);
-            font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
-        .btn-submit:hover { background: var(--blue); transform: translateY(-2px); }
         
         .confirmation-message { display: none; background: var(--mint); border: 1px solid #059669; border-radius: var(--radius-md); padding: 1.5rem; text-align: center; margin-top: 1.5rem; }
         .confirmation-message.show { display: block; }
@@ -106,22 +85,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2rem; color: var(--blue); text-decoration: none; font-weight: 500; transition: var(--transition); }
         .back-link:hover { color: var(--blue-dark); }
         .back-link svg { width: 18px; height: 18px; }
-        
-        /* Hide fields based on type */
-        .sponsored-only { display: none; }
-        body.type-sponsored .sponsored-only { display: block; }
-
-        /* Package picker shown when we can't determine the package automatically */
-        .package-picker { display: none; text-align: left; margin-bottom: 2rem; }
-        .package-picker.show { display: block; }
-        .package-picker p { font-size: 0.95rem; color: var(--gray-warm); margin-bottom: 1rem; }
-        .package-picker-options { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-        .package-picker-btn {
-            flex: 1; min-width: 160px; padding: 0.9rem 1rem; border: 2px solid var(--ice); border-radius: var(--radius-md);
-            background: var(--frost); color: var(--charcoal); font-family: inherit; font-weight: 600; font-size: 0.95rem;
-            cursor: pointer; transition: var(--transition); text-align: center;
-        }
-        .package-picker-btn:hover { border-color: var(--blue); background: var(--ice-light); }
         
         footer { background: var(--charcoal); color: white; padding: 2rem; margin-top: 4rem; text-align: center; }
         footer p { font-size: 0.85rem; color: var(--slate); }
@@ -156,8 +119,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="success-card">
             <div class="success-icon">🎉</div>
             <h1>Payment Successful!</h1>
-            <div class="package-badge" id="packageBadge">Featured Listing</div>
-            <p class="subtitle" id="subtitleText">Thank you for your purchase. Please complete the form below so we can activate your listing.</p>
+            <div class="package-badge" id="packageBadge">Payment Successful</div>
+            <p class="subtitle" id="subtitleText">Thanks for your payment! We'll be in touch by email with next steps.</p>
             
             <div class="divider"></div>
             
@@ -168,92 +131,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="divider"></div>
             
             <div class="details-form">
-                <h2 style="font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1.5rem; text-align: center;">Your Details</h2>
-
-                <div class="package-picker" id="packagePicker">
-                    <p>We couldn't automatically tell which package you paid for. Please select it below so we send you the right form.</p>
-                    <div class="package-picker-options">
-                        <button type="button" class="package-picker-btn" data-package="featured">⭐ Featured Listing</button>
-                        <button type="button" class="package-picker-btn" data-package="sponsored">🚀 Sponsored Post</button>
-                    </div>
+                <div class="confirmation-message show" id="confirmationMessage">
+                    <h4>✅ You're all set!</h4>
+                    <p id="confirmationText">Thanks for your payment. We'll be in touch by email with next steps &mdash; no further action needed.</p>
                 </div>
-                
-                <div class="confirmation-message" id="confirmationMessage">
-                    <h4>✅ Details Submitted!</h4>
-                    <p id="confirmationText">We'll activate your Featured listing within 24 hours. You'll receive an email confirmation.</p>
-                </div>
-                
-                <form id="detailsForm">
-                    <input type="hidden" id="packageType" name="packageType">
-                    <input type="hidden" id="transactionId" name="transactionId">
-                    
-                    <div class="form-group">
-                        <label>Tool/Company Name <span class="required">*</span></label>
-                        <input type="text" id="toolName" required placeholder="e.g., SpicyChat AI">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Website URL <span class="required">*</span></label>
-                        <input type="url" id="websiteUrl" required placeholder="https://your-tool.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Contact Email <span class="required">*</span></label>
-                        <input type="email" id="email" required placeholder="you@company.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Category <span class="required">*</span></label>
-                        <select id="category" required>
-                            <option value="">Select a category</option>
-                            <option value="Virtual Girlfriend">Virtual Girlfriend</option>
-                            <option value="NSFW Chat">NSFW Chat</option>
-                            <option value="Image Generation">NSFW Image Generation</option>
-                            <option value="Video Generation">NSFW Video Generation</option>
-                            <option value="Roleplay">Roleplay</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Is your tool already listed on Xchatbots?</label>
-                        <select id="alreadyListed">
-                            <option value="yes">Yes, it's already in the directory</option>
-                            <option value="no">No, please add it first</option>
-                            <option value="not-sure">Not sure</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Sponsored Post specific fields -->
-                    <div class="sponsored-only">
-                        <div class="form-group">
-                            <label>Brief Description <span class="required">*</span></label>
-                            <textarea id="toolDescription" placeholder="Describe your tool in 2-3 sentences. What makes it unique?"></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Key Features to Highlight</label>
-                            <textarea id="keyFeatures" placeholder="List 3-5 features you'd like us to focus on in the blog post..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Target Audience</label>
-                            <input type="text" id="targetAudience" placeholder="e.g., Users looking for uncensored AI chat">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Competitors to Compare Against</label>
-                            <input type="text" id="competitors" placeholder="e.g., Character AI, Janitor AI">
-                            <small>We can position your tool favorably against these</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Any Specific Requests?</label>
-                            <textarea id="specialRequests" placeholder="Anything else you'd like us to know or include in the post..."></textarea>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn-submit">Submit Details</button>
-                </form>
             </div>
             
             <a href="/" class="back-link">
@@ -269,63 +150,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>
         // ── Resolve package type ─────────────────────────────────────────
-        // Priority: explicit ?type= param (most reliable, survives any number
-        // of page loads) > localStorage.pendingAdType (fallback for PayPal
-        // buttons that don't forward query params) > show a manual picker if
-        // neither is available, rather than silently guessing "featured".
-        //
-        // IMPORTANT: localStorage.pendingAdType is NOT cleared here. It's
-        // cleared only after the details form is successfully submitted
-        // (see the submit handler below), so a page reload, a second tab, or
-        // briefly losing connection doesn't lose track of which package the
-        // person paid for.
+        // Priority: explicit ?type= param (most reliable — set directly by
+        // each PayPal button's own return URL / onApprove redirect) >
+        // localStorage.pendingAdType (fallback). If neither is available,
+        // the page still just shows a generic "Payment Successful"
+        // confirmation — never a question, never a form. No fallback UI.
         const urlParams = new URLSearchParams(window.location.search);
         const typeFromUrl = urlParams.get('type');
         const typeFromStorage = (() => {
             try { return localStorage.getItem('pendingAdType'); } catch (e) { return null; }
         })();
+        const emailFromStorage = (() => {
+            try { return localStorage.getItem('pendingEmail'); } catch (e) { return null; }
+        })();
 
         let packageType = typeFromUrl || typeFromStorage || null;
         const transactionId = urlParams.get('subscription_id') || urlParams.get('tx') || '';
 
-        const packagePicker = document.getElementById('packagePicker');
-        const detailsForm = document.getElementById('detailsForm');
-
-        // Configure page based on package type
+        // Configure page based on package type. Everything here was already
+        // collected on /advertise before payment — this page only confirms,
+        // it never asks for anything, period. If we genuinely don't know the
+        // package (no ?type= and nothing in storage), the page still just
+        // shows a generic "Payment Successful" confirmation — never a
+        // question, never a form. Any missing info gets chased down by
+        // email on our end, not surfaced back to the customer here.
         const config = {
             featured: {
                 badge: '⭐ Featured Listing',
-                subtitle: 'Thank you for subscribing! Please complete the form below so we can activate your featured listing.',
-                confirmation: "We'll activate your Featured listing within 24 hours. You'll receive an email confirmation.",
+                subtitle: 'Thank you for subscribing!',
+                confirmation: "We'll activate your Featured listing within 24 hours. You'll receive an email confirmation \u2014 no further action needed.",
                 steps: [
-                    { title: 'Submit your tool details', desc: 'Fill out the form below so we know which listing to feature.' },
                     { title: 'We activate your listing', desc: 'Within 24 hours, we\'ll add the Featured badge and move your listing to the top.' },
                     { title: 'Monthly analytics', desc: 'You\'ll receive a monthly report with impressions, clicks, and engagement data.' }
                 ]
             },
             sponsored: {
                 badge: '🚀 Sponsored Post',
-                subtitle: 'Thank you for your purchase! Please provide details about your tool so we can write an amazing blog post.',
-                confirmation: "We'll start working on your sponsored post within 48 hours. You'll receive a draft for review before publishing.",
+                subtitle: 'Thank you for your purchase!',
+                confirmation: "We'll start working on your sponsored post within 48 hours, using the details you already gave us. You'll receive a draft for review before publishing \u2014 no further action needed.",
                 steps: [
-                    { title: 'Submit your tool details', desc: 'Fill out the form below with information about your tool and what to highlight.' },
-                    { title: 'We write your post', desc: 'Our team will create an SEO-optimized blog post reviewing your tool (2-3 business days).' },
+                    { title: 'We write your post', desc: 'Our team will use the details from your inquiry to create an SEO-optimized blog post reviewing your tool (2-3 business days).' },
                     { title: 'Review & publish', desc: 'You\'ll receive a draft for approval. Once approved, we publish and feature it on our homepage.' }
                 ]
             }
         };
 
-        function applyPackageType(type) {
-            packageType = type;
-            const currentConfig = config[packageType] || config.featured;
-
-            document.getElementById('packageType').value = packageType;
-            document.getElementById('transactionId').value = transactionId;
+        if (packageType === 'featured' || packageType === 'sponsored') {
+            const currentConfig = config[packageType];
 
             document.getElementById('packageBadge').textContent = currentConfig.badge;
             document.getElementById('subtitleText').textContent = currentConfig.subtitle;
             document.getElementById('confirmationText').textContent = currentConfig.confirmation;
-
             document.body.classList.toggle('type-sponsored', packageType === 'sponsored');
 
             const stepsHtml = currentConfig.steps.map((step, i) => `
@@ -339,103 +214,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             `).join('');
             document.getElementById('nextSteps').innerHTML = '<h2>What happens next?</h2>' + stepsHtml;
 
-            // Make sponsored fields required only when actually visible
-            const toolDescField = document.getElementById('toolDescription');
-            if (toolDescField) toolDescField.required = (packageType === 'sponsored');
-
-            packagePicker.classList.remove('show');
-            detailsForm.style.display = '';
-        }
-
-        if (packageType === 'featured' || packageType === 'sponsored') {
-            applyPackageType(packageType);
-        } else {
-            // We genuinely don't know which package this is — ask rather than
-            // guess. This avoids silently mis-filing a Sponsored Post payment
-            // as a Featured Listing (or vice versa) in the Notion database.
-            packagePicker.classList.add('show');
-            detailsForm.style.display = 'none';
-            document.getElementById('packageBadge').textContent = 'Confirm your package';
-            document.getElementById('subtitleText').textContent = "Thanks for your payment! We just need to confirm which package you booked.";
-        }
-
-        document.querySelectorAll('.package-picker-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                applyPackageType(btn.dataset.package);
-            });
-        });
-
-        // Track conversion in GA (only once we know the package)
-        if (packageType === 'featured' || packageType === 'sponsored') {
             gtag('event', 'purchase', {
                 'transaction_id': transactionId,
                 'value': packageType === 'sponsored' ? 399 : 149,
                 'currency': 'USD',
-                'items': [{ 'item_name': config[packageType].badge, 'price': packageType === 'sponsored' ? 399 : 149 }]
+                'items': [{ 'item_name': currentConfig.badge, 'price': packageType === 'sponsored' ? 399 : 149 }]
             });
+        } else {
+            // Generic confirmation, still no question asked. The default
+            // markup already says "Thanks for your payment, we'll be in
+            // touch by email" — nothing further to fill in here.
+            document.getElementById('nextSteps').style.display = 'none';
         }
 
-        // Form submission
-        const form = document.getElementById('detailsForm');
-        const confirmationMessage = document.getElementById('confirmationMessage');
-        const submitBtn = form.querySelector('button[type="submit"]');
-        
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        // ── Automatically record the activation, no form, no fallback ────
+        // Everything (tool name, website, category, and for Sponsored Post
+        // the marketing-detail fields) was already collected on /advertise.
+        // This call just tells the Worker "this email + package was paid",
+        // so it can find that existing inquiry and mark it Paid with the
+        // transaction ID. It runs fully in the background: whatever happens
+        // here (success, no match, network failure) never changes what the
+        // customer sees on this page. If something's missing, we follow up
+        // by email ourselves — the customer is never asked anything.
+        async function recordActivation() {
+            if (!(packageType === 'featured' || packageType === 'sponsored')) return;
+            if (!emailFromStorage) return;
 
-            const submittedPackageType = document.getElementById('packageType').value;
-
-            const formData = {
-                packageType: submittedPackageType,
-                transactionId: document.getElementById('transactionId').value,
-                toolName: document.getElementById('toolName').value.trim(),
-                websiteUrl: document.getElementById('websiteUrl').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                category: document.getElementById('category').value,
-                alreadyListed: document.getElementById('alreadyListed').value
-            };
-            
-            // Add sponsored post fields if applicable
-            if (submittedPackageType === 'sponsored') {
-                formData.toolDescription = document.getElementById('toolDescription').value.trim();
-                formData.keyFeatures = document.getElementById('keyFeatures').value.trim();
-                formData.targetAudience = document.getElementById('targetAudience').value.trim();
-                formData.competitors = document.getElementById('competitors').value.trim();
-                formData.specialRequests = document.getElementById('specialRequests').value.trim();
-            }
-            
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
-            
             try {
                 const response = await fetch('/api/advertise-activation', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
+                    body: JSON.stringify({
+                        packageType: packageType,
+                        transactionId: transactionId,
+                        email: emailFromStorage
+                    })
                 });
-                
+
                 const result = await response.json();
-                
+
                 if (response.ok && result.success) {
-                    // Only clear the pending flag once we know the details
-                    // actually made it to the server successfully.
-                    try { localStorage.removeItem('pendingAdType'); } catch (e) {}
-                    confirmationMessage.classList.add('show');
-                    form.style.display = 'none';
-                } else {
-                    throw new Error(result.error || 'Failed to submit details');
+                    // Only clear the pending flags once we know this actually
+                    // went through, so a reload before this point doesn't
+                    // lose track of which package/email to use.
+                    try {
+                        localStorage.removeItem('pendingAdType');
+                        localStorage.removeItem('pendingEmail');
+                    } catch (e) {}
                 }
+                // No else/throw here on purpose: a non-success response just
+                // means we follow up manually. Nothing to show the customer.
             } catch (error) {
-                // Network or server error: keep pendingAdType intact so a retry
-                // (reload, or coming back later) still knows the right package.
-                // Surface the failure instead of silently claiming success, so
-                // the person knows to retry or contact support.
-                console.error('API error:', error);
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Details';
-                alert("We couldn't save your details just now. Please try again, or contact us with your payment confirmation if this keeps happening.");
+                // Background call failed (network, etc). Their payment with
+                // PayPal already succeeded regardless — just log it for our
+                // own follow-up, never surface it to the customer.
+                console.error('Activation recording error:', error);
             }
-        });
+        }
+
+        recordActivation();
     </script>
 <script>
 // Fallback affiliate URLs if worker is unreachable
