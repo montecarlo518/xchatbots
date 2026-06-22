@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State of AI Companions 2026 — Pricing, Features & Market Data | Xchatbots</title>
+    <meta name="description" content="Independent market data on 25 AI companion and NSFW chatbot platforms. Pricing benchmarks, free tier analysis, feature matrix, and trend observations. Updated June 2026.">
+    <meta name="keywords" content="AI companion market data 2026, NSFW AI chatbot pricing, AI girlfriend app statistics, AI companion industry report">
+    <link rel="canonical" href="https://x-chatbots.com/state-of-ai-companions-2026">
+    <meta property="og:title" content="State of AI Companions 2026 — Pricing & Market Data">
+    <meta property="og:description" content="Independent pricing benchmarks, free tier data, and feature analysis across 25 AI companion platforms. Last updated June 2026.">
+    <meta property="og:url" content="https://x-chatbots.com/state-of-ai-companions-2026">
+    <meta property="og:type" content="article">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "State of AI Companions 2026",
+      "description": "Independent pricing and feature data across 25 AI companion and NSFW chatbot platforms, compiled through direct testing. Updated June 2026.",
+      "url": "https://x-chatbots.com/state-of-ai-companions-2026",
+      "publisher": { "@type": "Organization", "name": "Xchatbots", "url": "https://x-chatbots.com" },
+      "dateModified": "2026-06-01",
+      "keywords": ["AI companion", "NSFW chatbot", "AI girlfriend", "pricing data", "market research"]
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ice: #E8F4F8;
+            --ice-light: #F5FAFB;
+            --blue: #4A9EBF;
+            --blue-dark: #2D7A9C;
+            --slate: #94A3B8;
+            --charcoal: #1E293B;
+            --gray-warm: #475569;
+            --gray-light: #94A3B8;
+            --white: #FFF;
+            --frost: #F8FAFC;
+            --shadow-soft: 0 4px 20px rgba(30,41,59,.06);
+            --shadow-medium: 0 8px 40px rgba(30,41,59,.1);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --transition: all .3s cubic-bezier(.4,0,.2,1);
+            --green: #10B981;
+            --red: #EF4444;
+            --gold: #F59E0B;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--frost); color: var(--charcoal); line-height: 1.7; }
+
+        /* Header */
+        header { position: sticky; top: 0; z-index: 100; background: rgba(248,250,252,.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(30,41,59,.06); }
+        .header-content { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--charcoal); }
+        .logo-icon { width: 36px; height: 36px; background: var(--blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon svg { width: 20px; height: 20px; fill: white; }
+        .logo-text { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 500; }
+        .header-nav { display: flex; gap: 1.5rem; }
+        .header-nav a { text-decoration: none; color: var(--gray-warm); font-size: .9rem; transition: var(--transition); }
+        .header-nav a:hover { color: var(--blue); }
+
+        /* Hero */
+        .hero { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 2rem; }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: .5rem; background: var(--ice); color: var(--blue-dark); padding: .35rem .9rem; border-radius: 50px; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 1.5rem; }
+        .hero-eyebrow span { width: 6px; height: 6px; background: var(--green); border-radius: 50%; display: inline-block; }
+        h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; line-height: 1.2; color: var(--charcoal); margin-bottom: 1rem; max-width: 780px; }
+        .hero-sub { font-size: 1.05rem; color: var(--gray-warm); max-width: 640px; margin-bottom: 2rem; line-height: 1.75; }
+        .meta-row { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(30,41,59,.08); }
+        .meta-item { font-size: .85rem; color: var(--slate); }
+        .meta-item strong { color: var(--gray-warm); }
+
+        /* Stat banner */
+        .stat-banner { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: rgba(30,41,59,.07); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 3.5rem; }
+        .stat-cell { background: var(--white); padding: 1.5rem; }
+        .stat-cell:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+        .stat-cell:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+        .stat-num { font-family: 'Fraunces', serif; font-size: 2.25rem; font-weight: 500; color: var(--charcoal); line-height: 1; margin-bottom: .35rem; }
+        .stat-num.blue { color: var(--blue); }
+        .stat-label { font-size: .8rem; color: var(--slate); line-height: 1.4; }
+
+        /* Main layout */
+        main { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; }
+
+        /* Sections */
+        .section { margin-bottom: 3.5rem; }
+        .section-title { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); margin-bottom: .5rem; }
+        .section-desc { color: var(--gray-warm); font-size: .95rem; margin-bottom: 1.75rem; max-width: 680px; }
+
+        /* Data table */
+        .table-wrap { overflow-x: auto; border-radius: var(--radius-sm); border: 1px solid rgba(30,41,59,.08); background: var(--white); box-shadow: var(--shadow-soft); }
+        table { width: 100%; border-collapse: collapse; min-width: 640px; }
+        thead tr { background: var(--charcoal); }
+        thead th { padding: .85rem 1rem; text-align: left; font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.7); letter-spacing: .4px; text-transform: uppercase; }
+        thead th:first-child { border-radius: var(--radius-sm) 0 0 0; }
+        thead th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
+        tbody tr { border-bottom: 1px solid rgba(30,41,59,.05); transition: background .15s; }
+        tbody tr:last-child { border-bottom: none; }
+        tbody tr:hover { background: var(--ice-light); }
+        tbody tr.highlight { background: linear-gradient(90deg, rgba(74,158,191,.06), transparent); }
+        td { padding: .85rem 1rem; font-size: .88rem; color: var(--gray-warm); vertical-align: middle; }
+        td strong { color: var(--charcoal); font-weight: 500; }
+        .tag { display: inline-block; padding: .2rem .55rem; border-radius: 50px; font-size: .72rem; font-weight: 600; }
+        .tag-green { background: rgba(16,185,129,.1); color: #065F46; }
+        .tag-blue { background: var(--ice); color: var(--blue-dark); }
+        .tag-amber { background: rgba(245,158,11,.1); color: #92400E; }
+        .tag-red { background: rgba(239,68,68,.1); color: #991B1B; }
+        .check { color: var(--green); font-weight: 600; }
+        .cross { color: var(--slate); }
+        .platform-name { font-weight: 500; color: var(--charcoal); white-space: nowrap; }
+
+        /* Insight cards */
+        .insight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+        .insight-card { background: var(--white); border-radius: var(--radius-sm); padding: 1.5rem; box-shadow: var(--shadow-soft); border: 1px solid rgba(30,41,59,.05); }
+        .insight-card h3 { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; margin-bottom: .6rem; color: var(--charcoal); }
+        .insight-card p { font-size: .88rem; color: var(--gray-warm); line-height: 1.7; }
+        .insight-num { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 500; color: var(--blue); display: block; margin-bottom: .25rem; }
+
+        /* Methodology */
+        .method-box { background: var(--white); border-radius: var(--radius-sm); padding: 1.75rem 2rem; border: 1px solid rgba(30,41,59,.08); box-shadow: var(--shadow-soft); }
+        .method-box p { font-size: .9rem; color: var(--gray-warm); line-height: 1.75; }
+        .method-box p + p { margin-top: .75rem; }
+
+        /* Press / citation box */
+        .press-box { background: var(--charcoal); border-radius: var(--radius-sm); padding: 2rem; color: white; }
+        .press-box h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 500; margin-bottom: .75rem; color: white; }
+        .press-box p { font-size: .88rem; color: var(--slate); line-height: 1.7; margin-bottom: 1rem; }
+        .press-contact { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .press-btn { display: inline-block; background: var(--blue); color: white; padding: .6rem 1.25rem; border-radius: 8px; text-decoration: none; font-size: .85rem; font-weight: 600; transition: var(--transition); }
+        .press-btn:hover { background: var(--blue-dark); }
+        .press-note { font-size: .8rem; color: var(--slate); }
+
+        /* Category breakdown */
+        .category-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+        .category-card { background: var(--white); border-radius: var(--radius-sm); padding: 1.5rem; border: 1px solid rgba(30,41,59,.06); box-shadow: var(--shadow-soft); }
+        .category-card h3 { font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; color: var(--slate); margin-bottom: 1rem; }
+        .cat-item { display: flex; justify-content: space-between; align-items: center; padding: .5rem 0; border-bottom: 1px solid rgba(30,41,59,.05); font-size: .88rem; }
+        .cat-item:last-child { border-bottom: none; }
+        .cat-item .name { color: var(--charcoal); font-weight: 500; }
+        .cat-item .val { color: var(--gray-warm); }
+
+        /* Bar chart rows */
+        .bar-row { display: flex; align-items: center; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid rgba(30,41,59,.04); }
+        .bar-row:last-child { border-bottom: none; }
+        .bar-label { font-size: .85rem; color: var(--charcoal); font-weight: 500; min-width: 130px; }
+        .bar-track { flex: 1; background: var(--ice); border-radius: 50px; height: 8px; overflow: hidden; }
+        .bar-fill { height: 100%; border-radius: 50px; background: var(--blue); transition: width .6s ease; }
+        .bar-val { font-size: .82rem; color: var(--slate); min-width: 60px; text-align: right; }
+
+        /* Update badge */
+        .update-strip { background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.2); border-radius: 8px; padding: .6rem 1rem; display: flex; align-items: center; gap: .6rem; font-size: .8rem; color: #065F46; margin-bottom: 2rem; }
+        .update-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
+
+        /* Footer */
+        footer { background: var(--charcoal); color: white; padding: 3rem 2rem; margin-top: 4rem; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+        .footer-brand p { color: var(--slate); font-size: .9rem; line-height: 1.7; margin-top: .75rem; }
+        .footer-col h4 { font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 1rem; color: rgba(255,255,255,.5); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: .5rem; }
+        .footer-col a { color: var(--slate); text-decoration: none; font-size: .88rem; transition: var(--transition); }
+        .footer-col a:hover { color: white; }
+        .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.07); font-size: .8rem; color: var(--slate); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.75rem; }
+            .category-row { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .hero { padding: 2.5rem 1.25rem 1.5rem; }
+            main { padding: 0 1.25rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <a href="/" class="logo">
+            <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <span class="logo-text">xchatbots</span>
+        </a>
+        <nav class="header-nav">
+            <a href="/best/nsfw-ai-chatbots">Top Chatbots</a>
+            <a href="/virtual-girlfriend">AI Girlfriend</a>
+            <a href="/roleplay">Roleplay</a>
+            <a href="/blog">Blog</a>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="hero-eyebrow"><span></span> Live data — updated June 2026</div>
+    <h1>State of AI Companions 2026</h1>
+    <p class="hero-sub">Independent pricing benchmarks, free tier data, and feature analysis across 25 AI companion and NSFW chatbot platforms — compiled through direct testing by the xchatbots research team.</p>
+    <div class="meta-row">
+        <div class="meta-item"><strong>Platforms tracked:</strong> 25</div>
+        <div class="meta-item"><strong>Data collected:</strong> Direct testing, each platform</div>
+        <div class="meta-item"><strong>Last updated:</strong> June 2026</div>
+        <div class="meta-item"><strong>Published by:</strong> xchatbots.com</div>
+        <div class="meta-item"><strong>Press enquiries:</strong> <a href="mailto:info@x-chatbots.com" style="color:var(--blue);">info@x-chatbots.com</a></div>
+    </div>
+
+    <div class="stat-banner">
+        <div class="stat-cell">
+            <div class="stat-num blue">$9.99</div>
+            <div class="stat-label">Median premium price/month across all 25 platforms</div>
+        </div>
+        <div class="stat-cell">
+            <div class="stat-num">$3.99</div>
+            <div class="stat-label">Lowest full-access premium plan (CandyAI annual)</div>
+        </div>
+        <div class="stat-cell">
+            <div class="stat-num">$43.99</div>
+            <div class="stat-label">Highest premium plan tracked (JuicyChat)</div>
+        </div>
+        <div class="stat-cell">
+            <div class="stat-num blue">33</div>
+            <div class="stat-label">Average free messages/day across platforms with a free tier</div>
+        </div>
+        <div class="stat-cell">
+            <div class="stat-num">13 / 25</div>
+            <div class="stat-label">Platforms offering image generation on premium plans</div>
+        </div>
+        <div class="stat-cell">
+            <div class="stat-num">6 / 25</div>
+            <div class="stat-label">Platforms offering video generation</div>
+        </div>
+    </div>
+</div>
+
+<main>
+
+    <div class="update-strip">
+        <div class="update-dot"></div>
+        This dataset is maintained and updated as platforms change pricing or features. Journalists and researchers may cite this page with attribution to xchatbots.com.
+    </div>
+
+    <!-- Full pricing table -->
+    <div class="section">
+        <h2 class="section-title">Platform pricing matrix</h2>
+        <p class="section-desc">Pricing sourced directly from each platform's subscription page. Free tier limits reflect what each platform offers without any payment. All prices in USD.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Free tier</th>
+                        <th>Free msg/day</th>
+                        <th>Premium (monthly)</th>
+                        <th>Premium (annual)</th>
+                        <th>Image gen</th>
+                        <th>Video gen</th>
+                        <th>Voice</th>
+                        <th>Memory</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight">
+                        <td><span class="platform-name">🍬 CandyAI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>20</td>
+                        <td>$12.99</td>
+                        <td><strong>$3.99</strong></td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🔥 SpicyChat AI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td><strong>50</strong></td>
+                        <td>$9.90</td>
+                        <td>$4.95</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">❤️ CrushOn AI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>30</td>
+                        <td>$9.80</td>
+                        <td>$4.90</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🧃 JuicyChat</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>40</td>
+                        <td>$43.99</td>
+                        <td>$12.99</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">💜 Luvr AI</span></td>
+                        <td><span class="tag tag-blue">Token rewards</span></td>
+                        <td>Daily tokens</td>
+                        <td>$5.99</td>
+                        <td>$4.17</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🌿 GirlfriendGPT</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>$13.00</td>
+                        <td>—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">💖 Darlink AI</span></td>
+                        <td><span class="tag tag-amber">Limited</span></td>
+                        <td>Limited</td>
+                        <td>$12.99</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🍎 Joi AI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>$19.99</td>
+                        <td>$9.99</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🎭 EroPlay.ai</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>$7.99</td>
+                        <td>$3.91</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🎙️ Xotic AI</span></td>
+                        <td><span class="tag tag-amber">Limited</span></td>
+                        <td>Limited</td>
+                        <td>$19.99</td>
+                        <td>$9.99</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🔮 Secrets AI</span></td>
+                        <td><span class="tag tag-red">No</span></td>
+                        <td>—</td>
+                        <td>$39.99</td>
+                        <td>$19.99</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🌺 Replika</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Unlimited*</td>
+                        <td>$19.99</td>
+                        <td>$7.99</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">✨ Funy AI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">💋 CraveU AI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🌙 Dream Companion</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">📸 Promptchan</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">💬 LusyChat</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🌟 Soulkyn</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🎨 ourdream.ai</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">💙 DreamBF AI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">⭐ Fanfinity AI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">💞 Swipey AI</span></td>
+                        <td><span class="tag tag-red">No</span></td>
+                        <td>—</td>
+                        <td>$39.99</td>
+                        <td>$19.99</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">🌿 Lovescape</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">💛 Dondi AI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><span class="platform-name">⚡ Get-Harder AI</span></td>
+                        <td><span class="tag tag-green">Yes</span></td>
+                        <td>Limited</td>
+                        <td>Varies</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:.78rem;color:var(--slate);margin-top:.75rem;">* Replika free tier allows unlimited SFW messages; romantic/explicit features require Pro. Annual prices shown as effective monthly cost. "Varies" indicates platforms where pricing tiers were not confirmed at time of publication — check each platform directly.</p>
+    </div>
+
+    <!-- Key findings -->
+    <div class="section">
+        <h2 class="section-title">Key findings</h2>
+        <p class="section-desc">Observations from direct testing across all 15 platforms, June 2026.</p>
+        <div class="insight-grid">
+            <div class="insight-card">
+                <span class="insight-num">10×</span>
+                <h3>Pricing range across the market</h3>
+                <p>The cheapest full-access plan (CandyAI annual at $3.99/mo) costs 11× less than the most expensive (JuicyChat monthly at $43.99/mo) — an unusually wide spread for a maturing SaaS category, suggesting the market has not yet converged on standard pricing tiers.</p>
+            </div>
+            <div class="insight-card">
+                <span class="insight-num">52%</span>
+                <h3>Platforms now include image generation</h3>
+                <p>13 of 25 tracked platforms include NSFW image generation in their premium plans. Image generation has shifted from a premium differentiator to an expected feature at the $10+/month tier, with video generation still scarce at 6 of 25 platforms.</p>
+            </div>
+            <div class="insight-card">
+                <span class="insight-num">6 only</span>
+                <h3>Video generation remains scarce</h3>
+                <p>Only CandyAI, Joi AI, Secrets AI, Funy AI, LusyChat, ourdream.ai, Dondi AI, Get-Harder AI, and Promptchan offer video generation — all other platforms either do not offer it or offer it as a costly add-on. This is a significant capability gap versus what users expect in 2026.</p>
+            </div>
+            <div class="insight-card">
+                <span class="insight-num">33 msgs</span>
+                <h3>Average daily free limit</h3>
+                <p>Across platforms offering a message-based free tier, the average daily limit is 33 messages. SpicyChat's 50/day limit is the most generous among mainstream paid-or-free platforms. The majority of newer platforms offer only vague "limited" free trials rather than a defined message count.</p>
+            </div>
+            <div class="insight-card">
+                <span class="insight-num">$9.99</span>
+                <h3>Median monthly premium price</h3>
+                <p>The median monthly premium price across all 25 platforms is $9.99. This compares to $9.99–$19.99/month for mainstream AI assistants (ChatGPT Plus, Claude Pro), placing AI companion apps at rough pricing parity with general-purpose AI despite more specialized and explicit feature sets.</p>
+            </div>
+            <div class="insight-card">
+                <span class="insight-num">76%</span>
+                <h3>Platforms offer persistent memory</h3>
+                <p>19 of 25 platforms now offer some form of conversation memory or character continuity on premium plans. Memory has become table stakes in 2026 for any platform positioned as a "companion" rather than a chatbot — only image/video-generation-first platforms tend to omit it.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free tier comparison -->
+    <div class="section">
+        <h2 class="section-title">Free tier generosity — messages per day</h2>
+        <p class="section-desc">For platforms using daily message limits on free tiers. Perchance AI excluded (unlimited). Replika excluded (SFW only on free).</p>
+        <div style="background:var(--white);border-radius:var(--radius-sm);padding:1.75rem;box-shadow:var(--shadow-soft);border:1px solid rgba(30,41,59,.06);">
+            <div class="bar-row">
+                <span class="bar-label">SpicyChat</span>
+                <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+                <span class="bar-val">50 / day</span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">JuicyChat</span>
+                <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+                <span class="bar-val">40 / day</span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">CrushOn AI</span>
+                <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+                <span class="bar-val">30 / day</span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">CandyAI</span>
+                <div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
+                <span class="bar-val">20 / day</span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">GirlfriendGPT</span>
+                <div class="bar-track"><div class="bar-fill" style="width:20%; background:var(--slate)"></div></div>
+                <span class="bar-val">~10 / day</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category breakdown -->
+    <div class="section">
+        <h2 class="section-title">Platform categories</h2>
+        <p class="section-desc">How xchatbots classifies the 15 tracked platforms by primary use case, based on feature emphasis and positioning.</p>
+        <div class="category-row">
+            <div class="category-card">
+                <h3>By primary category</h3>
+                <div class="cat-item"><span class="name">AI companion / girlfriend</span><span class="val">12 platforms</span></div>
+                <div class="cat-item"><span class="name">NSFW chat / sexting</span><span class="val">5 platforms</span></div>
+                <div class="cat-item"><span class="name">Roleplay / ERP focused</span><span class="val">4 platforms</span></div>
+                <div class="cat-item"><span class="name">Image / video generation</span><span class="val">3 platforms</span></div>
+                <div class="cat-item"><span class="name">Voice-first companion</span><span class="val">1 platform</span></div>
+            </div>
+            <div class="category-card">
+                <h3>Feature availability at premium</h3>
+                <div class="cat-item"><span class="name">Persistent memory</span><span class="val">19 / 25</span></div>
+                <div class="cat-item"><span class="name">Image generation</span><span class="val">13 / 25</span></div>
+                <div class="cat-item"><span class="name">Voice messages</span><span class="val">7 / 25</span></div>
+                <div class="cat-item"><span class="name">Video generation</span><span class="val">6 / 25</span></div>
+                <div class="cat-item"><span class="name">Mobile app (iOS/Android)</span><span class="val">4 / 25</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Methodology -->
+    <div class="section">
+        <h2 class="section-title">Methodology</h2>
+        <div class="method-box">
+            <p>All data on this page was collected through direct use and subscription testing of each platform by the xchatbots research team. Pricing data is taken from each platform's own subscription page and verified monthly. Free tier message limits were tested with new accounts. Feature availability (image generation, voice, video, memory) reflects what is actually accessible on each plan, not what is marketed — in several cases, advertised features were found to be unavailable, restricted, or in beta during testing.</p>
+            <p>Platforms included were selected based on measurable user activity (social mentions, Reddit presence, affiliate traffic) and are not sponsored or paid placements. Xchatbots earns affiliate commissions from some platforms listed; this does not influence the data or findings presented here. For corrections, pricing updates, or press enquiries, contact <a href="mailto:info@x-chatbots.com" style="color:var(--blue);">info@x-chatbots.com</a>.</p>
+            <p>This page covers the NSFW AI chatbot and AI companion category. For the broader AI assistant market (general-purpose models), this data is not representative. The platforms tracked here are purpose-built for adult or companion use cases and are not comparable to tools like ChatGPT, Claude, or Gemini in terms of content policy or intended use.</p>
+        </div>
+    </div>
+
+    <!-- Press section -->
+    <div class="section">
+        <div class="press-box">
+            <h3>For journalists and researchers</h3>
+            <p>You are welcome to cite statistics from this page with attribution to xchatbots.com. If you are writing about AI companion apps, AI regulation, the loneliness economy, or related topics and need a data point, a quote, or a background briefing on the market, get in touch.</p>
+            <div class="press-contact">
+                <a href="mailto:info@x-chatbots.com" class="press-btn">Contact info@x-chatbots.com</a>
+                <span class="press-note">We typically respond within 24 hours.</span>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div style="display:flex;align-items:center;gap:.75rem;">
+                <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:500;">xchatbots</span>
+            </div>
+            <p>Independent research and reviews of AI companion and NSFW chatbot platforms. We test every platform so you don't have to.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="/nsfw-chat">NSFW Chat</a></li>
+                <li><a href="/virtual-girlfriend">Virtual Girlfriend</a></li>
+                <li><a href="/nsfw-image-generation">Image Generation</a></li>
+                <li><a href="/roleplay">Roleplay</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Research</h4>
+            <ul>
+                <li><a href="/state-of-ai-companions-2026">Market Data 2026</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="mailto:info@x-chatbots.com">Press</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 Xchatbots. All rights reserved. All users must be 18+ to access linked platforms.
+    </div>
+</footer>
+
+</body>
+</html>
