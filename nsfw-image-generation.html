@@ -28,14 +28,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     { id: 'lusychat',           name: 'LusyChat',                 pattern: 'lusychat.ai' },
     { id: 'soulkyn',            name: 'Soulkyn',                  pattern: 'soulkyn.com' },
     { id: 'ourdream_ai',        name: 'ourdream.ai',              pattern: 't.vlmai-1.com/406118/10138' },
-    { id: 'girlfriendgpt',      name: 'GirlfriendGPT',            pattern: 't.vlmai-1.com/406118/7477' },
-    { id: 'xotic_ai',           name: 'Xotic AI',                 pattern: 't.vlmai-1.com/406118/10416' },
+    { id: 'girlfriendgpt',      name: 'GirlfriendGPT',            pattern: 't.vlmai-1.com/406118/10046' },
+    { id: 'xotic_ai',           name: 'Xotic AI',                 pattern: 't.vlmai-1.com/406118/10349' },
     { id: 'spicychat_ai',       name: 'SpicyChat AI',             pattern: 'spicychat.ai' },
     { id: 'juicychat_ai',       name: 'JuicyChat.ai',             pattern: 'lowest-prices.eu' },
     { id: 'crushon_ai',         name: 'CrushOn.ai',               pattern: 'crushon.ai' },
     { id: 'dreambf_ai',         name: 'DreamBF AI',               pattern: 't.vlmai-1.com/406118/6559' },
     { id: 'luvr_ai',            name: 'Luvr AI',                  pattern: 't.vlmai-1.com/406118/7944' },    { id: 'secrets_ai',         name: 'Secrets AI',               pattern: 't.vlmai-1.com/406118/10381' },
-    { id: 'darlink_ai',         name: 'Darlink AI',               pattern: 't.vlmai-1.com/406118/10345' }
+    { id: 'darlink_ai',         name: 'Darlink AI',               pattern: 't.vlmai-1.com/406118/10345' },
+    { id: 'joi_ai',             name: 'Joi AI',                   pattern: 't.vlmai-1.com/406118/8080' },
+    { id: 'dreamz_ai',          name: 'Dreamz AI',                pattern: 't.vlmai-1.com/406118/10460' },
+    { id: 'flirtcam_ai',        name: 'FlirtCam AI',              pattern: 't.vlmai-1.com/406118/10404' }
   ];
   function getToolForUrl(url) { for (var i = 0; i < affiliateTools.length; i++) { if (url.indexOf(affiliateTools[i].pattern) !== -1) return affiliateTools[i]; } return null; }
   function handleAffiliateClick(url) { var tool = getToolForUrl(url); if (!tool) return; gtag('event', 'purchase', { transaction_id: 'aff_' + tool.id + '_' + Date.now(), currency: 'USD', value: 1, items: [{ item_id: tool.id, item_name: tool.name, item_category: 'Affiliate Tool', quantity: 1, price: 1 }] }); gtag('event', 'affiliate_click', { tool_id: tool.id, tool_name: tool.name, link_url: url }); }
