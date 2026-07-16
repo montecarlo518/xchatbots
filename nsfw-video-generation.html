@@ -18,9 +18,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {id:'flirtcam_ai',name:'FlirtCam AI',pattern:'t.vlmai-1.com/406118/10404'},
     {id:'dreamz_ai',name:'Dreamz AI',pattern:'t.vlmai-1.com/406118/10460'},
     {id:'ourdream_ai',name:'ourdream.ai',pattern:'t.vlmai-1.com/406118/10138'},
-    {id:'xotic_ai',name:'Xotic AI',pattern:'t.vlmai-1.com/406118/10416'},
+    {id:'xotic_ai',name:'Xotic AI',pattern:'t.vlmai-1.com/406118/10349'},
     {id:'luvr_ai',name:'Luvr AI',pattern:'t.vlmai-1.com/406118/9313'},
-    {id:'girlfriendgpt',name:'GirlfriendGPT',pattern:'t.vlmai-1.com/406118/10046'}
+    {id:'girlfriendgpt',name:'GirlfriendGPT',pattern:'t.vlmai-1.com/406118/10046'},
+    {id:'joi_ai',name:'Joi AI',pattern:'t.vlmai-1.com/406118/8080'}
   ];
   function getT(u){for(var i=0;i<affiliateTools.length;i++){if(u.indexOf(affiliateTools[i].pattern)!==-1)return affiliateTools[i];}return null;}
   function h(u){var t=getT(u);if(!t)return;gtag('event','purchase',{transaction_id:'aff_'+t.id+'_'+Date.now(),currency:'USD',value:1,items:[{item_id:t.id,item_name:t.name,item_category:'Affiliate Tool',quantity:1,price:1}]});gtag('event','affiliate_click',{tool_id:t.id,tool_name:t.name,link_url:u});}
