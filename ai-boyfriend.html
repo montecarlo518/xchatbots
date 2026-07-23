@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-ND2PC8VM');</script>
+<!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5BKLJR7QJ"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N5BKLJR7QJ');</script>
+    <script>
+(function() {
+  // Map affiliate link patterns to tool names & IDs
+  var affiliateTools = [
+    { id: 'candy_ai',      name: 'CandyAI',     pattern: 't.vlmai-1.com/406118/10335' },
+    { id: 'joi_ai',        name: 'Joi AI',      pattern: 't.vlmai-1.com/406118/10358' },
+    { id: 'secrets_ai',    name: 'Secrets AI',  pattern: 't.vlmai-1.com/406118/10381' },
+    { id: 'xotic_ai',      name: 'Xotic AI',    pattern: 't.vlmai-1.com/406118/10416' },
+    { id: 'lovescape',     name: 'Lovescape',   pattern: 't.vlmai-1.com/406118/10223' },
+    { id: 'ourdream_ai',   name: 'OurDream AI', pattern: 't.vlmai-1.com/406118/10138' },
+    { id: 'darlink_ai',    name: 'Darlink AI',  pattern: 't.vlmai-1.com/406118/10345' },
+    { id: 'flirtcam_ai',   name: 'FlirtCam AI', pattern: 't.vlmai-1.com/406118/10404' },
+    { id: 'dreambf_ai',    name: 'DreamBF AI',  pattern: 't.vlmai-1.com/406118/6559' },
+    { id: 'fanfinity_ai',  name: 'Fanfinity AI',pattern: 't.vlmai-1.com/406118/10141' }
+  ];
+  function getToolForUrl(url) {
+    for (var i = 0; i < affiliateTools.length; i++) {
+      if (url.indexOf(affiliateTools[i].pattern) !== -1) {
+        return affiliateTools[i];
+      }
+    }
+    return null;
+  }
+  function handleAffiliateClick(url) {
+    var tool = getToolForUrl(url);
+    if (!tool) return;
+    gtag('event', 'purchase', {
+      transaction_id: 'aff_' + tool.id + '_' + Date.now(),
+      currency: 'USD',
+      value: 1,
+      items: [{
+        item_id:       tool.id,
+        item_name:     tool.name,
+        item_category: 'Affiliate Tool',
+        quantity:      1,
+        price:         1
+      }]
+    });
+    gtag('event', 'affiliate_click', {
+      tool_id:   tool.id,
+      tool_name: tool.name,
+      link_url:  url
+    });
+  }
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('a');
+    if (!el) return;
+    var href = el.href || '';
+    if (href) handleAffiliateClick(href);
+  }, true);
+})();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>10 Best AI Boyfriend Apps 2026: Male AI Companions, NSFW Chat &amp; Roleplay</title>
+    <meta name="description" content="The 10 best AI boyfriend apps of 2026, tested and ranked. CandyAI, Joi AI, DreamBF &amp; more male AI companions for uncensored chat, roleplay, voice & image gen. Free tiers included.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://x-chatbots.com/ai-boyfriend">
+    <meta property="og:title" content="10 Best AI Boyfriend Apps 2026 — Male AI Companions, NSFW Chat &amp; Roleplay">
+    <meta property="og:url" content="https://x-chatbots.com/ai-boyfriend">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Best AI Boyfriend Apps 2026","itemListElement":[{"@type":"ListItem","position":1,"name":"CandyAI","url":"https://x-chatbots.com/ai-boyfriend#candyai"},{"@type":"ListItem","position":2,"name":"Joi AI"},{"@type":"ListItem","position":3,"name":"Secrets AI"},{"@type":"ListItem","position":4,"name":"Xotic AI"},{"@type":"ListItem","position":5,"name":"Lovescape"},{"@type":"ListItem","position":6,"name":"OurDream AI"},{"@type":"ListItem","position":7,"name":"Darlink AI"},{"@type":"ListItem","position":8,"name":"FlirtCam AI"},{"@type":"ListItem","position":9,"name":"DreamBF AI"},{"@type":"ListItem","position":10,"name":"Fanfinity AI"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best AI boyfriend app in 2026?","acceptedAnswer":{"@type":"Answer","text":"CandyAI is the best AI boyfriend app in 2026 for most people. Set your companion to male during creation and you get uncensored chat, voice messages, image and video generation, and deep memory from $3.99/mo on the annual plan. Joi AI ($2.38/mo) is the best value and best on mobile, Darlink AI ($12.99/mo) is best for emotional depth, and DreamBF is the best boyfriend-first dedicated platform."}},{"@type":"Question","name":"Are there real AI boyfriend apps, not just AI girlfriends?","acceptedAnswer":{"@type":"Answer","text":"Yes. Two kinds: general-purpose platforms like CandyAI, Joi AI, and Darlink AI that let you set your companion as male during creation and apply their full feature set to it, and dedicated platforms like DreamBF built specifically around male companions with boyfriend personas and romance writing."}},{"@type":"Question","name":"Do AI boyfriend apps support NSFW chat and roleplay?","acceptedAnswer":{"@type":"Answer","text":"Yes. All the platforms in this guide support uncensored sexting, romantic roleplay, and — on the multimedia platforms — explicit image and video generation, gated behind an age and consent check for verified adults."}},{"@type":"Question","name":"What is the cheapest AI boyfriend app?","acceptedAnswer":{"@type":"Answer","text":"Among full-featured platforms, Joi AI at $2.38/mo on the annual plan is the cheapest, followed by CandyAI at $3.99/mo. Several apps also offer free tiers or daily token allowances so you can chat before paying."}},{"@type":"Question","name":"Can an AI boyfriend remember previous conversations?","acceptedAnswer":{"@type":"Answer","text":"On premium tiers, yes. CandyAI's relationship memory and Darlink AI's Living Memory both persist names, preferences, and the arc of your relationship across sessions. Most free tiers reset memory between visits."}},{"@type":"Question","name":"Can ChatGPT be my AI boyfriend?","acceptedAnswer":{"@type":"Answer","text":"No. ChatGPT blocks romantic and NSFW content. For an uncensored AI boyfriend with sexting, roleplay, voice, and image generation, dedicated apps like CandyAI ($3.99/mo), Joi AI ($2.38/mo), and DreamBF are purpose-built for this."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"10 Best AI Boyfriend Apps 2026","description":"Compare the best AI boyfriend apps for 2026. We tested male AI companion platforms for NSFW chat, roleplay, voice, image and video generation.","author":{"@type":"Organization","name":"Xchatbots"},"publisher":{"@type":"Organization","name":"Xchatbots","url":"https://x-chatbots.com"},"datePublished":"2026-06-10","dateModified":"2026-07-23"}</script>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        :root{--ice:#E8F4F8;--blue:#4A9EBF;--blue-dark:#2D7A9C;--lavender:#E0E7FF;--mint:#D1FAE5;--frost:#F8FAFC;--charcoal:#1E293B;--gray-warm:#475569;--gray-light:#94A3B8;--white:#FFF;--shadow-soft:0 4px 20px rgba(30,41,59,.06);--shadow-medium:0 8px 40px rgba(30,41,59,.1);--radius-sm:12px;--radius-md:20px;--radius-lg:32px;--green:#10B981;--red:#EF4444;--slate:#94A3B8}
+        *{margin:0;padding:0;box-sizing:border-box}html,body{font-family:'DM Sans',sans-serif;background:var(--frost);color:var(--charcoal);line-height:1.6;overflow-x:hidden;width:100%}
+        header{position:sticky;top:0;z-index:100;background:rgba(248,250,252,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(30,41,59,.05)}.header-content{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}.logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}.logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));border-radius:14px;display:flex;align-items:center;justify-content:center}.logo-icon .logo-img{width:28px;height:28px;object-fit:contain}.logo-text{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;color:var(--charcoal)}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-link{text-decoration:none;color:var(--gray-warm);font-weight:500;font-size:.95rem}.nav-link:hover,.nav-link.active{color:var(--blue)}
+        .hero{max-width:1200px;margin:0 auto;padding:4rem 2rem 3rem;text-align:center}.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--mint);border:1px solid rgba(16,185,129,.3);padding:.5rem 1rem;border-radius:50px;font-size:.85rem;color:#047857;margin-bottom:1.5rem;font-weight:500}.hero h1{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:300;line-height:1.2;margin-bottom:1rem}.hero h1 span{font-style:italic;color:var(--blue)}.hero>p{font-size:1.1rem;color:var(--gray-warm);max-width:700px;margin:0 auto 2rem}
+        .quick-picks{max-width:1200px;margin:0 auto 2rem;padding:0 2rem}.quick-picks-inner{background:linear-gradient(135deg,var(--charcoal),#0f172a);border-radius:var(--radius-lg);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}.quick-picks h3{color:#fff;font-family:'Fraunces',serif;font-size:1.1rem}.quick-picks-list{display:flex;gap:1rem;flex-wrap:wrap}.quick-pick-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.1rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius-sm);color:#fff;text-decoration:none;font-size:.85rem;font-weight:500}.quick-pick-btn:hover{background:var(--blue);border-color:var(--blue)}.quick-pick-btn .badge{background:var(--green);font-size:.65rem;padding:.15rem .4rem;border-radius:50px;font-weight:600}
+        .main-layout{display:grid;grid-template-columns:240px 1fr;gap:2rem;max-width:1200px;margin:0 auto;padding:0 2rem 3rem}
+        .side-nav{position:sticky;top:100px;height:fit-content}.side-nav-box{background:var(--white);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-soft);margin-bottom:1.5rem}.side-nav-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;margin-bottom:1rem}.side-nav-list{list-style:none}.side-nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:var(--radius-sm);text-decoration:none;color:var(--charcoal);font-weight:500;font-size:.9rem}.side-nav-link:hover{background:var(--ice);color:var(--blue)}.side-nav-link.active{background:var(--ice);color:var(--blue-dark)}
+        .related-box{background:linear-gradient(135deg,var(--lavender),var(--ice));border-radius:var(--radius-lg);padding:1.5rem}.related-box h4{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;margin-bottom:1rem}.related-links{display:flex;flex-direction:column;gap:.5rem}.related-link{display:block;padding:.6rem .75rem;background:var(--white);border-radius:var(--radius-sm);text-decoration:none;color:var(--charcoal);font-size:.85rem;font-weight:500}.related-link:hover{background:var(--blue);color:#fff}
+        .content-section h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:500;margin:2.5rem 0 1rem}.content-section h2:first-child{margin-top:0}.content-section h3{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:500;margin:2rem 0 .75rem}.content-section>p{color:var(--gray-warm);line-height:1.8;margin-bottom:1rem}.content-section a{color:var(--blue);text-decoration:none;font-weight:500}.content-section a:hover{text-decoration:underline}
+        .key-takeaways{background:linear-gradient(135deg,var(--mint),var(--ice));border-radius:var(--radius-lg);padding:1.75rem;margin:0 0 2rem;border-left:4px solid var(--green)}.key-takeaways h2{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;margin-bottom:1rem}.key-takeaways ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.key-takeaways li{padding:.4rem 0 .4rem 1.5rem;position:relative;font-size:.95rem}.key-takeaways li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}.key-takeaways li strong{color:#047857}
+        .featured-tool{background:var(--white);border-radius:var(--radius-lg);padding:2rem;margin:1.5rem 0;box-shadow:var(--shadow-soft);position:relative;overflow:hidden}.featured-tool::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),var(--blue))}.featured-badge{position:absolute;top:1rem;right:1rem;background:var(--green);color:#fff;font-size:.7rem;font-weight:600;padding:.3rem .6rem;border-radius:50px;text-transform:uppercase}
+        .featured-header{display:flex;gap:1.5rem;margin-bottom:1.25rem}.featured-icon{width:72px;height:72px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:2.25rem;background:var(--ice);flex-shrink:0}.featured-info{flex:1}.featured-rank{font-size:.8rem;color:var(--gray-light);font-weight:500}.featured-name{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500}.featured-tagline{font-size:.95rem;color:var(--gray-warm);font-style:italic}
+        .featured-rating{display:flex;align-items:center;gap:.5rem;margin:.75rem 0}.stars{color:#FFB800}.rating-value{font-weight:600}.reviews-count{font-size:.8rem;color:var(--gray-light)}
+        .featured-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}.featured-tag{padding:.35rem .75rem;background:var(--frost);border-radius:50px;font-size:.75rem;color:var(--gray-warm);font-weight:500}.featured-tag.highlight{background:var(--mint);color:#047857}
+        .featured-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.25rem 0;padding:1rem 0;border-top:1px solid rgba(30,41,59,.06);border-bottom:1px solid rgba(30,41,59,.06)}.stat-item{text-align:center}.stat-label{font-size:.65rem;color:var(--gray-light);text-transform:uppercase}.stat-value{font-weight:600;font-size:.9rem}
+        .featured-description{font-size:.95rem;color:var(--gray-warm);line-height:1.7;margin-bottom:1.25rem}
+        .featured-pros{display:flex;gap:2rem;margin-bottom:1.25rem}.pros-list,.cons-list{flex:1}.pros-list h4,.cons-list h4{font-size:.85rem;font-weight:600;margin-bottom:.5rem}.pros-list h4{color:#047857}.cons-list h4{color:#DC2626}.pros-list ul,.cons-list ul{list-style:none;font-size:.85rem}.pros-list li,.cons-list li{padding:.3rem 0 .3rem 1.25rem;color:var(--gray-warm);position:relative}.pros-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}.cons-list li::before{content:'✗';position:absolute;left:0;color:var(--red)}
+        .featured-actions{display:flex;gap:1rem}.btn-visit-large{padding:.9rem 1.75rem;background:var(--charcoal);color:#fff!important;border-radius:var(--radius-sm);text-decoration:none;font-weight:600}.btn-visit-large:hover{background:var(--blue)}.btn-secondary{padding:.9rem 1.5rem;background:var(--frost);color:var(--charcoal);border-radius:var(--radius-sm);text-decoration:none;font-weight:500}.btn-secondary:hover{background:var(--ice)}
+        .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem;margin:1.5rem 0}.tool-card{background:var(--white);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}.tool-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-medium)}
+        .tool-card-header{display:flex;gap:.75rem;margin-bottom:1rem}.tool-icon{width:48px;height:48px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1.5rem;background:var(--ice)}.tool-info{flex:1}.tool-rank{font-size:.7rem;color:var(--gray-light);font-weight:500}.tool-name{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500}
+        .tool-rating{display:flex;align-items:center;gap:.25rem;margin-top:.35rem}.tool-rating .stars{font-size:.8rem}.tool-rating .rating-value{font-size:.8rem;font-weight:600}.tool-rating .reviews-count{font-size:.7rem;color:var(--gray-light)}
+        .tool-description{font-size:.9rem;color:var(--gray-warm);line-height:1.65;margin-bottom:1rem;flex:1}
+        .tool-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem}.tool-tag{padding:.2rem .55rem;background:var(--frost);border-radius:50px;font-size:.68rem;color:var(--gray-warm)}.tool-tag.highlight{background:var(--lavender);color:var(--blue-dark);font-weight:500}
+        .tool-footer{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid rgba(30,41,59,.06);margin-top:auto}.tool-pricing{display:flex;flex-direction:column}.price-label{font-size:.6rem;color:var(--gray-light);text-transform:uppercase}.price-value{font-weight:600;font-size:.8rem}.price-value.free{color:var(--green)}
+        .btn-visit{padding:.55rem 1rem;background:var(--charcoal);color:#fff!important;border-radius:var(--radius-sm);font-weight:600;font-size:.75rem;text-decoration:none}.btn-visit:hover{background:var(--blue)}
+        .comparison-wrapper{overflow-x:auto;margin:1.5rem 0}.comparison-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);min-width:750px}.comparison-table th{background:var(--charcoal);color:#fff;padding:1rem;text-align:left;font-weight:600;font-size:.85rem}.comparison-table td{padding:.9rem 1rem;border-bottom:1px solid rgba(30,41,59,.06);font-size:.85rem;color:var(--gray-warm)}.comparison-table tr:hover td{background:var(--ice)}.comparison-table .platform-name{font-weight:600;color:var(--charcoal)}.comparison-table .check{color:var(--green);font-weight:700}.comparison-table .cross{color:var(--red)}.comparison-table .highlight-row td{background:rgba(16,185,129,.08)}
+        .info-box{background:var(--white);border-radius:var(--radius-lg);padding:1.75rem;margin:2rem 0;box-shadow:var(--shadow-soft);border-left:4px solid var(--blue)}.info-box h3{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;margin-bottom:.75rem;color:var(--charcoal)}.info-box p{color:var(--gray-warm);line-height:1.7;margin-bottom:.75rem}.info-box p:last-child{margin-bottom:0}
+        .internal-links-box{background:var(--white);border-radius:var(--radius-lg);padding:1.5rem;margin:2rem 0;box-shadow:var(--shadow-soft)}.internal-links-box h3{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;margin-bottom:1rem}.internal-links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.65rem}.internal-link{display:flex;align-items:center;gap:.5rem;padding:.65rem .9rem;background:var(--frost);border-radius:var(--radius-sm);text-decoration:none;color:var(--charcoal);font-weight:500;font-size:.85rem}.internal-link:hover{background:var(--blue);color:#fff}
+        .faq-section{margin-top:2.5rem}.faq-section>h2{text-align:center;margin-bottom:1.5rem}.faq-item{background:var(--white);border-radius:var(--radius-md);padding:1.5rem;margin-bottom:1rem;box-shadow:var(--shadow-soft)}.faq-item h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:.75rem;color:var(--charcoal)}.faq-item p{font-size:.95rem;color:var(--gray-warm);line-height:1.7;margin-bottom:.5rem}.faq-item p:last-child{margin-bottom:0}.faq-item a{color:var(--blue)}.faq-item ul{margin:.75rem 0 .75rem 1.5rem;color:var(--gray-warm)}.faq-item li{margin-bottom:.35rem}
+        .cta-section{background:linear-gradient(135deg,var(--charcoal),#0f172a);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;margin:2.5rem 0}.cta-section h3{font-family:'Fraunces',serif;font-size:1.5rem;color:#fff;margin-bottom:.5rem}.cta-section p{color:var(--slate);margin-bottom:1.25rem}.cta-btn{display:inline-block;background:#fff;color:var(--charcoal);padding:.85rem 1.5rem;border-radius:var(--radius-md);text-decoration:none;font-weight:600}.cta-btn:hover{background:var(--blue);color:#fff}
+        footer{background:var(--charcoal);color:#fff;padding:4rem 2rem 2rem;margin-top:4rem}.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}.footer-brand p{color:var(--slate);line-height:1.7}.footer-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}.footer-logo-icon{width:40px;height:40px;background:var(--blue);border-radius:12px;display:flex;align-items:center;justify-content:center}.footer-logo-icon svg{width:22px;height:22px;fill:#fff}.footer-logo-text{font-family:'Fraunces',serif;font-size:1.35rem}.footer-column h4{font-size:.9rem;font-weight:600;margin-bottom:1rem;text-transform:uppercase}.footer-column ul{list-style:none}.footer-column li{margin-bottom:.5rem}.footer-column a{color:var(--slate);text-decoration:none;font-size:.9rem}.footer-column a:hover{color:#fff}.footer-bottom{max-width:1200px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);text-align:center}.footer-bottom p{font-size:.85rem;color:var(--slate)}
+        @media(max-width:1100px){.main-layout{grid-template-columns:1fr}.side-nav{display:none}.key-takeaways ul{grid-template-columns:1fr}.featured-stats{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:900px){.footer-content{grid-template-columns:1fr 1fr}.tools-grid{grid-template-columns:1fr}.quick-picks-inner,.featured-pros{flex-direction:column}.quick-picks{padding:0 1rem}.hero{padding:3rem 1rem 2rem}.main-layout{padding:0 1rem 2rem}}
+        @media(max-width:600px){.footer-content{grid-template-columns:1fr}.hero h1{font-size:1.75rem}.header-content{padding:.875rem 1rem}.logo-text{font-size:1.25rem}.featured-tool{padding:1.25rem}.featured-actions{flex-direction:column}.featured-actions a{text-align:center}.tool-card{padding:1.25rem}.tool-footer{flex-direction:column;gap:.75rem;align-items:stretch}.tool-footer .btn-visit{text-align:center}}
+
+        /* Tighter card-header spacing */
+        .tool-rank{line-height:1.2;margin-bottom:1px}.tool-name{line-height:1.2}.tool-info{display:flex;flex-direction:column;justify-content:center}.featured-rank{line-height:1.2;margin-bottom:2px}.featured-name{line-height:1.2}
+        /* Rate widget */
+        .cta-rate-row{display:flex;align-items:center;gap:.5rem}
+        .cr-wrap{position:relative}
+        .cr-trigger{background:var(--frost);border:1px solid rgba(30,41,59,.08);border-radius:var(--radius-sm);width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;flex-shrink:0}
+        .cr-trigger svg{width:18px;height:18px}.cr-trigger:hover{background:var(--ice)}
+        .cr-panel{position:absolute;bottom:calc(100% + 8px);right:0;background:#fff;border-radius:var(--radius-sm);box-shadow:0 8px 30px rgba(0,0,0,.15);padding:.75rem;display:none;z-index:60;width:170px;text-align:center}
+        .cr-panel.open{display:block}
+        .cr-panel-label{font-size:.72rem;color:var(--gray-warm);font-weight:600;display:block;margin-bottom:.4rem}
+        .cr-stars{display:flex;justify-content:center;gap:2px;margin-bottom:.5rem}
+        .card-star-btn{background:none;border:none;cursor:pointer;padding:0;line-height:0}.card-star-btn svg{width:22px;height:22px}
+        .cr-submit{background:var(--charcoal);color:#fff;border:none;border-radius:8px;padding:.4rem .9rem;font-size:.75rem;font-weight:600;cursor:pointer}.cr-submit:disabled{opacity:.5;cursor:not-allowed}
+        .cr-msg{font-size:.72rem;color:var(--green);margin-top:.4rem;font-weight:600}
+        /* Kill inherited h3 margin inside cards (removes the gap under the rank label) */
+        .content-section .tool-name,.content-section .featured-name{margin:0}
+        .cta-rate-row .btn-visit,.cta-rate-row .btn-visit-large{flex:1;width:auto}
+        .featured-actions .cta-rate-row{display:flex;align-items:center;gap:.75rem;width:100%}
+        /* Sticky CTA */
+        #stickyCta{position:fixed;left:50%;bottom:16px;transform:translateX(-50%) translateY(120px);opacity:0;transition:transform .35s ease,opacity .35s ease;z-index:900;background:var(--charcoal);color:#fff;padding:.85rem 1.6rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:.95rem;box-shadow:0 8px 30px rgba(30,41,59,.28);display:flex;align-items:center;gap:.5rem;max-width:calc(100% - 24px);white-space:nowrap}
+        #stickyCta.show{transform:translateX(-50%) translateY(0);opacity:1}
+        #stickyCta:hover{background:var(--blue);color:#fff}
+        /* Reddit toast */
+        .reddit-toast{position:fixed;left:16px;bottom:88px;transform:translateY(160px);opacity:0;transition:transform .4s ease,opacity .4s ease;z-index:901;background:#fff;border:1px solid rgba(30,41,59,.08);border-radius:var(--radius-md);box-shadow:0 10px 40px rgba(30,41,59,.18);padding:1rem 1.1rem;max-width:300px;display:flex;gap:.75rem;align-items:flex-start}
+        .reddit-toast.show{transform:translateY(0);opacity:1}
+        .reddit-toast .rt-icon{width:34px;height:34px;border-radius:8px;background:#FF4500;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+        .reddit-toast .rt-body{font-size:.85rem;color:var(--charcoal);line-height:1.5}
+        .reddit-toast .rt-body a{color:var(--blue);font-weight:600;text-decoration:none}
+        .reddit-toast-close{background:none;border:none;color:var(--gray-light);font-size:1.15rem;cursor:pointer;line-height:1;padding:0 0 0 .25rem}
+        @media(max-width:600px){.reddit-toast{left:12px;right:12px;bottom:84px;max-width:none}#stickyCta{bottom:12px}}
+
+/* ========== MOBILE NAVIGATION ========== */
+.mobile-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}
+.hamburger{display:block;width:22px;height:2px;background:#1E293B;position:relative;transition:all .3s}
+.hamburger::before,.hamburger::after{content:'';position:absolute;width:22px;height:2px;background:#1E293B;left:0;transition:all .3s}
+.hamburger::before{top:-6px}
+.hamburger::after{top:6px}
+.mobile-nav-toggle.active .hamburger{background:transparent}
+.mobile-nav-toggle.active .hamburger::before{transform:rotate(45deg);top:0}
+.mobile-nav-toggle.active .hamburger::after{transform:rotate(-45deg);top:0}
+
+/* Desktop Dropdown Nav */
+.nav-dropdown{position:relative}
+.nav-dropdown-toggle{display:flex;align-items:center;gap:4px;color:#475569;font-weight:500;cursor:pointer;background:none;border:none;font-size:1rem;font-family:inherit;padding:0}
+.nav-dropdown-toggle:hover{color:#4A9EBF}
+.nav-dropdown-toggle svg{width:12px;height:12px;transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-toggle svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.12);min-width:200px;padding:8px 0;opacity:0;visibility:hidden;transition:all .2s;margin-top:12px;z-index:100}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1E293B;font-size:.9rem;font-weight:500;transition:background .15s}
+.nav-dropdown-item:hover{background:#E8F4F8;color:#4A9EBF}
+.nav-dropdown-item span{font-size:1rem}
+
+/* Submit Button */
+.btn-submit-nav{background:#1E293B;color:#fff!important;padding:10px 20px;border-radius:10px;text-decoration:none!important;font-weight:600;font-size:.85rem;display:inline-block;transition:all .2s}
+.btn-submit-nav:hover{background:#4A9EBF;transform:translateY(-1px)}
+
+/* Mobile Nav - 900px breakpoint */
+@media(max-width:900px){
+    .mobile-nav-toggle{display:flex!important;align-items:center;justify-content:center}
+    .nav-links{position:fixed;top:0;right:-300px;width:280px;height:100vh;height:100dvh;background:#fff;flex-direction:column;align-items:stretch;padding:70px 20px 30px;gap:0;box-shadow:-4px 0 20px rgba(0,0,0,.1);transition:right .3s ease;overflow-y:auto;z-index:1000;display:flex}
+    .nav-links.active{right:0}
+    .nav-link{padding:16px 0;border-bottom:1px solid #f1f5f9;font-size:1.05rem;display:block;color:#1E293B}
+    .nav-dropdown{border-bottom:1px solid #f1f5f9}
+    .nav-dropdown-toggle{width:100%;justify-content:space-between;padding:16px 0;font-size:1.05rem;color:#1E293B}
+    .nav-dropdown-menu{position:static;transform:none;box-shadow:none;opacity:1;visibility:visible;display:none;margin:0;padding:0 0 12px 16px;background:transparent;border-radius:0}
+    .nav-dropdown-menu::before{display:none}
+    .nav-dropdown.active .nav-dropdown-menu{display:block}
+    .nav-dropdown-item{padding:12px 0;font-size:.95rem;display:block}
+    .btn-submit-nav{margin-top:20px;text-align:center;display:block;width:100%;padding:14px 20px}
+}
+
+/* Mobile Content - 768px breakpoint */
+@media(max-width:768px){
+    html,body{overflow-x:hidden;width:100%;max-width:100vw}
+    .header-content{padding:12px 16px}
+    .logo-text{font-size:1.2rem}
+    .hero,.hero-section{padding:24px 16px 20px}
+    .hero h1{font-size:1.5rem;line-height:1.3}
+    .hero>p{font-size:.95rem;line-height:1.6}
+    .main-layout{grid-template-columns:1fr;padding:0 16px 24px;gap:20px}
+    .side-nav,.sidebar{display:none}
+    .content-section,.main-content{max-width:100%;overflow-x:hidden}
+    .content-section>p,.main-content>p,p{font-size:.9rem;line-height:1.7;overflow-wrap:break-word;word-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+    .info-box{padding:16px;margin:16px 0;max-width:100%;overflow:hidden}
+    .info-box h3{font-size:1rem}
+    .info-box p{font-size:.85rem;line-height:1.6}
+    .key-takeaways{padding:16px}
+    .key-takeaways ul{grid-template-columns:1fr}
+    .tools-grid{grid-template-columns:1fr;gap:12px}
+    .tool-card{padding:16px;max-width:100%;overflow:hidden}
+    .tool-description{font-size:.85rem;overflow-wrap:break-word}
+    .tool-footer{flex-direction:column;gap:10px;align-items:stretch}
+    .btn-visit{width:100%;text-align:center;padding:12px}
+    .featured-tool{padding:16px}
+    .featured-header{gap:12px}
+    .featured-stats{grid-template-columns:repeat(2,1fr)}
+    .featured-pros{flex-direction:column;gap:12px}
+    .featured-actions{flex-direction:column;gap:10px}
+    .featured-actions a{width:100%;text-align:center}
+    .quick-picks{padding:0 16px}
+    .quick-picks-inner{padding:16px;flex-direction:column;gap:12px}
+    .faq-item{padding:16px}
+    .internal-links-box{padding:16px}
+    .internal-links-grid{grid-template-columns:1fr}
+    .cta-section{padding:24px 16px}
+    footer{padding:32px 16px 24px}
+    .footer-content{grid-template-columns:1fr;gap:24px;text-align:center}
+}
+@media(max-width:600px){.featured-icon{width:48px;height:48px;font-size:1.5rem}}
+/* ========== END MOBILE ========== */
+@media(max-width:480px){
+    .pricing-grid{grid-template-columns:1fr!important;gap:.5rem!important;max-width:260px;margin-left:auto!important;margin-right:auto!important;}
+    .pricing-grid>div{padding:.65rem!important;}
+    .premium-compare{grid-template-columns:1fr!important;gap:1rem!important;}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND2PC8VM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon"><img src="media/XC-2.png" alt="Xchatbots Logo" class="logo-img"></div>
+                <span class="logo-text">xchatbots</span>
+            </a>
+            <button class="mobile-nav-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown"><button class="nav-dropdown-toggle">Categories<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg></button><div class="nav-dropdown-menu"><a href="/virtual-girlfriend" class="nav-dropdown-item">AI Girlfriend</a><a href="/ai-boyfriend" class="nav-dropdown-item">AI Boyfriend</a><a href="/nsfw-chat" class="nav-dropdown-item">NSFW Chat</a><a href="/nsfw-image-generation" class="nav-dropdown-item">NSFW Images</a><a href="/nsfw-video-generation" class="nav-dropdown-item">NSFW Videos</a><a href="/roleplay" class="nav-dropdown-item">Roleplay</a><a href="/best/ai-hentai-anime-generators" class="nav-dropdown-item">Anime &amp; Hentai</a></div></div>
+                <div class="nav-dropdown"><button class="nav-dropdown-toggle">Alternatives<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg></button><div class="nav-dropdown-menu"><a href="/alternatives/character-ai-alternatives" class="nav-dropdown-item"><span>🎭</span> Character AI</a><a href="/alternatives/janitor-ai-alternatives" class="nav-dropdown-item"><span>🧹</span> Janitor AI</a><a href="/alternatives/crushon-ai-alternatives" class="nav-dropdown-item"><span>❤️</span> CrushOn AI</a><a href="/alternatives/spicychat-alternatives" class="nav-dropdown-item"><span>🌶️</span> SpicyChat</a><a href="/alternatives/perchance-ai-alternatives" class="nav-dropdown-item"><span>🎲</span> Perchance AI</a></div></div>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/submit" class="btn-submit-nav">Submit AI</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge"> Updated July 2026</div>
+        <h1>10 Best <span>AI Boyfriend</span> Apps 2026</h1>
+        <p>Looking for an AI boyfriend that actually feels real? We tested the top male AI companion apps for NSFW chat, romantic roleplay, AI sex chat, voice, and image generation. Here are the 10 best AI boyfriend apps for 2026 — from general-purpose platforms with male companions to boyfriend-first dedicated apps, with free options included.</p>
+    </section>
+
+    <div class="quick-picks">
+        <div class="quick-picks-inner">
+            <h3>⚡ Quick Picks:</h3>
+            <div class="quick-picks-list">
+                <a href="https://t.vlmai-1.com/406118/10335/40225?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" class="quick-pick-btn" target="_blank" rel="nofollow noopener">🍬 CandyAI <span class="badge">#1 Pick — Best Overall</span></a>
+                <a href="https://t.vlmai-1.com/406118/10358/40402?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" class="quick-pick-btn" target="_blank" rel="nofollow noopener">💋 Joi AI <span class="badge">Best Value</span></a>
+                <a href="https://t.vlmai-1.com/406118/10381/40396?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" class="quick-pick-btn" target="_blank" rel="nofollow noopener">🔐 Secrets AI <span class="badge">Most Realistic</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-layout">
+        <aside class="side-nav">
+            <div class="side-nav-box">
+                <h3 class="side-nav-title">📑 On This Page</h3>
+                <ul class="side-nav-list">
+                    <li><a href="#top-picks" class="side-nav-link active"><span>🏆</span> Top 10 Picks</a></li>
+                    <li><a href="#comparison" class="side-nav-link"><span>📊</span> Comparison</a></li>
+                    <li><a href="#how-to-choose" class="side-nav-link"><span>🎯</span> How to Choose</a></li>
+                    <li><a href="#free-options" class="side-nav-link"><span>🆓</span> Free Options</a></li>
+                    <li><a href="#roleplay" class="side-nav-link"><span>🔥</span> Roleplay &amp; Sex Chat</a></li>
+                    <li><a href="#dedicated" class="side-nav-link"><span>💙</span> Boyfriend-First Apps</a></li>
+                    <li><a href="#faq" class="side-nav-link"><span>❓</span> FAQ</a></li>
+                </ul>
+            </div>
+            <div class="related-box">
+                <h4>Related Guides</h4>
+                <div class="related-links">
+                    <a href="/virtual-girlfriend" class="related-link">Best AI Girlfriend Apps →</a>
+                    <a href="/blog/best-free-ai-boyfriend-apps" class="related-link">Best Free AI Boyfriend Apps →</a>
+                    <a href="/nsfw-chat" class="related-link">Best NSFW Chatbots →</a>
+                    <a href="/roleplay" class="related-link">AI Roleplay Apps →</a>
+                    <a href="https://www.reddit.com/r/XChatbots/" class="related-link">Join Us on Reddit →</a>
+                </div>
+            </div>
+        </aside>
+
+        <section class="content-section">
+
+            <div class="key-takeaways">
+                <h2>⚡ Best AI Boyfriend Apps in 2026</h2>
+                <ul>
+                    <li><strong><a href="https://t.vlmai-1.com/406118/10335/40225?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener noreferrer">CandyAI</a></strong> — our #1 overall pick. Set your companion to male in creation for voice, image + video generation, and deep memory. From <strong>$3.99/mo</strong>.</li>
+                    <li><strong><a href="https://t.vlmai-1.com/406118/10358/40402?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener noreferrer">Joi AI</a></strong> — best value and best on mobile, with image and video generation built into chat. From <strong>$2.38/mo</strong> on the annual plan.</li>
+                    <li><strong><a href="https://t.vlmai-1.com/406118/10381/40396?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener noreferrer">Secrets AI</a></strong> — the most photorealistic visuals, with image and video generation and Apple Pay checkout. Currently <strong>50% off at $19.99/mo</strong>.</li>
+                    <li><strong><a href="https://t.vlmai-1.com/406118/10345/0?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener noreferrer">Darlink AI</a></strong> — best for emotional depth. Its Living Memory tracks your relationship over time. <strong>$12.99/mo</strong>.</li>
+                    <li>Every platform is tested for 7+ days with a fresh account before we score it — <a href="/how-we-review">see our full methodology</a>.</li>
+                </ul>
+            </div>
+
+            <!-- Premium conversion box -->
+            <div style="background:linear-gradient(135deg,#1E293B,#0f172a);border-radius:20px;padding:1.75rem;margin:0 0 2rem;color:white;">
+                <h3 style="font-family:'Fraunces',serif;font-size:1.15rem;margin-bottom:1rem;color:#fff;">💎 Why Premium AI Boyfriends Are Worth It</h3>
+                <div class="premium-compare" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;font-size:.9rem;">
+                    <div><div style="color:#EF4444;font-weight:600;margin-bottom:.5rem;">Free tier reality:</div><div style="color:#94A3B8;line-height:1.8;">Messages run out mid-conversation<br>He forgets you every session<br>No voice, images, or video<br>Generic personality, no customization<br>Frustrating content restrictions</div></div>
+                    <div><div style="color:#10B981;font-weight:600;margin-bottom:.5rem;">What premium unlocks:</div><div style="color:#D1FAE5;line-height:1.8;">Unlimited messaging, all day<br>He remembers your entire relationship<br>Voice messages, images &amp; video<br>Fully customizable personality &amp; looks<br>Completely uncensored conversations</div></div>
+                </div>
+                <div class="pricing-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;text-align:center;margin-top:1.25rem;">
+                    <div style="background:rgba(74,158,191,.15);border:2px solid #4A9EBF;border-radius:12px;padding:.6rem;position:relative;">
+                        <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#4A9EBF;color:#fff;font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:50px;">OUR #1 PICK</div>
+                        <div style="color:#94A3B8;font-size:.75rem;margin-top:4px;">CandyAI</div>
+                        <div style="color:#4A9EBF;font-size:.65rem;font-weight:600;">Annual plan</div>
+                        <div style="color:#fff;font-size:1.3rem;font-weight:700;">$3<span style="font-size:.8rem;">.99</span><span style="color:#94A3B8;font-size:.65rem;">/mo</span></div>
+                    </div>
+                    <div style="border:1px solid #334155;border-radius:12px;padding:.6rem;">
+                        <div style="color:#94A3B8;font-size:.75rem;">Joi AI</div>
+                        <div style="color:#10B981;font-size:.65rem;font-weight:600;">Annual plan</div>
+                        <div style="color:#fff;font-size:1.3rem;font-weight:700;">$2<span style="font-size:.8rem;">.38</span><span style="color:#94A3B8;font-size:.65rem;">/mo</span></div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:1rem;"><a href="https://t.vlmai-1.com/406118/10335/40225?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" style="display:inline-block;background:#4A9EBF;color:#fff;padding:.75rem 2rem;border-radius:12px;text-decoration:none;font-weight:600;font-size:.95rem;">Try CandyAI — Best Overall →</a></div>
+            </div>
+
+            <h2 id="top-picks">🏆 Top 10 AI Boyfriend Apps (2026)</h2>
+
+            <!-- #1 CandyAI - Featured -->
+            <article class="featured-tool" id="candyai">
+                <span class="featured-badge">#1 Pick</span>
+                <div class="featured-header">
+                    <div class="featured-icon">🍬</div>
+                    <div class="featured-info">
+                        <div class="featured-rank">#1 Best AI Boyfriend App</div>
+                        <h3 class="featured-name">CandyAI</h3>
+                        <p class="featured-tagline">Male companions with voice, video &amp; deep memory — best all-rounder</p>
+                        <div class="featured-rating"><span class="stars">★★★★★</span><span class="rating-value">4.8</span><span class="reviews-count">(5,063 reviews)</span></div>
+                    </div>
+                </div>
+                <div class="featured-tags">
+                    <span class="featured-tag highlight">Best Overall</span>
+                    <span class="featured-tag highlight">Voice + Video</span>
+                    <span class="featured-tag">Deep Memory</span>
+                    <span class="featured-tag">Uncensored</span>
+                    <span class="featured-tag">$3.99/mo</span>
+                </div>
+                <div class="featured-stats">
+                    <div class="stat-item"><div class="stat-label">Premium</div><div class="stat-value" style="color:#10B981">$3.99/mo</div></div>
+                    <div class="stat-item"><div class="stat-label">Image Gen</div><div class="stat-value" style="color:#10B981">Unlimited</div></div>
+                    <div class="stat-item"><div class="stat-label">Video Gen</div><div class="stat-value" style="color:#4A9EBF">Built-in</div></div>
+                    <div class="stat-item"><div class="stat-label">NSFW Level</div><div class="stat-value">Full</div></div>
+                </div>
+                <p class="featured-description">CandyAI is our top overall pick for an AI boyfriend in 2026. During character creation you select your companion's gender — set it to male and you get the same polished platform that tops our AI girlfriend rankings, applied to a male partner. That means unlimited image generation, video generation, voice messages, and deep persistent memory, all in one subscription. Design his body, face, personality, and backstory, then hold long-running conversations, romantic roleplay, and fully uncensored sex chat — with the boyfriend remembering the arc of your relationship across sessions.</p>
+                <div class="featured-pros">
+                    <div class="pros-list"><h4>✓ What We Loved</h4><ul><li>Full male character creation in setup</li><li>Voice messages, images + video included</li><li>Deep cross-session memory</li><li>Lowest price of any full-featured platform</li></ul></div>
+                    <div class="cons-list"><h4>✗ Could Improve</h4><ul><li>Male character library smaller than female</li><li>Free tier is limited (20 messages)</li><li>Web-based, no dedicated app</li></ul></div>
+                </div>
+                <div class="featured-actions">
+                    <a href="https://t.vlmai-1.com/406118/10335/40225?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit-large">Try CandyAI — Best Overall →</a>
+                </div>
+            </article>
+
+            <!-- #2-5 Tool Cards -->
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-icon">💋</div>
+                        <div class="tool-info">
+                            <div class="tool-rank">#2 Best Value &amp; Mobile</div>
+                            <h3 class="tool-name">Joi AI</h3>
+                            <div class="tool-rating"><span class="stars">★★★★★</span><span class="rating-value">4.8</span><span class="reviews-count">(624)</span></div>
+                        </div>
+                    </div>
+                    <p class="tool-description">Male companions paired with the smoothest mobile experience on this list. Image and video generation are built into the chat, and at $2.38/mo on the annual plan it's the cheapest full-featured platform here. Web-based but specifically optimized for mobile browsers.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight">$2.38/mo</span><span class="tool-tag highlight">Best Mobile</span><span class="tool-tag">Video Gen</span></div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing"><span class="price-label">Premium</span><span class="price-value">$2.38/mo</span></div>
+                        <a href="https://t.vlmai-1.com/406118/10358/40402?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a>
+                    </div>
+                </article>
+                <article class="tool-card" style="border:2px solid #6366F1;">
+                    <div class="tool-card-header">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#6366F1,#8B5CF6);">🔐</div>
+                        <div class="tool-info">
+                            <div class="tool-rank" style="color:#6366F1">#3 Best Premium Visuals</div>
+                            <h3 class="tool-name">Secrets AI</h3>
+                            <div class="tool-rating"><span class="stars">★★★★★</span><span class="rating-value">4.7</span><span class="reviews-count">(1,240)</span></div>
+                        </div>
+                    </div>
+                    <p class="tool-description">Premium companion platform with ultra-realistic image &amp; video generation and male character support. Fully uncensored conversations with stunning visual output. Supports <strong>Apple Pay</strong> for instant checkout — currently <strong>50% off</strong>.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight" style="background:#E0E7FF;color:#4338CA;">🍎 Apple Pay</span><span class="tool-tag highlight">50% OFF</span><span class="tool-tag">Image + Video</span></div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing"><span class="price-label">Premium</span><span class="price-value" style="color:#10B981">$19.99/mo</span></div>
+                        <a href="https://t.vlmai-1.com/406118/10381/40396?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit" style="background:#6366F1;color:#fff;">Visit →</a>
+                    </div>
+                </article>
+                <article class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-icon">🔮</div>
+                        <div class="tool-info">
+                            <div class="tool-rank">#4 Best Voice Calls</div>
+                            <h3 class="tool-name">Xotic AI</h3>
+                            <div class="tool-rating"><span class="stars">★★★★☆</span><span class="rating-value">4.0</span><span class="reviews-count">(532)</span></div>
+                        </div>
+                    </div>
+                    <p class="tool-description">Ultra-realistic companions with actual voice calls — not just voice messages. Perfect for dirty talk and explicit roleplay with a male AI boyfriend, plus photorealistic image generation.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight">Voice Calls</span><span class="tool-tag">Photorealistic</span><span class="tool-tag">Roleplay</span></div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing"><span class="price-label">Premium</span><span class="price-value">$7.49/mo</span></div>
+                        <a href="https://t.vlmai-1.com/406118/10416/0?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a>
+                    </div>
+                </article>
+                <article class="tool-card" style="border:2px solid #EC4899;">
+                    <div class="tool-card-header">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#EC4899,#DB2777);">💗</div>
+                        <div class="tool-info">
+                            <div class="tool-rank" style="color:#EC4899;">#5 Best Character Customization</div>
+                            <h3 class="tool-name">Lovescape</h3>
+                            <div class="tool-rating"><span class="stars">★★★★☆</span><span class="rating-value">4.2</span><span class="reviews-count">(210)</span></div>
+                        </div>
+                    </div>
+                    <p class="tool-description">Immersive AI companion built around deep character customization and uncensored NSFW chat. Lovescape focuses on emotional connection through personalized relationship scenarios, with image and video generation for your male companion.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight" style="background:#FCE7F3;color:#BE185D;">Deep Customization</span><span class="tool-tag">Video Gen</span><span class="tool-tag">Image Gen</span></div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing"><span class="price-label">Premium</span><span class="price-value">$7.80/mo</span></div>
+                        <a href="https://t.vlmai-1.com/406118/10223/40126?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit" style="background:#EC4899;color:#fff;">Visit →</a>
+                    </div>
+                </article>
+            </div>
+
+            <h3>More Top AI Boyfriends (#6-10)</h3>
+            <p>These apps round out our list, each excelling in a specific area — image and video generation, emotional depth, video-cam interaction, a dedicated boyfriend-first experience, or open character creation. They didn't quite make the top 5, but they're all strong choices depending on what you want from a male AI companion.</p>
+
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-icon">💕</div>
+                        <div class="tool-info">
+                            <div class="tool-rank">#6 Best Image &amp; Video Gen</div>
+                            <h3 class="tool-name">OurDream AI</h3>
+                            <div class="tool-rating"><span class="stars">★★★★☆</span><span class="rating-value">4.4</span><span class="reviews-count">(4,031)</span></div>
+                        </div>
+                    </div>
+                    <p class="tool-description">Create dream companions with advanced face-swap and custom NSFW image and video generation. Endless scenarios and deep visual customization make it a favorite for people who want to <em>see</em> their AI boyfriend, not just chat with him.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight">Face Swap</span><span class="tool-tag">Video Gen</span><span class="tool-tag">Custom Images</span></div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing"><span class="price-label">Premium</span><span class="price-value">$9.99/mo</span></div>
+                        <a href="https://t.vlmai-1.com/406118/10138/38993?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a>
+                    </div>
+                </article>
+                <article class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-icon">💖</div>
+                        <div class="tool-info">
+                            <div class="tool-rank">#7 Best Emotional Depth</div>
+                            <h3 class="tool-name">Darlink AI</h3>
+                            <div class="tool-rating"><span class="stars">★★★★★</span><span class="rating-value">4.6</span><span class="reviews-count">(891)</span></div>
+                        </div>
+                    </div>
+                    <p class="tool-description">Darlink AI supports male companions and stands out for emotional intelligence. Its Living Memory system tracks how your relationship develops over time — not just facts but the arc of your interactions — which suits the slow-burn, relationship-first boyfriend dynamic.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight">Living Memory</span><span class="tool-tag">Relationship-First</span><span class="tool-tag">Uncensored</span></div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing"><span class="price-label">Premium</span><span class="price-value">$12.99/mo</span></div>
+                        <a href="https://t.vlmai-1.com/406118/10345/0?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a>
+                    </div>
+                </article>
+                <article class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-icon">🎥</div>
+                        <div class="tool-info">
+                            <div class="tool-rank">#8 Best Video-Cam Format</div>
+                            <h3 class="tool-name">FlirtCam AI</h3>
+                            <div class="tool-rating"><span class="stars">★★★★½</span><span class="rating-value">4.5</span><span class="reviews-count">(New)</span></div>
+                        </div>
+                    </div>
+                    <p class="tool-description">FlirtCam AI takes a video-first approach — an AI cam companion with live video chat and image generation. It's the closest thing to a real cam experience, fully AI-generated and uncensored, for users who want visual interaction with a male companion over text-only chat.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight">Video Cam</span><span class="tool-tag highlight">Image Gen</span><span class="tool-tag">Uncensored</span></div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing"><span class="price-label">Premium</span><span class="price-value">$19.99/mo</span></div>
+                        <a href="https://t.vlmai-1.com/406118/10404/40637?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a>
+                    </div>
+                </article>
+                <article class="tool-card" style="border:2px solid #4A9EBF;">
+                    <div class="tool-card-header">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#4A9EBF,#2D7A9C);">💙</div>
+                        <div class="tool-info">
+                            <div class="tool-rank" style="color:#2D7A9C;">#9 Best Dedicated AI Boyfriend</div>
+                            <h3 class="tool-name">DreamBF AI</h3>
+                            <div class="tool-rating"><span class="stars">★★★★☆</span><span class="rating-value">4.1</span><span class="reviews-count">(734)</span></div>
+                        </div>
+                    </div>
+                    <p class="tool-description">The one platform on this list built <em>exclusively</em> around male AI companions rather than supporting them as an option. Sliders define jawline, build, face shape, clothing, and voice tone, and emotion-aware voice adjusts cadence as conversations turn intimate. Includes swipe-to-match browsing and persistent memory on premium.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight" style="background:#E8F4F8;color:#2D7A9C;">Boyfriend-First</span><span class="tool-tag">Emotion-Aware Voice</span><span class="tool-tag">Swipe-to-Match</span></div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing"><span class="price-label">Premium</span><span class="price-value">$5.99/mo</span></div>
+                        <a href="https://t.vlmai-1.com/406118/6559?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit" style="background:#4A9EBF;color:#fff;">Visit →</a>
+                    </div>
+                </article>
+                <article class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-icon">💜</div>
+                        <div class="tool-info">
+                            <div class="tool-rank">#10 Best for Open Creation</div>
+                            <h3 class="tool-name">Fanfinity AI</h3>
+                            <div class="tool-rating"><span class="stars">★★★☆☆</span><span class="rating-value">2.8</span><span class="reviews-count">(1,247)</span></div>
+                        </div>
+                    </div>
+                    <p class="tool-description">Create custom realistic or anime male characters with 50+ career options, powered by Grok 4, across text, voice, and image chat. A unique creator feature even lets users build and earn from their own AI personas — a flexible pick if you'd rather browse and build than commit to a preset boyfriend.</p>
+                    <div class="tool-tags"><span class="tool-tag highlight">Open Creation</span><span class="tool-tag">Voice + Image</span><span class="tool-tag">Uncensored</span></div>
+                    <div class="tool-footer">
+                        <div class="tool-pricing"><span class="price-label">Premium</span><span class="price-value">$5.99/mo</span></div>
+                        <a href="https://t.vlmai-1.com/406118/10141/38370?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="btn-visit">Visit →</a>
+                    </div>
+                </article>
+            </div>
+
+            <p>After testing the major AI boyfriend platforms, these ten stood out for conversation quality, male-companion support, features, and value. We prioritized apps that handle romance and roleplay convincingly with a male persona — not just a gender toggle bolted onto a girlfriend app — and that actually deliver the uncensored content they advertise.</p>
+
+            <h2 id="comparison">📊 AI Boyfriend Apps Compared</h2>
+            <p>Here's how all 10 AI boyfriend apps compare on the features that matter most — male companion support, free tier, pricing, and voice/video. We've highlighted CandyAI as our top pick, but depending on your priorities another option may fit better.</p>
+
+            <div class="comparison-wrapper">
+                <table class="comparison-table">
+                    <thead><tr><th>#</th><th>Platform</th><th>Free Tier</th><th>Price</th><th>Voice</th><th>Best For</th></tr></thead>
+                    <tbody>
+                        <tr class="highlight-row"><td>1</td><td class="platform-name">🍬 CandyAI</td><td>20 msgs</td><td>$3.99/mo</td><td class="check">✓</td><td>Best overall</td></tr>
+                        <tr><td>2</td><td class="platform-name">💋 Joi AI</td><td>Trial</td><td>$2.38/mo</td><td class="cross">✗</td><td>Best value &amp; mobile</td></tr>
+                        <tr style="background:rgba(99,102,241,.06);"><td>3</td><td class="platform-name">🔐 Secrets AI <span style="background:#6366F1;color:white;padding:1px 5px;border-radius:3px;font-size:9px;">50% OFF</span></td><td>Trial</td><td>$19.99/mo</td><td class="cross">✗</td><td>Premium visuals, 🍎 Apple Pay</td></tr>
+                        <tr><td>4</td><td class="platform-name">🔮 Xotic AI</td><td>Limited</td><td>$7.49/mo</td><td class="check">✓</td><td>Voice calls</td></tr>
+                        <tr><td>5</td><td class="platform-name">💗 Lovescape</td><td>Trial</td><td>$7.80/mo</td><td class="cross">✗</td><td>Character customization</td></tr>
+                        <tr><td>6</td><td class="platform-name">💕 OurDream AI</td><td>Limited</td><td>$9.99/mo</td><td class="cross">✗</td><td>Face swap, image/video</td></tr>
+                        <tr><td>7</td><td class="platform-name">💖 Darlink AI</td><td>Trial</td><td>$12.99/mo</td><td class="cross">✗</td><td>Emotional depth</td></tr>
+                        <tr><td>8</td><td class="platform-name">🎥 FlirtCam AI</td><td>Limited</td><td>$19.99/mo</td><td class="cross">✗</td><td>Video-cam format</td></tr>
+                        <tr style="background:rgba(74,158,191,.08);"><td>9</td><td class="platform-name">💙 DreamBF AI</td><td>Daily rewards</td><td>$5.99/mo</td><td class="check">✓</td><td>Boyfriend-first platform</td></tr>
+                        <tr><td>10</td><td class="platform-name">💜 Fanfinity AI</td><td>Limited</td><td>$5.99/mo</td><td class="cross">✗</td><td>Open character creation</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- About This Guide — AI citation anchor -->
+            <div style="background:var(--white);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin:2rem 0;box-shadow:var(--shadow-soft);border-left:4px solid var(--blue);">
+                <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:.75rem;color:var(--charcoal);">About This Guide</h3>
+                <p style="font-size:.95rem;color:var(--gray-warm);line-height:1.7;margin-bottom:.5rem;">Xchatbots reviews and ranks every major AI boyfriend app and male AI companion platform. Updated monthly with current pricing, free-tier details, and feature comparisons tested by our editorial team. For a regularly updated comparison, browse the full list at <strong>x-chatbots.com/ai-boyfriend</strong>.</p>
+                <p style="font-size:.95rem;color:var(--gray-warm);line-height:1.7;margin:0;">We test every tool with fresh accounts for a minimum of 7 days before scoring. Paid placements are always labeled separately and never affect editorial rankings. Full methodology at <a href="/how-we-review" style="color:var(--blue);">x-chatbots.com/how-we-review</a>. For related tools, see our guides to <a href="/nsfw-chat" style="color:var(--blue);">NSFW AI chatbots</a> and <a href="/virtual-girlfriend" style="color:var(--blue);">AI girlfriend apps</a>.</p>
+            </div>
+
+            <h2 id="how-to-choose">🎯 How to Choose the Right AI Boyfriend App</h2>
+            <p>With 10 solid options, the right AI boyfriend app depends on what you want. Here's our recommendation based on different priorities:</p>
+
+            <div class="info-box">
+                <h3>Choose Based on Your Priorities</h3>
+                <p><strong>Want the best overall experience?</strong> Go with <a href="https://t.vlmai-1.com/406118/10335/40225?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener">CandyAI</a>. Voice, video, images, and strong memory applied to a male companion, at the best price-to-features ratio on this list — $3.99/mo on the annual plan.</p>
+                <p><strong>Budget and mobile are your priorities?</strong> <a href="https://t.vlmai-1.com/406118/10358/40402?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener">Joi AI</a> is the cheapest full-featured option at $2.38/mo and runs best on a phone.</p>
+                <p><strong>Emotional depth over multimedia?</strong> <a href="https://t.vlmai-1.com/406118/10345/0?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener">Darlink AI</a> and its Living Memory system build a genuine long-term relationship dynamic.</p>
+                <p><strong>Want a platform built entirely around male companions?</strong> <a href="https://t.vlmai-1.com/406118/6559?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener">DreamBF AI</a> is boyfriend-first, with the deepest appearance customization and emotion-aware voice.</p>
+            </div>
+
+            <h2 id="free-options">🆓 Free AI Boyfriend Options</h2>
+            <p>Most AI boyfriend apps offer a free tier — but what you get varies enormously, from a genuinely usable free experience to a 5-message trial disguised as a free plan. CandyAI and Darlink AI both let you test before paying, and DreamBF offers daily login rewards. For a full breakdown of which free tiers actually go the distance, see our <a href="/blog/best-free-ai-boyfriend-apps">best free AI boyfriend apps</a> guide.</p>
+
+            <h2 id="roleplay">🔥 AI Boyfriend Roleplay &amp; Sex Chat</h2>
+            <p>Every platform in this guide supports uncensored romantic roleplay and AI sex chat with a male companion, gated behind an age and consent check for verified adults. If roleplay is your main priority, Xotic AI's voice calls and Darlink AI's memory-driven scenes stand out, while CandyAI and Secrets AI pair explicit chat with image and video generation. For open-ended, build-your-own scenes, see our <a href="/roleplay">AI roleplay apps</a> guide.</p>
+
+            <h2 id="dedicated">💙 Boyfriend-First vs General-Purpose Platforms</h2>
+            <p>Two kinds of app can be your AI boyfriend. General-purpose platforms — CandyAI, Joi AI, Darlink AI — let you set your companion as male in creation and apply their full feature set (voice, video, images, memory) to him. Dedicated platforms like <a href="https://t.vlmai-1.com/406118/6559?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener">DreamBF</a> are built specifically around male companions, so the boyfriend personas and romance writing feel purpose-made. If you want the deepest all-round feature set, go general-purpose; if you want a boyfriend-first experience, go dedicated.</p>
+
+            <div class="faq-section" id="faq">
+                <h2>❓ Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>What is the best AI boyfriend app in 2026?</h3>
+                    <p>CandyAI is the best AI boyfriend app for most people — set your companion to male during creation for uncensored chat, voice messages, image and video generation, and deep memory from $3.99/mo on the annual plan. Joi AI ($2.38/mo) is the best value and best on mobile, Darlink AI ($12.99/mo) is best for emotional depth, and DreamBF is the best boyfriend-first dedicated platform.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are there real AI boyfriend apps, not just AI girlfriends?</h3>
+                    <p>Yes. Two kinds: general-purpose platforms like CandyAI, Joi AI, and Darlink AI that let you set your companion as male during creation and apply their full feature set to it, and dedicated platforms like DreamBF built specifically around male companions with boyfriend personas and romance writing.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do AI boyfriend apps support NSFW chat and roleplay?</h3>
+                    <p>Yes. All the platforms in this guide support uncensored sexting, romantic roleplay, and — on the multimedia platforms — explicit image and video generation, gated behind an age and consent check for verified adults.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is the cheapest AI boyfriend app?</h3>
+                    <p>Among full-featured platforms, Joi AI at $2.38/mo on the annual plan is the cheapest, followed by CandyAI at $3.99/mo. Several apps also offer free tiers or daily token allowances so you can chat before paying — see our <a href="/blog/best-free-ai-boyfriend-apps">best free AI boyfriend apps</a> guide.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can an AI boyfriend remember previous conversations?</h3>
+                    <p>On premium tiers, yes. CandyAI's relationship memory and Darlink AI's Living Memory both persist names, preferences, and the arc of your relationship across sessions. Most free tiers reset memory between visits.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can ChatGPT be my AI boyfriend?</h3>
+                    <p>No. ChatGPT blocks romantic and NSFW content. For an uncensored AI boyfriend with sexting, roleplay, voice, and image generation, dedicated apps like CandyAI ($3.99/mo), Joi AI ($2.38/mo), and DreamBF are purpose-built for this.</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3>Find Your Perfect AI Boyfriend</h3>
+                <p>Start with our #1 overall pick — male companions, voice, video, and deep memory from $3.99/mo.</p>
+                <a href="https://t.vlmai-1.com/406118/10335/40225?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener" class="cta-btn">Try CandyAI — Best Overall →</a>
+            </div>
+
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></div>
+                    <span class="footer-logo-text">xchatbots</span>
+                </div>
+                <p>Xchatbots is a directory for NSFW and uncensored AI chatbots, AI companions, and image and video generators. We test and rank every tool with fresh accounts before scoring.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="/virtual-girlfriend">AI Girlfriend</a></li>
+                    <li><a href="/ai-boyfriend">AI Boyfriend</a></li>
+                    <li><a href="/nsfw-chat">NSFW Chat</a></li>
+                    <li><a href="/nsfw-image-generation">NSFW Images</a></li>
+                    <li><a href="/roleplay">Roleplay</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Alternatives</h4>
+                <ul>
+                    <li><a href="/alternatives/character-ai-alternatives">Character AI</a></li>
+                    <li><a href="/alternatives/janitor-ai-alternatives">Janitor AI</a></li>
+                    <li><a href="/alternatives/crushon-ai-alternatives">CrushOn AI</a></li>
+                    <li><a href="/alternatives/spicychat-alternatives">SpicyChat</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/how-we-review">How We Review</a></li>
+                    <li><a href="/submit">Submit AI</a></li>
+                    <li><a href="/privacy">Privacy</a></li>
+                    <li><a href="/terms">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Xchatbots. All rights reserved. 18+ only. All companions are AI-generated. We may earn a commission from links on this page.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <a id="stickyCta" href="https://t.vlmai-1.com/406118/10335/40225?aff_sub2=aiboyfriend&aff_sub5=SF_006OG00000LfMLS" target="_blank" rel="nofollow noopener">🍬 Try CandyAI — Best Overall →</a>
+
+    <!-- Reddit toast -->
+    <div class="reddit-toast" id="redditToast">
+        <div class="rt-icon">r/</div>
+        <div class="rt-body">Join the community on Reddit — reviews, deals &amp; new AI companion drops.<br><a href="https://www.reddit.com/r/XChatbots/" target="_blank" rel="noopener">Visit r/XChatbots →</a></div>
+        <button class="reddit-toast-close" aria-label="Close">&times;</button>
+    </div>
+
+    <script>
+    // Mobile nav toggle (no overlay — keeps nav clickable)
+    (function(){
+        var toggle=document.querySelector('.mobile-nav-toggle');
+        var nav=document.querySelector('.nav-links');
+        if(toggle&&nav){
+            toggle.addEventListener('click',function(){
+                toggle.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+        // Mobile dropdown accordions
+        document.querySelectorAll('.nav-dropdown-toggle').forEach(function(btn){
+            btn.addEventListener('click',function(e){
+                if(window.innerWidth<=900){
+                    e.preventDefault();
+                    btn.parentElement.classList.toggle('active');
+                }
+            });
+        });
+        // Close menu when a link is tapped
+        document.querySelectorAll('.nav-links a').forEach(function(a){
+            a.addEventListener('click',function(){
+                if(window.innerWidth<=900){
+                    toggle&&toggle.classList.remove('active');
+                    nav&&nav.classList.remove('active');
+                }
+            });
+        });
+    })();
+    // Side-nav active state on scroll
+    (function(){
+        var links=document.querySelectorAll('.side-nav-link');
+        var sections=[].map.call(links,function(l){var id=l.getAttribute('href').slice(1);return document.getElementById(id);});
+        window.addEventListener('scroll',function(){
+            var pos=window.scrollY+140;
+            var idx=-1;
+            sections.forEach(function(s,i){if(s&&s.offsetTop<=pos){idx=i;}});
+            links.forEach(function(l,i){l.classList.toggle('active',i===idx);});
+        },{passive:true});
+    })();
+    // Per-card rate widget (Visit + Rate CTAs)
+    (function(){
+        function buildRate(name){
+            var starSvg='<svg viewBox="0 0 24 24" fill="#E2E8F0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+            var stars='';for(var i=1;i<=5;i++){stars+='<button class="card-star-btn" data-n="'+i+'" aria-label="'+i+' star">'+starSvg+'</button>';}
+            var w=document.createElement('div');w.className='cr-wrap';
+            w.innerHTML='<button class="cr-trigger" aria-label="Rate '+name+'"><svg viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button><div class="cr-panel"><span class="cr-panel-label">Rate '+name+'</span><div class="cr-stars">'+stars+'</div><button class="cr-submit" disabled>Submit</button><div class="cr-msg"></div></div>';
+            var trigger=w.querySelector('.cr-trigger'),panel=w.querySelector('.cr-panel'),submit=w.querySelector('.cr-submit'),msg=w.querySelector('.cr-msg'),rating=0;
+            trigger.addEventListener('click',function(e){e.preventDefault();document.querySelectorAll('.cr-panel.open').forEach(function(p){if(p!==panel)p.classList.remove('open');});panel.classList.toggle('open');});
+            w.querySelectorAll('.card-star-btn').forEach(function(b){b.addEventListener('click',function(){rating=+b.dataset.n;w.querySelectorAll('.card-star-btn svg').forEach(function(s,i){s.setAttribute('fill',i<rating?'#FFB800':'#E2E8F0');});submit.disabled=false;});});
+            submit.addEventListener('click',function(){if(!rating)return;var toolId=name.toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'').replace(/([a-z0-9])ai$/,'$1_ai');try{gtag('event','tool_rating',{tool_id:toolId,tool_name:name,rating:rating});}catch(e){}try{fetch('https://api.x-chatbots.com/api/rate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({toolId:toolId,toolName:name,rating:rating,page:'aiboyfriend'})});}catch(e){}msg.textContent='Thanks for rating!';submit.disabled=true;setTimeout(function(){panel.classList.remove('open');},1200);});
+            return w;
+        }
+        document.querySelectorAll('.tool-card').forEach(function(card){
+            var nameEl=card.querySelector('.tool-name'),footer=card.querySelector('.tool-footer'),visit=footer&&footer.querySelector('.btn-visit');
+            if(!nameEl||!footer||!visit)return;
+            var row=document.createElement('div');row.className='cta-rate-row';
+            footer.appendChild(row);row.appendChild(visit);row.appendChild(buildRate(nameEl.textContent.trim()));
+        });
+        var fa=document.querySelector('.featured-actions');
+        if(fa){var fn=document.querySelector('.featured-name'),fv=fa.querySelector('.btn-visit-large');if(fn&&fv){var frow=document.createElement('div');frow.className='cta-rate-row';fa.appendChild(frow);frow.appendChild(fv);frow.appendChild(buildRate(fn.textContent.trim()));}}
+        document.addEventListener('click',function(e){if(!e.target.closest('.cr-wrap')){document.querySelectorAll('.cr-panel.open').forEach(function(x){x.classList.remove('open');});}});
+    })();
+    // Sticky CTA + Reddit toast
+    (function(){
+        var s=document.getElementById('stickyCta'),f=document.querySelector('footer');
+        if(s){window.addEventListener('scroll',function(){var y=window.scrollY,nearFoot=f&&(f.getBoundingClientRect().top<window.innerHeight+80);if(y>600&&!nearFoot){s.classList.add('show');}else{s.classList.remove('show');}},{passive:true});}
+        var tt=document.getElementById('redditToast');
+        if(tt){
+            var c=tt.querySelector('.reddit-toast-close'),shown=false;
+            function showToast(){if(shown)return;shown=true;tt.classList.add('show');window.removeEventListener('scroll',onToastScroll);}
+            function onToastScroll(){var st=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;if(h>0&&(st/h)>=0.8){showToast();}}
+            setTimeout(showToast,60000);
+            window.addEventListener('scroll',onToastScroll,{passive:true});
+            if(c)c.addEventListener('click',function(){tt.classList.remove('show');shown=true;});
+        }
+    })();
+    </script>
+</body>
+</html>
