@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Collect site + blog URLs and submit them to IndexNow (Bing/Yandex/DDG/Yahoo/Ecosia)."""
 import json, re, sys, urllib.request, urllib.error
+from concurrent.futures import ThreadPoolExecutor
 from xml.etree import ElementTree as ET
 
 HOST = "x-chatbots.com"
@@ -36,7 +37,7 @@ def parse_sitemap(url, depth=0):
         else:
             urls.add(u)
 
-parse_sitemap(f"https://{HOST}/sitemap-index.xml")
+parse_sitemap(f"https://{HOST}/sitemap.xml")
 
 # Blog is a separate Notion-powered service (not in sitemaps) -> scrape /blog
 try:
@@ -48,6 +49,28 @@ except Exception as e:
 
 urls = sorted(u for u in urls if u.startswith("http"))
 print("collected", len(urls), "urls")
+
+# Never submit dead URLs -- IndexNow penalises hosts that repeatedly submit
+# non-200s, and a stale sitemap once fed ~75 404s into every run.
+def alive(u):
+    try:
+        req = urllib.request.Request(u, headers=UA, method="HEAD")
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return u if r.status == 200 else None
+    except Exception:
+        return None
+
+with ThreadPoolExecutor(max_workers=8) as pool:
+    checked = list(pool.map(alive, urls))
+
+dead = [u for u, ok in zip(urls, checked) if ok is None]
+urls = [u for u in checked if u]
+if dead:
+    print(f"skipping {len(dead)} non-200 urls:")
+    for u in dead:
+        print("  ", u)
+print("submitting", len(urls), "urls")
+
 if not urls:
     print("no urls; nothing to submit"); sys.exit(0)
 
