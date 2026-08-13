@@ -118,8 +118,6 @@ Disallow: /
 # SITEMAP LOCATION
 # ===========================================
 Sitemap: https://x-chatbots.com/sitemap.xml
-Sitemap: https://x-chatbots.com/sitemap-reviews.xml
-Sitemap: https://x-chatbots.com/sitemap-guides.xml
 
 # ===========================================
 # HOST (Canonical domain)
