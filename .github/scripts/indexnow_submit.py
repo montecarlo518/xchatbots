@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 from xml.etree import ElementTree as ET
 
 HOST = "x-chatbots.com"
-KEY  = "f059b8a52d94b862515b2e034433aa8e"
+KEY  = "d15d4e375aecb489247c090a810a7c92"
 KEYLOC = f"https://{HOST}/{KEY}.txt"
 UA = {"User-Agent": "xchatbots-indexnow/1.0"}
 
