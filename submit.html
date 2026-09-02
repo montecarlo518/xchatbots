@@ -241,8 +241,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         .radio-option:hover { border-color: var(--blue); }
         .radio-option input[type="radio"] { width: 18px; height: 18px; accent-color: var(--blue); }
+        .radio-option input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--blue); }
         .radio-option span { font-size: 0.95rem; color: var(--charcoal); }
-        
+
+        /* Multi-select checkbox grids (Category, Features, Payment Methods).
+           These mirror the directory's multi_select properties, so a submission
+           can carry every value the tool card and the home filters read. */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 0.6rem;
+        }
+        .checkbox-grid .radio-option { padding: 0.6rem 0.85rem; }
+        .checkbox-grid .radio-option span { font-size: 0.9rem; }
+        .checkbox-grid.error { outline: 2px solid var(--error); outline-offset: 4px; border-radius: var(--radius-sm); }
+        @media (max-width: 480px) { .checkbox-grid { grid-template-columns: 1fr; } }
+
         /* PayPal Section */
         .payment-section {
             background: var(--ice-light);
@@ -453,7 +467,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="bg-decoration bg-blob-1"></div>
     <div class="bg-decoration bg-blob-2"></div>
 
-    <div class="mobile-overlay"></div>
     <header>
         <div class="header-content">
             <a href="/" class="logo">
@@ -541,31 +554,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     
                     <div class="form-group">
-                        <label for="category">Category <span class="required">*</span></label>
-                        <select id="category" name="category" required>
-                            <option value="">Select a category</option>
-                            <option value="Sexchat">Sexchat</option>
-                            <option value="Customizable Chat">Customizable Chat</option>
-                            <option value="Roleplay">Roleplay</option>
-                            <option value="Video Generation">Video Generation</option>
-                            <option value="Image Generation">Image Generation</option>
-                            <option value="Uncensored Chat">Uncensored Chat</option>
-                        </select>
+                        <label>
+                            Category <span class="required">*</span>
+                            <span class="label-hint">Pick every one that applies &mdash; this decides which category pages the tool can appear on</span>
+                        </label>
+                        <div class="checkbox-grid" id="categoryGroup">
+                            <label class="radio-option"><input type="checkbox" name="category" value="AI Girlfriend"><span>AI Girlfriend</span></label>
+                            <label class="radio-option"><input type="checkbox" name="category" value="AI Boyfriend"><span>AI Boyfriend</span></label>
+                            <label class="radio-option"><input type="checkbox" name="category" value="Hentai &amp; Anime"><span>Hentai &amp; Anime</span></label>
+                            <label class="radio-option"><input type="checkbox" name="category" value="Roleplay"><span>Roleplay</span></label>
+                            <label class="radio-option"><input type="checkbox" name="category" value="Image Generation"><span>Image Generation</span></label>
+                            <label class="radio-option"><input type="checkbox" name="category" value="Video Generation"><span>Video Generation</span></label>
+                            <label class="radio-option"><input type="checkbox" name="category" value="NSFW"><span>NSFW</span></label>
+                        </div>
                     </div>
-                    
+
+                    <div class="form-group">
+                        <label>
+                            Features
+                            <span class="label-hint">Shown as tags on the tool card</span>
+                        </label>
+                        <div class="checkbox-grid" id="featuresGroup">
+                            <label class="radio-option"><input type="checkbox" name="features" value="Sexchat"><span>Sexchat</span></label>
+                            <label class="radio-option"><input type="checkbox" name="features" value="Uncensored Chat"><span>Uncensored Chat</span></label>
+                            <label class="radio-option"><input type="checkbox" name="features" value="Customizable Chat"><span>Customizable Chat</span></label>
+                            <label class="radio-option"><input type="checkbox" name="features" value="Roleplay"><span>Roleplay</span></label>
+                            <label class="radio-option"><input type="checkbox" name="features" value="Voice Chat"><span>Voice Chat</span></label>
+                            <label class="radio-option"><input type="checkbox" name="features" value="Image Generation"><span>Image Generation</span></label>
+                            <label class="radio-option"><input type="checkbox" name="features" value="Video Generation"><span>Video Generation</span></label>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="pricingModel">Pricing Model <span class="required">*</span></label>
                         <select id="pricingModel" name="pricingModel" required>
                             <option value="">Select pricing</option>
                             <option value="Free">Free</option>
                             <option value="Freemium">Freemium (Free + Paid tiers)</option>
-                            <option value="Paid Only">Paid Only</option>
+                            <option value="Paid">Paid Only (subscription required)</option>
                         </select>
                     </div>
-                    
+
+                    <div class="form-group">
+                        <label for="startingPrice">
+                            Starting Price
+                            <span class="label-hint">Cheapest paid tier, in this exact shape: $9.99/mo</span>
+                        </label>
+                        <input type="text" id="startingPrice" name="startingPrice" placeholder="$9.99/mo">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Payment Methods
+                            <span class="label-hint">How can users pay? Visitors filter the directory by this</span>
+                        </label>
+                        <div class="checkbox-grid" id="paymentGroup">
+                            <label class="radio-option"><input type="checkbox" name="paymentMethods" value="Credit Card"><span>Credit Card</span></label>
+                            <label class="radio-option"><input type="checkbox" name="paymentMethods" value="Crypto"><span>Crypto</span></label>
+                            <label class="radio-option"><input type="checkbox" name="paymentMethods" value="Apple Pay"><span>Apple Pay</span></label>
+                            <label class="radio-option"><input type="checkbox" name="paymentMethods" value="Google Pay"><span>Google Pay</span></label>
+                            <label class="radio-option"><input type="checkbox" name="paymentMethods" value="PayPal"><span>PayPal</span></label>
+                            <label class="radio-option"><input type="checkbox" name="paymentMethods" value="Stripe"><span>Stripe</span></label>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="pricingDetails">Pricing Details</label>
-                        <input type="text" id="pricingDetails" name="pricingDetails" placeholder="e.g., Free / $9.99/mo">
+                        <input type="text" id="pricingDetails" name="pricingDetails" placeholder="e.g., annual billing required, 20% launch discount">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="icon">
+                            Icon
+                            <span class="label-hint">One emoji used on the tool card. Optional &mdash; we pick one if you leave it blank</span>
+                        </label>
+                        <input type="text" id="icon" name="icon" maxlength="2" placeholder="&#128142;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="affiliateUrl">
+                            Affiliate / Partner Program URL
+                            <span class="label-hint">Optional. If you run an affiliate program, paste your tracking link here &mdash; tools with one get a Visit button</span>
+                        </label>
+                        <input type="url" id="affiliateUrl" name="affiliateUrl" placeholder="https://track.example.com/...">
                     </div>
                 </div>
 
@@ -678,13 +749,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const formCard = document.getElementById('formCard');
         const validationError = document.getElementById('validationError');
 
+        // Values of every ticked box in one checkbox group, in DOM order.
+        function checkedValues(name) {
+            return Array.from(
+                document.querySelectorAll(`input[name="${name}"]:checked`)
+            ).map(el => el.value);
+        }
+
+        // "9.99/mo" and "$9.99 / MO" both become "$9.99/mo", which is the shape
+        // the directory's Price Text column uses everywhere else.
+        function normalisePrice(raw) {
+            const v = (raw || '').trim();
+            if (!v) return '';
+            const m = v.match(/^\$?(\d+(?:\.\d{1,2})?)\s*\/\s*(mo|yr)$/i);
+            return m ? `$${m[1]}/${m[2].toLowerCase()}` : v;
+        }
+
         // Form validation function
         function validateForm() {
             const requiredFields = [
                 { id: 'toolName', name: 'Tool Name' },
                 { id: 'websiteUrl', name: 'Website URL' },
                 { id: 'description', name: 'Description' },
-                { id: 'category', name: 'Category' },
                 { id: 'pricingModel', name: 'Pricing Model' },
                 { id: 'submitterName', name: 'Your Name' },
                 { id: 'submitterEmail', name: 'Your Email' }
@@ -705,6 +791,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     element.classList.remove('error');
                 }
             });
+
+            // Category is a multi_select in the directory, so it is a checkbox
+            // group here, not a <select>. At least one box has to be ticked --
+            // a tool with no category never surfaces on a hub page.
+            const categoryGroup = document.getElementById('categoryGroup');
+            if (checkedValues('category').length === 0) {
+                isValid = false;
+                missingFields.push('Category');
+                categoryGroup.classList.add('error');
+            } else {
+                categoryGroup.classList.remove('error');
+            }
+
+            // Starting Price feeds the directory's "Price Text", which
+            // priceMeta() regexes a bare number out of for schema.org/price.
+            // Free text like "cheap-ish" produces an invalid Offer, so shape it
+            // at the door. Empty is fine -- the field is optional.
+            const startingPrice = document.getElementById('startingPrice');
+            if (startingPrice.value.trim() && !/^\$?\d+(\.\d{1,2})?\s*\/\s*(mo|yr)$/i.test(startingPrice.value.trim())) {
+                isValid = false;
+                startingPrice.classList.add('error');
+                missingFields.push('Starting Price in the form $9.99/mo');
+            } else {
+                startingPrice.classList.remove('error');
+            }
+
+            // Affiliate URL is optional, but a malformed one is worse than none.
+            const affiliateField = document.getElementById('affiliateUrl');
+            if (affiliateField.value.trim()) {
+                try {
+                    new URL(affiliateField.value.trim());
+                    affiliateField.classList.remove('error');
+                } catch {
+                    isValid = false;
+                    affiliateField.classList.add('error');
+                    missingFields.push('Valid Affiliate URL');
+                }
+            } else {
+                affiliateField.classList.remove('error');
+            }
 
             // Validate email format
             const emailField = document.getElementById('submitterEmail');
@@ -746,10 +872,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             return {
                 toolName: document.getElementById('toolName').value.trim(),
                 websiteUrl: document.getElementById('websiteUrl').value.trim(),
+                affiliateUrl: document.getElementById('affiliateUrl').value.trim(),
                 description: document.getElementById('description').value.trim(),
-                category: document.getElementById('category').value,
+                // Arrays: the matching Notion properties are multi_select, and
+                // the worker maps them with .map(name => ({ name })).
+                category: checkedValues('category'),
+                features: checkedValues('features'),
+                paymentMethods: checkedValues('paymentMethods'),
                 pricingModel: document.getElementById('pricingModel').value,
+                startingPrice: normalisePrice(document.getElementById('startingPrice').value),
                 pricingDetails: document.getElementById('pricingDetails').value.trim(),
+                icon: document.getElementById('icon').value.trim(),
                 submitterName: document.getElementById('submitterName').value.trim(),
                 submitterEmail: document.getElementById('submitterEmail').value.trim(),
                 additionalInfo: document.getElementById('additionalInfo').value.trim()
@@ -863,6 +996,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Remove error styling on input
         document.querySelectorAll('input, select, textarea').forEach(element => {
             element.addEventListener('input', function() {
+                this.classList.remove('error');
+                validationError.classList.remove('show');
+            });
+        });
+
+        // Checkbox and radio groups carry .error on the WRAPPER, not on the
+        // input, so the listener above can never clear them. Clear the wrapper
+        // when anything inside it is ticked.
+        ['categoryGroup', 'featuresGroup', 'paymentGroup'].forEach(id => {
+            const group = document.getElementById(id);
+            if (!group) return;
+            group.addEventListener('change', function() {
                 this.classList.remove('error');
                 validationError.classList.remove('show');
             });
