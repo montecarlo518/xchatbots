@@ -148,6 +148,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
         }
         .form-help { font-size: 0.85rem; color: var(--gray-light); margin-top: 0.35rem; }
+
+        /* Multi-select checkbox grids (Category, Features, Payment Methods).
+           These mirror the directory's multi_select properties one-for-one, so
+           an accepted advertiser can become a directory row without anyone
+           retyping the taxonomy by hand. Same markup as submit.html. */
+        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 0.6rem; }
+        .checkbox-option {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.6rem 0.85rem; background: var(--frost);
+            border: 1px solid var(--ice); border-radius: var(--radius-sm);
+            cursor: pointer; transition: var(--transition);
+        }
+        .checkbox-option:hover { border-color: var(--blue); }
+        .checkbox-option input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--blue); margin: 0; }
+        .checkbox-option span { font-size: 0.9rem; color: var(--charcoal); }
+        .checkbox-grid.error { outline: 2px solid #DC2626; outline-offset: 4px; border-radius: var(--radius-sm); }
+        @media (max-width: 480px) { .checkbox-grid { grid-template-columns: 1fr; } }
         .btn-form { width: 100%; padding: 1rem 2rem; background: var(--charcoal); color: white; border: none; border-radius: var(--radius-md);
             font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
         .btn-form:hover { background: var(--blue); transform: translateY(-2px); }
@@ -340,7 +357,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="pricing-grid">
-            <div class="pricing-card" data-plan="Featured Listing ($149/mo)" data-card-id="featured">
+            <div class="pricing-card" data-plan="Featured Listing" data-card-id="featured">
                 <div class="pricing-icon">⭐</div>
                 <h3>Featured Listing</h3>
                 <div class="pricing-price">$149<span>/month</span></div>
@@ -353,7 +370,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <button type="button" class="btn-pricing secondary plan-select-btn">Choose this package</button>
             </div>
 
-            <div class="pricing-card popular" data-plan="Sponsored Post ($399)" data-card-id="sponsored">
+            <div class="pricing-card popular" data-plan="Sponsored Post" data-card-id="sponsored">
                 <div class="popular-badge">Popular</div>
                 <div class="pricing-icon">🚀</div>
                 <h3>Sponsored Post</h3>
@@ -367,7 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <button type="button" class="btn-pricing primary plan-select-btn">Choose this package</button>
             </div>
 
-            <div class="pricing-card" data-plan="Premium Partner (Custom)" data-card-id="premium">
+            <div class="pricing-card" data-plan="Premium Partner" data-card-id="premium">
                 <div class="pricing-icon">💎</div>
                 <h3>Premium Partner</h3>
                 <div class="pricing-price">Custom</div>
@@ -408,8 +425,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <form id="advertiseForm">
                     <div class="form-group">
-                        <label>Company Name <span class="required">*</span></label>
-                        <input type="text" id="companyName" required placeholder="Your company or tool name">
+                        <label>Tool Name <span class="required">*</span></label>
+                        <input type="text" id="toolName" required placeholder="e.g., SpicyChat AI">
+                        <p class="form-help">The name as it should appear in the directory.</p>
                     </div>
 
                     <div class="form-group">
@@ -418,25 +436,125 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
 
                     <div class="form-group">
-                        <label>Website URL</label>
-                        <input type="url" id="websiteUrl" placeholder="https://your-tool.com">
+                        <label>Website URL <span class="required">*</span></label>
+                        <input type="url" id="websiteUrl" required placeholder="https://your-tool.com">
                     </div>
 
                     <div class="form-group">
                         <label>Ad Type <span class="required">*</span></label>
                         <select id="adType" required>
                             <option value="">Select a package</option>
-                            <option value="Featured Listing ($149/mo)">Featured Listing ($149/mo)</option>
-                            <option value="Sponsored Post ($399)">Sponsored Post ($399)</option>
-                            <option value="Premium Partner (Custom)">Premium Partner (Custom)</option>
+                            <option value="Featured Listing">Featured Listing &mdash; $149/mo</option>
+                            <option value="Sponsored Post">Sponsored Post &mdash; $399</option>
+                            <option value="Premium Partner">Premium Partner &mdash; custom</option>
                             <option value="Other / Not Sure">Other / Not Sure</option>
                         </select>
                         <p class="form-help">Tip: use the "Choose this package" buttons above to fill this in automatically.</p>
                     </div>
 
                     <div class="form-group">
+                        <label>Category <span class="required">*</span></label>
+                        <div class="checkbox-grid" id="categoryGroup">
+                            <label class="checkbox-option"><input type="checkbox" name="category" value="AI Girlfriend"><span>AI Girlfriend</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="category" value="AI Boyfriend"><span>AI Boyfriend</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="category" value="Hentai &amp; Anime"><span>Hentai &amp; Anime</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="category" value="Roleplay"><span>Roleplay</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="category" value="Image Generation"><span>Image Generation</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="category" value="Video Generation"><span>Video Generation</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="category" value="NSFW"><span>NSFW</span></label>
+                        </div>
+                        <p class="form-help">Pick every one that applies &mdash; this decides which category pages your placement can run on.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Features</label>
+                        <div class="checkbox-grid" id="featuresGroup">
+                            <label class="checkbox-option"><input type="checkbox" name="features" value="Sexchat"><span>Sexchat</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="features" value="Uncensored Chat"><span>Uncensored Chat</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="features" value="Customizable Chat"><span>Customizable Chat</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="features" value="Roleplay"><span>Roleplay</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="features" value="Voice Chat"><span>Voice Chat</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="features" value="Image Generation"><span>Image Generation</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="features" value="Video Generation"><span>Video Generation</span></label>
+                        </div>
+                        <p class="form-help">Shown as tags on your listing card.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pricing Model</label>
+                        <select id="pricingModel">
+                            <option value="">Select pricing</option>
+                            <option value="Free">Free</option>
+                            <option value="Freemium">Freemium (Free + Paid tiers)</option>
+                            <option value="Paid">Paid Only (subscription required)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Starting Price</label>
+                        <input type="text" id="startingPrice" placeholder="$9.99/mo">
+                        <p class="form-help">Cheapest paid tier, in this exact shape: $9.99/mo</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Payment Methods</label>
+                        <div class="checkbox-grid" id="paymentGroup">
+                            <label class="checkbox-option"><input type="checkbox" name="paymentMethods" value="Credit Card"><span>Credit Card</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="paymentMethods" value="Crypto"><span>Crypto</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="paymentMethods" value="Apple Pay"><span>Apple Pay</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="paymentMethods" value="Google Pay"><span>Google Pay</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="paymentMethods" value="PayPal"><span>PayPal</span></label>
+                            <label class="checkbox-option"><input type="checkbox" name="paymentMethods" value="Stripe"><span>Stripe</span></label>
+                        </div>
+                        <p class="form-help">Visitors filter the directory by this.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Icon</label>
+                        <input type="text" id="icon" maxlength="2" placeholder="&#128142;">
+                        <p class="form-help">One emoji for your listing card. Optional &mdash; we pick one if you leave it blank.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Affiliate / Partner Program URL</label>
+                        <input type="url" id="affiliateUrl" placeholder="https://track.example.com/...">
+                        <p class="form-help">Optional. If you run an affiliate program, paste your tracking link here.</p>
+                    </div>
+
+                    <!-- Campaign detail. Revealed by updateUI() for the packages
+                         that need it: a Sponsored Post is written from these
+                         answers, and Premium Partner scoping depends on them.
+                         Hidden for a plain Featured Listing, which needs none. -->
+                    <div id="campaignDetails" hidden>
+                        <div class="form-group">
+                            <label>Tool Description</label>
+                            <textarea id="toolDescription" placeholder="What does your tool do? Two or three sentences is plenty."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Key Features</label>
+                            <textarea id="keyFeatures" placeholder="The 3-5 things that make it worth writing about."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Target Audience</label>
+                            <input type="text" id="targetAudience" placeholder="e.g., users leaving Character AI who want uncensored roleplay">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Competitors</label>
+                            <input type="text" id="competitors" placeholder="Who should we be comparing you against?">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label>Message</label>
                         <textarea id="message" placeholder="Tell us about your tool and advertising goals..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Special Requests</label>
+                        <input type="text" id="specialRequests" placeholder="Placement, timing or creative requirements">
                     </div>
 
                     <button type="submit" class="btn-form">Send Inquiry</button>
@@ -501,29 +619,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>
         // Plan configuration: maps select value -> payment link + display info
+        // Keys are the exact values written to the Notion "Ad Type" select, and
+        // they deliberately carry NO price. Prices live in priceLabel and in the
+        // <option> text, so changing what a package costs never orphans the
+        // historical rows that were sold at the old price. The price in force at
+        // inquiry time is recorded separately, in "Price Quoted".
         const PLAN_CONFIG = {
-            'Featured Listing ($149/mo)': {
+            'Featured Listing': {
                 cardId: 'featured',
                 shortKey: 'featured',
                 type: 'paypal',
                 priceLabel: '$149/month',
+                needsCampaignDetail: false,
                 payHref: 'https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-07G307761H0789608NGPMPFA',
                 title: 'Complete your Featured Listing subscription',
                 description: 'Set up your monthly subscription via PayPal. You can cancel anytime.'
             },
-            'Sponsored Post ($399)': {
+            'Sponsored Post': {
                 cardId: 'sponsored',
                 shortKey: 'sponsored',
                 type: 'paypal',
                 priceLabel: '$399 one-time',
+                needsCampaignDetail: true,
                 payHref: 'https://www.paypal.com/ncp/payment/UULBV5F6BVDZU',
                 title: 'Complete your Sponsored Post payment',
                 description: "Pay the one-time fee via PayPal and we'll get started on your dedicated post."
             },
-            'Premium Partner (Custom)': {
+            'Premium Partner': {
                 cardId: 'premium',
                 shortKey: 'premium',
                 type: 'custom',
+                priceLabel: 'Custom',
+                needsCampaignDetail: true,
                 title: "We'll send a custom proposal",
                 description: "Premium Partner pricing depends on your goals. We'll reply with a tailored proposal and payment options &mdash; no payment needed yet."
             },
@@ -531,10 +658,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 cardId: null,
                 shortKey: 'other',
                 type: 'custom',
+                priceLabel: '',
+                needsCampaignDetail: true,
                 title: "We'll help you choose",
                 description: "We'll reply with package recommendations based on what you tell us &mdash; no payment needed yet."
             }
         };
+
+        // Trimmed value of any field by id, safe when the field is absent.
+        const val = id => (document.getElementById(id)?.value || '').trim();
+
+        // Values of every ticked box in one checkbox group, in DOM order.
+        function checkedValues(name) {
+            return Array.from(
+                document.querySelectorAll(`input[name="${name}"]:checked`)
+            ).map(el => el.value);
+        }
+
+        // "9.99/mo" and "$9.99 / MO" both become "$9.99/mo", the shape the
+        // directory's Price Text column uses everywhere else.
+        function normalisePrice(raw) {
+            const v = (raw || '').trim();
+            if (!v) return '';
+            const m = v.match(/^\$?(\d+(?:\.\d{1,2})?)\s*\/\s*(mo|yr)$/i);
+            return m ? `$${m[1]}/${m[2].toLowerCase()}` : v;
+        }
 
         const adTypeSelect = document.getElementById('adType');
         const selectionSummary = document.getElementById('selectionSummary');
@@ -547,7 +695,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             updateUI(planValue);
             if (scrollToForm) {
                 document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                document.getElementById('companyName').focus({ preventScroll: true });
+                document.getElementById('toolName').focus({ preventScroll: true });
             }
         }
 
@@ -569,12 +717,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
             });
 
-            // Update summary chip
+            // Update summary chip. The chip shows the price the visitor is
+            // looking at; the value posted to Notion stays price-free.
+            const planConfig = PLAN_CONFIG[planValue];
             if (planValue) {
                 selectionSummary.classList.add('show');
-                selectionSummaryText.textContent = planValue;
+                selectionSummaryText.textContent = planConfig && planConfig.priceLabel
+                    ? `${planValue} (${planConfig.priceLabel})`
+                    : planValue;
             } else {
                 selectionSummary.classList.remove('show');
+            }
+
+            // Only ask for campaign detail when the package is written from it.
+            // Featured Listing is a badge and a slot, so those four fields are
+            // pure friction there.
+            const campaignDetails = document.getElementById('campaignDetails');
+            if (campaignDetails) {
+                campaignDetails.hidden = !(planConfig && planConfig.needsCampaignDetail);
             }
         }
 
@@ -594,6 +754,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Clear selection
         selectionClear.addEventListener('click', () => {
             setSelectedPlan('', false);
+        });
+
+        // Checkbox groups carry .error on the WRAPPER, so clear it when
+        // anything inside is ticked.
+        ['categoryGroup', 'featuresGroup', 'paymentGroup'].forEach(id => {
+            const group = document.getElementById(id);
+            if (group) group.addEventListener('change', () => group.classList.remove('error'));
         });
     </script>
 
@@ -645,12 +812,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             const adType = document.getElementById('adType').value;
 
+            const showsCampaignDetail = !!(PLAN_CONFIG[adType] || {}).needsCampaignDetail;
+
+            // Category is required and multi-valued, same as on submit.html.
+            const categoryGroup = document.getElementById('categoryGroup');
+            if (checkedValues('category').length === 0) {
+                categoryGroup.classList.add('error');
+                categoryGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+            categoryGroup.classList.remove('error');
+
+            // Same shape rule as submit.html: Starting Price ends up in the
+            // directory's Price Text, which is regexed for a bare number to
+            // build schema.org/price. Reject anything that would not parse.
+            const startingPriceEl = document.getElementById('startingPrice');
+            if (startingPriceEl.value.trim() && !/^\$?\d+(\.\d{1,2})?\s*\/\s*(mo|yr)$/i.test(startingPriceEl.value.trim())) {
+                alert('Starting Price needs to look like $9.99/mo');
+                startingPriceEl.focus();
+                return;
+            }
+
             const formData = {
-                companyName: document.getElementById('companyName').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                websiteUrl: document.getElementById('websiteUrl').value.trim(),
+                toolName: val('toolName'),
+                email: val('email'),
+                websiteUrl: val('websiteUrl'),
+                affiliateUrl: val('affiliateUrl'),
                 adType: adType,
-                message: document.getElementById('message').value.trim()
+                // The price attached to this package right now. Stored on the
+                // row so a later price change doesn't rewrite history.
+                priceQuoted: (PLAN_CONFIG[adType] || {}).priceLabel || '',
+                // Arrays: the matching Notion properties are multi_select.
+                category: checkedValues('category'),
+                features: checkedValues('features'),
+                paymentMethods: checkedValues('paymentMethods'),
+                pricingModel: val('pricingModel'),
+                startingPrice: normalisePrice(val('startingPrice')),
+                icon: val('icon'),
+                message: val('message'),
+                specialRequests: val('specialRequests'),
+                // Only send the campaign fields when they were actually on
+                // screen; a hidden input keeps its value if the visitor typed
+                // and then switched package, and stale answers are worse than
+                // blank ones.
+                toolDescription: showsCampaignDetail ? val('toolDescription') : '',
+                keyFeatures: showsCampaignDetail ? val('keyFeatures') : '',
+                targetAudience: showsCampaignDetail ? val('targetAudience') : '',
+                competitors: showsCampaignDetail ? val('competitors') : ''
             };
 
             // Show loading state
